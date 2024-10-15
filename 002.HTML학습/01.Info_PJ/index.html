@@ -21,13 +21,34 @@
           요소명 / 아이디명 / 클래스명
         */
       /* header{ 요소명 */
-      /* #top-area{ 아이디  */
+
+      /* 1. 상단영역 */
+      #top-area{ /* 아이디명 */ 
+      /* 중앙정렬 */
+        text-align: center;
+      }
+      /* 2. 메인영역 */
+      /* 3. 하단영역 */
+      
+      
+      /* 최상위박스 공통 */
       .part {
         /* 클래스명 */
-        /* 보더(경계선) */
-        border: 1px solid #f00;
+        /* 보더(경계선) 
+          border: 두께 종류 색상
+          종류(선형solid,데쉬선dashed,점선dotted)
+        */
+        border: 2px dashed #0be01d;
         /* 안쪽여백(패딩) */
         padding: 15px;
+      }
+
+      /* 주소셋팅 */
+      address {
+        /* 기본 이탤릭체 해제하기 fsn */
+        font-style: normal;
+        /* 글자 중앙정렬 tac */
+        text-align: center;
       }
     </style>
   </head>
@@ -66,10 +87,14 @@
     <!-- <div id="main"></div> -->
 
     <!-- 3. 하단영역 -->
-    <footer
-      id="info-area"
-      class="part"
-    ></footer>
+    <footer id="info-area" class="part">
+      <address>
+        서울시 강남구 역삼동 119 대호B
+        8F <br />
+        대표: Hyeon Seok Yang <br />
+        전화: 010-2222-3333
+      </address>
+    </footer>
     <!-- <div id="footer"></div> -->
 
     <!-- 
