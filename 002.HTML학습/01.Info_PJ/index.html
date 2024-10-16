@@ -79,26 +79,24 @@
         font-size: 19px;
         text-shadow: 2px 2px 1px
           #0c0c0ca1;
-        
       }
       /* 첫번째 a메뉴를 빼고 두번째부터 
       끝까지 양쪽마진 적용하기
       주의) 인라인요소는 위아래 마진적용안됨 */
-      .menu span+a{
+      .menu span + a {
         /* 앞에 span형제요소가 있는 a만선택
         p는 형제선택자 */
         margin: 4px;
       }
 
       /* a요소에 마우스 오버시 */
-      .menu span+a:hover{
+      .menu span + a:hover {
         /* 글자색 */
         color: #0be01d;
         /* 글자윗줄 tdo */
         text-decoration: underline;
         /* 글자데코 스타일 tdst*/
         text-decoration-style: wavy;
-
       }
 
       /* 2. 메인영역 */
@@ -132,8 +130,6 @@
       #info-area {
         /* 배경색 bgc */
         background-color: #dad5d5d8;
-        
-        
       }
 
       /* 최상위박스 공통 */
@@ -211,7 +207,8 @@
     <main
       id="main-area"
       class="part main-area"
-    ></main>
+    >
+  </main>
     <!-- <div id="main"></div> -->
 
     <!-- 3. 하단영역 -->
