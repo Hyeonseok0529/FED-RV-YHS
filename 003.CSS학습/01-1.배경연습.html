@@ -4,7 +4,126 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>01-1.배경연습</title>
-    <style></style>
+    <style>
+      /* 스타일시트 인터널 코딩구역 */
+
+      /* 초기화 
+      - 기본 디자인 셋팅을 없애는 코드 
+      - 마진,패딩 없애기가 기본적인 초기화 */
+      html,body,h1{
+        /* 콤마 = 그룹선택자 */
+        margin: 0;
+        padding: 0;
+      }
+      /* 보이는 화면만큼 최상위 요소 맞추기 */
+      body,html{
+        height: 100%;
+        /* %단위는 항상 싸고 있는 부모박스를 기준함 
+         body는 html을 기준하고 html은 보이는 화면을 기준한다
+         여기서 보이는 화면은 window라고 함.
+        */
+      }
+
+      /* 타이틀 */
+      h1{
+        /* 패딩 p50 */
+        padding: 50px;
+        /* 중앙정렬 tac */
+        text-align: center;
+      }
+
+      /* body요소 안에 배경넣기 */
+      body{
+        /* 주의! html에 배경을 넣지 말고 body에 넣어야 함. */
+
+        /* 1. 배경색 : background-color (bgc) */
+        background-color: #585ea37a;
+
+        /* 2. 배경이미지 :  background-image (bgi) -> url() 
+        기본적으로 배경이미지는 반복됨 */
+        background-image: url(./imgs/bg_logo_a_01.png);
+        
+        /* 3. 배경 반복여부 :  background-repeat (bgr)
+          값 :
+          repeat-x : x축 반복
+          repeat-y : y축 반복
+          repeat : 모든축 반복(기본값)
+          no-repeat : 반복안함
+        */
+        background-repeat: no-repeat;
+
+        /* 4. 화면고정 :bga 
+          배경고정 여부는 스크롤바가 있어야
+          확인됨.(보통 스크롤시 움직이지 않게 함)
+        */      
+        /* background-attachment: fixed/* ;
+        height: 200%; */
+
+        /* 5. 배경위치 : background-position (bgp) 
+          background-position: right;
+          1. 가로방향 : left, center, right
+          2. 세로방향 : top, center, bottom
+          - 수치값 : px, %, em등 여러단위 사용가능
+          - % 단위 기준 = 이미지의 중앙
+          (50% = 정중앙)
+          - 양방향중 생략하면 center가 기본값임
+        */
+        /* background-position: right bottom; */
+        /* 포지션 따로 쓸 수 있음 */
+        background-position-x: right;
+        background-position-y: bottom;
+
+        /* 6. 배경이미지 크기 : background-size (bgz) 
+          정해진 값:
+          1. contain - 이미지가 화면을 채우고 모두 보임
+          2. cover - 이미지가 박스를 모두 채우고 잘리는 부분이 있을 수 있음
+          3. 수치값 - 가로, 세로에 모두 수치값 사용 가능하며
+          가로, 세로중 한쪽만 주면 
+          이미지가 비율을 유지함!
+        */
+        /* background-size: 100px 300px; */
+        /* background-size: 100px ; */
+        /* background-size: 100px auto; */
+        background-size: auto 300px;
+
+
+        /* 
+          [ 배경속성 한꺼번에 쓰기 ]
+            background : 배경색 이미지 반복 고정 위치/크기
+            background : 색이반고윙/크
+            - 주의! : 위치값 없이 크기만 셋팅하려면
+            반드시 위치값을 0이라도 쓰고 슬래쉬 뒤에
+            크기를 써야한다.
+            ex) background: #000 url() no-repeat 0/right;
+        */
+      }
+
+      /*  body아래 .wrap박스 */
+      .wrap{
+        height: 100%;
+        /* 높이값을 body와 같이 화면만큼 채움 */
+
+        /* 
+          배경 한번에 쓰기를 사용하면
+          여러개의 배경이미지를 넣을 수 있다
+          background : 색이반고윙/크, 색이반고윙/크,...;
+          콤마로 구분하여 연속 셋팅함
+          
+          ((특징))
+          1. 위쪽에 셋팅된 배경이미지가 위에 위치함
+          2. 위치값을 가로는 left, 세로는 center가 기본값
+          3. 위치나 크기의 특정값을 쓰지 않으면 기본값이 적용됨
+          4. 위치값을 0을 쓰면 기본값인 left center가 적용됨
+          5. 위치값을 %로 쓰면 설정박스의 %위치를 이미지 중심을
+          기준으로 위치하게 됨
+        */
+
+        /* 배경이미지 다중적용하기 */
+        background:
+        url(./imgs/dc1.png) no-repeat center/400px;
+         
+      }
+      </style>
   </head>
   <body>
     <div class="wrap">
