@@ -38,7 +38,7 @@ display 하기전에 셋업하도록 명령한다!
     :last-child
     :nth-child(n) 
     -> 숫자n은 1부터!, 짝수는 even, 홀수는 odd
-
+    
 6. CSS 적용 우선순위
     인라인 > id > class > type
     - 만약 !important를 값 뒤에 쓰면

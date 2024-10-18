@@ -2,21 +2,174 @@
 
 /* 서브페이지 공통 CSS - sub.css */
 
+/*********************************************************
+[선택자의 종류]
+
+1) 타입선택자: 요소명 
+    예) h1{}, div{}
+
+2) 자손선택자: 띄어쓰기 
+    예) h1 a{}, div span{}
+
+3) 아이디선택자: # 
+    예) #my{}, #we{}
+
+4) 클래스선택자: . 
+    예) .home{}, .kite{}
+
+5) 직계자식선택자: > 
+    예) #my > div
+
+6) 그룹선택자: , 
+    예) html,body,h1{}
+
+7) 종속선택자: 태그명+아이디/클래스선택자
+    예) h1#logo{}, main.cont{}
+    
+8) 속성선택자: []
+    예) [target=_blank], a[href="index.html"]
+
+9) 형제선택자: + 
+    예) li+li , tr+tr 앞에 다른형제가 있는 요소를 선택함
+
+10) 다중형제선택자: ~
+    예) li:nth-child(4)~li -> 4번째 li이후 모든 형제선택 
+*********************************************************/
+
 /* 2-1. 서브타이틀 
 태그명+이름 방식의 선택자는 종속선택자*/
 h2.sub-title{
+    /* 글자체(웹폰트) */
+    font-family: "Jua", sans-serif;
     /* 글자크기 : font-size (fz) */
     font-size: 38px;
     /* 글자두께 : font-weight (fw) 
     두껍게 bold / 보통 normal (fwn) */
     font-weight: normal;
+    /* 텍스트 중앙정렬 */
     text-align: center;
-    background-color: #6176d391;
+    /* 배경색 */
+    /* background-color: #6176d391; */
+    /* 글자그림자 ts */
+    text-shadow: 2px 2px 2px #00000070;
+
+    /* 박스디자인 */
+    /* 패딩 p */
+    padding: 20px;
+    /* 둥근모서리 brad */
+    border-radius: 20px;
+    /* CSS이미지는 상대경로로 CSS파일위치로부터 찾아서 넣는다
+    ../는 폴더 하나위로 올라감 */
+    /* 배경 한번에 넣기 : 색이반고윙/크 */
+    background: url(../images/titbg4.jpg)
+    no-repeat center/cover;
+
+    /* 박스그림자 box-shadow (bxsh) 
+        box-shadow: (내부그림자 inset) x축 y축 블러 (확장) 색
+
+        -> 블러 뒤에 확장옵션에 px값을 주면
+        그림자가 더 커진다. 박스그림자에만 이 옵션이 있음
+
+        콤마로 연결하면 글자그림자든 박스그림자든
+        모두 다중 그림자 적용가능
+    */
+    box-shadow: 
+    /* 내부그림자 */
+    inset 0 0 10px #3f48bda2,
+    /* 바깥쪽 그림자 */
+    0 0 20px 10px #5147ad8a;
 }
+
+/* 
+    [CSS 적용 우선순위]
+    0. 속성값안에 !important 라고 쓰면 가장 최우선적용
+    1. 인라인 셋팅 : 태그안에 style속성셋팅
+    2. 종속선택 요소 : 태그명#아이디명 / 태그명.클래스명
+    3. 아이디 요소 : #이름
+    4. 클래스 요소 : .이름
+    5. 요소명 : 태그명
+    -> 레벨이 같은경우엔 나중에 쓴것이 덮어써짐
+
+*/
+
+/* 페이지별 타이틀 박스 디자인 변경 */
+/* 정치뉴스 */
+h2.politics{
+    /* 배경이미지 변경 */
+    background-image: 
+    url(../images/titbg1.jpg);
+
+    /* 글자색 변경 */
+    color: rgb(39, 38, 38);
+}
+
+/* 경제뉴스 */
+h2.economics{
+    /* 배경이미지 */
+    background-image: 
+    url(../images/titbg2.jpg);
+
+    /* 글자색 변경 */
+    color: rgb(216, 216, 56);
+}
+
+/* 사회뉴스 */
+h2.social{
+    /* 배경이미지 */
+    background-image: 
+    url(../images/titbg3.jpg);
+
+    /* 글자색 변경 */
+    color: rgb(235, 156, 53);
+}
+
+/* IT/과학 뉴스 */
+h2.it{
+    /* 배경이미지 */
+    background-image: 
+    url(../images/titbg4.jpg);
+
+    /* 글자색 변경 */
+    color: darkblue;
+}
+
+/* TV/연예 뉴스 */
+h2.tv{
+    /* 배경이미지 */
+    background-image: 
+    url(../images/titbg5.jpg);
+
+    /* 글자색 변경 */
+    color: wheat;
+}
+
+
+
 /* 2-2. 언론사로고 */
+.press-logo img{
+    /* 이미지 높이값 고정(가로크기는 자동) */
+    height: 32px;
+}
 /* 2-3. 기사제목 */
+.article-title{
+    /* 글자크기 fz30 */
+    font-size: 30px;
+    /* 글자색 c */
+    color: #1e1e23;
+}
 /* 2-4. 기사사진 */
+.article-picture{
+    /* figure 요소 기본마진 없앰 */
+    margin: 0;
+}
+.article-picture img{
+    width: 100%;
+}
 /* 2-5. 기사내용 */
+.contents p{
+    font-size: 18px;
+    line-height: 1.7;
+}
 /* 2-5.5 인용블록영역 */
 /* 2-6. 기자정보 */
 /* 2-7. 기사원문 */

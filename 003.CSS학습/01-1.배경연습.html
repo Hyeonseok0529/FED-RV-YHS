@@ -2,7 +2,10 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>01-1.배경연습</title>
     <style>
       /* 스타일시트 인터널 코딩구역 */
@@ -10,13 +13,16 @@
       /* 초기화 
       - 기본 디자인 셋팅을 없애는 코드 
       - 마진,패딩 없애기가 기본적인 초기화 */
-      html,body,h1{
+      html,
+      body,
+      h1 {
         /* 콤마 = 그룹선택자 */
         margin: 0;
         padding: 0;
       }
       /* 보이는 화면만큼 최상위 요소 맞추기 */
-      body,html{
+      body,
+      html {
         height: 100%;
         /* %단위는 항상 싸고 있는 부모박스를 기준함 
          body는 html을 기준하고 html은 보이는 화면을 기준한다
@@ -25,7 +31,7 @@
       }
 
       /* 타이틀 */
-      h1{
+      h1 {
         /* 패딩 p50 */
         padding: 50px;
         /* 중앙정렬 tac */
@@ -33,7 +39,7 @@
       }
 
       /* body요소 안에 배경넣기 */
-      body{
+      body {
         /* 주의! html에 배경을 넣지 말고 body에 넣어야 함. */
 
         /* 1. 배경색 : background-color (bgc) */
@@ -42,7 +48,7 @@
         /* 2. 배경이미지 :  background-image (bgi) -> url() 
         기본적으로 배경이미지는 반복됨 */
         background-image: url(./imgs/bg_logo_a_01.png);
-        
+
         /* 3. 배경 반복여부 :  background-repeat (bgr)
           값 :
           repeat-x : x축 반복
@@ -55,7 +61,7 @@
         /* 4. 화면고정 :bga 
           배경고정 여부는 스크롤바가 있어야
           확인됨.(보통 스크롤시 움직이지 않게 함)
-        */      
+        */
         /* background-attachment: fixed/* ;
         height: 200%; */
 
@@ -86,7 +92,6 @@
         /* background-size: 100px auto; */
         background-size: auto 300px;
 
-
         /* 
           [ 배경속성 한꺼번에 쓰기 ]
             background : 배경색 이미지 반복 고정 위치/크기
@@ -99,7 +104,7 @@
       }
 
       /*  body아래 .wrap박스 */
-      .wrap{
+      .wrap {
         height: 100%;
         /* 높이값을 body와 같이 화면만큼 채움 */
 
@@ -120,27 +125,37 @@
 
         /* 배경이미지 다중적용하기 */
         background:
-        /* 도깨비 이름 */
-        url(./imgs/d01.png) no-repeat 50% 67%/13%,
-        /* 도깨비 */
-        url(./imgs/dc1.png) no-repeat center/50%,
-        /* 지은탁 이름 */
-        url(./imgs/d02.png) no-repeat 89% 20%/13%,
-        /* 지은탁 */
-        url(./imgs/dc2.png) no-repeat right top/35%,
-        /* 저승사자 이름 */
-        url(./imgs/d03.png) no-repeat 11% 80%/13%,
-        /* 저승사자 */
-        url(./imgs/dc3.png) no-repeat left bottom/35%,
-        /* 써니 이름 */
-        url(./imgs/d04.png) no-repeat 12% 20%/13%,
-        /* 써니 */
-        url(./imgs/dc4.png) no-repeat left top/35%,
-        /* 포스터 */
-        url(./imgs/bg_mainvisual.jpg) no-repeat 0/50%;
-         
+          /* 도깨비 이름 */ 
+            url(./imgs/d01.png)
+            no-repeat 50% 67%/13%,
+          /* 도깨비 */
+            url(./imgs/dc1.png)
+            no-repeat center/50%,
+          /* 지은탁 이름 */
+            url(./imgs/d02.png)
+            no-repeat 89% 20%/13%,
+          /* 지은탁 */
+            url(./imgs/dc2.png)
+            no-repeat right top/35%,
+          /* 저승사자 이름 */
+            url(./imgs/d03.png)
+            no-repeat 11% 80%/13%,
+          /* 저승사자 */
+            url(./imgs/dc3.png)
+            no-repeat left bottom/35%,
+          /* 써니 이름 */
+            url(./imgs/d04.png)
+            no-repeat 12% 20%/13%,
+          /* 써니 */ url(./imgs/dc4.png)
+            no-repeat left top/35%,
+          /* 포스터 */
+            url(./imgs/bg_mainvisual.jpg)
+            no-repeat 0/50%,
+          /* 배경화면 */
+            url(./imgs/eachBG.jpg)
+            no-repeat 50% top/40% 100%;
       }
-      </style>
+    </style>
   </head>
   <body>
     <div class="wrap">
