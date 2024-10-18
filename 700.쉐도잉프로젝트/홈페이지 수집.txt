@@ -10,22 +10,40 @@
 - https://nannalagerman.com/
 - 한솔봄 홈페이지를 위의 느낌으로 변경
 
-[홈페이지 소스]
+[바꾸고 싶은 루트 홈페이지]
+1. 벽산(뭔가 바꿔보고싶은 홈페이지)
+http://www.byucksan.com/#Index
 
+2. 아크로
+https://www.acro.co.kr/Ahah_view02.action
+
+3. 한솔 봄
+https://www.vhom.co.kr/?utm_source=naver_bs&utm_medium=cpt&utm_campaign=pc&utm_term=homelink&utm_content=bespoke_%ED%95%9C%EC%86%94%EB%B4%84&n_media=27758&n_query=%ED%95%9C%EC%86%94%EB%B4%84&n_rank=1&n_ad_group=grp-a001-04-000000042550002&n_ad=nad-a001-04-000000318489354&n_keyword_id=nkw-a001-04-000006255594573&n_keyword=%ED%95%9C%EC%86%94%EB%B4%84&n_campaign_type=4&n_contract=tct-a001-04-000000000972904&n_ad_group_type=5&NaPm=ct%3Dm2ec9ads%7Cci%3D0za0002wZf5Bwq6Tjfp%2D%7Ctr%3Dbrnd%7Chk%3Df3fa513015112d26abd4fe35a50125297102b996%7Cnacn%3Dx0dyBUg2vmVg
+
+
+[홈페이지 소스]
 1.https://nannalagerman.com/
 잘 만들어진 것 같은 페이지
 디자인이나 가독성이 좋다고 판단 
 눈이 아프지 않는 정갈한 전환효과
 
-2. https://en.manayerbamate.com/
-다양한 시각디자인적 기능이 보이는 페이지
-
-3. https://www.upscaleconf.com/
+2. https://www.upscaleconf.com/
 컴팩트한 소개 페이지
 
-4. https://www.chungiyoo.com/
+3. https://www.chungiyoo.com/
 개인 프로필 홈페이지 - 개인 프로필 홈페이지를 디자인, 제작해주는 회사가 있을까 하는 생각에서 출발
 
-5. https://www.sejongpac.or.kr/portal/main/main.do
+4. https://www.kccworld.co.kr/main.do 
+KCC : 가져올 기능들이 조금 있어보임.
+
+
+
+[소스로 남길 것들]
+https://www.sejongpac.or.kr/portal/main/main.do
 전공과 제일 잘 맞을 것 같은 홈페이지
 (* 수료후 취직시에 전공하고 꼭 연관짓고 싶지는 않음.)
+= 따올만한 기능이 없음.
+
+https://en.manayerbamate.com/
+다양한 시각디자인적 기능이 보이는 페이지
+= 나중에 따오고싶은 기능이 있으면 해보는 걸로.
