@@ -144,7 +144,6 @@ h2.tv{
 }
 
 
-
 /* 2-2. 언론사로고 */
 .press-logo img{
     /* 이미지 높이값 고정(가로크기는 자동) */
@@ -162,15 +161,108 @@ h2.tv{
     /* figure 요소 기본마진 없앰 */
     margin: 0;
 }
+/* 기사이미지 */
 .article-picture img{
     width: 100%;
 }
+/* 이미지 설명 
+figcaptio = 블록요소*/
+.article-picture figcaption{
+    /* 글자 가운데 정렬 tac */
+    text-align: center;
+}
+/* 하위요소에 지정된 속성은 그 요소에서
+재정의 해야 적용가능 ex. 글자크기가 이미
+small 태그에 적용되어 있어서 여기에 재정의해야함. */
+.article-picture figcaption small{
+    /* 글자크기 15px :fz15 */
+    font-size: 15px;
+}
+
 /* 2-5. 기사내용 */
 .contents p{
-    font-size: 18px;
-    line-height: 1.7;
+    /* 기본마진 없애고 아래쪽 마진만 줌 */
+    margin: 0;
+    margin-bottom: 25px;
+
+    font-size: 20px;
+    line-height: 1.6;
+    /* 
+        [ 줄간격 : line-height ]
+         - 박스요소의 글자의 간격 높이를 지정하는 속성
+         - 글자는 높이값의 세로 정중앙에 위치함
+         - 단위를 사용하면 특정크기로 지정됨
+         - 단위없는 숫자로 표현하면 글자크기의 배수로 
+         상대적 크기가 적용된다.
+         - 젠코딩시 숫자만 쓰면 배수로 표현되므로
+         주의요망! ex. lh20 -> line-height: 20;
+    */
+    color: #303038;
 }
+
+/* 중요글자 strong */
+.contents p strong{
+    color: darkmagenta;
+}
+/* 강조글자 em */
+.contents p em{ 
+    /* 글자색 : c */
+    color: lightseagreen;
+    /* 글자그림자 : ts */
+    text-shadow: 2px 2px 2px #00000080;
+    /* 글자윗줄 overline : tdo */
+    /* 글자아랫줄 underline : tdu */
+    text-decoration : underline wavy;
+    /* text-decoration: 유형 (스타일) 
+    스타일이 있을 경우 뒤에 띄어쓰기로 쓸 수 있음 */
+}
+
 /* 2-5.5 인용블록영역 */
+.quote-box{
+    /* 윗쪽 보더 주기 : bdt */
+    border-top: 2px dashed gray;
+    /* 윗쪽마진 : mt */
+    margin-top: 20px;
+}
+/* 타이틀 */
+.quote-box h4{
+    /* 가로크기 내용만큼 설정위해 display변경!
+    -> inline (패딩 디자인이 실제 공간을 차지하지 않음)
+    -> inline-block (블록처럼 디자인 적용되는 인라인요소) */
+    display: inline-block;
+    /* 배경색 : bgc */
+    background-color: #e6e6e6;
+    /* 패딩 : p */
+    padding: 15px;
+    /* 둥근모서리 : brad */
+    border-radius: 15px;
+    /* 박스그림자 : bxsh */
+    box-shadow: inset 0 0 10px #858484;
+}
+/* 인용구 박스 : blockquote */
+.quote-box blockquote{
+    /* 기본 마진 없앰 : m */
+    margin: 0;
+    /* 글자크기 : fz */
+    font-size: 20px;
+    /* 줄간격 : lh */
+    line-height: 1.8;
+    /* 양쪽정렬 */
+    text-align: justify;
+}
+
+/* 이미지 오른쪽으로 보내고 옆에 글자 흘러가기 */
+.quote-box blockquote img{
+    /* 나는 오른쪽에 있고(글자는 왼쪽에 흘러감) 
+    float: right (flr) */
+    float: right;
+    /* 왼쪽마진 : ml (이미지왼쪽에 글자에 간격줌) */
+    margin-left: 15px;
+    
+
+}
+
+
 /* 2-6. 기자정보 */
 /* 2-7. 기사원문 */
 /* 2-8.주해영역 */
