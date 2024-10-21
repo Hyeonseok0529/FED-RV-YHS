@@ -10,6 +10,17 @@
 - https://nannalagerman.com/
 - 한솔봄 홈페이지를 위의 느낌으로 변경
 
+* 내가 정한 주제
+홈페이지 카피 - 가구 판매 사이트
+
+sol'ace
+https://solace-store.com/
+- 먼저 색감이 예쁨
+- 디자인 괜찮음
+- 기능도 좋음
+- 가독성 좋음
+
+
 [바꾸고 싶은 루트 홈페이지]
 1. 벽산(뭔가 바꿔보고싶은 홈페이지)
 http://www.byucksan.com/#Index
@@ -37,8 +48,7 @@ https://www.vhom.co.kr/?utm_source=naver_bs&utm_medium=cpt&utm_campaign=pc&utm_t
 KCC : 가져올 기능들이 조금 있어보임.
 
 
-확정할 홈페이지
-https://solace-store.com/
+
 
 
 
