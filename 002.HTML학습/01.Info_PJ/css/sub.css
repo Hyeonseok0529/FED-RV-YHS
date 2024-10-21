@@ -251,8 +251,8 @@ small 태그에 적용되어 있어서 여기에 재정의해야함. */
     line-height: 1.8;
     /* 양쪽정렬 justify : taj */
     text-align: justify;
-
-
+    /* 첫줄 들여쓰기 : ti */
+    text-indent: 15px;
 }
 
 /* 이미지 오른쪽으로 보내고 옆에 글자 흘러가기 */
@@ -269,6 +269,8 @@ small 태그에 적용되어 있어서 여기에 재정의해야함. */
     /* 둥근모서리 : brs */
     border-radius: 10px;
 }
+
+
 /* 2-6. 기자정보 */
 /* 2-7. 기사원문 */
 .article-link{
