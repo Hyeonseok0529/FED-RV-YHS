@@ -352,6 +352,110 @@
         </figure>
       </article>
 
+      
+      <!-- 
+          [ 순서없는 리스트 : ul ]
+          unordered list
+
+          (참고: 블릿옵션
+          https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ul_type_css)
+
+          [ 순서있는 리스트 : ol ]
+          ordered list
+
+          (참고: 순서표시옵션
+          https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ol_type_all_css)
+
+          [ ul/ol 공통사항 ]
+          - 하위필수요소 : li (개별리스트)
+          - 주의 : 하위에 li 이외의 블록요소나 
+          그 어떤 요소도 직계자식으로 사용할 수 없다!
+          예) <ul><li></li><div></div></ul> -> 사용불가!
+
+         --> 
+
+      <!-- 주요뉴스 : ul -->
+       <article class="main-news-box">
+        <h3>주요뉴스</h3>
+        <ul>
+          <li>
+            <a href="https://n.news.naver.com/mnews/article/081/0003489086" target="_blank">“돈맛 알아야” 12살 딸에 400만원 D사 가방 선물한 남편</a>
+          </li>
+          <li>
+            <a href="https://n.news.naver.com/mnews/article/081/0003489083" target="_blank">한동훈, 尹 면담 뒤 첫 입장…“오직 국민만 보고 피하지 않겠다”</a>
+          </li>
+          <li>
+            <a href="https://n.news.naver.com/mnews/article/081/0003489052" target="_blank">국제결혼 신부 따라 이슬람 개종도 했는데… 필리핀서 납치된 26세 美유튜버</a>
+          </li>
+        </ul>
+       </article>
+
+      <!-- 랭킹뉴스 : ol -->
+       <article class="rank-news-box">
+
+        <h3>랭킹뉴스</h3>
+        <ol>
+          <li>
+            <a href="https://n.news.naver.com/mnews/ranking/article/081/0003489077?ntype=RANKING" target="_blank">“비자 면제해줬더니 불법체류”…제주서 중국인 1만명이나</a>
+          </li>
+          <li>
+            <a href="https://n.news.naver.com/mnews/ranking/article/081/0003489044?ntype=RANKING" target="_blank">“5조원대 무기 자체구매할 듯” K방산 큰손, 갑자기 방향 튼 이유는</a>
+          </li>
+          <li>
+            <a href="https://n.news.naver.com/mnews/ranking/article/081/0003489032?ntype=RANKING" target="_blank">정부 “북한군 즉각 철수해야…러북 군사야합 중대위협, 좌시않을 것”</a>
+          </li>
+        </ol>
+       </article>
+
+      <!-- 
+          [ 용어정의리스트 : dl ]
+          
+          dl > dt + dd
+          __________________
+
+          dl : 용어 리스트
+          (defines the description list)
+          dt : 용어정의
+          (defines the term)
+          dd : 용어설명
+          (description each term)
+          ________________________
+          주의 - dl은 반드시 자식요소로 dt와 dd가
+          반드시 한번이상 사용되어야 함!!!
+          또 주의 - dt와 dd는 형제관계임!(자식아님!)
+          -->
+
+      <!-- 분야별 뉴스 -->
+       <article class="sec-news news-box">
+        <h3>분야별 뉴스</h3>
+        <dl>
+          <!-- 경제파트 -->
+           <dt>경제</dt>
+           <dd>
+            <a href="https://n.news.naver.com/mnews/article/001/0014999653" target="_blank">현대차 인도 상장 첫날 주가는 약세…장초반 5%대 하락(종합)</a>
+           </dd>
+           <dd>
+            <a href="https://n.news.naver.com/mnews/article/088/0000910963" target="_blank">中 메모리 반도체 생산량 증가 "경기 회복 걸림돌" 우려</a>
+           </dd>
+          <!-- 사회파트 -->
+          <dt>사회</dt>
+          <dd>
+           <a href="https://n.news.naver.com/mnews/article/016/0002377371" target="_blank">서울시, ‘흑백요리사’ 안성재 요리 맛보는 특별미식행사 개최</a>
+          </dd>
+          <dd>
+           <a href="https://n.news.naver.com/mnews/article/277/0005488151" target="_blank">'흑백요리사' 안성재 "미쉐린 3스타? 내려갈 일만 남았다"</a>
+          </dd>
+          <!-- TV/연예파트 -->
+          <dt>TV/연예</dt>
+          <dd>
+           <a href="https://n.news.naver.com/mnews/article/422/0000688466" target="_blank">[날씨] 추위 부르는 가을비…내일 비 그친 후 '쌀쌀'</a>
+          </dd>
+          <dd>
+           <a href="https://n.news.naver.com/mnews/article/028/0002712655" target="_blank">가을 서점가 ‘한강 가뭄’…단비같은 책은 25일 이후에나</a>
+          </dd>
+        </dl>
+       </article>
+
       <!-- [html요소에서 특수문자 처리] 
        & 엔퍼센드 &amp;
        < 여는꺽쇠 &lt; (lt뜻은 less than ~보다 작은) 
