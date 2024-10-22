@@ -221,8 +221,12 @@ small 태그에 적용되어 있어서 여기에 재정의해야함. */
 .bd-box{
     /* 윗쪽 보더 주기 : bdt */
     border-top: 2px dashed gray;
-    /* 윗쪽마진 : mt */
-    margin-top: 20px;
+    /* 아래쪽 보더 주기 : bdb */
+    border-bottom: 2px dashed gray;
+    /* 윗쪽마진 : m */
+    margin: 20px 0;
+    /* 위아래패딩 : p */
+    padding: 15px 0;
     }
 /* 타이틀 */
 .bd-box h4{
@@ -329,10 +333,55 @@ small 태그에 적용되어 있어서 여기에 재정의해야함. */
     /* 두꺼운 글자 : fwb */
     font-weight: bold;
 }
-/* 기사원문 오버시 변경 */
+/* 기사원문 오버시 변경 
+    :hover는 마우스 오버시 가상클래스.
+    선택요소에 붙여서 사용
+    가상클래스 = 클래스를 준 것 같다는 의미
+*/
 .article-link a:hover{
+    /* 배경색변경 : bgc */
     background-color: #2d5399;
+    /* 글자색변경 : c */
+    color: #ffffff;
+    /* 박스그림자 : bxsh */
+    box-shadow: 0 0 2px 2px #3b7780;
+    /* box-shadow: x축 y축 블러 확대 색 */
 }
 
 /* 2-8.주해영역 */
 /* 2-9.오늘의 작품 & 느낌 */
+.work{
+    /* 전체 정렬 중앙 : tac */
+    text-align: center;
+    font-family: 'Gugi', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0;
+    color: #555;
+}
+/* 이미지박스  */
+.work figure {
+    /* 기본마진없앰 */
+    margin: 0;
+    /* 위아래패딩 */
+    padding: 15px 0;
+}
+/* 작품 이미지 */
+.work img {
+    border: 7px ridge goldenrod;   
+}
+/* 글자설정 */
+.work figcaption{
+    font-size: 20px;
+    font-family: 'Gugi', sans-serif;
+    color: #722a2a;
+    font-weight: bold;
+}
+/* 작품명만 따로 디자인
+cite는 작품명요소(시멘틱 구조화)*/
+.work figcaption cite{
+    color: darkcyan;
+    /* 기본 이탤릭체 해제 : fsn */
+    font-style: normal;
+
+}
