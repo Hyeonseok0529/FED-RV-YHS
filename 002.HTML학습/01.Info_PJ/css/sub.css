@@ -413,8 +413,43 @@ cite는 작품명요소(시멘틱 구조화)*/
     color: darkcyan;
     /* 기본 이탤릭체 해제 : fsn */
     font-style: normal;
-
-
-
-
+}
+/* 뉴스파트 공통 클래스 : .news-box */
+.news-box{
+    /* 상단보더 넣기 : bdt */
+    border-top: 2px dashed #ccc;
+    /* 위 아래 패딩 : p */
+    padding: 20px 0;
+    margin: 20px;
+}
+/* 뉴스 타이틀 공통 */
+.news-box h3{
+    /* 글자체 (웹폰트) : ff */
+    font-family: "Jua", sans-serif;
+    /* 두껍지 않게 : fwn */
+    font-weight: normal;
+    /* 글자크기 : fz */
+    font-size: 30px;
+    /* 배경 그라데이션 : bg */
+    background: linear-gradient(to right, #3d9699,transparent);
+    /* 패딩 : p */
+    padding: 10px;
+}
+.news-box a{
+    /* 글자크기 17px : fz17 */
+    font-size: 17px;
+    /* 줄간격 2.5배 : lh2.5 */
+    line-height: 2.5;
+    /* 글자색 #222 :c */
+    color: #222;
+    /* 밑줄없앰 tdn */
+    text-decoration: none;
+}
+/* 공통 a요소 오버시 
+가상클래스(:hover) */
+.news-box a:hover{
+    /* 글자색 */
+    color: #59aa66;
+    /* 글자그림자 : ts */
+    text-shadow: 1px 1px 1px #54c550;
 }
