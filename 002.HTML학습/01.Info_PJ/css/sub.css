@@ -453,3 +453,51 @@ cite는 작품명요소(시멘틱 구조화)*/
     /* 글자그림자 : ts */
     text-shadow: 1px 1px 1px #54c550;
 }
+
+/* 뉴스파트 공통 초기화하기
+ul, ol은 기본마진,패딩,블릿,번호 등
+초기화 필요함 */
+.news-box ul, .news-box ol{
+    /* 마진,패딩 0 */
+    margin: 0;
+    padding: 0;
+    /* 블릿, 숫자표시 리스트 없앰
+    : lin */
+    list-style: none;    
+}
+/* ol은 숫자값 살리기 */
+.news-box ol{
+    /* 숫자표시 기본값 살리기 */
+    list-style: decimal;
+    /* 왼쪽패딩 : pl */
+    padding-left: 20px;
+}
+
+/* dl,dd는 기본마진이 있음 */
+.news-box dl, .news-box dl dd{
+    margin: 0;
+}
+
+.main-box a::before{ /* 맨앞  */
+    /* 가상요소 필수속성 content : ct */
+    content: '🍿';
+    margin-right: 5px;
+    font-size: 20px;
+}
+.main-box a::after{ /* 맨뒤  */
+    content: '🍯';
+    /* url을 사용하면 이미지를 넣을 수 있다
+    하지만 크기조정 불가 */
+    width: 15px; /* 적용안됨! */
+}
+
+/* 주요뉴스 개별 설정하기 */
+/* 가상요소로 아이콘 넣기 
+이미지같은 요소를 CSS에서 가상으로
+넣을 수 있음(가상은 실제 태그 요소는 아님)
+    앞에 넣는 가상요소는 ::before
+    뒤에 넣는 가상요소는 ::after
+    ((기본 필수속성은? content 속성))
+
+*/
+
