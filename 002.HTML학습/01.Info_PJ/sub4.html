@@ -456,6 +456,62 @@
         </dl>
        </article>
 
+       <!-- 
+            [ 테이블 요소 : table ]
+            table > tbody > tr > td
+
+            -> tbody는 안쓰고 tr부터 구현해도
+            브라우저가 자동으로 그려준다!
+
+            주의) table > tr 로 직계선택하게 되면
+            위와 같은 구조적인 이유로 선택되지 않는다!
+
+            _______________________________
+
+            ((간단한 테이블 작성시 필수요소 3가지!))
+            table : 테이블 박스 부모요소
+            tr : 테이블 행요소(table row)
+            td : 테이블 데이터요소(table data)
+        -->
+
+        <!-- 사진뉴스 : table -->
+         <article class="photo-news news-box">
+          <h3>사진뉴스</h3>
+          <!-- 3행3열 테이블 구성하기 -->
+           <table>
+            <!-- 첫번째줄 -->
+            <tr>
+              <td>1</td>            
+              <td>
+                <a href="https://view.asiae.co.kr/article/2024102314203419030" target="_blank">안성재 셰프 '1인 70만 원' 디너 코스…오픈 61초 만에 매진</a>
+              </td>
+              <td>
+                <img src="./images/photonews1.jpg" alt="photo news1">
+              </td>
+            </tr>
+            <!-- 두번째줄 -->
+            <tr>
+              <td>2</td>            
+              <td>
+                <a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202410230103&t=NN" target="_blank">금 제치고 올해만 45% '급등'…"진짜 금은 따로 있었네"</a>
+              </td>
+              <td>
+                <img src="./images/photonews2.jpg" alt="photonews2">
+              </td>
+            </tr>
+            <!-- 세번째줄 -->
+            <tr>
+              <td>3</td>            
+              <td>
+                <a href="https://n.news.naver.com/mnews/ranking/article/214/0001381906?ntype=RANKING" target="_blank">민주당 "독도 '다케시마' 지칭 지도 코엑스에"‥일본 대사관에 항의서한</a>
+              </td>
+              <td>
+                <img src="./images/photonews3.jpg" alt="photo news3">
+              </td>
+            </tr>
+           </table>
+         </article>
+
       <!-- [html요소에서 특수문자 처리] 
        & 엔퍼센드 &amp;
        < 여는꺽쇠 &lt; (lt뜻은 less than ~보다 작은) 
