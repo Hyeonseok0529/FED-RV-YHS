@@ -679,3 +679,18 @@ ul, ol은 기본마진,패딩,블릿,번호 등
   width: 100%;
   height: 392px;
 }
+/* mark 태그 디자인 변경 */
+.contents mark {
+  font-family: "Jua", sans-serif;
+    font-size: 26px;
+    color: #3CB;
+    line-height: 1.1;
+    background-color: #ffe4b6;
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px 67px;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    box-sizing: border-box;
+}
