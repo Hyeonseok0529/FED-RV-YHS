@@ -137,7 +137,6 @@ h2.tv {
   /* 글자색 변경 */
   color: wheat;
 }
-
 /* 2-2. 언론사로고 */
 .press-logo img {
   /* 이미지 높이값 고정(가로크기는 자동) */
@@ -154,10 +153,13 @@ h2.tv {
 .article-picture {
   /* figure 요소 기본마진 없앰 */
   margin: 0;
+  
+  
 }
 /* 기사이미지 */
 .article-picture img {
   width: 100%;
+
 }
 /* 이미지 설명 
 figcaptio = 블록요소*/
@@ -670,4 +672,10 @@ ul, ol은 기본마진,패딩,블릿,번호 등
 /* 사이구분선 넣기 : 두번째 tr부터 */
 .photo-news tr+tr td{
     border-top: 2px solid #ccc;
+}
+
+/* 비디오 박스 */
+.mv-box iframe{
+  width: 100%;
+  height: 392px;
 }
