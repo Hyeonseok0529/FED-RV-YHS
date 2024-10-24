@@ -278,6 +278,8 @@ small 태그에 적용되어 있어서 여기에 재정의해야함. */
   margin-top: 10px;
   /* 둥근모서리 : brs */
   border-radius: 10px;
+  width: 145px;
+  
 }
 
 /* 2-6. 기자정보 */
