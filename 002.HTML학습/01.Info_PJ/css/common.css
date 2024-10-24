@@ -20,7 +20,7 @@
       }
       /* 전체 타이틀
       CSS에서 띄어쓰기는 하위요소를 선택함 */
-      #top-area h1 {
+      #top-area h1 a {
         /* 글자체 ff
         콤마로 연결된 글자체는 앞의체가 없을경우
         대체체임, 모두 없을시 브라우저 기본체로 나옴 */
@@ -33,6 +33,7 @@
         text-shadow: x축 y축 블러 (그림자)색; */
         text-shadow: 3px 2px 2px
           #0c0c0ca1;
+        text-decoration: none;
       }
 
       /* 메뉴 a요소 */
