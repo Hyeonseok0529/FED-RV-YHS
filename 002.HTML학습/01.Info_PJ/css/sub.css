@@ -280,7 +280,7 @@ small 태그에 적용되어 있어서 여기에 재정의해야함. */
   margin-top: 10px;
   /* 둥근모서리 : brs */
   border-radius: 10px;
-  width: 145px;
+  width: 120px;
   
 }
 
@@ -662,7 +662,36 @@ ul, ol은 기본마진,패딩,블릿,번호 등
     만큼 밀려서 나오기떄문에
     기본 줄바꿈으로 설정함! */
     white-space: normal;
-}
+
+    /* 여러줄일때 말줄임 설정하기 */
+    /* 1. 여러줄 말줄임시 필요한 display */
+    display: -webkit-box;
+    /* 2. 넘치는요소 숨기기 */
+      overflow: hidden;
+      /* 3. 텍스트 말줄임표시 */
+      text-overflow: ellipsis;
+      /* 4. 말줄임 처리 줄수 : 여기선 2줄처리 */
+      -webkit-line-clamp: 2;
+      /* 5. 말줄임 처리 방향설정 : 수직방향(vertical) */
+      -webkit-box-orient: vertical;
+      /* 6. 높이값 제한설정 (이유: 숨겨야하니까) */
+      /* max-height: 2.5em; */
+      /* 7. 줄바꿈방지를 일반으로 변경 (줄바꿈상태) */
+      /* white-space: normal; -> 위에서 이미줌 */
+  }
+
+  /* 
+    [ CSS 속성이나 값에 벤더사 접두어 ]
+     - 브라우저 제작사별로 특정 속성을 지원할 경우
+     특정 버전부터 지원하게 되고
+     그때 브라우저사 접두어를 사용함
+     1. -webket- : 크롬, 사파리
+     2. -ms- : 익스플로러/엣지
+     3. -o- : 오페라
+     4. -moz- : (모질라)파이어폭스
+  */
+
+
 /* 사진뉴스 이미지 */
 .photo-news img{
     width: 100px;
@@ -673,6 +702,8 @@ ul, ol은 기본마진,패딩,블릿,번호 등
 .photo-news tr+tr td{
     border-top: 2px solid #ccc;
 }
+
+
 
 /* 비디오 박스 */
 .mv-box iframe{
@@ -693,4 +724,11 @@ ul, ol은 기본마진,패딩,블릿,번호 등
     border-top: 2px solid gray;
     border-bottom: 2px solid gray;
     box-sizing: border-box;
+}
+/* strong요소 디자인 변경 */
+.contents strong {
+  font-style: normal;
+  color: darkmagenta;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #0b88db;
 }
