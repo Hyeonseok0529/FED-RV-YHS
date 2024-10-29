@@ -17,6 +17,15 @@
         text-align: center;
         /* 배경색 */
         background-color: #30e917dc;
+        position: relative;
+        transform: translateY(-200%);
+        animation: topAni 1.5s ease-in-out 1.0s forwards;
+      }
+
+      @keyframes topAni {
+        to{
+          transform: translate(0%);
+        }
       }
       /* 전체 타이틀
       CSS에서 띄어쓰기는 하위요소를 선택함 */
@@ -51,6 +60,7 @@
         font-size: 21px;
         text-shadow: 2px 2px 1px
           #0c0c0ca1;
+          
       }
       /* 첫번째 a메뉴를 빼고 두번째부터 
       끝까지 양쪽마진 적용하기
@@ -69,12 +79,26 @@
         text-decoration: underline;
         /* 글자데코 스타일 tdst*/
         text-decoration-style: wavy;
+        
       }
 
       /* 2. 메인영역 */
       #main-area {
         /* 위,아래 마진 */
         margin: 15px auto;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        opacity: 0;
+        animation: dtxtAni 1s ease-in-out forwards;     
+      }
+      @keyframes dtxtAni {
+        to{
+           top: 0;
+           left: 0;
+           opacity: 1;
+        }
+      }
         /* margin-top: 15px;
        margin-bottom: 15px; */
         /* 
