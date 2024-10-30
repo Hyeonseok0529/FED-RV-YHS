@@ -26,7 +26,7 @@ h2.tit{
     /* 글자크기 : fz */
     font-size: 17px;
     /* 하단마진 */
-    margin-bottom: 10px;
+    margin-bottom: 10px;/
 }
 
 /* ul의 li를 옆으로 흐르게하기 */
@@ -63,12 +63,12 @@ table.drama{
     max-width: 670px;
     /* 마영오, 박스 중앙정렬 */
     margin: 0 auto;
-    /* 패딩 *//
+    /* 패딩 */
     padding: 15px;
     /* 각 테이블 td 사이 간격은 border-spacing */
     border-spacing: 13px;/
 }
-
+//
 
 /* 테이블 대신 일반 블록박스로 드라마 구성 */
 section.drama {
@@ -85,14 +85,13 @@ section.drama {
     float: left;
      /* 등분할  */
      width: 50%;
-     cxc./ddfg/?
 }
 
 /* 드라마별 묶음요소 .drama > ul */
 .drama ul {
     /* 보더 */
     border: 1px solid #a3a3a3;
-    /* 둥근 모서리 *//
+    /* 둥근 모서리 */
     border-radius: 10px;
     /* 전체글자 */
     font-size: 15px;
@@ -151,7 +150,7 @@ section.drama {
     text-decoration: none;
 }
 /* 플러스기호 */
-////
+
 .subscribe span{
     color: blue;
 }
