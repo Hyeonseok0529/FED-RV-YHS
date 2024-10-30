@@ -42,7 +42,11 @@ h2.tit{
 
 /* 자식 블록플롯때문에 부모가 망가지는걸
 막아주는 가상요소 클리어 장치 */
-.drama ul::after{
+    /*대상: ul아래 li가 float 되었으므로
+    ul에 넣고 section 아래 div가 float
+    되었으므로 section.drama에도 넣/준다!*/
+
+.drama ul::after,section.drama::after{
     content: '';
     display: block;
     clear: both;
@@ -53,20 +57,42 @@ h2.tit{
 사용하면 "종속선택자"라고 한다.
 해당 태그 일때만 그 클래스가 적용되도록
 태그명에 종속되어 있음 */
+
 table.drama{
     /* 최대가로크기 : maw */
     max-width: 670px;
     /* 마영오, 박스 중앙정렬 */
     margin: 0 auto;
-    /* 패딩 */
+    /* 패딩 *//
     padding: 15px;
+    /* 각 테이블 td 사이 간격은 border-spacing */
+    border-spacing: 13px;/
+}
+
+
+/* 테이블 대신 일반 블록박스로 드라마 구성 */
+section.drama {
+        /* 최대가로크기 : maw */
+        max-width: 670px;
+        /* 마영오, 박스 중앙정렬 */
+        margin: 0 auto;
+        /* 패딩 */
+        padding: 15px;
+        /* 각 테이블 td 사이 간격은 border-spacing */
+}
+/* 일반 블록박스 옆으로 흐르게 하기 */
+.each-drama{
+    float: left;
+     /* 등분할  */
+     width: 50%;
+     cxc./ddfg/?
 }
 
 /* 드라마별 묶음요소 .drama > ul */
 .drama ul {
     /* 보더 */
     border: 1px solid #a3a3a3;
-    /* 둥근 모서리 */
+    /* 둥근 모서리 *//
     border-radius: 10px;
     /* 전체글자 */
     font-size: 15px;
@@ -76,7 +102,7 @@ table.drama{
 .drama img{
     /* 가루크기 설정 : 높이값은 자동 */
     width: 75px;
-
+    border-radius: 5px;
 }
 
 
@@ -125,7 +151,7 @@ table.drama{
     text-decoration: none;
 }
 /* 플러스기호 */
-
+////
 .subscribe span{
     color: blue;
 }
