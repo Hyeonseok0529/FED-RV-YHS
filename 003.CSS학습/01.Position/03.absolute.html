@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>03. absolute 포지션</title>
@@ -14,43 +14,43 @@
             /* 글자세로중앙 */
             line-height: 300px;
         }
+
         /* 첫번째 앱솔루트 박스 */
         #a1{
             /* 포지션 앱솔루트 : poa */
             position: absolute;
-            background: url(./images/ab1.jpg)
-            no-repeat center/cover;
-            /*************************************
-                [3. absolute 포지션]
-                - 절대적인 부모를 기준으로 
-                위치를 잡는 포지션
-                - 부모자격을 따져서 기준을 삼는다!
-                (단, 위치속성을 쓴 경우에만!!!)
 
-                1. absolute 포지션은 위치이동값을 쓰기전과
-                쓴 후로 나눌 수 있다!
+            /******************************** 
+                [ 3. absolute 포지션 ]
+                 - 절대적인 부모를 기준으로
+                 위치를 잡는 포지션
+                 - 부모자격을 따져서 기준을 삼는다!
+                 (단, 위치속성을 쓴 경우에만!!!)
 
-                (1) 위치이동값을 쓰지 않은 경우
+                 1. absolute 포지션은 위치이동값을 쓰기전과
+                 쓴후로 나눌 수 있다!
 
-                자기보다 위에 있는 static한 요소를
-                존중하여 그 아래 위치함!!!
-                (->>>> 젠틀앱솔루트)
+                 (1) 위치이동값을 쓰지 않은 경우
 
-                - 어떤 요소의 자식요소로 앱솔루트가 셋팅된 경우
-                그 부모박스에 부모자격이 없을지라도!!
-                그 위치를 그대로 유지한다!
-                (->>>> 젠틀앱솔루트)
+                 - 자기보다 위에 있는 static한 요소를 
+                 존중하여 그 아래 위치함!!!
+                 (->>>> 젠틀앱솔루트!!!)
 
-                + 앱솔루트 요소보다 아랫쪽에 위치하고 있는
-                static한 요소는 앱솔루트를 인식하지 못하여
-                같은 자리에 올라와 자리를 차지한다.
-                (줄 서있다가 날아오른 아이언맨!)
+                 - 어떤 요소의 자식요소로 앱솔루트가 셋팅된 경우
+                 그 부모박스에 부모자격이 없을지라도!!!!!!
+                 그 위치를 그대로 유지한다!
+                 (->>>> 젠틀앱솔루트!!!)
+
+                 + 앱솔루트 요소보다 아랫쪽에 위치하고 있는
+                 static한 요소는 앱솔루트를 인식하지 못하여
+                 같은 자리에 올라와 자리를 차지한다!
+                 (줄서있다가 날아오른 아이언맨!)
 
                 (2) 위치 이동값을 사용한 경우
 
-                !!! 위치 이동값을 사용한 부분에 대해서만 !!!
-                앱솔루트가 위치를 잡을때  기준이 되는 
-                부모는? static이 아닌 요소가 부모이다
+                - 위치 이동값을 사용한 부분에 대해서만!!!
+                앱솔루트가 위치를 잡을때 기준이 되는
+                부모는? static이 아닌 요소가 부모다!
 
                 static이 아닌 포지션은?
                 relative / absolute / fixed / sticky
@@ -60,29 +60,43 @@
 
                 -> 부모자격이 있는 부모요소들 중 가장 가까운 것이 부모다!
 
-                -> 만약 부모 자격이 모두 없으면 보이는 화면
+                -> 만약 부모자격이 모두 없으면 보이는 화면
                 (window)을 기준한다!
-                (보이는 화면 body가 아니다! 스크롤이
+                (보이는 화면은 body가 아니다! 스크롤이
                 생겨도 스크롤 위쪽 보이는 화면을 지칭한다!)
 
                 -> 또한!
                 width나 height 값을
-                %단위로 줄 경우 부모자격을 가진 요소를 
+                %단위로 줄 경우 부모자격을 가진 요소를
                 기준으로 그 크기를 잡는다!
-                (일반적으로 %당위의 크기는 바로 싸고 있는
+                (일반적으로 %단위의 크기는 바로 싸고 있는
                 직계부모박스를 기준한다!)
-            *************************************/
+
+            2. 앱솔루트는 가로,세로 크기를 주지않은 경우
+            일반적으로 block요소 이므로 width:auto 로써
+            부모박스 끝까지 차지하지만...
+            앱솔루트는 내용만큼만 그 크기를 가진다!
+            ->>>앱솔루트 판타롱스타킹!!!            
+
+
+
+
+            ********************************/
+
+            
+            background: url(./images/ab1.jpg) no-repeat center/cover;
         }
+
         /* 두번째 앱솔루트 박스 */
         #a2{
+            /* 앱솔루트 포지션 */
             position: absolute;
             bottom: 0;
             right: 0;
             /* 나의 부모는? 포지션이 static이 아닌요소가
-            없으므로 보이는 화면(window)*/
-
-            background: url(./images/ab1.jpg)
-            no-repeat center/cover;
+            없으므로 보이는 화면(window)을 기준한다! */
+            
+            background: url(./images/ab1.jpg) no-repeat center/cover;
         }
 
         #r1{
@@ -93,18 +107,18 @@
             top: 100px;
             /* 왼쪽으로부터 100px : l100 */
             left: 100px;
-            
-            background: url(./images/ab5.jpg)
-            no-repeat center/cover;
+
+            background: url(./images/ab5.jpg) no-repeat center/cover;
         }
         #r2{
-            /* 포지션 relative : por */
+            /* 포지션 relative */
             position: relative;
-            background: url(./images/ab4.jpg)
-            no-repeat center/cover;
             top: 150px;
             left: 150px;
+
+            background: url(./images/ab4.jpg) no-repeat center/cover;
         }
+
         /* 첫번째 박스에 포지션 체크 */
         #s1{
             background-color: lightgreen;
@@ -112,16 +126,6 @@
         #s2{
             background-color: lightcoral;
         }
-
-
-
-
-
-
-
-
-
-
 
         /* 부모를 찾는 앱솔루트! */
         .bx2{
@@ -156,13 +160,14 @@
             color: #fff;
             background: url(./images/ab1.jpg) no-repeat center/cover;
         }
-        /* .a4는 위치이동값을 사용하자! -> 부모찾아 삼만리 */
+
+        /* .a4는 위치이동값을 사용하자! -> 부모찾아 삼만리! */
         .a4{
             /* 앱솔루트는 .abs에서 이미 셋팅! */
             top: 0;
             left: 0;
             /* 나의 부모는? 포지션이 있는 요소! .s8 */
-            
+
             /* 앱솔루트 요소 크기를 %로 줄경우
             부모자격 박스를 기준하여 설정된다!!! */
             width: 25%;
@@ -175,8 +180,8 @@
             /* 박스크기를 주지 않은 앱솔루트는
             그 크기가 내용만큼 자동으로 설정됨! */
             top: 20%;
-            right: 10;
-            /* 나의 부모는? 보이는 화면  */
+            right: 10%;
+            /* 나의 부모는? 보이는 화면 */
 
             outline: 2px solid red;
             /* 보더와 비슷하나 박스구성요소가 아니고
@@ -184,45 +189,54 @@
             사용법은 border와 유사함 */
         }
 
-        /* 블록받스 내에 단독 이미지 하단 공백 4px은 무엇인가? */
+        /*블록박스 내에 단독 이미지 하단공백 4px은 무엇인가? */
         .a5 img{
             vertical-align: top;
             /* 
-                박스에 단일한 이미지를 넣은 경우 
+                박스에 단일한 이미지를 넣은 경우
                 하단에 자연스런 간극이 존재한다!
                 이것을 없애려면 vertical-align
                 인라인요소간 세로정렬 속성의 값으로
                 top/bottom/middle 중 하나로 셋팅하면
                 하단 간극이 사라진다!
-                (baseline값은 적용 안됨!)
+                (baseline값은 적용안됨!)
             */
         }
 
-        /* 제목넣기 : 앱솔루트로 넣기 */
+
+        /* 제목넣기 : 앱솔루트로! */
         h1.tit{
-            /* 포지션 파트 */
+            /* 포지션 */
             position: absolute;
             top: 50px;
-            left: 50%;
-            /* 나의 부모는 누구인가? 보이는 화면 window */
+            left: 30%;
+            /* 나의 부모는? 보이는 화면 window */
+            /* 겹쳐질때 가장 위로하기 z-index  */
+            z-index: 999;
 
             /* 박스모델 */
             width: 40%;
             text-align: center;
             margin: 0;
             padding: 20px;
-            border: 4px solid orange;
+            border: 4px solid darkorange;
             border-radius: 20px;
             background-color: lightsalmon;
 
+            /* 박스그림자 : bxsh */
+            box-shadow: 5px 5px 4px rgb(0, 0, 0);
+
             /* 글자관련 */
             font-size: 60px;
-        
+
+
         }
+        
 
     </style>
 </head>
 <body>
+
     <!-- 제목 -->
      <h1 class="tit">Absolute 포지션</h1>
 
@@ -236,20 +250,12 @@
     <div class="bx" id="a2">a2</div>
 
     <!-- 앱솔루트 : 판타롱스타킹! -->
-     <div class="a5" title="앱솔루트 판타롱스타킹">
+     <div class="a5" title="앱솔루트 판타롱스타킹~!">
         <img src="./images/ab2.jpg" alt="타노스">
      </div>
 
 
-
-
-
-
-
-
-
-
-   <!-- 부모를 찾는 앱솔루트! -->
+    <!-- 부모를 찾는 앱솔루트! -->
      <div class="bx2 s5">s5
         <div class="bx2 s6">s6
             <div class="bx2 s7">s7
@@ -267,33 +273,6 @@
      </div>
 
 
-
-
-
-    <!-- 
-    [ 젠코딩(에밋코딩) ]
-    .bx#s${s$}*3 
-    _____________________
-
-
-    . : 클래스
-    # : 아이디
-    $ : 증가숫자자리
-    *숫자 : 반복생성횟수 
-    {} : 데이터출력(꺽쇠사이값)
-    [] : 속성셋팅값
-    > : 하위직계 자식요소
-    + : 형제요소
-    () : 요소 구분하기
-    _____________________
-    ((샘플))
-    header.my#key[title=hi]{메뉴}*2
-
-    ul>li*3>a*4
-
-    div.my#$*2>section+article>img
-
-    -->
 
     
 </body>
