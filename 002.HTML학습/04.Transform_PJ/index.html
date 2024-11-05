@@ -202,7 +202,7 @@
                 */
 
                 /* rotate: 4568deg; */
-                rotate: 3turn;
+                rotate: 4568deg;
                 /* rotate: x 4568deg; */
                 /* rotate: y 4568deg; */
                 /* rotate: 1 1 0 4568deg; */
@@ -210,7 +210,7 @@
                 /* 트랜지션 종류 변경 */
                 transition-property: rotate;
                 /* 트랜지션 시간 늘리기 */
-                transition-duration: 2s;
+                transition-duration: 1s;
             }
              /* 
                 transition: 속시이지
@@ -305,17 +305,77 @@
                 - 순서는 나중 것이 위에 온다!
                 - 적절한 트랜스폼, 트랜지션을 이용한다!
             */
-            #trans10{}
-            #trans10 img{}
-            /* 유정이 원본 회전하여 숨기기 */
-            #trans10 img:first-child{}
-            /* 유정이 오버시 회전하여 보이기 */
-            #trans10:hover img:first-child{}
-            /* 보거미 원본 회전하기 */
-            #trans10 img:last-child{}
-            /* 보거미 오버시 회전하기 */
-            #trans10:hover img:last-child{}
+            #trans10{
+                /* 앱솔루트 자식은 잡히지 않으므로
+                가로, 세로 크기를 설정함 */
+                width: 200px;
+                height: 200px;
+                
+                /* 텍스트 중앙해제 */
+                text-align-last: left;
+            }
+            #trans10 img{
+                position: absolute;
+                /* 앱솔루트는 서로 겹친다! */
+                /* 위치값 없으면 부모박스에 가만히 있는다!
+                즉, 젠틀하다. 젠틀앱솔루트 */
+            }
+
+
+
+
             
+            /* 유정이 원본 회전하여 숨기기 */
+            #trans10 img:first-child{
+                /* y축 90도 회전 */
+                rotate: y 90deg;
+                /* transform: rotateY(90deg); */
+
+                /* 트랜지션: trs 처음에 천천히*/
+                transition: .4s ease-in
+            }
+            /* 유정이 오버시 회전하여 보이기 */
+            #trans10:hover img:first-child{
+                /* y축 90도 회전 */
+                rotate: y 0deg;
+                /* transform: rotatey(0deg); */
+
+                /* 트랜지션: trs 속시이지 (뒤에 지연시간)
+                마지막에 천천히 */
+                transition: .4s ease-out .4s ;
+            }
+            /* 보거미 원본 회전하기 */
+            #trans10 img:last-child{
+                /* y축 90도 회전 */
+                rotate: y 0deg;
+                /* transform: rotatey(0deg); */
+
+                /* 트랜지션: trs 속시이지 (뒤에 지연시간) */
+                transition: .4s ease-out .4s;    
+
+            }
+            /* 보거미 오버시 회전하기 */
+            #trans10:hover img:last-child{
+                /* y축 90도 회전 */
+                rotate: y 90deg;
+                /* transform: rotatey(90deg); */
+
+                /* 트랜지션: trs 처음에 천천히 */
+                transition: .4s ease-in;
+            }
+            
+
+
+
+            /* [ CSS 애니메이션 가속도 ]
+
+            (1) linear : 등속도
+            (2) ease : 앞뒤로 약간느려짐(기본값)
+            (3) ease-in : 처음에 느리게 출발
+            (4) ease-out : 마지막에 느리게 멈춤
+            (5) ease-in-out : 앞뒤로 느려짐
+https://www.w3schools.com/cssref/playit.php?filename=playcss_animation-timing-function&preval=linear */
+
 
         </style>
     </head>
