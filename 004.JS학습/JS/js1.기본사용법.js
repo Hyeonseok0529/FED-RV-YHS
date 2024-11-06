@@ -94,4 +94,12 @@ function 김비서나와라(){
     // 만약 속성명을 잘못쓰면 브라우저가 출력에서 제외한다
     // 예전브라우저는 에러가 발생했지만 요즘은 에러가 나지 않고 예외처리 한다
 
+    // 3-11. 전체 배경색 바꾸기
+    // 대상: body
+    // JS에서 body는 특별히 취급하여 document.body로 선택한다
+    var 나바디 = document.body;
+    나바디.style.backgroundColor = "lightgreen";
+    // 나바디.style.background= "linear-gradient(45deg, lightgreen, hotpink)";
+    나바디.style.transition = "3s 5s";
+
 } //////// 김비서나와라 함수 ////////
