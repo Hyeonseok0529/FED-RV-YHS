@@ -171,9 +171,102 @@ function 맘대로해라(헐, 헉스){
     // 해당요소의 순번은 헐 변수에 들어있음!
     var 아파트 = 
     document.querySelectorAll('.박스야 .원이야')[헐];
+    // -> 아래와 같이 써도 같은 것임!
+    // document.querySelectorAll('.박스야 .원이야').item(헐);
+    /**************************************************
+        [ JS DOM의 특별한 선택 메서드 2가지]
+         1. querySelector(CSS선택자) - 하나만 선택
+         2. querySelectorAll(CSS선택자) - 여러개 선택
+         -> 2번방식은 HTMLCollection을 반환한다.
+         -> 따라서 length와 item(순번)/[순번]을 사용한다.
+    **************************************************/ 
+
     // document.getElementsByClassName("박스야").item(0)
     // .getElementsByClassName("원이야").item(헐);
 
     console.log("대상요소:",아파트);
 
+    // 3. 변경내용 : 트랜지션으로 화면 왼쪽하단으로 이동하며
+    //  박스에 유튜브 비디오가 나오도록 한다.
+
+    // 3-1.트랜지션 설정
+    아파트.style.transition = "all 1s ease-out,right 0.5s 1s ";
+
+    // 3-2. 위치이동
+    아파트.style.top = "calc(100% - 200px)";
+    아파트.style.right = "calc(100% - 200px*"+(헐+1)+")";
+    // 순번에 1을 더해서 곱한 이유는 right 위치를 순서대로 잡기위함이다.
+
+    // 3-3. 유튜브 동영상 넣기
+    아파트.innerHTML = `<iframe 
+    src="https://www.youtube.com/embed/8Ebqe2Dbzls?autoplay=1"
+    allow="autoplay"></iframe>`;
+
+    // 3-4. 아이프레임 디자인 넣기 : 선택된 아파트 하위 iframe
+    var 뮤비 = 아파트.querySelector('iframe');
+    // cssText속성: 한꺼번에 문자열로 CSS를 넣을때 사용
+    // 주의: 따로 속성 셋팅할때와 달리 다른 인라인 속성을
+    // 덮어써서 지워버리니까 조심해야 함
+
+    뮤비.style.cssText =`
+        position: absolute;
+        border: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    `;
+
+    // 3-5. class 추가/제거
+    // -> 현재 class "on"떄문에 회전애니가 적용됨!
+    // 그래서 클릭된 요소는 "on"을 제거한다!
+    아파트.classList.remove("on");
+
+    // 자바스크립트를 쉽게 쓰는 한가지 방법!
+    // 바로 클래스 넣기/빼기!!!!!!!!!!
+    // 클래스 제어 객체 : classList
+    // add(클래스명) : 클래스 추가
+    // remove(클래스명) : 클래스 제거
+    // toggle(클래스명) : 클래스 추가/제거
+    
+
 } ///////////////// 맘대로해라 함수 /////////////////
+
+/***************************************************
+    함수명 : 사각사각
+    기능 : 전체가 사각형으로 화면을 채우며
+           애니메이션 됨!
+***************************************************/
+function 사각사각(){
+    // 1. 함수호출확인
+    console.log("사각사각");
+
+    // 2. 대상선정 : . 넌뭐냐
+    var 나야나 = document.querySelector(".넌뭐냐");
+    console.log("선택요소:",나야나)
+
+    // 3. 변경내용 : top, 트랜지션, width, height값 변경
+    나야나.style.top = "0";
+    나야나.style.borderRadius = "0";
+    나야나.style.width = "100%";
+    나야나.style.height = "100%";
+    나야나.style.transition = "3s 1s, top 1s 0s";
+    // top값부터 1초간 작동 나머지는 1초후 작동
+    나야나.style.zIndex = "100";// 맨위
+
+    // 4. 추가변경 : 글자넣기
+    // innerText = 글자내용
+    //  -> 태그없는 글자 데이터만 넣기!
+    나야나.innerText = "JS입문을 환영합니다!";
+
+    // 5. 글자 관련 CSS 넣기!
+    나야나.style.fontSize = "70px";
+    나야나.style.color = "aqua";
+    나야나.style.fontWeight = "bold";
+    나야나.style.textShadow = "5px 5px 3px #000";
+    나야나.style.lineHeight = window.innerHeight + "px";
+    // window.innerHeight : 현재 윈도우창 높이값 리턴!
+
+    // 화면높이값
+    console.log;("화면높이값:",window.innerHeight);
+
+} /////////////////// 사각사각 함수 ///////////////////
