@@ -1,24 +1,13 @@
 @charset "utf-8";
 /* 로봇 PJ CSS - robot.css */
+
 /* 외부 CSS합치기 */
 @import url(./core.css);
 @import url(./reset.css);
 
-/* 웹폰트 CDN */
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap");
-
-/* 
-    font-family: 'Barlow', sans-serif;
-    font-family: 'Black Ops One', cursive;
-    font-family: 'Chakra Petch', sans-serif;
-    font-family: 'Orbitron', sans-serif;
-*/
-
 /* 초기화 */
 html,
 body {
-  margin: 0;
-  padding: 0;
   /* 보이는 화면만큼 높이값 셋팅 */
   height: 100%;
 }
@@ -29,33 +18,41 @@ body * {
 }
 
 body {
-  /* 배경이미지 */
+  /* 배경이미지( */
   background: url(../images/bg.jpg)
-    no-repeat top/cover;
-    /* 커서 이미지로 변경하기 */
-    cursor: url(../images/favicon.png),auto;
+    no-repeat fixed top/cover;
+  /* 커서 이미지로 변경하기 */
+  cursor: url(../images/favicon.png),
+    auto;
 }
 /************* 1. 상단영역 *************/
+
 /************* 2. 메인영역 *************/
 /* 2-1. 로봇박스 */
 .robot-box {
+  /* 위,아래 패딩으로 공간확보 */
   padding-top: 100px;
+  padding-bottom: 500px;
 }
 /* 2-1-1. 로봇머리 */
 .head {
   /* 부모자격 relative : 자식요소 앱솔루트 */
   position: relative;
-  /* 중앙정렬박스 : 마.영.오 */
+  /* 몸통보다위 */
+  z-index: 1;
+  /* 중앙정렬박스 : 마.영.오! */
   margin: 0 auto;
   /* margin-top: 250px; */
-  width: 250px;
+  width: 200px;
   height: 250px;
+  /* 얼굴모양 만들기 */
+  border-radius: 80px 80px 100px 100px;
 }
 
 /* 로봇머리 하위 공통 앱솔루트 */
 .head > div {
   position: absolute;
-} 
+}
 
 /* 눈공통 */
 .eye {
@@ -73,22 +70,164 @@ body {
 /* 왼눈 */
 .eye1 {
   /* 개별위치값 */
-  left: 50px;
+  top: 60px;
+  left: 15%;
   /* 이미지만 변경 */
   background-image: url(../images/e1.jpg);
 }
 /* 오른눈 */
 .eye2 {
   /* 개별위치값 */
-  right: 50px;
-   /* 이미지만 변경 */
-  background-image: url(../images/e2.jpg);
+  top: 60px;
+  right: 15%;
+  /* 이미지만 변경 */
+  background-image: url(../images/e1.jpg);
+}
+/* 코 */
+.nose {
+  top: 110px;
+  /* 가로방향 중앙이동설정 
+  -> left 절반밀고 자신크기 절반 반대로이동*/
+  left: 50%;
+  translate: -50%;
+
+  width: 50px;
+  height: 70px;
+  background: url(../images/nose.jpg)
+    no-repeat 0/110% 100%;
+  border-radius: 20px;
+}
+/* 입 */
+.mouth {
+  bottom: 7%;
+  /* 가로방향 중앙이동설정 
+  -> left 절반밀고 자신크기 절반 반대로이동*/
+  left: 50%;
+  translate: -50%;
+
+  width: 50px;
+  height: 30px;
+  background: url(../images/mouth.png)
+    no-repeat 0/100% 100%;
+}
+/* 귀공통 */
+.ear {
+  top: 80px;
+  width: 50px;
+  height: 80px;
+}
+/* 왼귀 */
+.ear1 {
+  /* 왼쪽바깥위치 */
+  left: -50px;
+  /* 왼위,아래만 둥근모서리 */
+  border-radius: 20px 0 0 20px;
+}
+/* 오른귀 */
+.ear2 {
+  /* 오른쪽 바깥위치 */
+  right: -50px;
+  /* 오른위,아래만 둥근모서리 */
+  border-radius: 0 20px 20px 0;
+}
+/* 2-1-2. 로봇몸통 */
+.body {
+  /* 부모자격 렐러티브 */
+  position: relative;
+  width: 170px;
+  height: 320px;
+  /* 마영오! 가로중앙 */
+  margin: 0 auto;
+  margin-top: 50px;
+}
+/* .body가상요소로 상체만들기 */
+.body::before {
+  content: '';
+  display: block;
+  /* 블록으로 변경해야 div같이 사용가능 */
+  position: absolute;
+  top: 0;
+  left: -10%;
+  /* 부모는? .body */
+  z-index: 1;
+  width: 120%;
+  height: 50%;
+  background-image: linear-gradient(to bottom, #e1e1e1, #b6b6b6, #4e4e4e);
+  border-radius: 15px;
+}
+/* .body가상요소로 숏바지만들기 */
+.body::after {
+  content: '';
+  display: block;
+  /* 블록으로 변경해야 div같이 사용가능 */
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  /* 부모는? .body */
+  z-index: 1;
+  width: 120%;
+  height: 40%;
+  border-radius: 15px 15px 50% 50%;
+  background-image: linear-gradient(to bottom, #e1e1e1, #b6b6b6, #4e4e4e);
+}
+/* 바디 하위요소 앱솔루트 */
+.body>div {
+  position: absolute;
+}
+/* 로봇목 */
+.neck{
+  top: -60px;
+  left: 50%;
+  translate: -50%;
+  width: 50px;
+  height: 70px;
+  border-radius: 20px;
+}
+/* 팔 공통 */
+.arm{
+  top: 20px;
+  width: 50px;
+  height: 180px;
+}
+/* 왼팔 */
+.arm1{
+  left: -65px;
+  border-radius: 20px;
+}
+/* 오른팔 */
+.arm2{
+  right: -65px;
+  border-radius: 20px;
+}
+/* 다리공통 */
+.leg{
+  top: 100%;
+  width: 50px;
+  height: 200px;
+}
+/* 왼다리 */
+.leg1{
+  left: 0;
+}
+/* 오른다리 */
+.leg2{
+  right: 0;
+}
+/* 어깨공통 */
+.shdr{
+  width: 70px;
+  height: 70px;
+}
+/* 왼어깨 */
+.shdr1{
+  left: -77px;
+  border-radius: 50% 0 0 50%;
+  }
+/* 오른어깨 */
+.shdr2{
+  right: -77px;
+  border-radius: 0 50% 50% 0;
 }
 
-/* 코 */
-/* 입 */
-/* 왼귀 */
-/* 오른귀 */
-/* 2-1-2. 로봇몸통 */
 /* 2-2. 설명박스 */
 /************* 3. 하단영역 *************/
