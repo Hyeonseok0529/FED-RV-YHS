@@ -1,5 +1,18 @@
 @charset "utf-8";
 /* 로봇 PJ CSS - robot.css */
+/* 외부 CSS합치기 */
+@import url(./core.css);
+@import url(./reset.css);
+
+/* 웹폰트 CDN */
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap");
+
+/* 
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Black Ops One', cursive;
+    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+*/
 
 /* 초기화 */
 html,
@@ -16,8 +29,11 @@ body * {
 }
 
 body {
+  /* 배경이미지 */
   background: url(../images/bg.jpg)
     no-repeat top/cover;
+    /* 커서 이미지로 변경하기 */
+    cursor: url(../images/favicon.png),auto;
 }
 /************* 1. 상단영역 *************/
 /************* 2. 메인영역 *************/
@@ -35,17 +51,15 @@ body {
   width: 250px;
   height: 250px;
 }
-/************** 공통클래스 **************/
-/* 메탈배경 클래스 */
-.metal1{
-  background: url(../images/metal01.jpg) no-repeat center/cover;
-}
-.metal2{
-  background: url(../images/metal02.jpg) no-repeat center/cover;
-}
+
+/* 로봇머리 하위 공통 앱솔루트 */
+.head > div {
+  position: absolute;
+} 
+
 /* 눈공통 */
 .eye {
-  position: absolute;
+  /* position: absolute; */
   top: 50px;
   /* 나의 부모는? .head */
   width: 50px;
