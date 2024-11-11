@@ -381,8 +381,8 @@ body {
     top: 13px;
     left: 10px;
     /* 부모는? .tv */
-    width: 95px;
-    height: 65px;
+    width: 100px;
+    height: 70px;
     background-color: red;
     border-radius: 10px;
     /* 넘치는 자식요소 숨기기 */
@@ -391,12 +391,31 @@ body {
   /* 유튭동영상 아이프레임 */
   .screen iframe{
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: -9%;
+    left: -41%;
     /* 부모는? .screen */
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 157%;
   }
+  /* 컨트롤버튼 */
+  .btns{
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    /* 부모는? .tv */
+  }
+  /* 버튼요소 */
+  .btns button {
+    display: block;
+    /* 원래은 inline-block 
+    한줄에 하나씩 오도록 블록화!*/
+    font-size: 9px;
+    padding: 0;
+    width: 25px;
+    height: 12px;
 
+
+
+  }
 /* 2-2. 설명박스 */
 /************* 3. 하단영역 *************/
