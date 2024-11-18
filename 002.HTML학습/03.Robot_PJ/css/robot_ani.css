@@ -1,0 +1,185 @@
+@charset "utf-8";
+/* 로봇 PJ 애니메이션 - 키프레임, 호출구현 : robot_ani.css*/
+
+/* 1. 로봇 이동 애니 */
+@keyframes move-robot-ani {
+  to {
+    /* ((애니)) left값변경애니 84% -> 50%(중앙) */
+    left: 50%;
+    /* ((애니)) 축소 : 0.4 -> 0.8 확대애니 */
+    scale: 0.8;
+  }
+}
+
+/* 호출 */
+/* 왼다리 */
+.leg1 {
+  /* 트랜스폼 축변경(상단:top) */
+  transform-origin: top;
+
+  /* 애니메이션 */
+  animation: step-walk-ani 0.5s 1s 8
+    alternate;
+  /* 이름(step-walk-ani) 
+    시간(.5s) 지연(1s) 반복(8) 방향(alternate) */
+}
+/* 오른다리 */
+.leg2 {
+  /* 트랜스폼 축변경(상단:top) */
+  transform-origin: top;
+
+  /* 애니메이션 */
+  animation: step-walk-ani 0.5s 1.5s 8
+    alternate;
+  /* 이름(step-walk-ani) 
+    시간(.5s) 지연(1.5s) 반복(8) 방향(alternate) */
+}
+
+/* 호출 */
+.robot-box {
+  animation: move-robot-ani 4s
+    ease-in-out 1s forwards;
+}
+
+/* 2. 다리구르기 애니 */
+@keyframes step-walk-ani {
+  to {
+    translate: 0 -30%;
+    /* translate: 가로(0) 세로(-30%) */
+  }
+}
+
+/* 3. 왼쪽팔 올리기1 */
+@keyframes move-arm-ani1 {
+  to {
+    rotate: 34deg;
+  }
+}
+/* 호출 */
+/* 왼팔 */
+.arm1 {
+  /* 축변경 (위) */
+  transform-origin: top;
+  /* 애니메이션:이시이지반방마 */
+  animation: move-arm-ani1 0.4s 5s
+    forwards;
+  /* 
+        이름(move-arm-ani1)
+        시간(.4s) 이징(ease) 지연(5s)
+        반복(1) 방향() 마지막상태(forwards)
+    */
+}
+/* 4. 왼쪽팔 올리기2 */
+@keyframes move-arm-ani2 {
+  to {
+    rotate: -93deg;
+  }
+}
+/* 호출 */
+/* 왼쪽팔뚝 */
+.arm1 span {
+  /* 축변경 (위) */
+  transform-origin: top;
+  /* 애니메이션:이시이지반방마 */
+  animation: move-arm-ani2 0.4s 5s
+    forwards;
+  /* 
+        이름(move-arm-ani1)
+        시간(.4s) 이징(ease) 지연(5s)
+        반복(1) 방향() 마지막상태(forwards)
+    */
+}
+/* 5. 왼쪽손목 올리기3 */
+@keyframes move-arm-ani3 {
+  to {
+    rotate: 85deg;
+  }
+}
+/* 호출 */
+/* 왼쪽팔뚝 */
+.arm1 span::after {
+  /* 축변경 (위) */
+  transform-origin: top;
+  /* 애니메이션:이시이지반방마 */
+  animation: move-arm-ani3 0.4s 5s
+    forwards;
+  /* 
+        이름(move-arm-ani1)
+        시간(.4s) 이징(ease) 지연(5s)
+        반복(1) 방향() 마지막상태(forwards)
+    */
+}
+/* 6. 오른쪽팔 올리기1 */
+@keyframes move-arm2-ani1 {
+  to {
+    rotate: -150deg;
+  }
+}
+/* 흔들기 */
+@keyframes move-arm2-waving-ani1 {
+  to {
+    rotate: -140deg;
+  }
+}
+/* 호출 */
+/* 오른팔 */
+.arm2 {
+  /* 축변경 (위) */
+  transform-origin: top;
+  /* 애니메이션:이시이지반방마 */
+  animation: move-arm2-ani1 0.4s 6s
+      forwards,
+    /* 
+        이름(move-arm-ani1)
+        시간(.4s) 이징(ease) 지연(6s)
+        반복(1) 방향() 마지막상태(forwards)
+    */
+      move-arm2-waving-ani1 0.4s
+      ease-in-out 6.4s infinite
+      alternate;
+
+  /* 
+        이름(move-arm2-waving-ani1)
+        시간(.4s) 이징(ease) 지연(6.4s)
+        반복(infinite) 방향(alternate) 마지막상태()
+    */
+}
+/* 7. 오른쪽팔뚝 흔들기1 */
+/* 먼저 올리기 */
+/* 흔들기 */
+@keyframes move-arm2-waving-ani2 {
+  to {
+    rotate: -50deg;
+  }
+}
+/* 호출 */
+/* 오른팔뚝 */
+.arm2 span {
+  /* 축변경 (위) */
+  transform-origin: top;
+  /* 애니메이션:이시이지반방마 */
+  animation: move-arm2-waving-ani2 0.4s
+    ease-in-out 6.4s infinite alternate;
+  /* 
+        이름(move-arm2-waving-ani2)
+        시간(.4s) 이징(ease) 지연(6.4s)
+        반복(infinite) 방향(alternate) 마지막상태()
+    */
+}
+/* 손목돌리기 */
+@keyframes rotate-ani {
+    to{
+        /* 역방향회전(y축) */
+        rotate: y 180deg;
+        /* 위치이동(x축) */
+        translate: 18% 0;
+    }
+}
+.arm2 span::after{
+    animation: rotate-ani .1s 6.4s forwards;
+      /* 
+        이름(rotate-ani)
+        시간(.1s) 이징(ease) 지연(6.4s)
+        반복() 방향() 마지막상태(forwards)
+    */
+}
