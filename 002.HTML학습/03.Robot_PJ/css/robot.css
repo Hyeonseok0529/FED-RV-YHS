@@ -5,6 +5,11 @@
 @import url(./core.css);
 @import url(./reset.css);
 
+/* 스크롤 이동 애니설정 */
+html{
+  /* 루트인 html에 부드러운 스크롤설정하기 */
+  scroll-behavior: smooth;
+}
 /* 초기화 */
 html,
 body {
@@ -31,10 +36,8 @@ body {
 /* 1-1.로고 */
 h1.logo{
   position: fixed;
-  top: 0;
-  left: 0;
-  /* top: calc(50% - 10vw);
-  left: calc(50% - 10vw); */
+  top: calc(50% - 10vw);
+  left: calc(50% - 10vw);
   width: 20vw;
   height: 20vw;
   border-radius: 50%;
@@ -97,7 +100,7 @@ h1.logo{
 }
 
 /* 2-1. 로봇박스 */
-.robot-box {
+.robot-box {  
   /* 로봇 fixed변경! */
   position: fixed;
   top: 0;
@@ -105,10 +108,10 @@ h1.logo{
   left: 84%;
   /* 중앙이동 */
   translate: -50%;
-  /* ((애니)) 축소 : 0.4 -> 0.8 확대애니 */
+  /* ((애니)) 축소 : 0.4 -> 0.65 확대애니 */
   scale: 0.4;
   /* 트랜스폼 기준변경: center center -> center 20% */
-  transform-origin: center 40%;
+  transform-origin: center 20%;
 
   /* display: none; */
   /* 위,아래 패딩으로 공간확보 */
@@ -437,7 +440,7 @@ h1.logo{
 /* 오른손 */
 .arm2 span::after {
   background-image: url(../images/hand_right.png);
-  right: -20px;
+  right: -12px;
 }
 /* 다리공통 */
 .leg {
