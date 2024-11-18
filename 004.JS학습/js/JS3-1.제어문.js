@@ -468,7 +468,14 @@ function showLocal() {
     // 1. 선택값 option의 value값
     var optVal = this.value;
 
-    // 1. 함수호출확인
-    console.log("구구단을 쓰자!", optVal);
+    // 2. 함수호출확인
+    console.log("구구단을 쓰자!", optVal, this);
+
+    // 3. 구구단 만들기
+    var hcode = `<h2>${optVal}단</h2>`;
+
+    // 4. 화면요소에 출력하기 //
+    // 출력대상은 g1변수 -> .g1박스
+    g1.innerHTML = hcode;
 
   } ////////// makeGugu //////////
