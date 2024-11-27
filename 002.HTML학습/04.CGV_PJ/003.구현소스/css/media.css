@@ -23,8 +23,8 @@
     flex-direction: column;
     /* 메뉴만 숨기기 */
     display: none;
-    /* 영사기와 연결되게 셋팅! 
-    이유 : 마우스오버시 이벤트 끊어지지 않게함!*/
+    /* 영상기와 연결되게 셋팅!
+    이유: 마우스오버시 이벤트 끊어지지 않게함! */
     padding-top: 10px;
     margin-top: -10px;
   }
@@ -52,7 +52,7 @@
 
 /********** 최대크기 840px 이하 시작 **********/
 @media screen and (max-width: 840px) {
-  /* 하단 영역 플렉스 박스  세로정렬 */
+  /* 하단 영역 플렉스 박스 세로정렬 */
   .footer-area {
     gap: 14px 20px;
     flex-direction: column;
@@ -71,14 +71,15 @@
     aspect-ratio: 1/1.4;
     background: url(../images/bg.jpg) no-repeat center top/146%;
   }
-  /* 스크린 크기위치조정 */
+  /* 스크린 크기,위치조정 */
   .screen {
     top: 11.7%;
     left: 8.2%;
     width: 85.4%;
     height: 34.7%;
   }
-  /* 포스터 박스 비율 및 크기 변경 */
+
+  /* 포스터 박스 비율 및 크기변경  */
   .poster-menu {
     width: 68%;
     aspect-ratio: 1;
@@ -89,7 +90,7 @@
     gap: 2%;
     flex-wrap: wrap;
   }
-  /* 한줄에 3개씩 오도록 가로크기 설정 */
+  /* 한줄에 3개씩 오도록 가로크기설정 */
   .poster-menu ul > li {
     flex-basis: 31.3%;
   }
@@ -97,15 +98,10 @@
   .mv-info {
     padding-top: 7vw;
     font-size: 3vw;
-    }
-    /* 제목 글자크기 조정 */
-    .mv-info ol li:first-child {
+  }
+  /* 제목 글자크기 조정 */
+  .mv-info ol li:first-child {
     font-size: 4vw;
-    }
+  }
 }
 /********** 최대크기 700px 이하 종료 **********/
-
-/********** 최대크기 00px 이하 시작 **********/
-@media screen and (max-width: 00px) {
-}
-/********** 최대크기 00px 이하 종료 **********/
