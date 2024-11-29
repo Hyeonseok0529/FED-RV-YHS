@@ -8,6 +8,12 @@
 /* 리셋 CSS */
 @import url(./reset.css);
 
+/* 초기화 */
+html,body,h1,h2,ul,ol{
+    margin: 0;
+    padding: 0;
+}
+
 /* 공사중표시 */
 body * {
     /* outline: 2px dashed red; */
