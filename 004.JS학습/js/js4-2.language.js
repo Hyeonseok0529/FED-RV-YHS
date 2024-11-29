@@ -41,5 +41,45 @@ const mainImg = myFn.qs('#cont img');
 // (3) 하단주소 : #info address
 const addrBox = myFn.qs('#info address');
 
-
 // console.log('대상요소:',selBox, gnbList, mainImg, addrBox);
+
+// 3. 이벤트 설정 //
+myFn.addEvt(selBox, 'change', setLang);
+
+// 4. 함수만들기 //
+function setLang(){
+    // this는 호출한 선택박스요소
+    // this.value는 선택된 option요소 value속성값
+    
+    // 1. 선택값 읽어오기
+    let optVal = this.value;
+
+    // 0. 함수호출확인
+    // console.log('언어셋팅해!',this,optVal);
+
+    // 2. 선택데이터 변수할당하기
+    // 데이터: langData[언어코드속성]["메뉴"]
+    let selData = langData[optVal];
+    console.log('선택데이터:',selData);
+
+
+    // 2. 메뉴언어 변경하기
+    // 대상: gnbList
+    // 데이터: 선택데이터의 "메뉴"속성값
+    gnbList.forEach((el,idx)=>{
+        console.log('요소:',el,'/순번:',idx);
+        // 메뉴값이 배열이므로 GNB 리스트 순번과 일치
+        el.innerText = selData['메뉴'][idx];
+    }); ///// forEach /////
+
+    // 3. 메인이미지 src 변경하기
+    // 각 언어별 이미지명이 선택박스의 value값으로
+    // 만들어져 있으므로 이미지명을 optVal로 넣어준다
+    mainImg.src = `images/${optVal}.jpg`;
+
+    // 4. 하단주소 변경하기
+    // 대상: addrBox
+    // 데이터: 선택데이터의 "주소" 속성값
+    addrBox.innerText = selData['주소'];
+} ///// setLang 함수 //////
+
