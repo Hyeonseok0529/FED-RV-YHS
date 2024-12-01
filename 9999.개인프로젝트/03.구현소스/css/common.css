@@ -15,9 +15,17 @@
   height: 100px;
 }
 /* 1-1. 햄버거,SHOP버튼 영역 */
+.hamShop-box{
+  display: flex;
+  gap: 42px;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
 .left-menu {
   font-size: 1.3rem;
-  display: flex;
+  /* display: flex; */
   /* row사이간격 */
   gap: 42px;
   /* 세로진행방향 */
