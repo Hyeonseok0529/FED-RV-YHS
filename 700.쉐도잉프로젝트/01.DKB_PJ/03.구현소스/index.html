@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 탭 아이콘 셋팅 -->
+    <link rel="shortcut icon" href="./images/pavicon_tvN.png" />
     <title>쓸쓸하고 찬란하神 도깨비 드라마 소개</title>
     <!-- 폰트어썸 CDN CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <!-- 메인 CSS 불러오기 -->
     <link rel="stylesheet" href="./css/main.css" />
   </head>
@@ -94,33 +99,39 @@
     </div>
     <!-- 메인영역 -->
     <main class="main-area">
-      <!-- 2.배너파트 -->
-      <div>
-        <!-- 배너박스 -->
+      <!-- 2.배너파트
+       겉박스가 특정 역할을 해야할 경우
+       이름을 주는 것이 좋은데 그 이름은
+       inbox의 이름을 준 클래스명과 같은 이름의
+       아이디명으로 주면 편리하다
+       (이름을 또 지을 필요도 없고, 같은 영역임을 생각할 수 있기 때문
+       단, 규칙을 잘 세워야 헷갈리지 않는다) -->
+      <div id="ban-area">
+        <!-- 배너기능박스는 바깥에 있음! -->
+        <!-- 슬라이드박스 -->
+        <section class="ban-box">
+          <ul>
+            <li>
+              <img src="./images/banner/ban01.jpg" alt="배너이미지" />
+            </li>
+            <li>
+              <img src="./images/banner/ban02.jpg" alt="배너이미지2" />
+            </li>
+            <li>
+              <img src="./images/banner/ban03.jpg" alt="배너이미지3" />
+            </li>
+          </ul>
+        </section>
+        <!-- 배너박스(인박스:인디케이터 등) -->
         <section class="ban-area inbox">
           <h2 class="blind">2.배너박스</h2>
           <!-- 파티션박스 -->
           <div class="cont-box">
-            <div class="col-12">
-              <!-- 슬라이드너박스 -->
-              <div class="ban-box">
-                <ul>
-                  <li>
-                    <img src="./images/bg_mainvisual.jpg" alt="배너이미지">
-                  </li>
-                  <li>
-                    <img src="./images/bg_main_02.jpg" alt="배너이미지2">
-                  </li>
-                  <li>
-                    <img src="./images/bg_main_03.jpg" alt="배너이미지3">
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <div class="col-12"></div>
           </div>
         </section>
         <!-- 캐릭터소개박스 -->
-        <section class="inbox">
+        <section class="cat-area inbox">
           <h2 class="temp">캐릭터소개박스</h2>
           <!-- 파티션박스 -->
           <div class="cont-box">
@@ -131,7 +142,7 @@
       <!-- 3.드라마소개 -->
       <div>
         <section class="inbox">
-          <h2 class="temp">3.드라마소개</h2>
+          <h2 class="blind">3.드라마소개</h2>
           <!-- 파티션박스 -->
           <div class="cont-box">
             <div class="col-6"></div>
