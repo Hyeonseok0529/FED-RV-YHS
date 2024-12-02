@@ -20,7 +20,7 @@ html,body,h1,h2,ul,ol{
 
 /* 공사중표시 */
 body * {
-    /* outline: 2px dashed red; */
+    outline: 2px dashed red;
 }
 
 /* 공통클래스 */
