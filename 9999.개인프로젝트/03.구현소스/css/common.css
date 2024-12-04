@@ -9,11 +9,18 @@
   top: 0;
   left: 0;
   z-index: 999;
-  background: rgba(255, 255, 255, 0.5);
+  /* background: rgba(255, 255, 255, 0.5); */
   box-shadow: 0 5px 5px #00000076;
   width: 100%;
   height: 100px;
+  /* 여기만 공사중 표시 제거할 수 있을까요? */
 }
+/* 상단영역 a태그 */
+.top-area a{
+  color: #fff;
+}
+/* 공사중표시 해제 */
+
 /* 1-1. 햄버거,SHOP버튼 영역 */
 .hamShop-box {
   display: flex;
@@ -21,6 +28,7 @@
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  align-items: center;
 }
 
 .left-menu {
@@ -54,7 +62,7 @@
   left: 0;
   width: 100%;
   height: 20%;
-  background-color: #333;
+  background-color: #fff;
   border-radius: 25px;
 }
 .hambtn span:nth-child(1) {  
@@ -83,6 +91,10 @@
   top: 40%;
   rotate: -45deg;
   transition: top .3s ease-out,rotate .3s ease-out .3s;
+}
+/* 1-1-2. Shop 버튼 */
+.shopbtn{
+  font-size: 1.3rem;
 }
 
 /* 1-2. 로고영역 */
