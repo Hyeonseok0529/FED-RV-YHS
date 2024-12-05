@@ -100,6 +100,31 @@
   rotate: -45deg;
   transition: top 0.3s ease-out, rotate 0.3s ease-out 0.3s;
 }
+/* 서브메뉴 */
+aside .smenu{
+  position: absolute;
+  margin-top: 79px;
+  left: 0;
+  width: 100%;
+  height: 340px;
+  background-color: #d1c7a3;
+  overflow: hidden;
+}
+.smenu .inbox{
+  padding: 20px;
+  box-sizing: border-box;
+}
+.smenu h2{
+  font-size: 3rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.smenu ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 7rem;
+  font-size: 2rem;
+}
 /* 1-1-2. Shop 버튼 */
 .shopbtn {
   font-size: 1.6rem;
@@ -164,7 +189,7 @@
 .ban-area {
   height: 300px;
 }
-.video {
+.main-video {
   display: inline-block;
   overflow: hidden;
   width: 100%;
@@ -173,6 +198,16 @@
 }
 .main-text{
   position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2rem;
+    /* 글자 미디어 쿼리, 두줄로 만드려면 어떻게 해야할까요???????????????????? */
 } 
 
 /**************** 2. 하단영역 ****************/
