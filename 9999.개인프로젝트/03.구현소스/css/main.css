@@ -20,14 +20,12 @@ html,body,h1,h2,ul,ol{
 
 /* 공사중표시 */
 body * {
-    outline: 2px dashed red;
+    outline: 1px dashed orange;
 }
 
 /* 공통클래스 */
 /* 중앙속박스 */
 .inbox{
-    /* 최대가로크기 */
-    max-width: 2000px;
     /* 블록박스 중앙정렬 -> 마.영.오! */
     margin: 0 auto;
 }
