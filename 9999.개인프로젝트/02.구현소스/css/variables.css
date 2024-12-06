@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+:root{
+    /* 폰트체 */
+    --font-title: "Stint Ultra Condensed";
+    --font-menu: "Sofia Sans Condensed";
+}
