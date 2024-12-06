@@ -5,6 +5,46 @@
 <title> child(&gt;)선택자  </title>
 <!-- jQuery library -->
 <script src="../jquery-3.6.3.min.js"></script>
+<script>
+  $(() => {
+    /////////// JQB ////////////////////
+    // 미션: #container 를 클릭하면 이것의 직계자식인 p태그의 배경색을 노란색, 글자색은 녹색, 글지크기는 42px, 테두리는 5px 점선 빨간색으로 설정하시오!
+
+    $('#container').click(
+      function(){
+
+      // [ 자손선택 3가지 방법 ] 
+      // $('#container p')  
+      // $(this).find('p')
+      // $('p',this)
+
+      // [ 직계자식선택 3가지 방법 ]  
+      // $('#container > p')  
+      // $(this).children('p')
+      $('>p',this)
+      .css({
+        'background-color': 'yellow',
+        'color': 'green',
+        'font-size': '42px',
+        'border': '5px dotted red'
+      }) // css //
+    }); // click //
+
+    // this를 이용한 자손선택법은?
+    // $(선택자,this)
+    // 예) ${'p',this}
+    // -> 자손선택 트래버싱 메서드 
+    // -> find() 
+    // 예) $(this).find('p')
+
+    // this를 이용한 직계자식선택법은?
+    // $('>선택자',this)
+    // 예) $('>p',this)
+    // -> 직계자식선택 트래버싱 메서드
+    // -> children()
+    // 예) $(this).children('p')
+  }); /////////////////// JQB ////////////////////
+  </script>
 
 </head>
   
