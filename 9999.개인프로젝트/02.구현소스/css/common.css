@@ -14,8 +14,6 @@
   /* box-shadow: 0 5px 5px #00000076; */
   width: 100%;
   height: 130px;
-  /* 여기만 공사중 표시 제거할 수 있을까요????????????????????? */
-  /* 공사중표시 해제 */
 }
 /* 상단영역 a태그 */
 .top-area a {
@@ -28,7 +26,6 @@
 .shopbtn:hover,
 .bagbtn:hover {
   color: #645832;
-  /* 오버 아웃시에도 동일한 전환효과를 주려면 어떻게 해야할까요 ?????????????????? */
 }
 
 /* 1-1. 햄버거,SHOP버튼 영역 */
@@ -43,7 +40,6 @@
 
 .left-menu {
   font-size: 1.3rem;
-  /* display: flex; */
   /* row사이간격 */
   gap: 42px;
   /* 세로진행방향 */
@@ -194,35 +190,7 @@ aside .smenu {
   color: #645832;
   transition: 0.25s ease-out;
 }
-/************* 2.배너영역 *************/
-.ban-area {
-  height: 300px;
-}
-.main-video {
-  display: inline-block;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.8);
-}
-.main-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: 99;
-  width: 50vw;
-  display: flex;
-  gap: 2vw;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-family: var(--font-title);
-  font-size: min(10rem,6vw);
-  /* 글자 미디어 쿼리, 두줄로 만드려면 어떻게 해야할까요???????????????????? */
-}
+
 
 /**************** 2. 하단영역 ****************/
 .footer-area {

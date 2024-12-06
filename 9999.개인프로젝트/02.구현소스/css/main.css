@@ -37,7 +37,7 @@ html,body,h1,h2,ul,ol{
     color: #888; 
 }
 
-/************* 3.컨텐츠영역 *************/
+/************* 컨텐츠영역 *************/
 .page{
     /* 영역별로 모두 보이는 화면 높이 설정 */
     /* 선생님 피드백 : 페이지당 100vh가 넘어가기때문에
@@ -52,7 +52,31 @@ html,body,h1,h2,ul,ol{
     width: 100%;
     text-align: center;
 }
-/************* 4.하단영역 *************/
-.footer-area{
-    height: 100px;
-}
+/************* 1. 배너영역 *************/
+.ban-area {
+    height: 300px;
+  }
+  .main-video {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+  }
+  .main-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 99;
+    width: 50vw;
+    display: flex;
+    gap: 2vw;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--font-title);
+    font-size: min(10rem,6vw);
+  }
