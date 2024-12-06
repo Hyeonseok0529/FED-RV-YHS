@@ -101,20 +101,25 @@
   transition: top 0.3s ease-out, rotate 0.3s ease-out 0.3s;
 }
 /* 서브메뉴 */
-aside .smenu{
+aside .smenu {
   position: absolute;
   margin-top: 79px;
   left: 0;
   width: 100%;
-  height: 340px;
-  background-color: #d1c7a3;
+  height: 35vw;
+  background-color: #ebe6d7;
   overflow: hidden;
 }
-.smenu .inbox{
+.smenu .inbox {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 35vw;
+  width: 13vw;
   padding: 20px;
   box-sizing: border-box;
 }
-.smenu h2{
+.smenu h2 {
   font-size: 3rem;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -156,11 +161,11 @@ aside .smenu{
   width: 120px;
 }
 /* 1-3. 장바구니버튼 영역 */
-.right-menu .fx-box{
+.right-menu .fx-box {
   gap: 10px;
   align-items: center;
 }
-.bagbtn li{
+.bagbtn li {
   display: flex;
 }
 .bag-box {
@@ -180,10 +185,10 @@ aside .smenu{
   width: 2rem;
   text-align: center;
 }
-.bagNbtn:hover{
+.bagNbtn:hover {
   background-color: #fff;
   color: #645832;
-  transition: .25s ease-out;
+  transition: 0.25s ease-out;
 }
 /************* 2.배너영역 *************/
 .ban-area {
@@ -196,7 +201,7 @@ aside .smenu{
   height: 100%;
   object-fit: cover;
 }
-.main-text{
+.main-text {
   position: absolute;
   margin: 0 auto;
   text-align: center;
@@ -207,8 +212,8 @@ aside .smenu{
   justify-content: center;
   color: #fff;
   font-size: 2rem;
-    /* 글자 미디어 쿼리, 두줄로 만드려면 어떻게 해야할까요???????????????????? */
-} 
+  /* 글자 미디어 쿼리, 두줄로 만드려면 어떻게 해야할까요???????????????????? */
+}
 
 /**************** 2. 하단영역 ****************/
 .footer-area {
