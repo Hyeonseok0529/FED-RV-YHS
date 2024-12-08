@@ -3,7 +3,6 @@
 /* 도깨비 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
 
-/* Font Family 가져오기 ??????????????????????????????????????????? */
 /************* 1.상단영역 *************/
 .top-area {
   position: fixed;
@@ -15,12 +14,13 @@
   width: 100%;
   height: 130px;
 }
+
 /* 상단영역 a태그 */
 .top-area a {
   font-family: var(--font-menu);
   color: #fff;
   font-size: 3rem;
-  transition: color 0.15s ease-out;
+  transition: color 0.4s ease-in-out;
 }
 
 .shopbtn:hover,
@@ -50,7 +50,7 @@
   align-items: flex-end;
 }
 .left-menu ul {
-  gap: 1.6rem;
+  gap: 3.8rem;
 }
 
 /* 햄버거 부모박스 */
@@ -110,25 +110,78 @@ aside .smenu {
   background-color: #ebe6d7;
   overflow: hidden;
   background: #ebe6d7 url(../images/Ld_img4.png) no-repeat right/40%;
-  display: none;
 }
 .smenu .inbox {
   display: flex;
-  padding: 20px;
+  padding: 8rem;
   box-sizing: border-box;
 }
+/* 햄버거 버튼 클릭시 스타일 1 
+.smenu .inbox {
+ border-top 2px solid #d1c7a3;
+}
+.top-area>.top-area .inbox {
+  background-color: #ebe6d7;
+  color: black;
+}
+
+
+*/
 .smenu dt {
   font-family: var(--font-title);
-  font-size: 5rem;
+  font-size: 6rem;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
+  font-weight: 700;
+  font-style: normal;
+  /* 자간 설정 */
+  letter-spacing: -0.6rem;
 }
 .smenu dl {
-  padding: 5vw;
-  font-size: 2rem;
+  padding: 2vw;
+  font-size: 2.2rem;
+  /* 밑줄 애니메이션 위해 부모자격 부여 */
+  position: relative;
+  letter-spacing: .5rem;
 }
-.smenu dd{
-  text-shadow: 0 0 3px #00000049;
+.smenu dd {
+  padding: 0px 0px 10px;
+}
+
+
+
+
+
+
+
+/* 밑줄 애니메이션 가상요소 */
+.smenu dl > dt > dd > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.2s ease-out;
+}
+
+/* 왜 안되는지 잘 모르겠습니다 ........ */
+.smenu dd > a::after:hover {
+  width: 100%;
+  transition-delay: .4s;
+}
+
+
+
+
+
+
+.smenu dd a {
+  /* text-shadow: 0 0 3px #00000049; */
+  color: #645832;
+  font-size: 2.5rem;
 }
 /* 1-1-2. Shop 버튼 */
 .shopbtn {
@@ -182,15 +235,14 @@ aside .smenu {
   border-radius: 100%;
   font-size: 1.6rem;
   display: block;
-  width: 2rem;
+  width: 3.5rem;
   text-align: center;
 }
 .bagNbtn:hover {
   background-color: #fff;
   color: #645832;
-  transition: 0.25s ease-out;
+  transition: 0.35s ease-in-out;
 }
-
 
 /**************** 2. 하단영역 ****************/
 .footer-area {

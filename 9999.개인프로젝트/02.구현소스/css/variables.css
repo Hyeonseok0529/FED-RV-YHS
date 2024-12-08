@@ -2,6 +2,6 @@
 
 :root{
     /* 폰트체 */
-    --font-title: "Stint Ultra Condensed";
-    --font-menu: "Sofia Sans Condensed";
+    --font-title: "Crimson Text", serif;
+    --font-menu: "Sofia Sans Condensed", serif;
 }

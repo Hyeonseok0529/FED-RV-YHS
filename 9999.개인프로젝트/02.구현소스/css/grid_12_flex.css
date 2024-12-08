@@ -22,7 +22,7 @@ flex-basis속성은 플렉스 자식요소 width */
 대괄호[]는 속성 선택자임! */
 [class*="col-"] {
     padding: 10px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     /* 패딩,보더 포함설정 : bxb */
     box-sizing: border-box;
   }
