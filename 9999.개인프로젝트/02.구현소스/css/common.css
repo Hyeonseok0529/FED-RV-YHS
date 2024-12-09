@@ -24,8 +24,8 @@
   border-bottom: 1.5px solid #d1c7a3;
 ????? 질문 : SVG 색깔은 어떻게 바꾸는지 ????????????????????????????
   } */
-  
-  /* 상단탑영역 스타일 3 
+
+/* 상단탑영역 스타일 3 
   일정 영역 스크롤 다운시 적용예정
   header{
     background-color: #645832
@@ -120,21 +120,60 @@
   transition: top 0.3s ease-out, rotate 0.3s ease-out 0.3s;
 }
 /* 장바구니 서브메뉴 */
-.minicart{
-  z-index: 1;
+.minicart {
+  z-index: 999;
   position: fixed;
-  background-color: orange;
   display: flex;
-  justify-content: center;
-  width: 50%;
-  height: 100vh;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  display: none;
 }
-.minicart-box{
-overflow: hidden;
-height: 10vh;
-width: 70.4rem;
+.minicart-box {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100rem;
+  background-color: #ebe6d7;
 }
-
+.minicart span:nth-child(1) {
+  font-size: 2.5rem;
+  color: #1f1f1f;
+  font-family: var(--font-menu);
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-weight: 600;
+  position: absolute;
+  top: 11%;
+  left: 18%;
+  translate: -50% -50%;
+}
+.minicart span:nth-child(2) {
+  font-size: 3.5rem;
+  color: #1f1f1f;
+  font-family: var(--font-title);
+  letter-spacing: -2.5px;
+  font-weight: 600;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.minicart span:nth-child(3) {
+  font-size: 2rem;
+  color: #1f1f1f;
+  font-family: var(--font-menu);
+  font-weight: 400;
+  line-height: 5vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: #645832;
+  padding: 0 75px;
+  color: #ebe6d7;
+  border-radius: 5px;
+}
 /* 서브메뉴 */
 aside .smenu {
   position: absolute;
@@ -145,7 +184,6 @@ aside .smenu {
   background-color: #ebe6d7;
   overflow: hidden;
   background: #ebe6d7 url(../images/Ld_img4.png) no-repeat right/40%;
-  display: none;
 }
 .smenu .inbox {
   display: flex;
@@ -159,9 +197,14 @@ aside .smenu {
 .top-area>.top-area .inbox {
   background-color: #ebe6d7;
   color: black;
-}
+} 
+*/
 
-
+/* 햄버거 버튼 클릭시 스타일 2
+ .top-area>.top-area .inbox {
+  background-color: #645832;
+  color: #645832;
+} 
 */
 .smenu dt {
   font-family: var(--font-title);
@@ -176,19 +219,13 @@ aside .smenu {
 .smenu dl {
   padding: 2vw;
   font-size: 2.2rem;
-  /* 밑줄 애니메이션 위해 부모자격 부여 */
+  /* 밑줄 애니메이션 위해 부모자격 부여?????????? */
   position: relative;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
 }
 .smenu dd {
   padding: 0px 0px 10px;
 }
-
-
-
-
-
-
 
 /* 밑줄 애니메이션 가상요소 */
 .smenu dl > dt > dd > a::after {
@@ -206,13 +243,8 @@ aside .smenu {
 /* 왜 안되는지 잘 모르겠습니다 ........ */
 .smenu dd > a::after:hover {
   width: 100%;
-  transition-delay: .4s;
+  transition-delay: 0.4s;
 }
-
-
-
-
-
 
 .smenu dd a {
   /* text-shadow: 0 0 3px #00000049; */
