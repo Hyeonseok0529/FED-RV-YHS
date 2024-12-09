@@ -15,7 +15,26 @@
   height: 130px;
 }
 
-/* 상단영역 a태그 */
+/* 상단탑영역 스타일 2 
+햄버거버튼 클릭시 , 일정 영역 스크롤 다운시 적용예정
+애니메이션 어떻게 할건지 정해야 함
+ header{
+  background-color: #ebe6d7;
+  color: #1f1f1f;
+  border-bottom: 1.5px solid #d1c7a3;
+????? 질문 : SVG 색깔은 어떻게 바꾸는지 ????????????????????????????
+  } */
+  
+  /* 상단탑영역 스타일 3 
+  일정 영역 스크롤 다운시 적용예정
+  header{
+    background-color: #645832
+    color: #1f1f1f;
+    border-bottom: 1.5px solid #d1c7a3;
+}
+*/
+
+/* 상단탑영역 a태그 */
 .top-area a {
   font-family: var(--font-menu);
   color: #fff;
@@ -100,6 +119,22 @@
   rotate: -45deg;
   transition: top 0.3s ease-out, rotate 0.3s ease-out 0.3s;
 }
+/* 장바구니 서브메뉴 */
+.minicart{
+  z-index: 1;
+  position: fixed;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 100vh;
+}
+.minicart-box{
+overflow: hidden;
+height: 10vh;
+width: 70.4rem;
+}
+
 /* 서브메뉴 */
 aside .smenu {
   position: absolute;
@@ -110,6 +145,7 @@ aside .smenu {
   background-color: #ebe6d7;
   overflow: hidden;
   background: #ebe6d7 url(../images/Ld_img4.png) no-repeat right/40%;
+  display: none;
 }
 .smenu .inbox {
   display: flex;

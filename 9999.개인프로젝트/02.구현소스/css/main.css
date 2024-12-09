@@ -70,16 +70,16 @@ html,body,h1,h2,ul,ol{
     left: 50%;
     translate: -50% -50%;
     z-index: 99;
-    width: 50vw;
+    width: 59vw;
     display: flex;
-    gap: .9vw;
+    gap: 1.8vw;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     color: #fff;
     font-family: var(--font-title);
-    font-size: min(10rem,6vw);
+    font-size: min(10rem, 6vw);
     font-weight: 400;
     font-style: normal;
-    letter-spacing: -.9rem;
+    letter-spacing: -1.4rem;
   }
