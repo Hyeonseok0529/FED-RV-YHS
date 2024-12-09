@@ -100,7 +100,12 @@ default로 내보낼 때 변수에 담아서 내보내는 것이
 
 33. 리터럴이란 ? 
 
-34.
+34. DOM ? 
+Document Object Model 
+프로그래밍 인터페이스
+돔을 쓰고 있습니까?
+= 돔은 이미 쓰고 있다. 
+document.querySelector 와 같은 메서드들이 DOM 메서드이다.
 
 
 
