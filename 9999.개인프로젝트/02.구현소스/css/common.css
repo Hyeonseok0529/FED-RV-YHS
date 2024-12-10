@@ -4,13 +4,23 @@
 /* 공유기능 요소 셋팅 */
 
 /************* 1.상단영역 *************/
+/* 상단영역 공통 페이드 박스 */
+.fadebox{
+  background: rgba(100, 88, 50, .51);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+  display: none;
+  }
+
 .top-area {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
-  /* background: rgba(255, 255, 255, 0.5); */
-  /* box-shadow: 0 5px 5px #00000076; */
   width: 100%;
   height: 130px;
 }
@@ -33,6 +43,8 @@
     border-bottom: 1.5px solid #d1c7a3;
 }
 */
+
+
 
 /* 상단탑영역 a태그 */
 .top-area a {
@@ -174,8 +186,12 @@
   color: #ebe6d7;
   border-radius: 5px;
 }
+
 /* 서브메뉴 */
+
 aside .smenu {
+  /* 페이드 박스 효과와 합쳐야함 (.fadebox) */
+  display: none;
   position: absolute;
   margin-top: 79px;
   left: 0;
@@ -236,16 +252,18 @@ position: relative;
   content: "";
   display: block;
   position: absolute;
-  bottom: -3px;
+  bottom: 2px;
   left: 0;
   width: 0;
-  height: 2px;
-  background-color: #fff;
+  height: .5px;
+  background-color: #645832;
   transition: width 0.2s ease-out;
 }
 
 /* 호버를 쓸 때는 가상요소에다가 주면 안되고,
 호버를 하는 대상에다가 주고 가상요소를 주어야 함. */
+
+/*  오버 아웃시 반대방향으로 효과를 주려면 ??????????????????????? */
 .smenu dd > a:hover::after {
   width: 100%;
   transition-delay: 0.1s;
@@ -256,6 +274,9 @@ position: relative;
   color: #645832;
   font-size: 2.5rem;
 }
+
+
+
 /* 1-1-2. Shop 버튼 */
 .shopbtn {
   font-size: 1.6rem;

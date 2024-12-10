@@ -83,3 +83,26 @@ html,body,h1,h2,ul,ol{
     font-style: normal;
     letter-spacing: -1.4rem;
   }
+
+/* SHOP ALL 버튼 */
+.shopAbtn{
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 9;
+    width: 8vw;
+    height: 3.5vh;
+    color: #1f1f1f;
+    background-color: #ebe6d7;
+    text-align: center;
+    align-content: center;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out;
+}
+.shopAbtn:hover{
+    background-color: #645832;
+    color: #ebe6d7;
+
+}
