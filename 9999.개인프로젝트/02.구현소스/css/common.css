@@ -219,16 +219,20 @@ aside .smenu {
 .smenu dl {
   padding: 2vw;
   font-size: 2.2rem;
-  /* 밑줄 애니메이션 위해 부모자격 부여?????????? */
-  position: relative;
   letter-spacing: 0.5rem;
 }
 .smenu dd {
   padding: 0px 0px 10px;
 }
 
-/* 밑줄 애니메이션 가상요소 */
-.smenu dl > dt > dd > a::after {
+/* 밑줄 애니메이션 */
+/* 주의 : dt와 dd는 형제임! */
+/* 밑줄 애니메이션 위해 부모자격 부여!!!!!!!!! */
+/* 애니메이션을 할때는 우선 보이는 것이 중요함. */
+.smenu dl > dd > a {
+position: relative;
+}
+.smenu dl > dd > a::after {
   content: "";
   display: block;
   position: absolute;
@@ -240,10 +244,11 @@ aside .smenu {
   transition: width 0.2s ease-out;
 }
 
-/* 왜 안되는지 잘 모르겠습니다 ........ */
-.smenu dd > a::after:hover {
+/* 호버를 쓸 때는 가상요소에다가 주면 안되고,
+호버를 하는 대상에다가 주고 가상요소를 주어야 함. */
+.smenu dd > a:hover::after {
   width: 100%;
-  transition-delay: 0.4s;
+  transition-delay: 0.1s;
 }
 
 .smenu dd a {

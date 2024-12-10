@@ -107,6 +107,8 @@ Document Object Model
 = 돔은 이미 쓰고 있다. 
 document.querySelector 와 같은 메서드들이 DOM 메서드이다.
 
+35. 웹페이지에서 중력상태는 static일 경우에는 위쪽, 왼쪽이다.
+
 
 
 * 회사 선택할 때는 반드시 교육이 있는 회사여야 한다.
