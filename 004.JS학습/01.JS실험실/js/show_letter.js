@@ -38,7 +38,6 @@ myText.forEach((v, i) => {
     if (x == " ") result += `<b></b>`;
     // 문자값이면 span으로 싸기 + 트랜지션 지연시간
     // 지연시간은 0.08초에 0,1,2,3,...을 순서대로 곱한다
-    // 여기서 제일 중요한 기능이 transition-delay: 를 넣은 것 !
     else {
       result += `
         <span 
@@ -60,13 +59,14 @@ myText.forEach((v, i) => {
   stage[i].classList.add("style" + (i + 1));
 }); ///////// forEach //////////
 
-// 6. 일정시간후 stage에 클래스 on 넣어서 글자 등장하기
+// 6. 일정시간후 stage에 클래스 on넣어서 글자등장하기
+// 시간셋팅 배열변수
 const startTime = [2000, 3500, 5000];
 stage.forEach((el, idx) => {
   // el - 출력할요소 , idx - 요소순번
   console.log("요소:", el, "/순번:", idx);
-  // 타임아웃 셋팅하기
+  // 타임아웃 셋팅하기 ///
   setTimeout(() => {
     el.classList.add("on");
   }, startTime[idx]);
-}); /// forEach /////
+}); /// forEach ////

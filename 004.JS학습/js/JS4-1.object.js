@@ -1,4 +1,4 @@
-// 영화정보 객체 JS - JS4-1.object.js //
+// 영화정보 객체 JS - JS4-1.object.js
 
 // 탐쌤의 오브젝트!
 // -> 변경가능하게 let으로 선언한다!
@@ -23,8 +23,10 @@ myObj.trailer = function () {
   playMovie("4uSn4Dem9i0");
 }; ////// trailer 메서드 ////////
 
+// 객체확인
+console.log("나의객체:", myObj);
 
-// 1. 김혜민
+//////// 1. 김혜민 객체 /////////////
 let khmObj = {};
 
 khmObj.title = "모아나 2";
@@ -37,8 +39,7 @@ khmObj.trailer = function () {
   playMovie("zKIN_aZM1Qc");
 };
 
-// 2. 양현석
-// -> 변경가능하게 let으로 선언한다!
+////////// 2. 양현석 객체 /////////////
 let yhsObj = {};
 // 오브젝트 형만 만들고 객체내용은 아래에서!
 
@@ -59,7 +60,8 @@ yhsObj.trailer = function () {
   playMovie("Ceoe2wf-bbo");
 }; ////// trailer 메서드 ////////
 
-// 3. 황대웅
+/////////// 3. 황대웅 객체 /////////////
+// 대웅의 오브젝트!
 // -> 변경가능하게 let으로 선언한다!
 let hdwObj = {};
 // 오브젝트 형만 만들고 객체내용은 아래에서!
@@ -81,8 +83,7 @@ hdwObj.trailer = function () {
   playMovie("AubJhjH0MfY");
 }; ////// trailer 메서드 ////////
 
-// 4. 이민경
-
+////////// 4. 이민경 객체 ///////////////
 let lmkObj = {};
 
 // 1. 영화제목
@@ -103,8 +104,7 @@ lmkObj.trailer = function () {
   playMovie("kihrFxwdMb4");
 }; ////// trailer 메서드 ////////
 
-// 5. 김민지
-
+///////// 5. 이민지 객체 ////////////////
 let mimObj = {};
 
 // [ 선정한 영화 정보 ]
@@ -126,7 +126,7 @@ mimObj.trailer = function () {
   playMovie("dyuvMHc-vYc");
 }; ////// trailer 메서드 ////////
 
-// 6. 전정훈
+///////// 6. 전정훈 객체 /////////////
 let jjhObj = {};
 // 오브젝트 형만 만들고 객체내용은 아래에서!
 
@@ -147,31 +147,44 @@ jjhObj.trailer = function () {
   playMovie("yowWyxS5rXc");
 }; ////// trailer 메서드 ////////
 
-// 7. 윤고은
+//////// 7. 윤고은 객체 ///////////
 
 let ygeObj = {};
+
 // 오브젝트 형만 만들고 객체내용은 아래에서!
+
 // 1. 영화제목
+
 ygeObj.title =
   "퓨리오사: 매드맥스 사가";
+
 // 2. 감독
+
 ygeObj.director = "조지 밀러";
+
 // 3. 배우
+
 ygeObj.actor =
   "안야 테일러 조이, 크리스 헴스워스";
+
 // 4. 장르
+
 ygeObj.genre = " 액션";
+
 // 5. 관람가
+
 ygeObj.ratings = "15세";
+
 // 6. 예고편
+
 ygeObj.trailer = function () {
-  console.log("예고편:영화아이디");
-  // 예고편 플레이 함수호출!
+  console.log("예고편:영화아이디"); // 예고편 플레이 함수호출!
+
   playMovie("NXHOhQOCB6g");
 }; ////// trailer 메서드 ////////
 
-// 8. 김다영
 
+/////////// 8. 김다영 객체 ////////////////
 let ssgObj = {};
 // 오브젝트 형만 만들고 객체내용은 아래에서!
 
@@ -192,3 +205,26 @@ ssgObj.trailer = function () {
   // 예고편 플레이 함수호출!
   playMovie("pMAPj6WVsT4");
 }; ////// trailer 메서드 ////////
+
+
+///////// 9. 강수현 객체 /////////////
+let shkObj = {};
+// 오브젝트 형만 만들고 객체내용은 아래에서!
+
+// 1. 영화제목
+shkObj.title = "미션 임파서블: 파이널 레코닝";
+// 2. 감독
+shkObj.director = "크리스토퍼 맥쿼리";
+// 3. 배우
+shkObj.actor = "톰 크루즈";
+// 4. 장르
+shkObj.genre = "액션, 스릴러";
+// 5. 관람가
+shkObj.ratings = "15세 이상 관람가";
+// 6. 예고편
+shkObj.trailer = function () {
+  console.log("예고편:영화아이디");
+  // 예고편 플레이 함수호출!
+  playMovie("uOzcSOSGb3w");
+}; ////// trailer 메서드 ////////
+

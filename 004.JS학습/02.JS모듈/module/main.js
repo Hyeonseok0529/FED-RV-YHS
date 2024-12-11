@@ -1,23 +1,25 @@
 // 모듈 연습 메인 JS - main.js
 
 // 데이터 JS 가져오기
-// import { mTitle, sTitle } from "./text_data.js";
+// import { mTitle,sTitle } from "./text_data.js";
 
 // 별칭으로 가져오기 {원래변수 as 새이름}
-import { mTitle as 큰제목,
+import { 
+    mTitle as 큰제목, 
     sTitle as 소제목,
     personInfo as 개인정보,
     mvData as 영화정보
- } from "./text_data.js";
+} from "./text_data.js";
 
 // 프리티어 자동완성시 JS파일 뒤에 확장자가 없는 것은
 // SPA 노드개발환경에서 가능한 방식이다!
 // 그러나 일반 JS에서는 반드시 확장자 .js를 써야함!
 
-// console.log('확인:',mTitle);
+// console.log("확인:", mTitle);
 
-// 메시지 함수 불러오기
+// 메시지함수 불러오기 ////
 import msgFn from "./msg_format.js";
+
 console.log("메시지함수:",msgFn);
 
 // 나의 함수 가져오기 ///
@@ -35,32 +37,32 @@ console.log("메시지함수:",msgFn);
 // console.log('나의함수:',myFn);
 
 import 헐 from "./my_function.js";
-console.log('나의함수:',헐);
+console.log("나의함수:", 헐);
 
 // default로 내보낼때 변수에 담아서 내보내는 것이
 // 아니고 하나의 값만 전달한다! 따라서 받을때
 // 변수명은 내맘대로다!!!
 
 // 1. 첫번째 요소 .tpart에 타이틀 데이터 출력하기
-헐.qs('.tpart').innerHTML = `
+헐.qs(".tpart").innerHTML = `
     <h2>${큰제목}</h2>
     <h3>${소제목}</h3>
 `;
 
 // 2. 두번째 요소 #demo에 이름나이 메시지 출력하기
 // 대상요소
-const demo = 헐.qs("#demo");
+const demo = 헐.qs('#demo');
 
 // 코드변수
 let hCode = '';
 
-// 코드에 메시지 넣기(메시지 함수 호출)
+// 코드에 메시지 넣기(메시지 함수호출함!)
 hCode += msgFn('공유',46);
 hCode += msgFn('톰행크스',60);
 hCode += msgFn('안젤리나 졸리',49);
 // 개인정보 배열 데이터를 돌면서 메시지함수 호출하기
 개인정보.forEach(v=>hCode += msgFn(v[0],v[1]));
-console.log("나는개인정보야:",개인정보);
+console.log(개인정보);
 
 // 화면출력
 demo.innerHTML = hCode;
@@ -72,8 +74,7 @@ const mvBox = 헐.qs('.mvpart');
 
 console.log("데이터:",영화정보);
 // 제목출력
-mvBox.innerHTML = "<h2>🎅영화위시리스트🎅</h2>";
-
+mvBox.innerHTML = "<h2>🎃영화위시리스트🎃</h2>";
 
 // 객체를 forEach() 메서드 사용하려면?
 // 객체를 배열화한다!!
@@ -81,15 +82,14 @@ mvBox.innerHTML = "<h2>🎅영화위시리스트🎅</h2>";
 Object.keys(영화정보).forEach(v=>{
     mvBox.innerHTML += `
         <ol>
-            <li>🏃‍♂️제목 : ${영화정보[v].제목}</li>
-            <li>🏃‍♂️장르 : ${영화정보[v].개요}</li>
-            <li>🏃‍♂️감독 : ${영화정보[v].감독}</li>
-            <li>🏃‍♂️주연 : ${영화정보[v].출연}</li>
-            <li>🏃‍♂️한마디 : ${영화정보[v].문구}</li>
+            <li>🎪제목 : ${영화정보[v].제목}</li>
+            <li>🎪장르 : ${영화정보[v].개요}</li>
+            <li>🎪감독 : ${영화정보[v].감독}</li>
+            <li>🎪주연 : ${영화정보[v].출연}</li>
+            <li>🎪한마디 : ${영화정보[v].문구}</li>
         </ol>
     `;
-});///// forEach문 /////
-
+});/// forEach ///
 
 /**********************************************     
     [ import 형식 ]

@@ -32,9 +32,8 @@ _____________________________________
     (1~7까지 7개의 이미지가 있다)
     if문으로 조건을 체크한다!
 
-
 *********************************************/
-// 공통변수 //
+// 공통변수 ////
 // [1] 이미지설명 배열변수
 const iTxt = [
   "노랑잉꼬가 먹이를 꼭꼭 찍어먹어요~",
@@ -51,37 +50,37 @@ const tColor = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
 
 // 1. 대상선정
 // 1-1. 이벤트 대상: .btn
-// 이벤트종류: click
+// 이벤트종류 : click
 const btn = myFn.qsa(".btn");
 
-// 1-2. 변경대상 : #mbox img
+// 1-2. 변경 대상: #mbox img
 const mbox = myFn.qs("#mbox img");
 
-// 1-3. 변경대상 : .imgtxt
+// 1-3. 변경 대상: .imgtxt
 const imgTxt = myFn.qs(".imgtxt");
-
-// 1-4. 초기화
-// 처음에 첫번째 배열글자와 글자색 적용하기!
-imgTxt.textContent = iTxt[0];
-imgTxt.style.color = tColor[0];
 
 console.log("대상:", btn, mbox, imgTxt);
 
-// 2. 이벤트 설정하기
-// 이벤트 대상은 btn 변수에 할당
+// 1-4. 초기화
+// -> 처음에 첫번째 배열글자와 글자색 적용하기!
+imgTxt.innerText = iTxt[0];
+imgTxt.style.color = tColor[0];
+
+// 2. 이벤트 설정하기 /////////
+// 이벤트 대상은 btn변수에 할당
 btn.forEach((el) => {
   // el - 각각의 버튼요소
   myFn.addEvt(el, "click", changeImg);
-}); ///// forEach /////
+}); ////// forEach /////
 
-// 3. 함수만들기 //
+// 3. 함수만들기 ////////////
 // 이미지번호변수(전역변수)
 let iNum = 1;
 function changeImg() {
   // (1) 함수호출 확인(this확인)
-  console.log("나야나!:", this);
+  console.log("나야나!", this);
 
-  // (2) 오른쪽 버튼인지 여부판별하기
+  // (2) 오른쪽 버튼인지 여부판별
   let isR = this.classList.contains("rb");
   console.log("오른쪽인가?", isR);
 
@@ -91,12 +90,12 @@ function changeImg() {
     iNum++;
     // 한계값 체크(끝번호 다음은 첫번호)
     if (iNum > 7) iNum = 1;
-  } ///// if /////
+  } /// if ///
   else {
     iNum--;
     // 한계값 체크(첫번호 이전은 끝번호)
     if (iNum < 1) iNum = 7;
-  } ///// else //////
+  } /// else ///
 
   // (4) 이미지 src변경하기
   // 변경대상은 mbox변수에 할당
@@ -105,12 +104,12 @@ function changeImg() {
   // 속성쓰기 JS메서드 - setAttribute(속성명,값)
 
   // (5) 이미지 설명 변경하기
-  imgTxt.textContent = iTxt[iNum - 1];
+  imgTxt.innerText = iTxt[iNum - 1];
   imgTxt.style.color = tColor[iNum - 1];
-} ///// changeImg 함수 /////
+} ////// changeImg 함수 ///////////
 
-/***************************************************
-  [ JS 클래스 관련 내장함수 ]
+/****************************************** 
+    [ JS 클래스 관련 내장함수 ]
     classList 객체
     -> 클래스를 요소에 넣거나 빼거나 클래스여부 판별
     ((관련메서드))
@@ -125,7 +124,7 @@ function changeImg() {
     여러개의 클래스를 추가하거나 제거할 수 있다!
     예) 요소.classList.add("tt","cc","dd")
 
-        **************************************
+    **************************************
     [ JS 타이밍 함수 : Timing Function ]
 
     1. setInterval(함수,시간)
@@ -142,7 +141,7 @@ function changeImg() {
     -> 타임아웃을 지울때는 변수에 담고
     아래 함수를 호출한다!
     ->>> clearTimeout(변수)
- ***************************************************/
+******************************************/
 
 // 타임아웃 함수로 미니언즈 애니하기!!! ////
 // 원리: 미리셋팅된 클래스를 미니언즈요소에
@@ -174,14 +173,14 @@ setTimeout(() => {
 }, 8000);
 
 /***************************************** 
-            [ 자동넘김 기능 구현하기 ]
-            - "자동넘김"버튼 클릭시 일정시간간격으로
-            롤링갤러리가 넘어감
-            - "멈춤"버튼 클릭시 정지됨
-           *****************************************/
+    [ 자동넘김 기능 구현하기 ]
+    - "자동넘김"버튼 클릭시 일정시간간격으로
+    롤링갤러리가 넘어감
+    - "멈춤"버튼 클릭시 정지됨
+*****************************************/
 // 이벤트 대상: .abtn button
 const abtn = myFn.qsa(".abtn button");
-//   console.log(abtn);
+// console.log(abtn);
 
 // 인터발용변수
 let autoI;
@@ -199,7 +198,7 @@ for (let x of abtn) {
     // 2-1. true이면 자동넘김
     if (isStart) {
       // setInterval(함수,시간)
-      // 오른쪽 버튼 클릭 강제발생하기는 click() 메서드 사용!
+      // 오른쪽버튼 클릭강제발생하기는 click() 메서드 사용!
       // 오른쪽버튼은 btn[1]
       autoI = setInterval(() => {btn[1].click()}, 1000);
     } //////// if ////////

@@ -99,7 +99,7 @@
         console.log("호출확인!");
 
         // 1. 대상선정 : 이벤트대상+변경대상
-        // 1-1. 이벤트대상 : 버튼들 - btngo
+        // 1-1. 이벤트대상 : 버튼들 - .btngo
         const btns = document.querySelectorAll(".btngo");
 
         // 1-2. 변경대상 : 데이터 표시박스들 - .minfo
@@ -107,10 +107,10 @@
 
         // console.log('대상들:',btns,boxes);
 
-        // 2. 이벤트 설정하기 //
-        // 원래 for문으로 셋팅해야함. 그러나... for of가 있음
+        // 2. 이벤트 설정하기 //////
+        // 원래 for문으로 셋팅해야함. 그러나... for of있음!
         for (let x of btns) {
-          // x는 누구?
+          // x는 누구? 각 버튼요소
           // console.log("x는?",x);
 
           // 2-1. 클릭이벤트 설정
@@ -146,7 +146,7 @@
               case "무빙":
                 selData = mv8;
                 break;
-            } ///// switch /////
+            } //////// switch //////////
 
             // console.log("선택배열:",selData,
             // "/배열인가?",Array.isArray(selData));
@@ -158,29 +158,27 @@
               console.log("배열돌아?", y, "/순번:", num);
               // 넣을 대상요소 컬렉션은? boxes변수의 컬렉션
               boxes[num].innerText = y;
-              num++; // 1씩 증가(다음순번)
+              num++; // 1씩증가(다음순번)
             } ///// for of /////
-          }; ///// click이벤트 함수 /////
-        } ///// for of /////
+          }; ///// click이벤트 함수 //////
+        } /////////// for of //////
 
         // 따라오는 포스터 기능 셋팅함수 호출하기!!!
-        followPoster(boxes );
-        // boxes는 .minfo를 수집한 html 컬렉션이다
-
+        followPoster(boxes);
+        // boxes는 .minfo를 수집한 html 컬렉션이다!
 
 
       } //////////// loadFn 함수 ///////////
       //////////////////////////////////////
 
-
-      /*****************************************
+      /******************************************* 
         함수명: followPoster
-        기능: 컨텐츠 박스위에 오버시
+        기능: 컨텐츠 박스 위에 오버시
             마우스무브 이벤트동안 포스터 따라오기
-      *****************************************/
+      *******************************************/
       function followPoster(minfo) {
         // 로딩함수에서 호출시 boxes변수에 담긴
-        // .minfo 컬렉션 요소를 전달받는다!
+        // .minfo컬렉션 요소를 전달받는다!
         console.log("전달된 컬렉션:",minfo);
 
         // 1. 대상선정
@@ -233,8 +231,8 @@
         wrap.onmouseleave = () => {
           moving.style.display = "none";
         }; ///// mouseleave ////
+      } //////// followPoster 함수 ///////////
 
-     } ///// followPoster /////
       /******************************************* 
         [ for of 문 ]
         ___________________________

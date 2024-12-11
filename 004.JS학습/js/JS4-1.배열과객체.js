@@ -29,8 +29,8 @@
 
 **********************************************/
 
-// 1. 배열 셋팅하고 출력하기 //
-// 1-1. new 키워드로 배열선언 및 할당하기 //////////////////////////////////////////////////////
+// 1. 배열 셋팅하고 출력하기 ////////////////
+// 1-1. new 키워드로 배열선언 및 할당하기 /////////////////
 // 그런데 배열은 굳이 new키워드로 선언할 필요는 없다!
 // 배열 리터럴로 생성할 수 있다!
 const arr1 = new Array(
@@ -47,51 +47,52 @@ const arr1 = new Array(
   function () {
     // this는 누구? 호출한 요소자신!!!
     // alert("김태리 멋찜!!!");
-    // 1. 호출한 요소박스에 김태리 사진 이미지를 넣고(+=대입연산자로 기존 데이터 살림!)
+
+    // 1.호출한요소 박스에 김태리 사진 이미지를 넣고(+=대입연산자로 기존 데이터 살림!)
     this.innerHTML += `
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgMVhsU6KWhsvAv3YA_uBLn25yo9O5v0kpmg&s" alt="김태리이미지"
-      style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 230px;
-        height: 300px;
-        border-radius: 20px;
-        border: 4px ridge lightsalmon;
-        display: none;
-        transition: .4s ease-out;
-        translate: -50% -50%;
-        z-index: 100;
-        pointer-events: none;
-      "
-      id="kim"
-    >
+      <img src="https://cdn.mhnse.com/news/photo/202410/333921_379284_5123.jpg" alt="김태리이미지"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 150px;
+          height: 200px;
+          border-radius: 20px;
+          border: 4px ridge hotpink;    
+          display: none; 
+          transition: .4s ease-out;
+          translate: -50% -50%;
+          z-index: 100;
+          pointer-events: none;
+        "
+        id="kim"
+      >
     `;
 
-    // [ 위의 CSS 코드 체크!! ]
-    // pointer-events: none; -> 실제 이벤트는 부모박스인데
-    // 자식 요소인 이미지가 매번 가림으로 인해 이벤트가
-    // 순간 없어졌다가 다시 걸렸다가를 반복함으로 떨림증상이 발생한다.
+    // [위의 CSS 코드 체크!!!]
+    // pointer-events: none -> 실제 이벤트는 부모박스인데
+    // 자식요소인 이미지가 매번 가림으로 인해 이벤트가
+    // 순간 없어졌가 다시 걸렸다가 함으로 떨림증상발생!!!
     // 이 설정으로 본 이미지는 이벤트를 없애고 아래쪽 요소가
-    // 그대로 이벤트를 발생하게 된다! 따라다니는 기능에서
-    // 매우 중요한 설정이다.
+    // 그대로 이벤트를 발생하게됨! 따라다니는 기능에서
+    // 매우 중요한 설정임!!!
 
     // 앱솔루트의 부모자격을 this에게 준다!
     this.style.position = "relative";
 
-    // 위에서 생성된 id="kim" 요소를 변수에 할당한다
+    // 위에서 생성된 id="kim" 요소를 변수에 할당함!
     const kim =
       document.querySelector("#kim");
 
-    // 2. 마우스 오버시 나타나고
+    // 2.마우스 오버시 나타나고
     this.onmouseenter = () => {
       kim.style.display = "block";
     };
-    // 3. 마우스 아웃시 사라지고
+    // 3.마우스 아웃시 사라지고
     this.onmouseleave = () => {
       kim.style.display = "none";
     };
-    // 4. 마우스 움직이면 따라다니게 해요!
+    // 4.마우스 움직이면 따라다니게 해요!
     // mousemove 이벤트 :
     // 마우스 포인터가 대상요소 위에서 움직일때 계속발생
     this.onmousemove = (헐) => {
@@ -101,15 +102,15 @@ const arr1 = new Array(
       // 그 요소에서 발생하는 이벤트를 객체로 가지고 있음
       // 대체해서 event 라고 직접 전체 이벤트 객체를 쓸 수 있음!
 
-      // 이벤트 객체하위 pageX, pageY : 최상단, 최왼쪽으로부터
+      // 이벤트 객체하위 pageX, pageY는 최상단, 최왼쪽으로부터
       // 마우스 커서의 위치를 x,y축으로 단위없는 px값을 리턴한다!
-      // 이 값은 사이트 전체를 이동하는 어떤 요소를 구현할 때
-      // 많이 사용함!
+      // 이 값은 사이트 전체를 이동하는 어떤 요소를 구현할때
+      // 많이 사용함
       // console.log("pageX:",헐.pageX);
-      // console.log("pageX:",헐.pageY);
+      // console.log("pageY:",헐.pageY);
 
       // 여기서는 본 박스 안에서만 그 위치를 알면 되므로
-      // -> offsetX, offsetY -> 해당부모요소 박스로부터
+      // -> offsetX, offsetY -> 해당부모요소 박스로 부터
       // 위치를 리턴함!
       // console.log(
       //   "offsetX:",
@@ -128,7 +129,7 @@ const arr1 = new Array(
 );
 
 // new 키워드로 선언과 할당을 동시에 할 수 있다!
-// 소괄호안에 컴마로 값을 구분하여 사용한다
+// 소괄호안에 컴마로 값을 구분하여 사용함!
 
 // 배열변수에 할당한 데이터 불러오기
 // 호출방법 : 배열변수명[순번] -> 순번은 0부터!
@@ -143,12 +144,12 @@ console.log(
   // 비?집:놀이동산 -> 삼항연산자(조건연산자)
 );
 // typeof(변수) / typeof 변수 -> 데이터형 출력!
-// 배열의 데이터형을 찍으면 object!라고 나옴!
-// 이것을 배열도 객체이기 때문!
+// 배열의 데이터형을 찍으면 object라고 나옴
+// 이것은 배열도 객체이기 때문!
 // 배열인지 검사하는 방법은 Array.isArray(변수)
 // -> 배열여부를 알아내는 메서드는 중요함!
 
-// 출력 대상 : .cont(여러개임!)
+// 출력 대상 : .cont (여러개임!)
 const target =
   document.querySelectorAll(".cont");
 
@@ -160,13 +161,13 @@ target[0].innerHTML = `
     키: ${arr1[1]}/
     몸무게: ${arr1[2]}/
     대표작: ${arr1[4]}/
-    데뷔년도:${arr1[3][0]}
+    데뷔년도: ${arr1[3][0]}
 `;
 // 배열안에 배열이 또 있으면 대괄호를 추가하여
 // 해당 순번을 써준다! 변수[순번][순번]
 
 // 김태리 기능추가!
-// 함수호출! : 배열마지막 번호 == 배열개수-1
+// 배열마지막 번호 == 배열개수-1
 target[0].onclick =
   arr1[arr1.length - 1];
 
@@ -174,10 +175,10 @@ target[0].onclick =
 // click() 메서드 호출!
 target[0].click();
 
-// 1-2. 배열 리터럴 방식의 선언과 할당 /////////////////////////////////////////////////////
+// 1-2. 배열 리터럴 방식의 선언과 할당 /////////////////////
 // 배열변수명 = [값1, 값2,...]
 // new 키워드 없이 바로 쓸 수 있는 객체임!
-// 이런 배열과 같은 객체를 정적객체(static object)라고 함!
+// 이런 배열과 같은 객체를 정적객체(Static Object)라고 함!
 
 const arr2 = [
   "삼일절",
@@ -187,42 +188,43 @@ const arr2 = [
     alert("대한독립만세~!");
     // this는 누구인가? 호출한 요소자신!
     console.log("this:", this);
-    //배경넣기
-    this.style.background = `url(https://blog.kakaocdn.net/dn/H4k8p/btqUUqx7TLT/VAMfjsV79wqyKIfOGXn5P0/img.jpg) repeat-x 0/auto 100%`;
+    // 배경넣기
+    this.style.background = `
+    url(https://blog.kakaocdn.net/dn/H4k8p/btqUUqx7TLT/VAMfjsV79wqyKIfOGXn5P0/img.jpg) repeat-x 0/auto 100%`;
     // 트랜스폼 변경 : 스케일 1.5, 회전 720도
     this.style.scale = "1.5";
-    this.style.rotate = "5760deg";
+    this.style.rotate = "720deg";
     // 트랜지션 : 2초 ease-in-out
     this.style.transition =
-      "all 1s ease-in-out";
+      "2s ease-in-out";
 
-    // 5초후에 다시 원래크기로 돌아가기
+    // 4초후에 다시 원래크기로 돌아가기
     // setTimeout(함수,시간)
     setTimeout(() => {
       this.style.scale = "1";
-    }, 5000);
+    }, 4000);
   },
 ];
 // 배열끝에 콤마는 원래는 쓰면 에러나지만
 // 최신브라우저에서 에러안나게 처리됨!
-// 요즘은 추가배열 데이터를 위해 마지막 콤마를
-// 쓰는 것이 일반적임(프리티어도 마지막콤마 넣어줌!
+// 요즘은 추가 배열 데이터를 위해 마지막 콤마를
+// 쓰는 것이 일반적임!(프리티어도 마지막콤마 넣어줌)
 
 // function(){} 익명함수 - 이름없고 코드만 저장
-// -> 배열값으로 문자, 숫자, 배열, 객체, 함수등 사용가능!
+// -> 배열값으로 문자,숫자,배열,객체,함수 등 사용가능!
 
 console.log(
-  "arr2는 배열인가?",
+  "arr2는 배열인가? ",
   Array.isArray(arr2) ? "응" : "아니"
 );
 
 // 출력대상 : target의 두번째
 target[1].innerHTML = `
-${arr2[0]}은 ${arr2[2]}년에 일제에 항거하여
-${arr2[1]}를 들고 일어난 민중봉기를 기념하는 날이다!
+    ${arr2[0]}은 ${arr2[2]}년에 일제에 항거하여
+    ${arr2[1]}를 들고 일어난 민중봉기를 기념하는 날이다!
 `;
 
-// 두번째 출력박스를 클릭하면 배열함수 호출하기
+// 두번째 출력박스를 클릭하면 배열 값에 있는 함수 호출하기
 target[1].onclick = arr2[3];
 
 // 두번째 박스에 타이틀 출력
@@ -231,9 +233,9 @@ target[1].title =
 // 두번째 박스에 손가락표시
 target[1].style.cursor = "pointer";
 
-// console.log("배열안의 함수:", arr2[3]);
+// console.log("배열안의 함수:",arr2[3]);
 
-// 1-3. 배열을 미리 생성하여 각각 할당하기 //////////////////////////////////////////////////
+// 1-3. 배열을 미리 생성하여 각각 할당하기 //////////
 // 배열변수명 = [] -> 배열리터럴
 // 배열변수명.length = 숫자 -> 숫자만큼 배열이 생성됨
 // 배열변수명.length 는 배열개수를 읽기/쓰기 모두 가능함!
@@ -241,17 +243,17 @@ target[1].style.cursor = "pointer";
 const arr3 = [];
 // const 상수로 리터럴선언, 할당후
 // 배열값 변경은 자유롭다!
-// 그러나 배열형을 변경할 수 없다! 즉, 재할당 불가!!!
-// 그래서 상수임! (코드보안상, 안전상 이유로 많이씀)
+// 그러나 배열형을 변경할 수 없다! 즉, 재할당불가!!!
+// 그래서 상수임! (코드 보안상, 안전상 이유로 많이씀)
 
-console.log("arr3배열", arr3);
+console.log("arr3배열:", arr3);
 
 // 배열개수 미리 셋팅하기
 arr3.length = 8;
 // 배열의 개수를 미리 셋팅해도 배열을 더 추가할 수 있음!
-// 의미는? 미리 배열개수를 정하고, 이것을 지키려는 의도임!
+// 의미는? 미리 배열개수를 정하고 이것을 지키려는 의도임!
 
-console.log("arr3배열", arr3);
+console.log("arr3배열:", arr3);
 
 // 각 배열주소에 값을 할당하기
 arr3[0] = "산";
@@ -279,7 +281,7 @@ console.log(
 // join(구분자) -> 구분자 넣고 문자값 생성
 console.log(
   "arr3배열 join():",
-  arr3.join("♡")
+  arr3.join("♥")
 );
 
 // 배열값 맨뒤에 값 추가하기 메서드 : push()
@@ -287,7 +289,7 @@ arr3.push("김창환작사");
 
 // 배열값을 세번째 target박스에 출력하기
 // join()으로 사이에 별표 넣고 문자열 변환출력
-target[2].innerHTML = arr3.join("☆");
+target[2].innerHTML = arr3.join("★");
 
 // -> 배열 메서드는 중요하므로 별도로 훈련함!!!
 
@@ -341,14 +343,13 @@ target[2].innerHTML = arr3.join("☆");
 
 ********************************************/
 
-// 2. 객체를 셋팅하고 출력하기 ///////////////////////////////////
-// 2-1. new 키워드로 object객체 생성하여 셋팅하기
+// 2. 객체를 셋팅하고 출력하기 ////////
+// 2-1. new 키워드로 Object객체 생성하여 셋팅하기
 // -> 실제 코드에서는 객체 리터럴 방식을 쓴다
 // 즉, 변수 = {}
-// 여기서는 new 키워드 생성 방식도 된다는 것을 체험한다.
-// 객체는 셋팅시 반드시 중괄호{}를 사용한다!!!
-// 중괄호안에서는 {속성명:값,속성명:값,...}
-// SSG가 객체, 너의이름은~비밀번호가 속성, 팬레터는 메서드라고 한다.
+// 여기서는 new키워드 생성 방식도 된다는 것을 체험함!
+// 객체는 셋팅시 반드시 중괄호{}를 사용함!!!
+// 중괄호안에는 {속성명:값,속성명:값,...}
 const SSG = new Object({
   "너의 이름은?": "손석구",
   생일: "1983년 2월 7일",
@@ -376,20 +377,22 @@ const SSG = new Object({
     mycss.textShadow = "0 0 5px #000";
     // 4. 줄간격변경
     mycss.lineHeight = "84px";
-    // 5. 박스확대
+    // 5. 박스 확대
     mycss.scale = "1.2";
     // 6. 트랜지션
     mycss.transition = "1s ease-out 1s";
 
-    // . 글자내용변경
+    // 7. 글자내용변경
     this.innerText = `손석구 최고 멋쨍이! 승승장구! 화이팅!!!`;
   },
-}); //////// SSG 객체 ///////////////////////////////////////////
+}); ///// SSG 객체 ///////////
 
 console.log("석구객체:", SSG);
 
-// 박스에 출력전 셋팅변경 //
+// 박스에 출력전 셋팅변경 ///
 // 대상박스 : target[3] 네번째 박스
+
+// 줄간격 2줄이니까 조정
 target[3].style.lineHeight = "40px";
 
 // 툴팁 넣기
@@ -401,10 +404,9 @@ target[3].title = `여기를 클릭하여 ${SSG["너의 이름은?"]}팬레터�
 // 손가락모양 커서
 target[3].style.cursor = "pointer";
 let aa = "생일";
-
 // 출력하기
 target[3].innerHTML = `
-  당신이 좋아하는 남자배우는?
+  당신이 좋아하는 남자배우는? 
   ${SSG["너의 이름은?"]}
   / 몸무게를 아세요? ${SSG.몸무게} <br>
   생년월일은? ${SSG["생일"]}
@@ -456,25 +458,26 @@ target[3].addEventListener(
 
 ***************************************/
 
-// 2-2. 객체리터럴로 객체 생성하기 ////////////////////////////////////////////////
+// 2-2. 객체리터럴로 객체 생성하기 //////
 const GU = {
   name: "공유",
   tall: "184cm",
   weight: "74kg",
   com: "매니지먼트숲",
-  work: "도깨지,부산행",
-  msgFn: function (txt,ele) {
+  work: "도깨비,부산행",
+  msgFn: function (txt, ele) {
     // txt - 메시지, ele - 호출요소
     // 1. 메시지 띄우기(호출확인!)
-    alert("팬레터:"+txt);
-    // this의 의미는?
-    // 1) 만약 함수를 별도로 호출하였으면
-    // 객체안의 메서드이므로 객체자신임!
-    // 2) 만약 이벤트설정이 직접 할당되었으면
-    // 호출한 요소 자신이 this임
-    console.log("this:",this);
+    alert("팬레터:" + txt);
 
-    // 2. CSS변경하기
+    // this의 의미는?
+    // 1)만약 함수를 별도로 호출하였으면
+    // 객체안의 메서드이므로 객체자신임!
+    // 2)만약 이벤트설정이 직접 할당되었으면
+    // 호출한 요소 자신이 this임!
+    console.log("this:", this);
+
+    // 2. CSS변경하기 : ele - 호출한 요소 자신
     let mycss = ele.style;
 
     // 2-1.배경이미지넣기
@@ -497,20 +500,21 @@ const GU = {
     mycss.paddingTop = "100px";
 
     //2-7. 트랜지션
-    mycss.transition = "2s ease-in-out .5s";
-
+    mycss.transition =
+      "2s ease-in-out .5s";
   },
-}; //////// GU 객체 ///////////////////////////////////////////////////////////////
+}; //////// GU객체 ////////////
 
-console.log("GU객체:",GU);
+console.log("GU객체:", GU);
 
 // 내용출력 : 대상 - target[4] 다섯번째 박스
 target[4].innerHTML = `
- 저는 ${GU.name}입니다. 몸무게는 비밀인데요 그래도 말씀드리자면
- ${GU.weight}입니다. ㅎㅎㅎ <br>
- 제 대표작은 ${GU.work}입니다. <br>
- 제 소속사는 모르시는 분들이 많은데
- ${GU.com}입니다. 빠이빠이~!
+  저는 ${GU.name}입니다. 
+  몸무게는 비밀인데요 그래도 말씀드리자면
+  ${GU.weight}입니다. ㅎㅎㅎ <br>
+  제 대표작은 ${GU.work}입니다.<br>
+  제 소속사는 모르시는 분들이 많은데
+  ${GU.com}입니다. 빠이빠이~!
 `;
 
 // 줄간격 조정
@@ -524,29 +528,34 @@ target[4].style.cursor = "pointer";
 
 // 객체의 함수(메서드)를 클릭이벤트에 연결하기
 // 이벤트 대상: target[4]
-// -> 유의사항: 함수에 값을 전달해야할 경우
-// 소괄호를 사용해야 하는데, 바로 사용할 경우
+// -> 유의사항 : 함수에 값을 전달해야할 경우
+// 소괄호를 사용해야하는데 바로 사용할 경우
 // 소괄호를 한 함수는 바로 실행하므로
-// 이벤트 설정에 실패하게되고 그 함수만 
-// 바로 실행된다... 따라서 
-// 이 호출함수를 익명함수로 감싸준다!!
-target[4].addEventListener("click",
-  function(){
+// 이벤트 설정에 실패하게 되고 그 함수만
+// 바로 실행된다... 따라서
+// 이 호출함수를 익명함수로 감싸준다!!!
+target[4].addEventListener(
+  "click",
+  function () {
     // 이벤트에 바로 연결된 익명함수안에서
     // this의 의미는?
-    console.log("원본함수내 this:",this);
+    console.log(
+      "원본함수내this:",
+      this
+    );
 
-    
     // 메시지변수
-    let msg = "공유오빠, 오징어게임 싸다구 멋쪘어요! \n차기작도 기대해요! 화이팅!!";
-    
+    let msg =
+      "공유오빠, 오징어게임 싸다구 멋쪘어요! \n차기작도 기대해요! 화이팅!!";
+
     // 호출시 this를 보내준다!
-    // 왜? 객체의 메서드에서 this의 의미가 다르니까!
-    GU.msgFn(msg,this);
+    // 왜? 객체의 메서드에서 this의미가 다르니까!
+    GU.msgFn(msg, this);
     // GU.msgFn(값1,값2)
     // 값1 - 메시지문자
-    // 값2 - this(호출한 요소)
-  });
+    // 값2 - this (호출요소)
+  }
+); //// 이벤트리스너 ///
 
 /****************************************
     [ 미션 :  내가 만든 객체 활용하기 ]
@@ -555,7 +564,7 @@ target[4].addEventListener("click",
     작성함. 단, 속성명을 동일하게 작성할것!
     (속성명을 샘플에서 정해줄 예정)
     3.  객체를 쌤과 모두에게 공유하기!(톡업!)
-  ****************************************/
+****************************************/
 // 탐쌤의 오브젝트!
 // -> 변경가능하게 let으로 선언한다!
 let tomObj = {};
@@ -582,7 +591,9 @@ tomObj.trailer = function () {
 // 객체확인
 console.log("나의객체:", tomObj);
 
-// 화면에 정보를 보여주는 함수
+///////////////////////////////
+// 화면에 정보를 보여주는 함수 //
+///////////////////////////////
 const showMovieInfo = function () {
   // 함수호출 확인
   console.log("영화정보!!!");
@@ -609,6 +620,7 @@ target[5].style.lineHeight = "34px";
 target[5].style.cursor = "pointer";
 target[5].style.fontSize = "20px";
 
+
 // 할당형 함수는 바로 호출시 하단에서 해야함!
 showMovieInfo();
 
@@ -622,10 +634,12 @@ const choiceName = [
   "양현석",
   "황대웅",
   "이민경",
-  "김민지",
+  "이민지",
   "전정훈",
   "윤고은",
   "김다영",
+  "강수현",
+  "훈련생10",
 ];
 
 // 배열확인
@@ -710,7 +724,7 @@ for (let i = 0; i < cntBtn; i++) {
       // 자기자신 오브젝트
       case "탐쌤초이스":
         // 객체의 내용을 덮어쓰기 변경함
-        tomObj = ssgObj;
+        tomObj = myObj;
         break;
 
       case "김혜민초이스":
@@ -729,7 +743,7 @@ for (let i = 0; i < cntBtn; i++) {
         tomObj = lmkObj;
         break;
 
-      case "김민지초이스":
+      case "이민지초이스":
         tomObj = mimObj;
         break;
 
@@ -742,6 +756,14 @@ for (let i = 0; i < cntBtn; i++) {
         break;
 
       case "김다영초이스":
+        tomObj = ssgObj;
+        break;
+
+      case "강수현초이스":
+        tomObj = shkObj;
+        break;
+
+      case "훈련생10초이스":
         tomObj = ssgObj;
         break;
 
@@ -772,7 +794,6 @@ for (let i = 0; i < cntBtn; i++) {
   // console.log(choiceBtn[i]);
 } ////////// for문 ////////////
 /////////////// 초이스 버튼 셋팅하기 //////////////
-
 
 /*****************************************
     함수명 : playMovie
@@ -860,4 +881,3 @@ function playMovie(mcode) {
   document.body.classList.add("on");
 } ///////////// playMovie 함수 ///////////
 ///////////////////////////////////////////
-
