@@ -259,7 +259,7 @@ html,body,h1,h2,ul,ol{
 }
 .productDesc{
     display: block;
-    font-size: 2rem;
+    font-size: 1vw;
     font-family: var(--font-menu);
     color: #ebe6d7;
     font-weight: 300;
