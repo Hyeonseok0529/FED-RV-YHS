@@ -15,383 +15,416 @@
 @import url(./core.css);
 
 /* 초기화 */
-html,body,h1,h2,ul,ol{
-    margin: 0;
-    padding: 0;
+html,
+body,
+h1,
+h2,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
 }
 
 /* 공사중표시 */
 .ing * {
-    outline: 1px dashed orange;
+  outline: 1px dashed orange;
 }
 
 /* 공통클래스 */
 /* 중앙속박스 */
-.inbox{
-    /* 블록박스 중앙정렬 -> 마.영.오! */
-    margin: 0 auto;
+.inbox {
+  /* 블록박스 중앙정렬 -> 마.영.오! */
+  margin: 0 auto;
 }
 /* 임시 타이틀 */
-.temp-tit{
-    position: absolute;   
-    color: #888; 
+.temp-tit {
+  position: absolute;
+  color: #888;
 }
 
 /************* 컨텐츠영역 *************/
-.page{
-    /* 영역별로 모두 보이는 화면 높이 설정 */
-    /* 선생님 피드백 : 페이지당 100vh가 넘어가기때문에
+.page {
+  /* 영역별로 모두 보이는 화면 높이 설정 */
+  /* 선생님 피드백 : 페이지당 100vh가 넘어가기때문에
     추후 레이아웃 변경 필요. // 하지만 개인적으로 가독성이 떨어진다고 생각함,
     영역마다 집약해서 보여줄 필요가 있다고 생각함.
     따라서 부드러운 스크롤만 반영하면 어떨까 선생님께 피드백을 요청드릴 예정*/
-    height: 100vh;
-    outline: 1px dashed gray;
+  height: 100vh;
+  outline: 1px dashed gray;
 }
 /* 임시타이틀 */
-.page .temp-tit{
-    font-size: 4vw;
-    line-height: 100vh;
-    width: 100%;
-    text-align: center;
+.page .temp-tit {
+  font-size: 4vw;
+  line-height: 100vh;
+  width: 100%;
+  text-align: center;
 }
 /************* 1. 배너영역 *************/
 .ban-area {
-    height: 300px;
-  }
-  .main-video {
-    display: inline-block;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.8);
-  }
-  .main-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: 9;
-    width: 59vw;
-    display: flex;
-    gap: 1.8vw;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-family: var(--font-title);
-    font-size: min(10rem, 6vw);
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: -1.4rem;
-  }
+  height: 300px;
+}
+.main-video {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+.main-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 9;
+  width: 59vw;
+  display: flex;
+  gap: 1.8vw;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-title);
+  font-size: min(10rem, 6vw);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -1.4rem;
+}
 
 /* SHOP ALL 버튼 */
-.shopAbtn{
-    position: absolute;
-    top: 68%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: 9;
-    width: 8vw;
-    height: 3.5vh;
-    color: #1f1f1f;
-    background-color: #ebe6d7;
-    text-align: center;
-    align-content: center;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: 0.3s ease-in-out;
+.shopAbtn {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 9;
+  width: 8vw;
+  height: 3.5vh;
+  color: #1f1f1f;
+  background-color: #ebe6d7;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: 0.3s ease-in-out;
 }
-.shopAbtn:hover{
-    background-color: #645832;
-    color: #ebe6d7;
+.shopAbtn:hover {
+  background-color: #645832;
+  color: #ebe6d7;
 }
 
 /****************2. About us 영역  *****************/
 /* 이미지 */
-.imgbox{
-    width: 100%;
-    height: 100%;
-    background-color:#ebe6d7;
-    /* 이미지 부모박스 */
-    position: absolute;
+.imgbox {
+  width: 100%;
+  height: 100%;
+  background-color: #ebe6d7;
+  /* 이미지 부모박스 */
+  position: absolute;
 }
-.imgbox img:nth-child(1){
-    position: absolute;
-    height: 25vh;
-    left: 4rem;
-    top: 15rem;
-    width: 23rem;
-    object-fit: cover;
+.imgbox img:nth-child(1) {
+  position: absolute;
+  height: 25vh;
+  left: 4rem;
+  top: 15rem;
+  width: 23rem;
+  object-fit: cover;
 }
-.imgbox img:nth-child(2){
-    position: absolute;
-    height: 35vh;
-    right: 80rem;
-    top: 1rem;
-    width: 33rem;
-    object-fit: cover;
+.imgbox img:nth-child(2) {
+  position: absolute;
+  height: 35vh;
+  right: 80rem;
+  top: 1rem;
+  width: 33rem;
+  object-fit: cover;
 }
-.imgbox img:nth-child(3){
-    position: absolute;
-    height: 30vh;
-    right: 0;
-    top: 39rem;
-    width: 20rem;
-    object-fit: cover;
+.imgbox img:nth-child(3) {
+  position: absolute;
+  height: 30vh;
+  right: 0;
+  top: 39rem;
+  width: 20rem;
+  object-fit: cover;
 }
-.imgbox img:nth-child(4){
-    position: absolute;
-    height: 39vh;
-    left: 90rem;
-    top: 55rem;
-    width: 35rem;
-    object-fit: cover;
+.imgbox img:nth-child(4) {
+  position: absolute;
+  height: 39vh;
+  left: 90rem;
+  top: 55rem;
+  width: 35rem;
+  object-fit: cover;
 }
-.imgbox img:nth-child(5){
-    position: absolute;
-    height: 39vh;
-    left: 1rem;
-    top: 44rem;
-    width: 41rem;
-    object-fit: cover;
+.imgbox img:nth-child(5) {
+  position: absolute;
+  height: 39vh;
+  left: 1rem;
+  top: 44rem;
+  width: 41rem;
+  object-fit: cover;
 }
-.imgbox img:nth-child(6){
-    position: absolute;
+.imgbox img:nth-child(6) {
+  position: absolute;
 
-    height: 18vh;
-    right: 20rem;
-    top: 20rem;
-    width: 17rem;
-    object-fit: cover;
+  height: 18vh;
+  right: 20rem;
+  top: 20rem;
+  width: 17rem;
+  object-fit: cover;
 }
 /* 텍스트 */
-.page:nth-child(2){
-    position: relative;
+.page:nth-child(2) {
+  position: relative;
 }
-.aboutTextbox{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    
+.aboutTextbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
-.mainTxt{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -100%;
-    font-size: 7rem;
-    width: 55vw;
-    font-family: var(--font-title);
-    font-weight: 600;
-    color: #1f1f1f;
-    text-align: center;
-    line-height: 85%;
-    letter-spacing: -0.3vw;
+.mainTxt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -100%;
+  font-size: 7rem;
+  width: 55vw;
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: #1f1f1f;
+  text-align: center;
+  line-height: 85%;
+  letter-spacing: -0.3vw;
 }
-.subTxt{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% 30%;
-    font-size: 1.5rem;
-    text-align: center;
-    line-height: 130%;
-    font-family: var(--font-menu);
-    font-weight: 400;
+.subTxt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% 30%;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 130%;
+  font-family: var(--font-menu);
+  font-weight: 400;
 }
 
 /****************2. 추천제품 영역  *****************/
 .recommendBox {
-    /* 텍스트박스 부모자격 */
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #645832;
-    border-bottom: 1px solid #ebe6d7;
-    box-sizing: border-box;
+  /* 텍스트박스 부모자격 */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #645832;
+  border-bottom: 1px solid #ebe6d7;
+  box-sizing: border-box;
 }
 /* 이미지 */
-.recImgbox{
-    display: flex;
-    justify-content: flex-end;
+.recImgbox {
+  width: 50%;
+  height: 100vh;
+  margin-left: auto;
+}
+.recImgbox a {
+  display: block;
+  height: 100%;
+  overflow: hidden;
 }
 /* 이미지가 박스 안에서 커지게, 갑자기 커지지 않게 하려면 ???????????????????????????????????????????????????????????????? */
-.recImgbox a img{
-    width: 50vw;
-    height: 100vh;
-    transition: 1s ease-out
+.recImgbox a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s ease-out;
 }
-.recImgbox a:hover img{
-    scale: 1.2;
-    object-fit: cover;
-    overflow: hidden;
+.recImgbox a:hover img {
+  scale: 1.05;
 }
 /* 텍스트 */
 /* 질문 ?????? 화면을 50 : 50 으로 만들고 싶은데, 왜 텍스트 박스가 이미지영역으로 침범하는지 모르겠음. */
 /* 질문 ??????????? 위치를 잡는데 우선적인 코드를 모르겠음.  */
-.recTextbox{
-    display: flex;
-    position: absolute;
-    top: 0;
-    padding: 0 0 14vw 11vw;
-    width: 50%;
-    height: 100%;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    box-sizing: border-box;
-    gap: 3vh;
-    margin-top: 4.8%;
+.recTextbox {
+  display: flex;
+  position: absolute;
+  top: 0;
+  padding: 0 0 14vw 11vw;
+  width: 50%;
+  height: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: 3vh;
+  margin-top: 4.8%;
 }
-.productName{
-    font-size: 4.4rem;
-    display: block;
-    font-family: var(--font-title);
-    color: #fff;
-    letter-spacing: -1.6px;
-    transition: .4s ease-out;
-    cursor: pointer;
+.productName {
+  font-size: 4.4rem;
+  display: block;
+  font-family: var(--font-title);
+  color: #fff;
+  letter-spacing: -1.6px;
+  transition: 0.4s ease-out;
+  cursor: pointer;
 }
-.productName:hover{
-    color: #1f1f1f;
-
+.productName:hover {
+  color: #1f1f1f;
 }
-.productDesc{
-    display: block;
-    font-size: 1vw;
-    font-family: var(--font-menu);
-    color: #ebe6d7;
-    font-weight: 300;
-    line-height: 150%;
-    letter-spacing: 0.9px;
+.productDesc {
+  display: block;
+  font-size: 1vw;
+  font-family: var(--font-menu);
+  color: #ebe6d7;
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: 0.9px;
 }
-.viewbtn{ 
-    position: relative;
-    font-size: 2rem;
-    font-family: var(--font-menu);
-    color: #fff;
-    letter-spacing: 1px;
+.viewbtn {
+  position: relative;
+  font-size: 2rem;
+  font-family: var(--font-menu);
+  color: #fff;
+  letter-spacing: 1px;
 }
 .viewbtn::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 1px;
-    left: 0;
-    width: 0;
-    height: 0.5px;
-    background-color: #fff;
-    transition: width .2s ease-out;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+  margin-left: 100%;
+  background-color: #fff;
+  transition: 0.2s ease-out;
 }
 .viewbtn:hover::after {
-    width: 100%;
-    transition-delay: .1s;
+  width: 100%;
+  margin-left: 0;
+  transition: width 0.2s ease-out;
 }
 /**************** 3. Lookbook 영역  *****************/
-.lookbookBox{
-    background-color: #645832;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
+.lookbookBox {
+  background-color: #645832;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
 }
 /* 세로 텍스트 */
-.lbVerTxtbox{
-    width: 5%;
-    height: 100%;
-    /* 질문 : 원본 페이지처럼 얇게 표현하려면 단위를 다르게 해야하는지???? */
-    border-right: .5px solid #ebe6d7;
+.lbVerTxtbox {
+  width: 5%;
+  height: 100%;
+  /* 질문 : 원본 페이지처럼 얇게 표현하려면 단위를 다르게 해야하는지???? */
+  border-right: 0.5px solid #ebe6d7;
 }
-.lbVerTxt{
-    color: #ebe6d7;
-    font-family: var(--font-title);
-    font-size: 2.5rem;
-    margin-top: 91vh;
-    rotate: 270deg;
-    letter-spacing: -1.5px;
+.lbVerTxt {
+  color: #ebe6d7;
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  margin-top: 91vh;
+  rotate: 270deg;
+  letter-spacing: -1.5px;
 }
 /* 타이틀 , 설명 영역 */
-.lbTxt{
-    display: flex;
-    flex-wrap: wrap;
-    width: 47.5%;
-    height: 100%;
-    align-content: space-around;
-    border-right: .5px solid #ebe6d7;
+.lbTxt {
+  display: flex;
+  flex-wrap: wrap;
+  width: 47.5%;
+  height: 100%;
+  align-content: space-around;
+  border-right: 0.5px solid #ebe6d7;
 }
-.lbtit{
-    width: 100%;
-    font-size: 5rem;
-    color: #ebe6d7;
-    font-family: var(--font-title);
-    font-weight: 600;
-    letter-spacing: -1px;
-    display: block;
-    text-align: center;
+.lbtit {
+  width: 100%;
+  font-size: 5rem;
+  color: #ebe6d7;
+  font-family: var(--font-title);
+  font-weight: 600;
+  letter-spacing: -1px;
+  display: block;
+  text-align: center;
 }
-.lbDesc{
-    margin: 10px 75px;
-    font-size: 2rem;
-    color: #ebe6d7;
-    font-family: var(--font-menu);
-    font-weight: 300;
-    line-height: 150%;
-    text-align: center;
-    display: block;
-    opacity: .8;
+.lbDesc {
+  margin: 10px 75px;
+  font-size: 2rem;
+  color: #ebe6d7;
+  font-family: var(--font-menu);
+  font-weight: 300;
+  line-height: 150%;
+  text-align: center;
+  display: block;
+  opacity: 0.8;
 }
-
 
 /* 제품 슬라이드 영역 */
-.lbSlideDesc{
-    width: 47.5%;
-    height: 100%;
+.lbSlideDesc {
+  width: 47.5%;
+  height: 100%;
 }
 /* 위쪽 타이틀 */
-.upTitBox{
-    border-top: 1px solid #ebe6d7;
-    border-bottom: 1px solid #ebe6d7;
-    width: 100%;
-    height: 3vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 4vh;
-    font-size: 1vw;
-    color: #ebe6d7;
-    font-family: var(--font-menu);
-    letter-spacing: .5px;
-    font-weight: 300;
-    /* 질문 : 해당 CSS안에서 정 중앙에 선을 그을 수 있는 방법이 있을까요??????????????????????????? */
+.upTitBox {
+  border-top: 1px solid #ebe6d7;
+  border-bottom: 1px solid #ebe6d7;
+  width: 100%;
+  height: 3vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4vh;
+  font-size: 1vw;
+  color: #ebe6d7;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  /* 질문 : 해당 CSS안에서 정 중앙에 선을 그을 수 있는 방법이 있을까요??????????????????????????? */
 }
-.upTit1{
-    margin-left: 1vw;
+.upTit1 {
+  margin-left: 1vw;
 }
-.upTit2{
-    margin-right: 1vw;
+.upTit2 {
+  margin-right: 1vw;
 }
 /* 슬라이드 박스 */
-.lbSlideBox{
-    width: 90%;
-    height: 70vh;
-    background-color: #e0e0e0;
-    margin: 0 auto;
-    margin-top: 5vh;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+.lbSlideBox {
+  width: 90%;
+  height: 74vh;
+  background-color: #e0e0e0;
+  margin: 0 auto;
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
-.slideImg{
-    width: 92%;
-    height: 80%;
-    display: flex;
-    margin-top: 2.5vh;
+.slideImg {
+  width: 92%;
+  height: 89%;
+  display: flex;
+  margin-top: 2.5vh;
 }
-.slideImg img{
-    object-fit: cover;
-    margin: 0 auto;
-    width: 100%;
+.slideImg img {
+  object-fit: cover;
+  margin: 0 auto;
+  width: 100%;
+}
+/* 슬라이드 버튼 */
+.lbbtn{
+  display: block;
+  position: absolute;
+  top: 71%;
+}
+.lbshopbtn{
+  display: block;
+  position: absolute;
+  top: 71%;
+  left: 93%;
+}
+/* 슬라이드 하단 텍스트 */
+.downDescBox {
+}
+.materialsBox {
+  width: 100%;
+}
+.prodBox {
+  width: 100%;
+}
+.categBox {
+  width: 100%;
 }

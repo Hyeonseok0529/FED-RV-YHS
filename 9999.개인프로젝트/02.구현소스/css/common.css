@@ -255,8 +255,9 @@ position: relative;
   left: 0;
   width: 0;
   height: .5px;
+  margin-left: 100%;
   background-color: #645832;
-  transition: width 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
 /* 호버를 쓸 때는 가상요소에다가 주면 안되고,
@@ -265,7 +266,8 @@ position: relative;
 /*  오버 아웃시 반대방향으로 효과를 주려면 ??????????????????????? */
 .smenu dd > a:hover::after {
   width: 100%;
-  transition-delay: 0.1s;
+  margin-left: 0;
+  transition: width 0.2s ease-out;
 }
 
 .smenu dd a {
