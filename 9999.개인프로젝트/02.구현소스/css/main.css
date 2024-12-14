@@ -50,7 +50,7 @@ ol {
     영역마다 집약해서 보여줄 필요가 있다고 생각함.
     따라서 부드러운 스크롤만 반영하면 어떨까 선생님께 피드백을 요청드릴 예정*/
   height: 100vh;
-  outline: 1px dashed gray;
+  /* outline: 1px dashed gray; */
 }
 /* 임시타이틀 */
 .page .temp-tit {
@@ -61,7 +61,7 @@ ol {
 }
 /************* 1. 배너영역 *************/
 .ban-area {
-  height: 300px;
+  height: 400px;
 }
 .main-video {
   display: inline-block;
@@ -272,7 +272,7 @@ ol {
   font-size: 1vw;
   font-family: var(--font-menu);
   color: #ebe6d7;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 150%;
   letter-spacing: 0.9px;
 }
@@ -287,18 +287,18 @@ ol {
   content: "";
   display: block;
   position: absolute;
-  bottom: 1px;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 0.5px;
   margin-left: 100%;
   background-color: #fff;
-  transition: 0.2s ease-out;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .viewbtn:hover::after {
   width: 100%;
   margin-left: 0;
-  transition: width 0.2s ease-out;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);;
 }
 /**************** 3. Lookbook 영역  *****************/
 .lookbookBox {
@@ -347,7 +347,7 @@ ol {
   font-size: 2rem;
   color: #ebe6d7;
   font-family: var(--font-menu);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 150%;
   text-align: center;
   display: block;
@@ -373,7 +373,7 @@ ol {
   color: #ebe6d7;
   font-family: var(--font-menu);
   letter-spacing: 0.5px;
-  font-weight: 300;
+  font-weight: 400;
   /* 질문 : 해당 CSS안에서 정 중앙에 선을 그을 수 있는 방법이 있을까요??????????????????????????? */
 }
 .upTit1 {
@@ -394,8 +394,8 @@ ol {
   overflow: hidden;
 }
 .slideImg {
-  width: 92%;
-  height: 89%;
+  width: 91%;
+  height: 80%;
   display: flex;
   margin-top: 2.5vh;
 }
@@ -405,26 +405,175 @@ ol {
   width: 100%;
 }
 /* 슬라이드 버튼 */
-.lbbtn{
+.lbbtn {
   display: block;
   position: absolute;
-  top: 71%;
+  top: 73%;
+  font-size: 0.9vw;
+  font-weight: 400;
 }
-.lbshopbtn{
+.lbbtn:hover {
+  color: #645832;
+}
+.lbbtn::after {
+  content: "";
   display: block;
   position: absolute;
-  top: 71%;
-  left: 93%;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+  margin-left: 100%;
+  background-color: #645832;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lbbtn:hover::after {
+  width: 100%;
+  margin-left: 0;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lbshopbtn {
+  display: block;
+  position: absolute;
+  top: 73%;
+  left: 91%;
+  font-size: 0.9vw;
+  font-weight: 400;
+}
+.lbshopbtn:hover {
+  color: #645832;
+}
+.lbshopbtn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+  margin-left: 100%;
+  background-color: #645832;
+  color: #645832;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lbshopbtn:hover::after {
+  width: 100%;
+  margin-left: 0;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 /* 슬라이드 하단 텍스트 */
 .downDescBox {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 78vh;
 }
 .materialsBox {
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 46.9vw;
+  height: 3vh;
+  align-items: center;
+  font-size: 1vw;
+  color: #ebe6d7;
+  border-top: 1px solid #ebe6d7;
+  border-bottom: 1px solid #ebe6d7;
 }
+.mattit {
+  margin-left: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.matDesc {
+  margin-right: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
 .prodBox {
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 46.9vw;
+  height: 3vh;
+  align-items: center;
+  font-size: 1vw;
+  color: #ebe6d7;
+  border-bottom: 1px solid #ebe6d7;
+}
+.prodtit{
+  margin-left: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.prodDesc{
+  margin-right: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
 }
 .categBox {
+  display: flex;
+  justify-content: space-between;
+  width: 46.9vw;
+  height: 3vh;
+  align-items: center;
+  font-size: 1vw;
+  color: #ebe6d7;
+  border-bottom: 1px solid #ebe6d7;
+}
+.categtit{
+  margin-left: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.categDesc{
+  margin-right: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+/*********************** 4. Article 영역 ***********************/
+.artiBox{
+  background-color: #ebe6d7;
   width: 100%;
+  height: 100%;
+}
+.artiUpTitbox{
+  width: 100%;
+  height: 10vh;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d1c7a3;
+}
+.artiUpTit{
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: 1.3vw;
+  font-weight: 800;
+  transform: scaleY(2.5);
+  padding-top: 2vh;
+  box-sizing: border-box;
+}
+.artVerbox {
+  position: relative;
+  width: 5%;
+  height: 89%;
+  /* 질문 : 원본 페이지처럼 얇게 표현하려면 단위를 다르게 해야하는지???? */
+  border-right: 0.5px solid #d1c7a3;
+}
+.artVerTxt {
+  position: absolute;
+  color: #1f1f1f;
+  font-family: var(--font-title);
+  font-size: 3.2rem;
+  margin-top: 72vh;
+  rotate: 270deg;
+  letter-spacing: -3.5px;
+  width: 187px;
+  left: -3.8vw;
 }

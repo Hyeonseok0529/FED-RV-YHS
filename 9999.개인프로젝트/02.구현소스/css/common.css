@@ -257,7 +257,7 @@ position: relative;
   height: .5px;
   margin-left: 100%;
   background-color: #645832;
-  transition: 0.2s ease-out;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* 호버를 쓸 때는 가상요소에다가 주면 안되고,
@@ -267,7 +267,7 @@ position: relative;
 .smenu dd > a:hover::after {
   width: 100%;
   margin-left: 0;
-  transition: width 0.2s ease-out;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .smenu dd a {
