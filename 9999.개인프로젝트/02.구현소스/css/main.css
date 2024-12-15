@@ -691,6 +691,7 @@ ol {
   position: relative;
 }
 /* 서브기사 1 */
+/* 질문 : 선을 박스에 맞게 조정! , 포지션 위치관계에 대한 정리! */
 .subArti1 {
   width: 33.3%;
   height: 100%;
@@ -757,4 +758,18 @@ ol {
 }
 .subimg img:hover {
   scale: 1.05;
+}
+/************************ 6. 하단영역 ************************/
+footer {
+  background-color: #645832;
+}
+.footSpaceBox {
+  width: 100%;
+  height: 5vh;
+  border: 1px solid #d1c7a3;
+}
+.footcatBox {
+  width: 100%;
+  height: 35%;
+  border: 1px solid #d1c7a3;
 }

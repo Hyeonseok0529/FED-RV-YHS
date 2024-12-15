@@ -5,8 +5,8 @@
 
 /************* 1.상단영역 *************/
 /* 상단영역 공통 페이드 박스 */
-.fadebox{
-  background: rgba(100, 88, 50, .51);
+.fadebox {
+  background: rgba(100, 88, 50, 0.51);
   height: 100vh;
   left: 0;
   position: fixed;
@@ -14,7 +14,7 @@
   width: 100vw;
   z-index: 1;
   display: none;
-  }
+}
 
 .top-area {
   position: fixed;
@@ -42,8 +42,6 @@
     border-bottom: 1.5px solid #d1c7a3;
 }
 */
-
-
 
 /* 상단탑영역 a태그 */
 .top-area a {
@@ -202,7 +200,7 @@ aside .smenu {
 }
 .smenu .inbox {
   display: flex;
-  padding: 8rem;
+  padding: 8rem 5rem;
   box-sizing: border-box;
 }
 /* 햄버거 버튼 클릭시 스타일 1 
@@ -225,19 +223,22 @@ aside .smenu {
   font-family: var(--font-title);
   font-size: 6rem;
   margin-top: 10px;
-  margin-bottom: 2px;
+  margin-bottom: 2vh;
   font-weight: 700;
   font-style: normal;
   /* 자간 설정 */
   letter-spacing: -0.6rem;
 }
 .smenu dl {
+  margin-top: -4vh;
   padding: 2vw;
-  font-size: 2.2rem;
+  font-size: 0.2rem;
   letter-spacing: 0.5rem;
 }
 .smenu dd {
   padding: 0px 0px 10px;
+  letter-spacing: 1px;
+  font-weight: 400;
 }
 
 /* 밑줄 애니메이션 */
@@ -245,7 +246,7 @@ aside .smenu {
 /* 밑줄 애니메이션 위해 부모자격 부여!!!!!!!!! */
 /* 애니메이션을 할때는 우선 보이는 것이 중요함. */
 .smenu dl > dd > a {
-position: relative;
+  position: relative;
 }
 .smenu dl > dd > a::after {
   content: "";
@@ -254,7 +255,7 @@ position: relative;
   bottom: 2px;
   left: 0;
   width: 0;
-  height: .5px;
+  height: 0.5px;
   margin-left: 100%;
   background-color: #645832;
   transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -275,8 +276,6 @@ position: relative;
   color: #645832;
   font-size: 2.5rem;
 }
-
-
 
 /* 1-1-2. Shop 버튼 */
 .shopbtn {
