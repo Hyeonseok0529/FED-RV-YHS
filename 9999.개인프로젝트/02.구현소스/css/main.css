@@ -298,7 +298,7 @@ ol {
 .viewbtn:hover::after {
   width: 100%;
   margin-left: 0;
-  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 /**************** 3. Lookbook 영역  *****************/
 .lookbookBox {
@@ -502,13 +502,13 @@ ol {
   color: #ebe6d7;
   border-bottom: 1px solid #ebe6d7;
 }
-.prodtit{
+.prodtit {
   margin-left: 1vw;
   font-family: var(--font-menu);
   letter-spacing: 0.5px;
   font-weight: 400;
 }
-.prodDesc{
+.prodDesc {
   margin-right: 1vw;
   font-family: var(--font-menu);
   letter-spacing: 0.5px;
@@ -524,31 +524,34 @@ ol {
   color: #ebe6d7;
   border-bottom: 1px solid #ebe6d7;
 }
-.categtit{
+.categtit {
   margin-left: 1vw;
   font-family: var(--font-menu);
   letter-spacing: 0.5px;
   font-weight: 400;
 }
-.categDesc{
+.categDesc {
   margin-right: 1vw;
   font-family: var(--font-menu);
   letter-spacing: 0.5px;
   font-weight: 400;
 }
 /*********************** 4. Article 영역 ***********************/
-.artiBox{
+/* 상단 중앙 타이틀 */
+.artiBox {
   background-color: #ebe6d7;
   width: 100%;
   height: 100%;
+  /* 기사정보 부모박스 */
+  position: relative;
 }
-.artiUpTitbox{
+.artiUpTitbox {
   width: 100%;
   height: 10vh;
   box-sizing: border-box;
   border-bottom: 1px solid #d1c7a3;
 }
-.artiUpTit{
+.artiUpTit {
   width: 100%;
   display: block;
   text-align: center;
@@ -559,10 +562,11 @@ ol {
   padding-top: 2vh;
   box-sizing: border-box;
 }
+/* 세로 텍스트 박스 */
 .artVerbox {
   position: relative;
   width: 5%;
-  height: 89%;
+  height: 90%;
   /* 질문 : 원본 페이지처럼 얇게 표현하려면 단위를 다르게 해야하는지???? */
   border-right: 0.5px solid #d1c7a3;
 }
@@ -570,10 +574,139 @@ ol {
   position: absolute;
   color: #1f1f1f;
   font-family: var(--font-title);
+  font-weight: 600;
   font-size: 3.2rem;
   margin-top: 72vh;
   rotate: 270deg;
   letter-spacing: -3.5px;
   width: 187px;
   left: -3.8vw;
+}
+/* 기사 정보 */
+.artiTxtbox {
+  position: absolute;
+  display: block;
+  width: 45%;
+  height: 90%;
+  top: 10vh;
+  left: 5vw;
+  border-right: 1px solid #d1c7a3;
+  color: #1f1f1f;
+}
+.upTxt {
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-menu);
+  border-bottom: 1px solid #d1c7a3;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  padding-left: 2vw;
+  font-size: 1.3rem;
+}
+.artMainTit {
+  height: 2vh;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-article);
+  letter-spacing: -0.4px;
+  font-weight: 500;
+  padding: 6vw 2vw;
+  font-size: 6.1rem;
+  transition: 0.4s ease-out;
+}
+.artMainTit:hover {
+  color: #645832;
+  cursor: pointer;
+}
+.artiDesc {
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  padding: 6vw 2vw;
+  font-size: 1.4rem;
+}
+.artiImgbox {
+  position: absolute;
+  top: 10vh;
+  left: 49.5vw;
+  width: 49.8%;
+  height: 89.8%;
+}
+.borderBox {
+  width: 100%;
+  border-bottom: 1px solid #d1c7a3;
+  font-family: var(--font-menu);
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.borderBoxTxt {
+  padding-right: 2vw;
+}
+.imgBox {
+  display: flex;
+  position: absolute;
+  width: 95%;
+  top: 6vh;
+  left: 1.2vw;
+  box-sizing: border-box;
+  height: 91.5%;
+  overflow: hidden;
+  justify-content: center;
+}
+.imgBox img {
+  cursor: pointer;
+  object-fit: cover;
+  transition: 1s ease-out;
+}
+.imgBox img:hover {
+  scale: 1.05;
+}
+/*********************** 5. Sub Article 영역 ***********************/
+.subartiBox {
+  width: 100%;
+  height: 100%;
+  background-color: #ebe6d7;
+}
+.spaceBox {
+  width: 100%;
+  height: 5%;
+  display: block;
+  border-bottom: 1px solid #d1c7a3;
+  border-top: 1px solid #d1c7a3;
+}
+.subArtiContBox {
+  width: 100%;
+  height: 90%;
+}
+.subArti1 {
+  width: 33.3%;
+  height: 100%;
+  border-right: 1px solid #d1c7a3;
+}
+.subimg {
+  display: block;
+  width: 91.3%;
+  height: 50%;
+  margin: 0 auto;
+  padding-top: 2vh;
+  box-sizing: border-box;
+}
+.subimg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.subArtiTit{
+  font-family: var(--font-article);
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: -0.3px;
 }
