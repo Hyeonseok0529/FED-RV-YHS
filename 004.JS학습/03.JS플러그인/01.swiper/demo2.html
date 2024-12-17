@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스와이퍼 데모2</title>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+      /* 스와이퍼 부모박스 */
+      .demo-box {
+        width: 800px;
+        height: 450px;
+        margin: 0 auto;
+        outline: 2px solid #ccc;
+      }
+      /* 각 스와이퍼 개별 슬라이드 디자인 */
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* 각 스와이퍼 슬라이드 하위 이미지 */
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      // [스와이퍼 가이드 사이트]
+      // https://swiperjs.com/
+      window.addEventListener("DOMContentLoaded", () => {
+        // 스와이퍼 인스턴스 생성하기
+        var swiper = new Swiper(".my-slide", {
+          // 한화면에 볼 슬라이드 수
+          slidesPerView: 3,
+          //   슬라이드 사이 간격(숫자는 px 단위임)
+          spaceBetween: 10,
+          //   루프설정 true(기본값:false)
+          loop: true,
+          //   자동넘김설정
+          autoplay: {
+            // 중간 지연시간
+            delay: 2500,
+            // 상호작용없애기 설정
+            disableOnInteraction: false,
+            // -> false를 해야 잠시후 다시 작동함!
+          },
+          //   하단 블릿 인디케이터
+          pagination: {
+            // 사용할 요소이름(CSS명이 이것으로 되어있으므로 이름변경 금지!)
+            el: ".swiper-pagination",
+            // 블릿 클릭으로 슬라이드 이동여부 설정
+            clickable: true,
+          },
+          //   양쪽 이동버튼 설정
+          navigation: {
+            // 오른쪽 다음이동버튼
+            nextEl: ".swiper-button-next",
+            // 왼쪽 이전이동버튼
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      }); //////////////// load구역 ////////////////
+    </script>
+  </head>
+  <body>
+    <h1>Slides per view</h1>
+    <div class="demo-box swiper my-slide">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./images/pic01.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic02.png" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic03.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic04.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic05.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic06.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic07.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic08.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic09.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic10.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic11.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic12.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic13.jfif" alt="" />
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </body>
+</html>
