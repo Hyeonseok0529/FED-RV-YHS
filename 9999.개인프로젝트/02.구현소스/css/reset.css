@@ -3,7 +3,7 @@
 /* 도깨비 PJ : 리셋 CSS - reset.css */
 /* 기본 초기화 셋팅 */
 html{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 /* 기본 초기화 */
 html,
