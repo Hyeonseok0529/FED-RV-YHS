@@ -30,25 +30,25 @@ h2.temp {
 }
 
 /***************** 1.5. 드라마 파트메뉴 영역 *****************/
-#spart-menu{
+#spart-menu {
   /* 스티키 포지션 - 상단스크롤 걸림! */
   position: sticky;
   top: 0;
   background-color: #fff;
   z-index: 999;
 }
-.spart-menu.inbox{
+.spart-menu.inbox {
   /* 인박스 높이값 초기화 */
   height: auto;
 }
-.spart-menu ul{
+.spart-menu ul {
   /* 플렉스박스 */
   display: flex;
   padding: 12px 0;
-  transition: .4s ease-out;
+  transition: 0.4s ease-out;
 }
 /* 도깨비메뉴 상위메뉴a */
-.spart-menu ul>li>a{
+.spart-menu ul > li > a {
   color: #999;
   font-size: 1.8rem;
   display: block;
@@ -57,25 +57,25 @@ h2.temp {
   white-space: nowrap;
 }
 /* 도깨비메뉴 상위li 오버시 a */
-.spart-menu ul>li:hover>a{
+.spart-menu ul > li:hover > a {
   color: #222;
 }
 /* 하위메뉴가 있는 li만 하위 표시하기 */
-.spart-menu ul>li.be-sub>a::after{
-  content: '∨';
+.spart-menu ul > li.be-sub > a::after {
+  content: "∨";
   display: inline-block;
-  transform: scale(.5,.3);
+  transform: scale(0.5, 0.3);
   margin-left: 3px;
 }
 /* 현재 선택된 메뉴 li.on 클래스 */
-.spart-menu ul>li.on>a{    
+.spart-menu ul > li.on > a {
   background-color: red;
   color: #fff;
   border-radius: 30px;
 }
 
 /* 도깨비 서브메뉴 */
-.spart-sub-menu{
+.spart-sub-menu {
   position: absolute;
   border: 1px solid red;
   border-radius: 20px;
@@ -86,16 +86,15 @@ h2.temp {
   display: none;
 }
 /* 상위li에 마우스 오버시 서브 보이기 */
-.spart-menu ul>li:hover .spart-sub-menu{
+.spart-menu ul > li:hover .spart-sub-menu {
   display: block;
 }
 /* 도깨비 서브메뉴 a */
-.spart-sub-menu a{
+.spart-sub-menu a {
   display: block;
   padding: 10px 15px;
   font-size: 1.8rem;
 }
-
 
 /*************** 메인영역 ***************/
 /*************** 2. 배너파트 ***************/
@@ -177,37 +176,36 @@ h2.temp {
 }
 
 /*블릿버튼*/
-.indic-box{
+.indic-box {
   position: absolute;
   top: 20px;
   left: 30px;
-  width: min(450px,32.8vw);
+  width: min(450px, 32.8vw);
   height: 5px;
   z-index: 1;
 }
-.indic{
+.indic {
   display: flex;
   gap: 0 15px;
 }
-.indic li{
+.indic li {
   width: 150px;
   height: 5px;
   background-color: #ffffff66;
 }
 /* 가상요소바 */
-.indic li::before{
-  content: '';
+.indic li::before {
+  content: "";
   display: block;
   width: 0;
   height: 5px;
   background-color: #fff;
 }
 /* li.on일 경우 가상요소 width변경 */
-.indic li.on::before{
+.indic li.on::before {
   width: 100%;
   transition: width 3s linear;
 }
-
 
 /********** 3. 캐릭터소개영역 **********/
 .main-area .cat-area {
@@ -231,17 +229,17 @@ h2.temp {
   flex: 1;
 }
 /* 캐릭터 이미지박스 */
-.cat-box figure {  
+.cat-box figure {
   /* 트랜지션 */
-  transition: .4s ease-out;
+  transition: 0.4s ease-out;
 }
 /* 캐릭터 각 박스 오버시 캐릭터박스
 마진탑 올리기 */
-.cat-box>div:hover figure{
+.cat-box > div:hover figure {
   /* 브라우저 화면크기를 중앙속박스 크기로 맞추고
   최대크기 px,vw를 조정한다! 이때 마이너스니까
   min이 아니고 max로 조정함! */
-  margin-top: max(-200px,-15vw);
+  margin-top: max(-200px, -15vw);
 }
 /* 캐릭터 이미지만 선택 */
 .cat-box figure > img {
@@ -255,7 +253,7 @@ h2.temp {
   margin-top: -17%;
 }
 /* 이름이미지 공통 */
-.cat-box figcaption img{
+.cat-box figcaption img {
   width: 35%;
 }
 /* 첫번째 이름이미지 처음에 안보임 */
@@ -264,46 +262,46 @@ h2.temp {
 }
 /* 캐릭터 개별박스에 오버시 이름변경
 -> 첫번째 보이고 두번째 숨기기 */
-.cat-box>div:hover figcaption img:first-child{
+.cat-box > div:hover figcaption img:first-child {
   display: inline;
 }
-.cat-box>div:hover figcaption img:last-child{
+.cat-box > div:hover figcaption img:last-child {
   display: none;
 }
 
 /* 캐릭터 설명박스 */
-.cat-box aside{
+.cat-box aside {
   height: 0;
   overflow: auto;
   /* 배경 */
   background: url(../images/eachBG.jpg) no-repeat bottom/cover;
   /* 트랜지션 */
-  transition: .4s ease-out;
+  transition: 0.4s ease-out;
   /* 둥근모서리 설정 */
   border-radius: 10px 5px 5px 10px;
   margin-top: 10px;
 }
 /* 각 캐릭터박스에 오버시 설명박스 보이기 */
-.cat-box>div:hover aside{
+.cat-box > div:hover aside {
   /* 중앙박스 최대크기에서 px과 vw크기를 맞추고
   최소크기 출력을 테스트하면 잘된다! */
-  height: min(200px,15vw);
+  height: min(200px, 15vw);
 }
 /* 캐릭터 타이틀 */
-.cat-box aside h3{
-  font-family: 'Gugi';
+.cat-box aside h3 {
+  font-family: "Gugi";
   /* 글자 최대크기를 min으로 설정 */
-  font-size: min(2.4rem,1.8vw);
+  font-size: min(2.4rem, 1.8vw);
   font-weight: normal;
-  padding: 1.5rem 1rem .5rem;
+  padding: 1.5rem 1rem 0.5rem;
   /* 자간 letter-spacing */
   letter-spacing: -1px;
 }
 /* 캐릭터 설명 */
-.cat-box aside p{
-  font-family: 'Single Day';
+.cat-box aside p {
+  font-family: "Single Day";
   /* 글자 최대크기를 min으로 설정 */
-  font-size: min(1.8rem,1.3vw);
+  font-size: min(1.8rem, 1.3vw);
   padding: 1.5rem;
   line-height: 1.6;
   /* 양쪽정렬 justify */
@@ -412,7 +410,7 @@ h2.temp {
   font-weight: normal;
 }
 /* 리스트 내용 */
-.preview-box li p{
+.preview-box li p {
   font-size: 1.5rem;
   margin-top: 1.4rem;
   color: #00000099;
@@ -433,3 +431,126 @@ h2.temp {
   color: #000;
 }
 
+/************** 7. 최신동영상영역 **************/
+.banbx{
+  position: relative;
+  /* 앱솔루트 양쪽이동박스의 부모자격 */
+}
+.main-area .clip-video-area {
+  height: auto;
+}
+.clip-video-area {
+  position: relative;
+  /* 부모자격 - 이동버튼의 부모 */
+}
+.clip-box ul {
+  position: relative;
+  left: 0; /* 이동초기값 */
+  display: flex;
+  /* gap: 0 2%; */
+  /* 트랜지션 
+  -> 스와이퍼 랩퍼일 경우 트랜지션 주지말 것*/
+  /* transition: left 0.3s ease-out; */
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.clip-box li {
+  flex-basis: 25%;
+  flex-shrink: 0;
+  /* 플렉스 gap 속성대신 패딩으로 처리!
+    이유는? 드래그시 영역아웃현상때문! */
+  padding: 0 1.1%;
+  box-sizing: border-box;
+}
+
+/* 동영상 이미지박스 */
+.clip-mv-box {
+  position: relative;
+  /* 부모자격 */
+}
+/* 동영상 이미지박스 이미지 */
+.clip-mv-box img {
+  width: 100%;
+  border-radius: 6px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+/* 동영상 이미지박스 가상요소로 플레이버튼 */
+.clip-mv-box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 62px;
+  background: url(../images/icon_play.png) no-repeat 0/100%;
+  cursor: pointer;
+}
+
+.clip-box h4 {
+  font-size: 18px;
+  font-weight: normal;
+
+  /* 2줄 말줄임 셋팅 */
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.clip-box h3 {
+  font-size: 15px;
+  font-weight: normal;
+  color: #555;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.clip-box {
+  overflow: hidden;
+}
+
+/* 양쪽버튼만들기 */
+.btn-box button {
+  position: absolute;
+  z-index: 999;
+  top: 43%;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  line-height: 65px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+/* 왼쪽버튼 */
+.btn-box button:first-child {
+  left: 0;
+}
+/* 오른쪽버튼 */
+.btn-box button:last-child {
+  right: 0;
+}
+/* 클래스를 추가하여 한쪽버튼만 안보이게 처리 */
+/* 왼쪽버튼만 보이기 */
+.btn-box.left button:first-child {
+  display: inline-block;
+}
+.btn-box.left button:last-child {
+  display: none;
+}
+/* 오른쪽버튼만 보이기 */
+.btn-box.right button:last-child {
+  display: inline-block;
+}
+/* .btn-box.right button:first-child {
+  display: none;
+} */

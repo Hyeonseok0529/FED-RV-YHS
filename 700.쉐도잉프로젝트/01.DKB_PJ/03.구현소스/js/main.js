@@ -27,12 +27,49 @@ slideFn();
 $(".preview-box ul").html(
   previewData
     .map(
-      v => `
+      (v) => `
             <li>
         <h3>${v.title}</h3>
         <p>${v.story}</p>
     </li>
 `
     )
-    .join('')
+    .join("")
 );
+
+// 스와이퍼 인스턴스 생성하기
+var swiper = new Swiper(".clip-box", {
+  // 한화면에 볼 슬라이드 수
+  slidesPerView: 4,
+  //   슬라이드 사이 간격(숫자는 px 단위임)
+  spaceBetween: 10,
+  //   루프설정 true(기본값:false)
+  loop: true,
+}); // swiper //////
+
+// 스와이퍼 API를 이용한 개별코딩
+// 내가 만든 버튼에 이동기능 부여하기!
+const myBtns = document.querySelectorAll(".btn-box .abtn");
+console.log("대상:", myBtns);
+
+// 클릭이벤트 설정하기
+myBtns.forEach((el) => {
+  el.addEventListener("click", controlSwp);
+});
+
+// 기능구현함수
+function controlSwp() {
+  // 버튼 구분하기
+  let isBtn = this.classList.contains("ab2");
+  console.log("나야나!", isBtn);
+
+  // 분기하기
+  // 다음버튼
+  if (isBtn) {
+    swiper.slideNext();
+  } // if //
+  // 이전버튼
+  else {
+    swiper.slidePrev();
+  } //  else /////
+} ///// controlSwp함수 //////
