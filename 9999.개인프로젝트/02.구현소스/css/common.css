@@ -3,6 +3,18 @@
 /* 개인인 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
 
+body.on::after{
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #00000079;
+  z-index: 99;
+  transition: .4s ease-in-out;
+}
+
 /************* 1.상단영역 *************/
 /* 상단영역 공통 페이드 박스 */
 .fadebox {
@@ -47,7 +59,7 @@
 .top-area a {
   font-family: var(--font-menu);
   color: #fff;
-  font-size: 2vw;
+  font-size: 2.4rem;
   transition: color 0.4s ease-in-out;
 }
 
@@ -136,7 +148,9 @@
   justify-content: flex-end;
   width: 100%;
   height: 100%;
-  display: none;
+  translate: 100%;
+  transition: translate .6s ease-out;
+  /* display: none; */
 }
 .minicart-box {
   position: relative;
@@ -188,15 +202,17 @@
 
 aside .smenu {
   /* 페이드 박스 효과와 합쳐야함 (.fadebox) */
-  display: none;
+  /* display: none; */
   position: absolute;
   margin-top: 79px;
+  translate: 0 -170%;
   left: 0;
   width: 100%;
   height: 35vw;
   background-color: #ebe6d7;
   overflow: hidden;
   background: #ebe6d7 url(../images/Ld_img4.png) no-repeat right/40%;
+  transition: translate .6s ease-in-out;
 }
 .smenu .inbox {
   display: flex;
@@ -245,10 +261,10 @@ aside .smenu {
 /* 주의 : dt와 dd는 형제임! */
 /* 밑줄 애니메이션 위해 부모자격 부여!!!!!!!!! */
 /* 애니메이션을 할때는 우선 보이는 것이 중요함. */
-.smenu dl > dd > a {
+.uline a {
   position: relative;
 }
-.smenu dl > dd > a::after {
+.uline a::after {
   content: "";
   display: block;
   position: absolute;
@@ -261,10 +277,14 @@ aside .smenu {
   transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.uline.color2 a::after{
+  background-color: #fff;
+}
+
 /* 호버를 쓸 때는 가상요소에다가 주면 안되고,
 호버를 하는 대상에다가 주고 가상요소를 주어야 함. */
 
-.smenu dd > a:hover::after {
+.uline a:hover::after {
   width: 100%;
   margin-left: 0;
   transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -325,10 +345,11 @@ aside .smenu {
 }
 .bagNbtn {
   background-color: #645832;
-  border-radius: 100%;
+  border-radius: 50%;
   font-size: 1.6rem;
   display: block;
-  width: 5.5vh;
+  width: 30px;
+  height: 30px;
   text-align: center;
 }
 .bagNbtn:hover {

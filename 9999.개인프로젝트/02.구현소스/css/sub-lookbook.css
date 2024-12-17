@@ -12,11 +12,75 @@
   /* 이미지 부모박스 */
   position: relative;
 }
-.lookBox {
+.lookBox1 {
     position: absolute;
-    top: 16rem;
-    left: 0;
-    width: 10vw;
-    height: 10vh;
+    height: 23.526rem;
+    left: 22.94rem;
+    width: 32.125rem;
+    top: 23.562rem;
     border: 1px solid;
+    overflow: hidden;
+}
+.lookBox2 {
+  position: absolute;
+  height: 30.576rem;
+  left: 77.25rem;
+  top: 33.783rem;
+  width: 31.003rem;
+  border: 1px solid;
+  overflow: hidden;
+}
+.lookBox3 {
+  position: absolute;
+  height: 32.662rem;
+  left: 145.011rem;
+  top: 19.562rem;
+  width: 28.015rem;
+  border: 1px solid;
+  overflow: hidden;
+}
+.lookBox4 {
+  position: absolute;
+  height: 35.418rem;
+  left: 118.936rem;
+  width: 33.43rem;
+  top: 67.505rem;
+  border: 1px solid;
+  overflow: hidden;
+}
+.lookBox5 {
+  position: absolute;
+  height: 23.575rem;
+  left: 15.1rem;
+  top: 68.2rem;
+  width: 32.918rem;
+  border: 1px solid;
+  overflow: hidden;
+}
+.lookBox6 {
+  position: absolute;
+  height: 33.418rem;
+  left: 72.549rem;
+  top: 92.941rem;
+  width: 31.43rem;
+  border: 1px solid;
+  overflow: hidden;
+}
+.lookBox7 {
+  position: absolute;
+  height: 31.576rem;
+  left: 21.002rem;
+  top: 113.4rem;
+  width: 26.344rem;
+  border: 1px solid;
+  overflow: hidden;
+}
+.lookBox8 {
+  position: absolute;
+  height: 24.575rem;
+  left: 100rem;
+  top: 85.4rem;
+  width: 31.843rem;
+  border: 1px solid;
+  overflow: hidden;
 }

@@ -8,7 +8,13 @@
     <!-- <link rel="shortcut icon" href="./images/로고.png" type="image/x-icon"> -->
     <!-- 메인페이지 CSS 불러오기 -->
     <link rel="stylesheet" href="./css/main.css" />
-    <link rel="mediaQuery" href="./css/query.css" />
+    <link rel="stylesheet" href="./css/query.css" />
+    <!-- 제이쿼리 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    
+    <script src="./js/main.js" defer></script>
+
   </head>
   <body>
     <!-- 상단 고정 코딩구역 시작 -->
@@ -58,7 +64,7 @@
                     </li>
                     <!-- 서브메뉴 -->
                     <aside class="smenu">
-                      <div class="inbox">
+                      <div class="inbox uline">
                         <dl>
                           <dt>SOL'ACE</dt>
                           <dd>
@@ -203,7 +209,7 @@
             <!-- 메인 텍스트 -->
             <h1 class="main-text">
               <span>SEAMLESS</span>
-              <span>FURNITURE</span>
+              <span>FURNITURE</span> <br>
               <span>WITH</span>
               <span>NATURAL</span>
               <span>FABRICS</span>
@@ -252,7 +258,7 @@
         </section>
 
         <!-- 2-3. 추천제품소개 영역 -->
-        <section class="page">
+        <section class="page recom-box">
           <h2 class="blind">추천제품소개</h2>
           <!-- 소개박스 -->
           <div class="recommendBox">
@@ -471,7 +477,7 @@
         <!-- 공간박스 -->
         <div class="footSpaceBox"></div>
         <!-- 하단 카테고리 -->
-        <div class="footcatBox">
+        <div class="footcatBox uline color2">
           <div class="footFirst">
             <ul class="footcatInbox">
               <li>

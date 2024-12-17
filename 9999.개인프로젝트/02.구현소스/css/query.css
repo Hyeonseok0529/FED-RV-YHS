@@ -1,3 +1,21 @@
+@charset "utf-8";
+
+
 @media screen and (max-width: 1200px) {
- /*  질문 ! : 미디어 쿼리의 흐름은 어떻게 진행하는 것이 좋을까요?  */
+    /*  질문 ! : 미디어 쿼리의 흐름은 어떻게 진행하는 것이 좋을까요?  */
+}
+@media screen and (max-width: 900px) {
+    .recom-box{
+        height: auto;
+    }
+    .main-text{
+        font-size: 8vw;
+    }
+    .recommendBox {
+       flex-direction: column;
+       height: auto;
+    }
+    .recommendBox>div{
+      width: 100%;
+    }
 }
