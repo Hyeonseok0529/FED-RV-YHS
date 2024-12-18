@@ -55,6 +55,9 @@ ol {
   width: 100%;
   text-align: center;
 }
+.about.page{
+  height: 115vh;
+}
 /************* 1. 배너영역 *************/
 .ban-area {
   height: 400px;
@@ -649,7 +652,7 @@ ol {
   letter-spacing: -0.5px;
   font-weight: 400;
   padding: 6vw 2vw;
-  font-size: 1.3vw;
+  font-size: 1vw;
 }
 .artiImgbox {
   position: absolute;
