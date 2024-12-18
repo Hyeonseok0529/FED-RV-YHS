@@ -51,7 +51,7 @@
 
     <script>
       window.addEventListener("DOMContentLoaded", () => {
-        //바깥쪽 스와이퍼 ///////////
+        // 바깥쪽 스와이퍼 ///////////
         const swiper = new Swiper(".my-slide", {
           // 세로방향 슬라이드 설정
           direction: "vertical",
@@ -59,9 +59,8 @@
           slidesPerView: 1,
           // 슬라이드 사이 간격(숫자는 px단위임)
           spaceBetween: 0,
-          mousewheel: {
-            wheel: true,
-          },
+          // 마우스 휠 활성화하기
+          mousewheel: true,
           // 루프설정 true (기본값은 false)
           // loop: true,
           // 자동넘김 설정

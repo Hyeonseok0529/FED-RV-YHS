@@ -113,6 +113,9 @@ document.querySelector 와 같은 메서드들이 DOM 메서드이다.
 append Prepend 메서드 입니다 
 ~~~ 
 
+37. current target&target 을 구분하기
+preventDefault&stopPropagation 에 대해서 확실하게 인지하기
+
 
 
 * 회사 선택할 때는 반드시 교육이 있는 회사여야 한다.
