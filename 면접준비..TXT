@@ -116,6 +116,9 @@ append Prepend 메서드 입니다
 37. current target&target 을 구분하기
 preventDefault&stopPropagation 에 대해서 확실하게 인지하기
 
+38. '시멘틱한' 프론트엔드 개발자
+figcaption 등 쓰는 요소에 정확하게 태그를 주자.
+
 
 
 * 회사 선택할 때는 반드시 교육이 있는 회사여야 한다.
