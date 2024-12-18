@@ -46,13 +46,7 @@ ol {
 
 /************* 컨텐츠영역 *************/
 .page {
-  /* 영역별로 모두 보이는 화면 높이 설정 */
-  /* 선생님 피드백 : 페이지당 100vh가 넘어가기때문에
-    추후 레이아웃 변경 필요. // 하지만 개인적으로 가독성이 떨어진다고 생각함,
-    영역마다 집약해서 보여줄 필요가 있다고 생각함.
-    따라서 부드러운 스크롤만 반영하면 어떨까 선생님께 피드백을 요청드릴 예정*/
   height: 100vh;
-  /* outline: 1px dashed gray; */
 }
 /* 임시타이틀 */
 .page .temp-tit {
@@ -73,6 +67,7 @@ ol {
   object-fit: cover;
   filter: brightness(0.8);
 }
+
 .main-text {
   position: absolute;
   top: 46%;
@@ -88,15 +83,17 @@ ol {
   color: #fff;
   font-family: var(--font-title);
   font-size: min(8rem, 5vw);
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   letter-spacing: -0.4rem;
   text-align: center;
   white-space: nowrap;
+  transform: scaleY(1.8);
+  line-height: 7vh;
 }
 .main-text br~span{
   display: inline-block;
-  margin-top: 1.5vw;
+  /* margin-top: -5.5vw; */
 }
 
 /* SHOP ALL 버튼 */
@@ -106,8 +103,8 @@ ol {
   left: 50%;
   translate: -50% -50%;
   z-index: 9;
-  width: max(8vw, 10rem);
-  height: 3.5vh;
+  width: max(10vw, 15.1rem);
+  height: 4.5vh;
   color: #1f1f1f;
   background-color: #ebe6d7;
   text-align: center;
@@ -131,6 +128,7 @@ ol {
   /* 이미지 부모박스 */
   position: absolute;
 }
+/* 질문! : (미디어쿼리) 이미지들을 화면에 맞게 줄어들도록 하려면???????????????????????????? */
 .imgbox img{
   left: 50%;
 }
@@ -202,7 +200,7 @@ ol {
   top: 50%;
   left: 50%;
   translate: -50% -100%;
-  font-size: min(7rem,3vw);
+  font-size: min(7rem, 6vw);
   width: 55vw;
   font-family: var(--font-title);
   font-weight: 600;
@@ -216,7 +214,7 @@ ol {
   top: 50%;
   left: 50%;
   translate: -50% 30%;
-  font-size: 1.5rem;
+  font-size: min(1.5vw, 1.9rem);
   text-align: center;
   line-height: 130%;
   font-family: var(--font-menu);
@@ -286,7 +284,7 @@ ol {
 }
 .productDesc {
   display: block;
-  font-size: 1vw;
+  font-size: min(1.2vw, 1.2rem);
   font-family: var(--font-menu);
   color: #ebe6d7;
   font-weight: 400;
@@ -329,8 +327,8 @@ ol {
 .lbVerTxtbox {
   width: 5%;
   height: 100%;
-  /* 질문 : 원본 페이지처럼 얇게 표현하려면 단위를 다르게 해야하는지???? */
   border-right: 0.5px solid #ebe6d7;
+  opacity: .5;
 }
 .lbVerTxt {
   color: #ebe6d7;
@@ -392,7 +390,6 @@ ol {
   font-family: var(--font-menu);
   letter-spacing: 0.5px;
   font-weight: 400;
-  /* 질문 : 해당 CSS안에서 정 중앙에 선을 그을 수 있는 방법이 있을까요??????????????????????????? */
 }
 .upTitBox::before {
   content: '';
@@ -720,7 +717,6 @@ ol {
 }
 
 /* 서브기사 1 */
-/* 질문 : 선을 박스에 맞게 조정! , 포지션 위치관계에 대한 정리! */
 .subArti1 {
   height: 100%;
   border-right: 1px solid #d1c7a3;
