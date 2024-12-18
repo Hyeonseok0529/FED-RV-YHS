@@ -3,7 +3,7 @@
 $('.hambtn').click(function(e){
     e.preventDefault(); 
     let isOn = $(this).is('.on');
-    $('.smenu').css({translate: isOn?'0':'0 -190%'});
+    $('.smenu').css({translate: isOn?'0':'0 -220%'});
     $('body').toggleClass('on');
 })
 

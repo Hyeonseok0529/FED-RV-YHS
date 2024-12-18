@@ -1,21 +1,72 @@
 @charset "utf-8";
 
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
+  .imgbox img:nth-child(3) {
+    display: none;
+  }
 }
-@media screen and (max-width: 900px) {
-    .recom-box{
-        height: auto;
+@media screen and (max-width: 1400px) {
+  .imgbox img:nth-child(4) {
+    translate: 14vw;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .shopAbtn {
+    top: 65%;
+  }
+  .imgbox img:nth-child(6) {
+    display: none;
+  }
+  .imgbox img:nth-child(2) {
+    translate: 2vw 3vh;
+  }
+  @media screen and (max-width: 1100px) {
+    .imgbox img:nth-child(4) {
+      display: none;
     }
-    .main-text{
-        font-size: 6vw;
-        letter-spacing: -2px;
+    .imgbox img:nth-child(5) {
+      translate: -27vw 7vh;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .shopAbtn {
+      top: 62%;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .recom-box {
+      height: auto;
+    }
+    .main-text {
+      font-size: 7vw;
+      letter-spacing: -1px;
     }
     .recommendBox {
-       flex-direction: column;
-       height: auto;
+      flex-direction: column;
+      height: auto;
     }
-    .recommendBox>div{
+    .recommendBox > div {
       width: 100%;
     }
+    .bagNbtn,
+    .shopbtn {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .left-menu ul {
+      gap: 1.5rem;
+      padding: 0px 1.5rem;
+    }
+    .hamShop-box {
+      height: 11rem;
+    }
+    .main-text {
+      top: 46%;
+    }
+    .shopAbtn {
+      top: 59%;
+    }
+  }
 }

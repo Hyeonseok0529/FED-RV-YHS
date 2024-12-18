@@ -106,14 +106,14 @@ ol {
   left: 50%;
   translate: -50% -50%;
   z-index: 9;
-  width: 8vw;
+  width: max(8vw, 10rem);
   height: 3.5vh;
   color: #1f1f1f;
   background-color: #ebe6d7;
   text-align: center;
   align-content: center;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   transition: 0.3s ease-in-out;
 }
@@ -138,7 +138,7 @@ ol {
   position: absolute;
   height: 25vh;
   /* left: 4rem; */
-  translate: -31vw;
+  translate: -43vw;
   top: 15rem;
   width: 23rem;
   object-fit: cover;
@@ -147,16 +147,16 @@ ol {
   position: absolute;
   height: 35vh;
   /* right: 80rem; */
-  translate: 18vw;
+  translate: -9vw;
   top: 1rem;
-  width: 33rem;
+  width: 37rem;
   object-fit: cover;
 }
 .imgbox img:nth-child(3) {
   position: absolute;
   height: 30vh;
   /* right: 0; */
-  translate: 26vw;
+  translate: 36vw;
   top: 39rem;
   width: 20rem;
   object-fit: cover;
@@ -165,7 +165,7 @@ ol {
   position: absolute;
   height: 39vh;
   /* left: 90rem; */
-  translate: -27vw;
+  translate: 9vw;
   top: 55rem;
   width: 35rem;
   object-fit: cover;
@@ -174,16 +174,16 @@ ol {
   position: absolute;
   height: 39vh;
   /* left: 1rem; */
-  translate: 1vw;
+  translate: -41vw 7vh;
   top: 44rem;
-  width: 41rem;
+  width: 57rem;
   object-fit: cover;
 }
 .imgbox img:nth-child(6) {
   position: absolute;
   height: 18vh;
   /* right: 20rem; */
-  translate: -14vw;
+  translate: 23vw;
   top: 20rem;
   width: 17rem;
   object-fit: cover;
