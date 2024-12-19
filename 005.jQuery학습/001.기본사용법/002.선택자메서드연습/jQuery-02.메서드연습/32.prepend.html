@@ -23,19 +23,20 @@
         // 배열순번변수
         let arrSeq = 0;
 
-        // 미션: p태그의 글자를 클릭하면 #pic 요소의 내부에
+        //미션: p태그의 글자를 클릭하면 #pic 요소의 내부에
         // 자식요소로 웹 경로 이미지가 번갈아서 앞쪽에 추가되게하시오.
         evtTg.click(() => {
           // 앞에 추가하기
-          picBox.prepend(`<img src="${isrc[arrSeq]}" alt="선재포스터" >`);
+          picBox.prepend(`
+            <img src="${isrc[arrSeq]}" alt="선재포스터">`);
 
           // 배열순번 전환하기
           arrSeq = arrSeq === 0 ? 1 : 0;
 
           // 이미지 크기조정
           picBox.find("img").css({ height: "300px" });
-        }); //// click ////
-      }); /// jQB //////////////////////////////////////
+        }); /// click ///
+      }); /// jQB ////////////////////////////
     </script>
   </head>
 

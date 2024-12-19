@@ -6,11 +6,11 @@
     <!-- jQuery library -->
     <script src="../jquery-3.6.3.min.js"></script>
     <script src="../jquery-ui.min.js"></script>
-    <!-- 색상변경 애니는 반드시 제이쿼리 UI를
-     불러와야함! 그리고 라이브러리 아래 위치해야함 -->
+    <!-- 색상변경 애니는 반드시 제이쿼리UI를 
+     불러와야함! 그리고 라이브러리 아래 위치해야함! -->
     <script>
       $(() => {
-        $("body").css({fontSize:"5vw"})
+        $("body").css({fontSize:"3vw"});
         /* 
           :hidden 선택자 -> display:none인 요소를 선택함
           :visible 선택자 -> display:none이 아닌 요소를 선택함
@@ -27,7 +27,7 @@
         // 시간 지연은 delay를 사용하시오.
 
         // 미션2 : display가 보이는 요소를 선택하여
-        // 위의 첫번째 미션 6초후에 글자크기를 32px,
+        // 위의 첫번째 미션 6초후에 글자크기를 7vw,
         // 글자색을 red로 애니메이션 하시오.(1초간)
         $("li:visible").delay(6000).animate(
           {

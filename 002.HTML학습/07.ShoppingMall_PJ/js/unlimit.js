@@ -1,4 +1,4 @@
-// 쇼핑몰 배너 JS - 01.가로방향 배너 슬라이드 - 무한이동//
+// 쇼핑몰 배너 JS - 01.가로방향 배너 슬라이드 - 무한이동 //
 
 // 나의 함수 불러오기
 import myFn from "./my_function.js";
@@ -11,7 +11,8 @@ import myFn from "./my_function.js";
     4. 기능 설계:
 
         (1) 오른쪽 버튼 클릭시 다음 슬라이드가
-            나타나도록 슬라이드 박스의 translate X축 이동값을
+            나타나도록 슬라이드 박스의 
+            translate X축 이동값을
             -100%로 변경시킨다.
             -> 슬라이드 이동후!!! 
             바깥에 나가있는 첫번째 슬라이드
@@ -20,7 +21,8 @@ import myFn from "./my_function.js";
 
         (2) 왼쪽버튼 클릭시 이전 슬라이드가
             나타나도록 하기위해 우선 맨뒤 li를
-            맨앞으로 이동하고 동시에 translate X축 이동값을
+            맨앞으로 이동하고 동시에 
+            translate X축 이동값을
             -100%로 변경한다.
             그 후 translate X축 이동값을 0으로 애니메이션하여
             슬라이드가 왼쪽에서 들어온다.
@@ -53,13 +55,13 @@ const slide = myFn.qsEl(slideBox, ".slide");
 // (4) 최초 슬라이드 li 수집하기
 const firstSlide = myFn.qsaEl(slide, "li");
 
-// 최초슬라이드 li에 data-seq 속성 만들고 순번 넣기
-// 왜 넣는가? 슬라이드 li 순서가 계속 변경되므로
-// 블릿 인디케이터의 표시 순서를 잡기위해 넣어준다!
+// 최초슬라이드 li에 data-seq 속성 만들고 순번넣기
+// 왜 넣는가? 슬라이드 li순서가 계속 변경되므로
+// 블릿 인디케이터의 표시 순서를 잡기 위해 넣어준다!
 firstSlide.forEach((el, idx) => {
   // 속성셋팅은 setAttribute(속성명,값)
   el.setAttribute("data-seq", idx);
-}); ////// forEach /////
+}); ////// forEach /////////////
 
 // 슬라이드 개수 변수할당!
 // 보통 변경없이 사용하는 변수는 상수라고 하고
@@ -78,39 +80,39 @@ abtn.forEach((el) => {
   // 각 요소에 이벤트 설정하기
   // click이벤트를 addEventListener로 설정!
   myFn.addEvt(el, "click", goSlide);
-  // 이동버튼 클릭시 인터벌 지우기함수 호출
+  // 이동버튼 클릭시 인터발지우기함수 호출
   myFn.addEvt(el, "click", ()=>{clearAuto()});
 }); //////////// forEach ////////////////
 
 // 광클금지 상태변수
 let stsClick = false;
-// 슬라이드 애니시간 상수
+// 슬라이드 애니시간상수
 const TIME_ANI = 600;
 
 // 3. 함수만들기 /////////////////////
 function goSlide() {
-  // 광클금지 설정
-  if (stsClick) return; // 함수를 나가!!!!
+  // 광클금지 설정 ///////
+  if (stsClick) return; // 함수를 나가!
   stsClick = true; // 문잠금!
   setTimeout(() => {
-    stsClick = false; // 잠금 해제!!
+    stsClick = false; // 잠금해제!
   }, TIME_ANI);
-  /////////////////////////////////
+  //////////////////////
 
   // 1. 함수호출확인
   console.log('나함수!',this,this.classList);
 
-  // 2. 오른쪽버튼여부 확인
+  // 2. 오른쪽버튼여부 확인(기본값 true할당)
   let isRight = true;
   // 만약 this.classList가 undefined가 아니면
   // 클래스 오른쪽 여부를 판단한다!
-  if(this.classList)
-    this.classList.contains("ab2");
+  if(this.classList) 
+    isRight = this.classList.contains("ab2");
   // 일반적으로 버튼을 클릭하지 않고 호출하면
-  // window객체가 this로 잡히므로 classList 객체가 없어서
-  // undefined로 나오고 하위 클래스인 contains()가 
-  // 없으므로 에러 메시지가 나온다. 따라서 이런 경우를 
-  // 대비하여 기본값으로 isRight 변수에 true를 주고 ,
+  // window객체가 this로 잡히므로 classList객체가 없어서
+  // undefined로 나오고 하위 클래스인 contains()가
+  // 없으므로 에러 메시지가 나온다! 따라서 이런 경우를
+  // 대비하여 기본값으로 isRight변수에 true를 주고
   // 직접호출시 오른쪽으로 이동하게 해준다!
   // 만약 버튼을 클릭하면 if문에서 걸러주므로
   // 실제 버튼 클래스 존재 여부를 판단하여 오른쪽/왼쪽
@@ -119,36 +121,36 @@ function goSlide() {
   // classList.contains(클래스명) -> 클래스있으면 true
   console.log("나함수!", isRight);
 
-  // 3. 현재 변경된 li 수집용 변수
+  // 3. 현재 변경된 li수집용 변수
   let list = myFn.qsaEl(slide, "li");
 
-  // 4. 분기하여 슬라이드 이동하기 /////
+  // 3. 분기하여 슬라이드 이동하기 /////////
   // (1) 오른쪽버튼 클릭시 : 왼쪽으로 이동
   if (isRight) {
-    // [1] translate x축 방향 -100% 이동
+    // [1] translate x축방향 -100% 이동
     slide.style.translate = "-100%";
     slide.style.transition = TIME_ANI + "ms ease-in-out";
 
-    // [슬라이드 이동후 실행해야함]
+    // [ 슬라이드 이동후 실행해야함 ]
     // 따라서 setTimeout으로 시간 지연실행코드작성
     setTimeout(() => {
       // [2] 맨앞li 선택하여 맨뒤로 이동하기
       slide.appendChild(list[0]);
-      // 슬라이드.appendchild(맨앞li)
+      // 슬라이드.appendChild(맨앞li)
 
-      // [3]이때 translate값 0으로 초기화함!
+      // [3] 이때 translate값 0으로 초기화함!
       slide.style.translate = "0";
 
-      // [4]초기화할 경우 트랜지션 없애기
+      // [4] 초기화할 경우 트랜지션 없애기
       slide.style.transition = "none";
-    }, TIME_ANI);
-  } //////////////// if ////////////////
-  // (2) 왼쪽일때 클릭시 : 오른쪽으로 이동
+    }, TIME_ANI); /// setTimeout ///
+  } /////////// if ///////////
+  // (2) 왼쪽버튼 클릭시 : 오른쪽으로 이동
   else {
-    // [1] 맨뒤li 맨앞으로 이동하기
-    // 슬라이드.insertBefore(맨뒤li,맨앞li)
+    // [1] 맨뒤li 맨앞으로 이동하기 /////////
     slide.insertBefore(list[list.length - 1], list[0]);
-    // 맨뒤 li 순번은 (개수 - 1)임!
+    // 슬라이드.insertBefore(맨뒤li,맨앞li)
+    // 맨뒤 li순번은 (개수-1)임!
 
     // [2] 이때 슬라이드 translate값을 -100%로 설정
     slide.style.translate = "-100%";
@@ -162,13 +164,13 @@ function goSlide() {
       slide.style.translate = "0";
 
       // [4] 이때 트랜지션 애니메이션 설정
-      slide.style.transition = ".4s ease-in-out";
+      slide.style.transition = TIME_ANI + "ms ease-in-out";
     }, 0);
-  } //////////////// else ////////////////
+  } ///////// else ///////
 
-  // 명령어 코드는 콜스택(Call Stack)에서 순서대로 실행됨!
+  // 명령어 코드는 콜 스택(Call Stack)에서 순서대로 실행됨
   //   console.log('1');
-  // 타임아웃메서드는 태스크큐(Task Queue)에 대기하다가
+  // 타임아웃메서드는 태스크 큐(Task Queue)에 대기하다가
   // 콜 스택의 명령어가 모두 실행후 큐에 쌓인 명령어를
   // 스택으로 옮겨서 순서대로 실행함!
   //   setTimeout(()=>console.log('2'),0);
@@ -189,8 +191,8 @@ function goSlide() {
   indic.forEach((el, idx) => {
     // console.log(el,idx,typeof idx);
 
-    // 반드시 순자형으로 변환해야한다! Number(문자형숫자)
     // 속성값은 문자형이므로 비교시 === 형까지 비교할 경우
+    // 반드시 숫자형으로 변환해야한다! Number(문자형숫자)
     if (idx === Number(num)) {
       el.classList.add("on");
     } /// if ///
@@ -198,7 +200,7 @@ function goSlide() {
     else {
       el.classList.remove("on");
     } /// else ///
-  }); /// forEach ///
+  }); /// forEach ////
 
   // -> seqNum 값 즉, 슬라이드 순번과
   // 인디케이터 li 순번이 같으므로
@@ -207,26 +209,28 @@ function goSlide() {
 } ////////// goSlide함수 /////////////
 
 
-/***************************** 
- 인터발 호출 설정하기
-*****************************/
-// 인터벌 및 타임아웃설정을 지우기 위해 변수에 할당한다! 
+
+
+/**************************************** 
+        인터발 호출 설정하기
+****************************************/
+// 인터발 및 타임아웃설정을 지우기 위해 변수에 할당한다!
 let autoI, autoT;
-// 인터발 함수 최초 호출
+// 인터발함수 최초호출
 autoSlide();
 
-//[1] 인터벌 설정함수 ///////////////
+// [1] 인터발 설정함수 ////
 function autoSlide(){
-  autoI = setInterval(goSlide,2000);
-} ///// autoSlide 함수 ///// 
+  autoI = setInterval(goSlide, 2000);
+} ///// autoSlide 함수 //////
 
-// [2] 인터벌 지우기 함수 ///
+// [2] 인터발 지우기 함수 ////
 // -> 버튼 직접 조작시 호출함!
 function clearAuto(){
-  // (1) 인터벌 지우기
+  // (1) 인터발 지우기
   clearInterval(autoI);
   // (2) 타임아웃 지우기(실행쓰나미방지)
   clearTimeout(autoT);
-  // (3) 일정시간 후 인터벌 재호출(최종하나만 남는다!)
+  // (3) 일정시간후 인터발 재호출(최종하나만 남는다!)
   autoT = setTimeout(autoSlide, 5000);
-} ////// clearAuto 함수 /////
+} /////// clearAuto 함수 ////////
