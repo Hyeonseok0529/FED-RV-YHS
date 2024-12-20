@@ -29,6 +29,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: ;
+}
+.lookbookInbox a img:hover {
+  scale: 1.05;
 }
 .lookbookInbox {
   /* 이미지 부모박스 */

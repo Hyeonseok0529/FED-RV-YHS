@@ -55,7 +55,7 @@ ol {
   width: 100%;
   text-align: center;
 }
-.about.page{
+.about.page {
   height: 115vh;
 }
 /************* 1. 배너영역 *************/
@@ -152,7 +152,16 @@ ol {
   top: 1rem;
   width: 37rem;
   object-fit: cover;
+  scale: 0;
+  animation: show-ani 1s cubic-bezier(0.83, -0.2, 0.2, 1.47) 2s forwards;
 }
+
+@keyframes show-ani {
+  to {
+    scale: 1;
+  }
+}
+
 .imgbox img:nth-child(3) {
   position: absolute;
   height: 30vh;
@@ -591,7 +600,7 @@ ol {
   box-sizing: border-box;
 }
 /* Article 박스 */
-.verFlexbox{
+.verFlexbox {
   display: flex;
   height: 90vh;
 }
@@ -611,7 +620,7 @@ ol {
   transform-origin: left top;
   letter-spacing: -3.5px;
   width: 187px;
-  
+
   /* left: -3.8vw; */
 }
 /* 기사 정보 */
@@ -678,7 +687,7 @@ ol {
 .borderBoxTxt {
   padding-right: 2vw;
 }
-.imgBox{
+.imgBox {
   height: 86vh;
   overflow: hidden;
 }

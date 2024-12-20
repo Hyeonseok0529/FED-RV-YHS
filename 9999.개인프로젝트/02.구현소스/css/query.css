@@ -19,191 +19,213 @@
   }
   .imgbox img:nth-child(2) {
     translate: 2vw 3vh;
+    width: min(370px, 37vw);
+    height: auto;
+    scale: 0;
+    /* animation: show-ani 1s cubic-bezier(0.83,-0.2, 0.2, 1.47) forwards; */
+    /* transition: 1s cubic-bezier(0.83,-0.2, 0.2, 1.47); */
   }
-  @media screen and (max-width: 1100px) {
-    .imgbox img:nth-child(4) {
-      display: none;
-    }
-    .imgbox img:nth-child(5) {
-      translate: -27vw 7vh;
-    }
-  }
-  @media screen and (max-width: 1000px) {
-    .shopAbtn {
-      top: 65%;
-    }
-  }
-  @media screen and (max-width: 900px) {
-    .recom-box {
-      height: auto;
-    }
-    .main-text {
-      font-size: 7vw;
-      letter-spacing: -1px;
-    }
-    .recommendBox {
-      flex-direction: column;
-      height: auto;
-    }
-    .recommendBox > div {
-      width: 56vw;
-      height: 55vw;
-      margin: 0 auto;
-    }
-    .bagNbtn,
-    .shopbtn {
-      display: none;
-    }
-    .recTextbox {
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-      padding: 0;
-    }
-    .viewbtn {
-      font-size: 2.3vw;
-    }
-    .productName {
-      font-size: 5.4vw;
-    }
-    .recommendBox::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      height: 1px;
-      opacity: 0.5;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.604);
-    }
-
-    .lookbook-page {
-      height: auto;
-    }
-    .lookbookBox {
-      flex-direction: column;
-      padding-top: 5vh;
-    }
-    .lookbookBox > div {
-      width: 100%;
-    }
-    .lbSlideDesc {
-      height: auto;
-    }
-    /* 순서정렬 필요한 박스 */
-    .lbSlideBox {
-      flex-direction: column;
-      height: auto;
-      background-color: transparent;
-    }
-
-    .slideImg {
-      width: 100%;
-      padding: 2vh;
-      padding-bottom: 5vh;
-      box-sizing: border-box;
-      margin-top: 0;
-      background-color: #e0e0e0;
-    }
-
-    .lbVerTxtbox {
-      display: none;
-    }
-    /* 순서3번째로 변경 */
-    .downDescBox {
-      order: 3;
-      position: static;
-      width: 100%;
-      margin-top: 0;
-      padding: 2vh 0 5vh;
-    }
-    .materialsBox {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
-    /* 순서2번째로 변경 */
-    .btnBox {
-      order: 2;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 2vh;
-      margin-top: -2vh;
-    }
-    .lbbtn,
-    .lbshopbtn {
-      position: static;
-    }
-
-/* 아래 박스 */
-.article-page{
-  height: auto;
-}
-.verFlexbox{
-  flex-direction: column;
-  height: auto;
-}
-.artVerbox{
-  display: none;
-}
-.artiTxtbox{
-  width: 100%;
-  height: auto;
-}
-.artiDesc{
-  height: auto;
-  line-height: 2;
-  padding: 0;
+  /* body:hover .imgbox img:nth-child(2) {
+    scale: 1;
+  } */
+  
 }
 
-.artiImgbox{
-  width: 100%;
-  height: auto;
-}
-
-.footcatBox > div {
-  flex-basis: 50%;
-  box-sizing: border-box;
-}
-
-
-
-  }
-  @media screen and (max-width: 700px) {
-    .mainTxt {
-      font-size: 9vw;
-      width: 85vw;
-    }
-    .subTxt {
-      font-size: 2.7vw;
-      width: 80vw;
+/* @keyframes show-ani {
+  to{
+    .imgbox img:nth-child(2) {
+      scale: 1;
     }
   }
+} */
 
-  @media screen and (max-width: 600px) {
-    .left-menu ul {
-      gap: 1.5rem;
-      padding: 0px 1.5rem;
-    }
-    .hamShop-box {
-      height: 11rem;
-    }
-    .main-text {
-      top: 46%;
-    }
-    .shopAbtn {
-      top: 65%;
-    }
+
+@media screen and (max-width: 1100px) {
+  .imgbox img:nth-child(4) {
+    display: none;
   }
-  @media screen and (max-width: 500px) {
-    .mainTxt {
-      font-size: 9.6vw;
-      width: 90vw;
-    }
+  .imgbox img:nth-child(5) {
+    translate: -27vw 7vh;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .shopAbtn {
+    top: 65%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .recom-box {
+    height: auto;
+  }
+  .main-text {
+    font-size: 7vw;
+    letter-spacing: -1px;
+  }
+  .recommendBox {
+    flex-direction: column;
+    height: auto;
+  }
+  .recommendBox > div {
+    width: 56vw;
+    height: 55vw;
+    margin: 0 auto;
+  }
+  .bagNbtn,
+  .shopbtn {
+    display: none;
+  }
+  .recTextbox {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .viewbtn {
+    font-size: 2.3vw;
+  }
+  .productName {
+    font-size: 5.4vw;
+  }
+  .recommendBox::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    opacity: 0.5;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.604);
+  }
 
-    .subTxt {
-      font-size: 3.1vw;
-      width: 95vw;
-      height: 30vw;
-    }
+  .lookbook-page {
+    height: auto;
+  }
+  .lookbookBox {
+    flex-direction: column;
+    padding-top: 5vh;
+  }
+  .lookbookBox > div {
+    width: 100%;
+  }
+  .lbtit {
+    padding: 7vh 0px;
+  }
+  .lbDesc {
+    margin: 3vh 4vh 10vh;
+  }
+  .lbSlideDesc {
+    height: auto;
+  }
+  /* 순서정렬 필요한 박스 */
+  .lbSlideBox {
+    flex-direction: column;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .slideImg {
+    width: 100%;
+    padding: 2vh;
+    padding-bottom: 5vh;
+    box-sizing: border-box;
+    margin-top: 0;
+    background-color: #e0e0e0;
+  }
+
+  .lbVerTxtbox {
+    display: none;
+  }
+  /* 순서3번째로 변경 */
+  .downDescBox {
+    order: 3;
+    position: static;
+    width: 100%;
+    margin-top: 0;
+    padding: 2vh 0 5vh;
+  }
+  .materialsBox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  /* 순서2번째로 변경 */
+  .btnBox {
+    order: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vh;
+    margin-top: -2vh;
+  }
+  .lbbtn,
+  .lbshopbtn {
+    position: static;
+  }
+
+  /* 아래 박스 */
+  .article-page {
+    height: auto;
+  }
+  .verFlexbox {
+    flex-direction: column;
+    height: auto;
+  }
+  .artVerbox {
+    display: none;
+  }
+  .artiTxtbox {
+    width: 100%;
+    height: auto;
+  }
+  .artiDesc {
+    height: auto;
+    line-height: 2;
+    padding: 0;
+  }
+
+  .artiImgbox {
+    width: 100%;
+    height: auto;
+  }
+
+  .footcatBox > div {
+    flex-basis: 50%;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mainTxt {
+    font-size: 9vw;
+    width: 85vw;
+  }
+  .subTxt {
+    font-size: 2.7vw;
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .left-menu ul {
+    gap: 1.5rem;
+    padding: 0px 1.5rem;
+  }
+  .hamShop-box {
+    height: 11rem;
+  }
+  .main-text {
+    top: 46%;
+  }
+  .shopAbtn {
+    top: 65%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .mainTxt {
+    font-size: 9.6vw;
+    width: 90vw;
+  }
+
+  .subTxt {
+    font-size: 3.1vw;
+    width: 95vw;
+    height: 30vw;
   }
 }
