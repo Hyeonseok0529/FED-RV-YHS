@@ -62,6 +62,9 @@
 }
 @media screen and (max-width: 900px) {
   /************************** 추천제품영역 **************************/
+  .main-video {
+    height: 90%;
+  }
   .recom-box {
     height: auto;
   }
@@ -252,7 +255,7 @@
     font-size: 5.5vw;
     padding: 4.3vw 4.4vw 0;
   }
-  .subArti1{
+  .subArti1 {
     margin-top: 4vh;
   }
   .subArti1 {
@@ -269,12 +272,12 @@
   .subartTxt {
     font-size: 2vw;
   }
-  .subartiTxt{
-      font-size: 2.2vw;
-      padding: 1.8vw 4.4vw;
-      margin-top: 7vh;
+  .subartiTxt {
+    font-size: 2.2vw;
+    padding: 1.8vw 4.4vw;
+    margin-top: 7vh;
   }
-  .subArtiTxt{
+  .subArtiTxt {
     padding: 4.3vw 4.4vw 0;
   }
   .footcatBox {
@@ -285,16 +288,18 @@
     box-sizing: border-box;
     padding: 3.2vh 7vh 5vh;
   }
-  .footSecond, .footForth{
+  .footSecond,
+  .footForth {
     border-right: none;
   }
-  .footThird, .footForth {
+  .footThird,
+  .footForth {
     border-top: 1px solid #d1c7a3;
   }
-  .footer-area{
+  .footer-area {
     height: auto;
   }
-  .copyright{
+  .copyright {
     font-size: 1.4vw;
     padding: 0px 6vw;
   }
@@ -342,11 +347,18 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .main-text {
+    font-size: 7.8vw;
+    line-height: 4vh;
+    top: 40%;
+  }
   .mainTxt {
     font-size: 9.6vw;
     width: 90vw;
   }
-
+  .shopAbtn {
+    top: 55%;
+  }
   .subTxt {
     font-size: 3.1vw;
     width: 95vw;
@@ -368,10 +380,10 @@
     font-size: min(2.8vw, 7.9rem);
     width: 90vw;
   }
-  .subArtiTit{
+  .subArtiTit {
     font-size: 10.1vw;
   }
-  .subArtiTxt{
+  .subArtiTxt {
     margin-top: 1vh;
   }
 }
