@@ -61,6 +61,7 @@
   }
 }
 @media screen and (max-width: 900px) {
+  /************************** 추천제품영역 **************************/
   .recom-box {
     height: auto;
   }
@@ -110,9 +111,8 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 0.604);
   }
-  .upTitBox{
-  font-size: 2.8vw;
-}
+
+  /***************************** lookbook 영역  *****************************/
   .lookbook-page {
     height: auto;
   }
@@ -120,6 +120,13 @@
     flex-direction: column;
     padding-top: 5vh;
   }
+  .upTitBox {
+    font-size: 2.8vw;
+    height: 6vh;
+    box-sizing: border-box;
+    padding: 0 15px;
+  }
+
   .lookbookBox > div {
     width: 100%;
     padding: 7vh 0 0 0;
@@ -133,21 +140,22 @@
   .lbSlideDesc {
     height: auto;
   }
-  .downDescBox > div{
+  .downDescBox > div {
     font-size: 2vw;
   }
-  .prodBox{
+  .prodBox {
     width: 100%;
   }
-  .categBox{
+  .categBox {
     width: 100%;
   }
-  
+
   /* 순서정렬 필요한 박스 */
   .lbSlideBox {
     flex-direction: column;
     height: auto;
     background-color: transparent;
+    width: 75%;
   }
 
   .slideImg {
@@ -170,6 +178,13 @@
     margin-top: 0;
     padding: 2vh 0 5vh;
   }
+  .downDescBox div {
+    height: 5vh;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
   .materialsBox {
     display: flex;
     justify-content: space-between;
@@ -188,6 +203,10 @@
     position: static;
   }
 
+  /*************** article 영역 ***************/
+  .artiUpTit {
+    font-size: 2.5vw;
+  }
   /* 아래 박스 */
   .article-page {
     height: auto;
@@ -199,6 +218,11 @@
   .artVerbox {
     display: none;
   }
+  .artMainTit {
+    height: 16vh;
+    font-size: 9vw;
+    padding: 6vw 4vw;
+  }
   .artiTxtbox {
     width: 100%;
     height: auto;
@@ -206,14 +230,54 @@
   .artiDesc {
     height: auto;
     line-height: 2;
-    padding: 0;
+    padding: 5vh 3vh 8vh 2vh;
+    margin-top: 3vh;
+    font-size: min(1.6rem, 3.1vw);
+  }
+  .borderBox {
+    display: none;
   }
 
   .artiImgbox {
     width: 100%;
     height: auto;
   }
-
+  .subArti {
+    height: 200vh;
+  }
+  .subArtiContBox {
+    flex-direction: column;
+  }
+  .subArtiTit {
+    font-size: 5.5vw;
+    padding: 4.3vw 4.4vw 0;
+  }
+  .subArti1,
+  .subArti2 {
+    margin-top: 4vh;
+  }
+  .subArti1 {
+    border: none;
+  }
+  .subArti2 {
+    border-top: 1px solid #d1c7a3;
+    border-right: none;
+    padding-top: 4vh;
+  }
+  .subArti3 {
+    display: none;
+  }
+  .subartTxt {
+    font-size: 2vw;
+  }
+  .subartiTxt{
+      font-size: 2.2vw;
+      padding: 1.8vw 4.4vw;
+      margin-top: 7vh;
+  }
+  .subArtiTxt{
+    padding: 0vw 8.4vw 0vh 5vh;
+  }
   .footcatBox > div {
     flex-basis: 50%;
     box-sizing: border-box;
@@ -261,31 +325,31 @@
     gap: 4vh;
   }
 }
-  @media screen and (max-width: 500px) {
-    .mainTxt {
-      font-size: 9.6vw;
-      width: 90vw;
-    }
+@media screen and (max-width: 500px) {
+  .mainTxt {
+    font-size: 9.6vw;
+    width: 90vw;
+  }
 
-    .subTxt {
-      font-size: 3.1vw;
-      width: 95vw;
-      height: 30vw;
-    }
-    .imgbox img:nth-child(2) {
-      translate: 2vw 7vh;
-    }
-    .productDesc {
-      font-size: min(2.4vw, 2.3vw);
-      line-height: 160%;
-    }
-    @media screen and (max-width: 400px) {
-      .about.page {
-        height: 60vh;
-      }
-    }
-    .subTxt {
-      font-size: min(2.8vw, 7.9rem);
-      width: 90vw;
+  .subTxt {
+    font-size: 3.1vw;
+    width: 95vw;
+    height: 30vw;
+  }
+  .imgbox img:nth-child(2) {
+    translate: 2vw 7vh;
+  }
+  .productDesc {
+    font-size: min(2.4vw, 2.3vw);
+    line-height: 160%;
+  }
+  @media screen and (max-width: 400px) {
+    .about.page {
+      height: 60vh;
     }
   }
+  .subTxt {
+    font-size: min(2.8vw, 7.9rem);
+    width: 90vw;
+  }
+}

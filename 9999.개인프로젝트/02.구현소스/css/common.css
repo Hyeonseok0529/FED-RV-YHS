@@ -69,6 +69,7 @@ body.on::after{
 
 /* 햄버거 부모박스 */
 .hambtn {
+  filter: drop-shadow(1px 1px 1px black);
   position: relative;
   display: block;
   width: 32px;

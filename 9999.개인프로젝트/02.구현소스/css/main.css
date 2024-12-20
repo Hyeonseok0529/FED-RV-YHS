@@ -347,7 +347,7 @@ ol {
   color: #ebe6d7;
   font-family: var(--font-title);
   font-size: 2.5rem;
-  margin-top: 91vh;
+  margin-top: 88vh;
   rotate: 270deg;
   letter-spacing: -1.5px;
 }
@@ -617,7 +617,7 @@ ol {
   font-weight: 600;
   font-size: 3.2rem;
   rotate: 270deg;
-  translate: 0 1200%;
+  translate: 0 1600%;
   transform-origin: left top;
   letter-spacing: -3.5px;
   width: 187px;
@@ -629,7 +629,7 @@ ol {
   /* position: absolute; */
   display: block;
   width: 45%;
-  height: 90%;
+  height: 100%;
   /* top: 10vh;
   left: 5vw; */
   border-right: 1px solid #d1c7a3;
@@ -674,7 +674,7 @@ ol {
   width: 50%;
 }
 .borderBox {
-  width: 50%;
+  width: 100%;
   border-bottom: 1px solid #d1c7a3;
   font-family: var(--font-menu);
   height: 4vh;
@@ -689,7 +689,10 @@ ol {
   padding-right: 2vw;
 }
 .imgBox {
-  height: 86vh;
+  width: 95%;
+  height: 90%;
+  margin: 0 auto;
+  margin-top: 3vh;
   overflow: hidden;
 }
 .imgBox img {
