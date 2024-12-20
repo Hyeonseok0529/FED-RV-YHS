@@ -252,8 +252,7 @@
     font-size: 5.5vw;
     padding: 4.3vw 4.4vw 0;
   }
-  .subArti1,
-  .subArti2 {
+  .subArti1{
     margin-top: 4vh;
   }
   .subArti1 {
@@ -276,11 +275,28 @@
       margin-top: 7vh;
   }
   .subArtiTxt{
-    padding: 0vw 8.4vw 0vh 5vh;
+    padding: 4.3vw 4.4vw 0;
+  }
+  .footcatBox {
+    height: 59%;
   }
   .footcatBox > div {
     flex-basis: 50%;
     box-sizing: border-box;
+    padding: 3.2vh 7vh 5vh;
+  }
+  .footSecond, .footForth{
+    border-right: none;
+  }
+  .footThird, .footForth {
+    border-top: 1px solid #d1c7a3;
+  }
+  .footer-area{
+    height: auto;
+  }
+  .copyright{
+    font-size: 1.4vw;
+    padding: 0px 6vw;
   }
 }
 @media screen and (max-width: 700px) {
@@ -351,5 +367,11 @@
   .subTxt {
     font-size: min(2.8vw, 7.9rem);
     width: 90vw;
+  }
+  .subArtiTit{
+    font-size: 10.1vw;
+  }
+  .subArtiTxt{
+    margin-top: 1vh;
   }
 }
