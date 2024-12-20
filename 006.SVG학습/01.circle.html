@@ -91,11 +91,9 @@
         fill: none;
         /* 선색 stroke (기존은 안나옴) */
         stroke: red;
-
         /* 선두께 stroke-width
         기본두께 1px, 단위생략가능 */
-        /* svg는 생성할 떄 기본 단위를 px로 하기 때문이다. */
-        stroke-width: 10;
+        stroke-width: 20;
 
         /* 데쉬설정(선-공백) stroke-dasharray 
         선과 공백순으로 숫자를 나열하여 셋팅함
@@ -109,7 +107,7 @@
           1. 값으로 50%를 줘본다!
           2. 몇조각 나는지 세어본다
           3. 모두 선으로 채우려면
-            50% 곱하기 조각수(= 그려진 경우마다 다르기때문에 항상 6조각은 아님)
+            50% 곱하기 조각수
           4. 데쉬옵셋값을 데쉬값과 같은값으로
           셋팅하면 공백부터 모두 채우기됨!
           5. 오버시나 특정이벤트시 데쉬옵셋값을
@@ -146,7 +144,7 @@
         stroke-dashoffset: -300%;
       } */
 
-      /* 2. 블랙위도우 : 사각형*/
+      /* 2. 블랙위도우 */
       .svg2 {
         background: url(./images/black.jpg) no-repeat top/cover;
       }
@@ -208,7 +206,6 @@
         /* 데쉬선 설정 */
         stroke-dasharray: 340%;
         stroke-dashoffset: 340%;
-
         /* 트랜지션 */
         transition: 0.7s ease-out;
       }
@@ -225,8 +222,8 @@
           height: 200px;
         }
         /* 완다 클리핑 SVG */
-        #myClip{
-          scale: .67;
+        #myClip {
+          scale: 0.67;
         }
       }
     </style>
@@ -244,22 +241,16 @@
       <!-- 1.아이언맨 : 원 -->
       <section>
         <div class="cbx svg1">
-          <svg viewbox="0 0 300 300">
-            <!-- <circle class="c1" cx="150" cy="150" r="140" /> -->
-            <circle
-              class="c1"
-              cx="150"
-              cy="150"
-              r="140"
-              transform="rotate(-90,150,150)"
-            />
+          <svg viewBox="0 0 300 300">
+            <circle class="c1" cx="150" cy="150" r="140" />
+            <!-- <circle class="c1" cx="150" cy="150" r="140" transform="rotate(-90,150,150)" /> -->
           </svg>
         </div>
       </section>
       <!-- 2. 블랙위도우 : 사각형 -->
       <section>
         <div class="cbx svg2">
-          <svg viewbox="0 0 300 300">
+          <svg viewBox="0 0 300 300">
             <rect class="rt1" width="280" height="280" x="10" y="10" />
           </svg>
         </div>
@@ -267,7 +258,7 @@
       <!-- 3.닥스박스 : 다각형(6각형) -->
       <section>
         <div class="cbx svg3">
-          <svg viewbox="0 0 300 300">
+          <svg viewBox="0 0 300 300">
             <!-- 
               [defs요소] : 요소에 효과를 정의함
 

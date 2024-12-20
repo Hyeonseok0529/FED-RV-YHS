@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>04. fixed 포지션</title>
@@ -19,78 +19,82 @@
       h1.tit {
         /* 포지션 : pof */
         position: fixed;
-        /**************************************
-                [ 4. fixed 포지션 ] 
+      /**************************************
+        [ 4. fixed 포지션 ] 
 
-                1. 보이는 화면을 기준한 포지션이다!
-                -> 대부분의 속성은 absolute와 같으나
-                부모만 다르다고 보면 된다!
+        1. 보이는 화면을 기준한 포지션이다!
+        -> 대부분의 속성은 absolute와 같으나
+        부모만 다르다고 보면 된다!
 
-                2. 스크롤이 내려갈때 요소가 그대로 화면에 멈춰있다!
+        2. 스크롤이 내려갈때 요소가 그대로 화면에 멈춰있다!
 
-                3. 위치속성값을 설정하지 않으면 젠틀하다!
-                -> 젠틀픽스드!!! (젠틀앱솔루트와 같음!)
+        3. 위치속성값을 설정하지 않으면 젠틀하다!
+        -> 젠틀픽스드!!! (젠틀앱솔루트와 같음!)
 
-                4. 크기설정을 하지 않으면 내용만큼 자동크기설정됨!
-                -> 픽스드 판타롱스타킹!!! (앱솔루트와 같음)
+        4. 크기설정을 하지 않으면 내용만큼 자동크기설정됨!
+        -> 픽스드 판타롱스타킹!!! (앱솔루트와 같음)
 
-                5. 인라인요소도 fixed를 주면 block으로 자동전환됨!
+        5. 인라인요소도 fixed를 주면 block으로 자동전환됨!
 
-                6. 부모요소가 아무리 많이 싸여있어도 fixed를 주면
-                화면을 기준하여 위치를 잡는다!
+        6. 부모요소가 아무리 많이 싸여있어도 
+        fixed를 주면 화면을 기준하여 위치를 잡는다!
 
-                7. 이미 부모가 fixed이면 자손요소는 fixed를 
-                할 필요가 없다!
+        7. 이미 부모가 fixed이면 자손요소는 fixed를 
+        할 필요가 없다!
 
-                8. 활용도
-                1) 스크롤에 관계없이 화면고정시
-                2) 화면바깥에 숨겼다가 나타나기를 할때
-                3) 보이는 화면을 기준하는 구현의 모든경우
+        8. 활용도
+        1) 스크롤에 관계없이 화면고정시
+        2) 화면바깥에 숨겼다가 나타나기를 할때
+        3) 보이는 화면을 기준하는 구현의 모든경우
 
-                (유의: 배경고정과는 다르다! 배경고정은
-                보이는 화면을 기준한 박스의 배경이미지를
-                고정해 주는 것! 박스가 움직이면 배경이미지도
-                안보이게됨! 반명  fixed포지션은 요소를 고정함!)
-            
-            **************************************/
-
+        (유의: 배경고정과는 다르다! 배경고정은
+        보이는 화면을 기준한 박스의 배경이미지를
+        고정해 주는 것! 박스가 움직이면 배경이미지도
+        안보이게됨! 반명  fixed포지션은 요소를 고정함!)
+    
+    **************************************/
         top: 0;
-        left: 0;
-        /*-> 위치값 사용안하면 젠틀픽스드!
+        left: 0; 
+
+        /* 
+        -> 위치값 사용안하면 젠틀픽스드!
         */
 
-        /* 나의 부모는? 보이는 화면 window */
-        /* 겹쳐질때 가장 위로하기 z-index  */
+        /* 나의 부모는? 당연히 보이는 화면 window */
+        /* 겹쳐질때 가장위로하기 z-index : z999 */
         z-index: 999;
 
         /* 박스모델 */
         width: 100%;
         text-align: center;
         margin: 0;
-        padding: 20px;
-        border: 4px solid darkorange;
+        padding: 20px;        
+        border: 4px solid darkgreen;
         border-radius: 0 0 50% 50%;
-        /* border-radius: 50px 100px 200px 300px; */
         /* border-radius: 50px 200px 300px; */
+        /* border-radius: 50px 300px; */
         /* 
-          [둥근모서리 모서리별 값주기]
-          border-radius: 값;
-          -> 모든방향
-          border-radius: 값 값;
-          -> 왼쪽위+오른쪽아래 오른쪽위+왼쪽아래
-          border-radius: 값 값 값;
-          -> 왼쪽위 오른쪽위+왼쪽아래 오른쪽아래
-          border-radius: 값 값 값 값;
-          -> 왼쪽위부터 시계방향
-           */
+          [ 둥근모서리 모서리별 값주기 ]
+           border-radius: 값;
+           -> 모든방향
+           border-radius: 값 값;
+           -> 왼쪽위+오른쪽아래 오른쪽위+왼쪽아래
+           border-radius: 값 값 값;
+           -> 왼쪽위 오른쪽위+왼쪽아래 오른쪽아래
+           border-radius: 값 값 값 값;
+           -> 왼쪽위 부터 시계방향
+        */
 
-        /* 패딩,보더 포함박스 설정 :bxb */
+
+        /* 패딩,보더 포함박스 설정 : bxb */
         box-sizing: border-box;
-        background-color: lightsalmon;
+
+
+        background-color: lightgreen;
 
         /* 박스그림자 : bxsh */
         box-shadow: 5px 5px 4px
-          rgb(0, 0, 0);
+          rgba(0, 0, 0, 0.412);
 
         /* 글자관련 */
         font-size: 60px;
@@ -100,7 +104,6 @@
       #a1 {
         /* 포지션 앱솔루트 : poa */
         position: absolute;
-
         background: url(./images/ab1.jpg)
           no-repeat center/cover;
       }
@@ -225,39 +228,40 @@
             */
       }
 
-      /* span을 앱솔루트로 만들경우 */
+      /* span을 앱솔루트로 만들경우~! */
       .spabs {
         position: absolute;
         bottom: 0;
         right: 0;
         /* 나의 부모는? .s8 */
 
-        outline: 4px dotted lightcyan;
+        outline: 4px dotted darkmagenta;
       }
 
       /* 앱솔루트끼리는 서로 겹친다! */
       .absimg {
         /* 박스크기를 지정한 이유는?
             자식요소 img가 앱솔루트 이므로
-            그 크기를 자동으로 감쌀 수 없다. */
+            그 크기를 자동으로 감쌀 수 없음! */
         width: 200px;
         height: 250px;
       }
-      /* 모든 이미지에 앱솔루트 주기 */
+      /* 모든 이미지에 앱솔루트주기! */
       .absimg img {
         position: absolute;
         /* 젠틀앱솔루트! */
         width: 200px;
-        border: 10px ridge goldenrod;
+
+        border: 21px ridge goldenrod;
       }
       /* 두번째 이미지인 닥스를 투명하게 만들기 */
       .absimg img:last-child {
-        /* 투명도 속성 : opacity -> opa숫자
+        /* 투명도 속성 : opacity -> op숫자
             0투명, 1불투명, 0~1사이 소수점 반투명 */
         opacity: 0;
         /* filter: opacity(.5);-> 예전방식 */
 
-        /* 트랜지션 속성 : trs 
+        /* 트랜지션 속성 : trs
             -> 두가지 속성변경과정을 애니메이션 해주는 속성
             transition: 속시이지;
             (속성 시간 이징 지연)
@@ -272,8 +276,9 @@
       .absimg:hover img:last-child {
         opacity: 1;
       }
+
       /* 나는 젠틀픽스드다! */
-      #f1 {
+      #f1{
         position: fixed;
         z-index: 100;
         width: 50%;
@@ -282,26 +287,29 @@
         background-color: yellow;
         font-size: 30px;
       }
+
       /* 포스터 보기 박스 */
-      .fixed-poster {
+      .fixed-poster{
         position: fixed;
         top: 250px;
         right: -209px;
         /* 부모는 당연히 window! */
         z-index: 9999999;
+
+        /* 트랜지션 : trs 속시이지 */
         transition: .4s ease-out;
+
+        /* background-color: red; */
       }
-       /* 트랜지션 : trs 속시이지 */
-
-
-      /*  포스터에 마우스 오버시
+      /* 포스터에 마우스 오버시
       right값 변경으로 포스터 보이기 */
       .fixed-poster:hover{
         right: 0;
       }
 
-        /* 글자span  */
-        .fixed-poster span {
+
+      /* 글자span */
+      .fixed-poster span{
         position: absolute;
         top: 0;
         left: -50px;
@@ -309,46 +317,49 @@
         width: 50px;
         height: 300px;
         background-color: lightblue;
-        /* 둥근모서리 : 왼쪽위 , 아래 */
+        /* 둥근모서리 : 왼쪽위,아래 */
         border-radius: 20px 0 0 20px;
 
         /* 글자 세로모드 */
         writing-mode: vertical-lr;
+        font-size: 25px;
         text-align: center;
         padding-left: 7px;
         box-sizing: border-box;
-        /* 자간 : letter-spacing */
+        /* 자간: letter-spacing */
         letter-spacing: 10px;
         /* 참고) 단어간격 : word-spacing */
       }
       /* 포스터 이미지 */
-      .fixed-poster img {
+      .fixed-poster img{
         height: 300px;
-        /* 블록박스에 단독 이미지 
-          하단 간극 없애기 : vam */
+        /* 블록박스에 단독 이미지
+        하단 간극 없애기 : vam */
         vertical-align: middle;
       }
 
-      /* 부모가 많은 요소를 fixed처리하기 
-        - display: inline 요소가 자동으로
+      /* 부모가 많은 요소를 fixed처리하기
+        - display: inline 요소가 자동
         block처리됨!
         - 가로,세로크기 내용만큼 생김!
         - 부모가 아무리 많아도 fixed는
-        보이는 화면이 기준이 된다.
+        보이는 화면이 그 기준이된다!
+      
       */
-
       .iamfixed{
         position: fixed;
         top: 200px;
         right: 200px;
-        z-index: 999999999;
-        
+        z-index: 9999999;
+
         background-color: yellowgreen;
         border: 4px double blue;
         border-radius: 50%;
         padding: 15px;
         font-size: 30px;
+
       }
+
     </style>
   </head>
   <body>
@@ -359,19 +370,15 @@
     <div class="bx" id="s1">s1</div>
 
     <!-- 젠틀픽스드 박스 -->
-
     <div class="bx" id="f1">
       나는 젠틀픽스드다!!!
     </div>
 
     <!-- 포스터보기 fixed적용박스 -->
-    <div class="fixed-poster">
-      <img
-        src="./images/ab0.jpg"
-        alt="포스터"
-      />
+     <div class="fixed-poster">
+      <img src="./images/ab0.jpg" alt="포스터">
       <span>포스터보기</span>
-    </div>
+     </div>
 
     <!-- 첫번째 앱솔루트 박스 -->
     <div class="bx" id="a1">a1</div>

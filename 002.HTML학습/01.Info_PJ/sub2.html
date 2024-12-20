@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -9,6 +9,9 @@
     <title>
       네이버요약뉴스 - 경제 뉴스
     </title>
+    <!-- 웹폰트 CDN방식 호출하기 -->
+    <!-- CDN은 Content Delivery Network
+      네트웤으로 컨텐트 불러오기 -->
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -19,24 +22,29 @@
       crossorigin
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Gugi&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
       rel="stylesheet"
     />
+    <!-- 스타일 요소 -->
+    <!-- <style></style> -->
 
     <!-- 외부 CSS 불러오기 -->
-     <!-- 공통 CSS -->
+    <!-- 공통 CSS -->
     <link
       rel="stylesheet"
       href="./css/common.css"
     />
     <!-- 서브용 CSS -->
-     <link rel="stylesheet" href="./css/sub.css">
+    <link
+      rel="stylesheet"
+      href="./css/sub.css"
+    />
   </head>
   <body>
     <!-- 1. 상단영역 -->
     <header id="top-area" class="part">
       <!-- 1-1. 타이틀 -->
-      <h1><a href="index.html">네이버 요약뉴스</a></h1>
+      <h1>네이버 요약뉴스</h1>
       <!-- 1-2. 메뉴 -->
       <nav class="menu">
         <a href="index.html">
@@ -51,16 +59,17 @@
         </a>
         <span></span>
         <a href="sub1.html">정치</a>
-        <span></span>
+        <span> | </span>
         <a href="sub2.html">경제</a>
-        <span></span>
+        <span> | </span>
         <a href="sub3.html">사회</a>
-        <span></span>
+        <span> | </span>
         <a href="sub4.html">IT/과학</a>
-        <span></span>
+        <span> | </span>
         <a href="sub5.html">TV/연예</a>
       </nav>
     </header>
+    <!-- <div id="header"></div> -->
 
     <!-- 2. 메인영역 -->
     <main
@@ -69,209 +78,314 @@
     >
       <!-- 2-1. 서브타이틀 -->
       <h2 class="sub-title economics">
-        경제뉴스
+        경제 뉴스
       </h2>
-      <!-- 2-2. 언론사로고 -->
+      <!-- 2-2.언론사로고 -->
       <div class="press-logo">
         <img
           src="./images/press_logo2.png"
-          alt="서울경제로고"
+          alt="더스크푸"
         />
       </div>
       <!-- 2-3. 기사제목 -->
       <h3 class="article-title">
-        메모리 세계 1위 보인다…SK하이닉스, 매출·영업익 사상 최대
+        매력 없고 임대료는 비싸고…
+        '명동의 봄' 내쫓는 고질병
+        [視리즈]
       </h3>
-      <!-- 2-4. 기사사진 -->
+      <!-- 2-4. 기사사진 
+       figure요소 : 사진,그림 넣는 블록박스-->
       <figure class="article-picture">
         <img
-          src="./images/arti_img2-1.jpg"
-          alt="SK 하이닉스 공장"
+          src="./images/arti_img2.jpg"
+          alt="명동 거리에선 한국의 전통과 문화를 찾아볼 수 없다.[사진=더스쿠프 포토]
+"
         />
+        <!-- 사진설명은 figcaption요소 사용 -->
         <figcaption>
           <small>
-            SK하이닉스 이천 사업장 전경. 사진제공=SK하이닉스
+            명동 거리에선 한국의 전통과
+            문화를 찾아볼 수
+            없다.[사진=더스쿠프 포토]
           </small>
         </figcaption>
       </figure>
       <!-- 2-5. 기사내용 -->
       <section class="contents">
-        <p>[서울경제]</p>
+        <p>
+          9월 30일 오후 4시. 서울 중구
+          명동 거리는 다양한 국적의
+          외국인 관광객으로 발 디딜 틈이
+          없었다. 팬데믹과 경기침체로
+          오랜 겨울잠을 자던 명동에 다시
+          봄이 찾아온 듯 활력이
+          넘실댔다.
+        </p>
 
-<p>SK하이닉스가 올 3분기에 사상 최대 실적을 기록했다. 인공지능(AI) 칩 업계에서 독주하고 있는 엔비디아의 공급망에서 영향력을 발휘하면서 일각에서 제기되는 '반도체 겨울론'을 불식시켰다. SK하이닉스는 4조~5조원대로 예상되는 삼성전자 반도체(DS)부문의 영업이익을 추월할 것으로 예상된다.</p>
+        <p>
+          관광객들은 명동의 분주한
+          풍경을 사진에 담기 바빴다.
+          그들은 이방인의 자유로움과
+          이국의 낯섦, 군중 사이를
+          헤치고 다니는 즐거움을 실컷
+          만끽하고 있었다. 길에 앉아
+          닭꼬치ㆍ크레페 등 길거리
+          음식을 먹는 이들도 숱했다.
+          다만, 이 풍경 속에서 한국만의
+          '문화'는 찾아볼 수 없었다.
+        </p>
 
-<p>24일 SK하이닉스는 올 3분기 잠정 영업이익<sup>①</sup> 이 7조 300억원으로 지난해 같은 기간 영업손실 1조7920억원에서 흑자전환했다고 발표했다. <mark>매출은 17조 5730억원으로 전년 동기보다 94% 올랐다.</mark></p>
+        <p>
+          "사람 많고, 쇼핑할 곳 많아요.
+          그런데 한국의
+          아이덴티티(정체성)는 없어요."
+          말레이시아에서 온
+          페리드(25)씨는 명동을 관광한
+          후 이렇게 말했다.
+          "일본ㆍ베트남 등의 도시들을
+          여행할 때는 그 지역만의
+          정체성이 뚜렷했어요. 명동은
+          쇼핑할 곳도, 길거리 음식도
+          많은데 이곳만의 문화가 없어서
+          아쉬웠어요." 그는 "다음에
+          한국에 방문하면, 오늘의
+          아쉬움을 달랠 수 있도록 한국의
+          자연을 느낄 수 있는 부산이나
+          제주에 가보고 싶다"고
+          털어놨다.
+        </p>
 
-<p>영업이익과 매출 모두 분기 최대다. 특히 영업이익은 메모리 초호황기였던 2018년 3분기 당시의 6조 4000억원을 훌쩍 뛰어넘으며 새로운 기록을 썼다. 영업이익률은 40%대를 웃돈다. 지난해 4분기 메모리 불황에서 벗어나 흑자로 전환한 이후 3개월 연속으로 급격하게 상승했다.</p>
+        <p>
+          프랑스에서 온 엘리옷(26)씨의
+          감상도 마찬가지였다. 그는
+          "명동에서는 K-팝 문화 정도만
+          볼 수 있을 뿐, 한국의 전통과
+          문화는 전혀 느낄 수 없었다"며
+          "관광 안내소를 찾기 어려웠던
+          점도 불편했다"고 말했다.
+          일본인 마야(38)씨는 "한글의
+          모양을 좋아하는데, 명동은
+          간판에 영어가 많았다"며
+          "한글을 조금 더 보고 싶다"고
+          했다.
+        </p>
 
-<p>SK하이닉스 측은 "수익성 높은 고부가가치 제품 중심으로 판매가 늘며 D램·낸드 모두 평균판매단가(ASP)가 전분기 대비 10% 중반 올라 사상 최대 영업이익을 거뒀다"고 설명했다.</p>
-
-<p>SK하이닉스가 역대 최대 실적을 낸 배경은 단연 고대역폭메모리(HBM)이다. HBM은 여러 개의 D램을 수직으로 쌓아 만든 AI용 메모리다. 업계 1위를 달리고 있는 회사의 HBM은 AI 반도체 생태계에서 리더십을 발휘하고 있는 엔비디아의 선택을 받고 있다. 엔비디아의 최상위 AI 반도체인 '블랙웰'에는 SK하이닉스의 5세대(HBM3E) 칩이 경쟁사 제품을 제치고 단연 압도적인 비율로 활용되고 있다.</p>
-
-<p>회사는 4분기 이후의 실적도 긍정적으로 내다봤다. HBM3E 8단에서 12단 제품으로의 전환과 함께 고용량의 기업용 저장장치(eSSD), DDR5 D램 등 첨단 제품 위주의 생산으로 수익성에 집중한다는 전략이다. 김우현 SK하이닉스 최고재무책임자(CFO)는 "올 3분기 글로벌 1위 AI 메모리 기업으로서 위상을 공고히 했다"며 "앞으로도 시장 수요에 맞춘 유연한 공급전략으로 수익성을 극대화할 것"이라고 말했다.</p>
+        <p>
+          명동 상권은 2010년대부터
+          가파르게 늘어난
+          유커遊客(중국인 관광객)로
+          호황을 누리다 팬데믹 탓에
+          외국인 관광객의 발길이 뚝
+          끊기면서 장기침체를 겪었다.
+          그러던 2022년,
+          엔데믹(풍토병ㆍendemic) 국면이
+          열리면서 관광객이 조금씩
+          돌아왔다. 한국관광공사에
+          따르면 올해 8월까지 누적
+          방한訪韓 외국인 관광객은
+          1067만명으로, 지난해 같은
+          기간보다 62.9% 늘었다. 팬데믹
+          전인 2019년 같은 기간과
+          비교하면 93.0% 회복했다.
+        </p>
       </section>
-
-      <!-- 2-5.5 인용블록영역 -->
-      <article class="quote-box bd-box">
-        <h4>참고자료 : SK하이닉스</h4>
-       
-        <blockquote
-          cite="https://namu.wiki/w/SK%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4"
-        >
-          <img
-            src="./images/SK 하이닉스.svg"
-            alt="SK 하이닉스"
-          />
-          SK 산하의 종합 반도체 제조회사(IDM). 반도체 업계의 호황기와 경쟁자의 해체, 집중적인 투자로 인해 경쟁력을 강화하고 점유율을 상승시키며, SK그룹 계열사 중 3대 축을 이루고 있다. 특히 SK하이닉스는 그룹 내에서 가장 높은 매출액과 영업이익, 시가총액을 유지하며, SK그룹이 21세기 들어 재계 최상위권으로 도약하는 데 중요한 역할을 했다.
-        </blockquote>
-      </article>
 
       <!-- 2-6. 기자정보 -->
       <div class="reporter">
-        강해령 기자
+        홍승주 기자
       </div>
 
       <!-- 2-7. 기사원문 -->
       <div class="article-link">
         <a
-          href="https://n.news.naver.com/mnews/article/011/0004406556"
+          href="https://n.news.naver.com/mnews/hotissue/article/665/0000003786?type=series&cid=2000368"
           target="_blank"
           >기사원문</a
         >
       </div>
-      <!-- 공통 보더박스 디자인 -->
-      <article class="desc bd-box">
-        <h4>주해</h4>
-        <p>
-          ① 영업이익 : 
-          기업의 주된 영업활동으로 발생하는 이익으로 매출총액에서 매출원가와 판매비 및 일반관리비를 뺀 것
-        </p>
-      </article>
-
-      <!-- 2-9. 오늘의 작품 & 느낌 -->
-      <article class="work">
-        <h4>오늘의 작품 &amp; 느낌</h4>
-        <figure>
-          <img
-            src="./images/img_the_scream.jpg"
-            alt="뭉크의 절규"
-          />
-          <figcaption>
-            뭉크의 &lt;<cite>절규</cite>&gt;
-          </figcaption>
-        </figure>
-      </article>
-
-      <!-- 주요뉴스 : ul -->
-       <article class="main-box news-box">
-        <h3>주요뉴스</h3>
-        <ul>
-          <li>
-            <a href="https://n.news.naver.com/mnews/article/081/0003489086" target="_blank">“돈맛 알아야” 12살 딸에 400만원 D사 가방 선물한 남편</a>
-          </li>
-          <li>
-            <a href="https://n.news.naver.com/mnews/article/081/0003489083" target="_blank">한동훈, 尹 면담 뒤 첫 입장…“오직 국민만 보고 피하지 않겠다”</a>
-          </li>
-          <li>
-            <a href="https://n.news.naver.com/mnews/article/081/0003489052" target="_blank">국제결혼 신부 따라 이슬람 개종도 했는데… 필리핀서 납치된 26세 美유튜버</a>
-          </li>
-        </ul>
-       </article>
-
-      <!-- 랭킹뉴스 : ol -->
-       <article class="rank news-box">
-
-        <h3>랭킹뉴스</h3>
-        <ol>
-          <li>
-            <a href="https://n.news.naver.com/mnews/ranking/article/081/0003489077?ntype=RANKING" target="_blank">“비자 면제해줬더니 불법체류”…제주서 중국인 1만명이나</a>
-          </li>
-          <li>
-            <a href="https://n.news.naver.com/mnews/ranking/article/081/0003489044?ntype=RANKING" target="_blank">“5조원대 무기 자체구매할 듯” K방산 큰손, 갑자기 방향 튼 이유는</a>
-          </li>
-          <li>
-            <a href="https://n.news.naver.com/mnews/ranking/article/081/0003489032?ntype=RANKING" target="_blank">정부 “북한군 즉각 철수해야…러북 군사야합 중대위협, 좌시않을 것”</a>
-          </li>
-        </ol>
-       </article>
-
-      <!-- 분야별 뉴스 -->
-       <article class="sec-news news-box">
-        <h3>분야별 뉴스</h3>
-        <dl>
-          <!-- 경제파트 -->
-           <dt>경제</dt>
-           <dd>
-            <a href="https://n.news.naver.com/mnews/article/001/0014999653" target="_blank">현대차 인도 상장 첫날 주가는 약세…장초반 5%대 하락(종합)</a>
-           </dd>
-           <dd>
-            <a href="https://n.news.naver.com/mnews/article/088/0000910963" target="_blank">中 메모리 반도체 생산량 증가 "경기 회복 걸림돌" 우려</a>
-           </dd>
-          <!-- 사회파트 -->
-          <dt>사회</dt>
-          <dd>
-           <a href="https://n.news.naver.com/mnews/article/016/0002377371" target="_blank">서울시, ‘흑백요리사’ 안성재 요리 맛보는 특별미식행사 개최</a>
-          </dd>
-          <dd>
-           <a href="https://n.news.naver.com/mnews/article/277/0005488151" target="_blank">'흑백요리사' 안성재 "미쉐린 3스타? 내려갈 일만 남았다"</a>
-          </dd>
-          <!-- TV/연예파트 -->
-          <dt>TV/연예</dt>
-          <dd>
-           <a href="https://n.news.naver.com/mnews/article/422/0000688466" target="_blank">[날씨] 추위 부르는 가을비…내일 비 그친 후 '쌀쌀'</a>
-          </dd>
-          <dd>
-           <a href="https://n.news.naver.com/mnews/article/028/0002712655" target="_blank">가을 서점가 ‘한강 가뭄’…단비같은 책은 25일 이후에나</a>
-          </dd>
-        </dl>
-       </article>
-
-        <!-- 사진뉴스 : table -->
-         <article class="photo-news news-box">
-          <h3>사진뉴스</h3>
-           <table>
-            <!-- 첫번째줄 -->
-            <tr>
-              <td>1</td>            
-              <td>
-                <a href="https://view.asiae.co.kr/article/2024102314203419030" target="_blank">안성재 셰프 '1인 70만 원' 디너 코스…오픈 61초 만에 매진</a>
-              </td>
-              <td>
-                <a href="https://view.asiae.co.kr/article/2024102314203419030" target="_blank"><img src="./images/photonews1.jpg" alt="photo news1"></a>
-              </td>
-            </tr>
-            <!-- 두번째줄 -->
-            <tr>
-              <td>2</td>            
-              <td>
-                <a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202410230103&t=NN" target="_blank">금 제치고 올해만 45% '급등'…"진짜 금은 따로 있었네"</a>
-              </td>
-              <td>
-                <a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202410230103&t=NN" target="_blank"><img src="./images/photonews2.jpg" alt="photonews2"></a>
-              </td>
-            </tr>
-            <!-- 세번째줄 -->
-            <tr>
-              <td>3</td>            
-              <td>
-                <a href="https://n.news.naver.com/mnews/ranking/article/214/0001381906?ntype=RANKING" target="_blank">민주당 "독도 '다케시마' 지칭 지도 코엑스에"‥일본 대사관에 항의서한</a>
-              </td>
-              <td>
-                <a href="https://n.news.naver.com/mnews/ranking/article/214/0001381906?ntype=RANKING" target="_blank"><img src="./images/photonews3.jpg" alt="photo news3"></a>
-              </td>
-            </tr>
-           </table>
-         </article>
     </main>
+    <!-- <div id="main"></div> -->
 
     <!-- 3. 하단영역 -->
     <footer id="info-area" class="part">
       <address>
         서울시 강남구 역삼동 119 대호B
         8F <br />
-        대표: Hyeon Seok Yang <br />
+        대표: Tom Brace Parker <br />
         전화: 010-2222-3333
       </address>
     </footer>
+    <!-- <div id="footer"></div> -->
+
+    <!-- 
+      [ 1. HTML 서식 요소 ]
+      1. 두꺼운 글자
+      <b>- 굵은 글씨
+        (Bold Text - 단순히 글자만 두꺼움)
+      <strong>- 중요한 텍스트
+        (Important text - 중요함의 의미)
+
+      2. 이탤릭 글자
+      <i>- 이탤릭체 텍스트(기울임꼴 글자)
+          (Italic text - 글자만 이탤릭처리)
+      <em>- 강조된 텍스트
+          (Emphasized text - 강조의 의미)
+
+      3. 색상표시
+      <mark>- 표시된 텍스트
+          (Marked text - 눈에 띄게 표시)
+
+      4. 작은글자(13px)
+      <small>- 작은 텍스트
+          (Smaller text - 더 작은 텍스트)
+
+      5. 삭제된 글자표시
+      <del>- 삭제된 텍스트(Deleted text)          
+
+          중간 지우는줄표시 CSS속성값
+          text-decoration: line-through;
+
+      6. 삽입된 글자표시
+      <ins>- 삽입된 텍스트(Inserted text)
+        
+          밑줄표시 CSS속성값
+          text-decoration: underline;
+
+      7. 첨자표시
+      <sub>- 아래 첨자 텍스트
+        - 약간 아랫쪽 작은글자(Subscript text)
+        - 사용예 : 병행글자표시(영문,한자), 화학식
+
+      <sup>- 상위 첨자 텍스트
+        - 약간 윗쪽 작은글자(Superscript text)
+        - 사용예 : 주석표시숫자(숫자와 설명연결), 승수표시
+
+    ______________________________
+
+    [ 2. HTML 인용관련 요소 ]
+
+      1. 블록인용요소
+      <blockquote>
+          - 블록요소로 별도의 인용구를 구분하는 박스
+          - 주의: 내부에 p요소와 같은 다른 블록요소 사용불가!
+          - cite 속성 : 출처표시
+          (필수속성은 아니지만 url 주소가 들어가기 때문에
+          링크로 오해할 수 있으나 아님! 단순출처정보임)
+
+      2. 인라인 인용요소
+      <q>
+          - 작은 이용구(쌍따옴표가 자동생성됨!)
+          - 주의: 인라인요소임(blockquote와 구분할것!)
+
+      3. 줄임말 인용
+      <abbr>
+          - 줄임말의 원래 뜻을 표시하는 요소
+          - 필수속성 ->> title 속성 -> 툴팁으로 원래뜻을 표시
+      (참고: title 툴팁속성은 어느요소든 사용가능함!)
+          - 기본디자인 : 점선 밑줄
+          text-decoration: underline dotted;
+
+      4. 주소인용
+      <address>
+          - 주소, 대표자, 전화번호 등 사이트 정보표시
+      
+      5. 작품명 인용
+      <cite>
+          - 인용하고 있는 작품을 표시하기 위한 요소
+
+      6. 반대방향글 인용
+      <bdo>
+          - 글방향이 반대일때 사용함
+          - Bi-Directional Override(줄임)
+          - dir 속성 :  rtl(right to left : 오른쪽에서 왼쪽으로 진행)
+          - 아랍어, 이스라엘어 등 반대방향으로 
+          출력해야하는 문자를 인용할때 사용함!
+
+      __________________________________
+
+
+
+    [ HTML5에서 등장한 div 친구들 ]
+        - div에 내용을 구분하는 이름을 지어줌
+        - 의미가 있는요소를 시멘틱(sementic)태그라고 함!
+        1. header : 머릿부분
+        2. footer : 아랫부분
+        3. main : 메인부분(한번만 사용가능!)
+        4. nav : 네비게이션 부분
+        5. aside : 부가정보
+        6. section : 내용구분파트
+        7. article : 독립된 내용구분파트
+        ( section/article 내부에 h1~h6 태그사용권고)     
+         
+        [ 요소 명명법 ]
+        1. 아이디는 #, 클래스는 . (약어로만들기)
+        2. 이름은 구체적으로 만들고
+        단어마다 데쉬(-)를 사용함(케밥케이스)
+        3. 아이디는 유일함, 클래스는 다중적용가능
+        예) <div class="aa bb cc" id="ee"></div>
+
+
+        [ img 요소 ]
+        - img 는 이미지를 불러오는 요소
+        - 필수속성
+            1) src : 이미지경로
+            2) alt : 대체텍스트(웹접근성 필수)
+            -> alternative text
+
+        [ 요소의 구성 ]
+        1. 요소명 - 요소별 특징을 구분하는 이름
+        2. 속성 - 요소가 가지는 개별 셋팅값을 저장함
+        -> 속성값은 쌍따옴표안에 표기함
+        표기) <요소명 속성="값">
+        -> 요소의 문자는 모두 소문자를 원칙으로 한다!
+
+
+        [ 요소 공통속성 ]
+        1. style 속성 : 요소에 인라인으로 CSS속성값을 셋팅함
+        예) <요소명 style="속성:값;속성:값;">
+        2. title 속성 : 툴팁제공속성(마우스오버시 등장)
+
+        [ 블록요소 VS 인라인요소 ]
+        1. 블록요소 : 내용을 구분하는 큰 구분박스
+        - 기본적으로 다른요소가 옆에 올 수 없다!
+        ex) div, section, figure, article, p  
+
+        2. 인라인요소 : 내용으로 나오는 컨텐츠를
+        구분해주는 요소
+        - 기본적으로 다른요소가 옆에 위치함!
+        ex) a, span, i, em, strong, img
+
+        [ 쌍태그 VS 홀로태그 ]
+        1. 쌍태그: 일반적으로 태그는 여는태그와
+        닫는 태그가 있다. 그 사이에 데이터를 넣는다!
+        ex) <div></div>, <h1></h1>
+
+        2. 홀로태그: 닫는 태그가 없는 태그
+        -> 데이터를 넣을 필요가 없는 태그
+        ex) <br>, <img src="" alt="">
+        -> 줄바꿈br요소는 데이터를 담을 필요없다
+        -> 이미지는 불러오면 끝, 데이터 필요없다
+
+        참고) 프리티어 자동 줄마춤 적용시 홀로태그에
+        마무리 슬래쉬가 생기는 이유는?
+        기본 XHTML문법에서 홀로태그는 마지막에 
+        스스로 닫는 방식으로 마무리해야함의 문법있음
+        이 문법을 프리티어가 적용하는 것!
+        우리가 코딩시엔 할 필요없고 프리티어가
+        해줘도 신경쓰지 않아도됨!
+        -> 프리티어가 이것을 하는 이유는
+        JSX문법을 사용할 경우 홀로닫기 태그가 필요
+        그래서 일반적으로 넣어주는것임!
+        JSX는 리액트에서 hmtl태그를 그대로 사용하는
+        문서형식임!
+        예) <br> -> <br />
+
+        [ p요소 유의사항! ]
+        -> 블록요소지만 내부에 일반적으로 다른
+         블록요소를 사용할 수 있지만 p는 안된다!
+
+
+
+-->
   </body>
 </html>

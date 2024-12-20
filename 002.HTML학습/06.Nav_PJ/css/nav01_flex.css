@@ -53,9 +53,8 @@ a{
 
 /* 메뉴 플렉스박스 설정 */
 .gnb ul{
-    
-    /* 진행방향 오른쪽끝정렬 */
     display: flex;
+    /* 진행방향 오른쪽끝정렬 */
     justify-content: flex-end;
 
     /* 메뉴 글자 줄바꿈방지 */
@@ -192,21 +191,23 @@ a{
     margin-top: 4px;
     background-color: #fff;
 
-    /* 마우스 아웃시에는 여기에
-    셋팅해야함 따라서 바깥으로 
+    /* 마우스 아웃시는 여기에
+    셋팅해야함 따라서 바깥으로
     나가는 모양을 만들기 위해
-    왼쪽마진값을 100%로 설정함! */
+    왼쪽마진값을 100%로 설정함 */
     margin-left: 100%;
+
     transition: .3s;
+    
 }
 /* 오버시 밑줄박스 애니 */
 .uline ul>li:hover>a::after{
-    width: 100%;   
+    width: 100%;
     /* 왼쪽마진 시작위치로!
     단, 트랜지션 안되게해야함! */
     margin-left: 0;
     /* 오버시 트랜지션은
-    width만 먹히게 함!!! */
+    width만 먹히게함!!! */
     transition: width .3s;
 }
 

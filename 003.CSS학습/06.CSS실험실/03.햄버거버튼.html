@@ -22,9 +22,6 @@
         height: 50px;
         background-color: #333;
         border-radius: 25px;
-
-        /* 트랜지션 : trs 속시이지 */
-        transition: .3s ;
       }
 
       /* 처음 바 셋팅상태 */
@@ -32,8 +29,8 @@
       .hambtn span:nth-child(1){
         top: 0;
         /* 트랜지션
-        - top은 .3s
-        - rotate는 .3s 기다림 */
+        - rotate은 .3s
+        - top는 .3s 기다림 */
         transition: 
         top .3s .3s,
         rotate .3s;
@@ -41,7 +38,7 @@
       /* 두번째 바 */
       .hambtn span:nth-child(2){
         top: 100px;
-
+        
         /* 트랜지션 : 겹쳐질때
         까지 기다린 후 나타남 */
         transition: 
@@ -55,8 +52,9 @@
         - top은 .3s 기다림 */
         transition: 
         top .3s .3s,
-        rotate .3s;        
+        rotate .3s;
       }
+
       /* 클래스 on일때 바 셋팅상태 */
       /* 첫번째 바 */
       .hambtn.on span:nth-child(1){
@@ -72,9 +70,9 @@
       /* 두번째 바 */
       .hambtn.on span:nth-child(2){
         width: 0;
-        /* 트랜지션 : 겹쳐질 때
+        /* 트랜지션 : 겹쳐질때
         까지 기다린 후 없어짐 */
-        transition:
+        transition: 
         width .01s .3s;
       }
       /* 세번째 바 */
@@ -88,17 +86,18 @@
         top .3s,
         rotate .3s .3s;
       }
+
+      /* 두번째 카피 햄버거 버튼
+      크기/위치 이동 */
+      .hambtn2{
+        position: absolute;
+        top: 2vw;
+        right: 3vw;
+        scale: .1;
+        /* 스케일 기준변경 */
+        transform-origin: right top;
+      }
       
-      /* 두번째  카피 햄버거 버튼
-        크기/위치 이동 */
-        .hambtn2{
-          position: absolute;
-          top: 2vw;
-          right: 3vw;
-          scale: .1;
-          /* 스케일 기준변경 */
-          transform-origin: right top;
-        }
       
     </style>
   </head>
@@ -109,7 +108,6 @@
       <span></span>
       <span></span>
     </div>
-
 
     <div class="hambtn hambtn2" 
     onclick="this.classList.toggle('on')">

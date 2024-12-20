@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>05. sticky 포지션</title>
@@ -54,37 +54,40 @@
           (높이값을 기준으로 작동하기 때문임!!!)
 
       **************************************/
-
+      
         z-index: 999;
 
         /* 박스모델 */
         width: 100%;
         text-align: center;
         margin: 0;
-        padding: 20px;
-        border: 4px solid rgb(165, 197, 95);
+        padding: 20px;        
+        border: 4px solid darkgreen;
         border-radius: 0 0 50% 50%;
-        /* border-radius: 50px 100px 200px 300px; */
         /* border-radius: 50px 200px 300px; */
+        /* border-radius: 50px 300px; */
         /* 
-          [둥근모서리 모서리별 값주기]
-          border-radius: 값;
-          -> 모든방향
-          border-radius: 값 값;
-          -> 왼쪽위+오른쪽아래 오른쪽위+왼쪽아래
-          border-radius: 값 값 값;
-          -> 왼쪽위 오른쪽위+왼쪽아래 오른쪽아래
-          border-radius: 값 값 값 값;
-          -> 왼쪽위부터 시계방향
-           */
+          [ 둥근모서리 모서리별 값주기 ]
+           border-radius: 값;
+           -> 모든방향
+           border-radius: 값 값;
+           -> 왼쪽위+오른쪽아래 오른쪽위+왼쪽아래
+           border-radius: 값 값 값;
+           -> 왼쪽위 오른쪽위+왼쪽아래 오른쪽아래
+           border-radius: 값 값 값 값;
+           -> 왼쪽위 부터 시계방향
+        */
 
-        /* 패딩,보더 포함박스 설정 :bxb */
+
+        /* 패딩,보더 포함박스 설정 : bxb */
         box-sizing: border-box;
-        background-color: rgb(107, 232, 99);
+
+
+        background-color: lightskyblue;
 
         /* 박스그림자 : bxsh */
         box-shadow: 5px 5px 4px
-          rgb(0, 0, 0);
+          rgba(0, 0, 0, 0.412);
 
         /* 글자관련 */
         font-size: 60px;
@@ -94,7 +97,6 @@
       #a1 {
         /* 포지션 앱솔루트 : poa */
         position: absolute;
-
         background: url(./images/ab1.jpg)
           no-repeat center/cover;
       }
@@ -219,39 +221,40 @@
             */
       }
 
-      /* span을 앱솔루트로 만들경우 */
+      /* span을 앱솔루트로 만들경우~! */
       .spabs {
         position: absolute;
         bottom: 0;
         right: 0;
         /* 나의 부모는? .s8 */
 
-        outline: 4px dotted lightcyan;
+        outline: 4px dotted darkmagenta;
       }
 
       /* 앱솔루트끼리는 서로 겹친다! */
       .absimg {
         /* 박스크기를 지정한 이유는?
             자식요소 img가 앱솔루트 이므로
-            그 크기를 자동으로 감쌀 수 없다. */
+            그 크기를 자동으로 감쌀 수 없음! */
         width: 200px;
         height: 250px;
       }
-      /* 모든 이미지에 앱솔루트 주기 */
+      /* 모든 이미지에 앱솔루트주기! */
       .absimg img {
         position: absolute;
         /* 젠틀앱솔루트! */
         width: 200px;
-        border: 10px ridge goldenrod;
+
+        border: 21px ridge goldenrod;
       }
       /* 두번째 이미지인 닥스를 투명하게 만들기 */
       .absimg img:last-child {
-        /* 투명도 속성 : opacity -> opa숫자
+        /* 투명도 속성 : opacity -> op숫자
             0투명, 1불투명, 0~1사이 소수점 반투명 */
         opacity: 0;
         /* filter: opacity(.5);-> 예전방식 */
 
-        /* 트랜지션 속성 : trs 
+        /* 트랜지션 속성 : trs
             -> 두가지 속성변경과정을 애니메이션 해주는 속성
             transition: 속시이지;
             (속성 시간 이징 지연)
@@ -266,8 +269,9 @@
       .absimg:hover img:last-child {
         opacity: 1;
       }
+
       /* 나는 젠틀픽스드다! */
-      #f1 {
+      #f1{
         position: fixed;
         z-index: 100;
         width: 50%;
@@ -276,25 +280,29 @@
         background-color: yellow;
         font-size: 30px;
       }
+
       /* 포스터 보기 박스 */
-      .fixed-poster {
+      .fixed-poster{
         position: fixed;
         top: 250px;
         right: -209px;
         /* 부모는 당연히 window! */
         z-index: 9999999;
-        transition: 0.4s ease-out;
-      }
-      /* 트랜지션 : trs 속시이지 */
 
-      /*  포스터에 마우스 오버시
+        /* 트랜지션 : trs 속시이지 */
+        transition: .4s ease-out;
+
+        /* background-color: red; */
+      }
+      /* 포스터에 마우스 오버시
       right값 변경으로 포스터 보이기 */
-      .fixed-poster:hover {
+      .fixed-poster:hover{
         right: 0;
       }
 
-      /* 글자span  */
-      .fixed-poster span {
+
+      /* 글자span */
+      .fixed-poster span{
         position: absolute;
         top: 0;
         left: -50px;
@@ -302,52 +310,54 @@
         width: 50px;
         height: 300px;
         background-color: lightblue;
-        /* 둥근모서리 : 왼쪽위 , 아래 */
+        /* 둥근모서리 : 왼쪽위,아래 */
         border-radius: 20px 0 0 20px;
 
         /* 글자 세로모드 */
         writing-mode: vertical-lr;
+        font-size: 25px;
         text-align: center;
         padding-left: 7px;
         box-sizing: border-box;
-        /* 자간 : letter-spacing */
+        /* 자간: letter-spacing */
         letter-spacing: 10px;
         /* 참고) 단어간격 : word-spacing */
       }
       /* 포스터 이미지 */
-      .fixed-poster img {
+      .fixed-poster img{
         height: 300px;
-        /* 블록박스에 단독 이미지 
-          하단 간극 없애기 : vam */
+        /* 블록박스에 단독 이미지
+        하단 간극 없애기 : vam */
         vertical-align: middle;
       }
 
-      /* 부모가 많은 요소를 fixed처리하기 
-        - display: inline 요소가 자동으로
+      /* 부모가 많은 요소를 fixed처리하기
+        - display: inline 요소가 자동
         block처리됨!
         - 가로,세로크기 내용만큼 생김!
         - 부모가 아무리 많아도 fixed는
-        보이는 화면이 기준이 된다.
+        보이는 화면이 그 기준이된다!
+      
       */
-
-      .iamfixed {
+      .iamfixed{
         position: fixed;
         top: 200px;
         right: 200px;
-        z-index: 999999999;
+        z-index: 9999999;
 
         background-color: yellowgreen;
         border: 4px double blue;
         border-radius: 50%;
         padding: 15px;
         font-size: 30px;
+
       }
 
       /* 스티키를 포함하는 부모박스 */
       .wrap{
         padding: 15px;
-        border: 5px dotted blue;
         margin-top: 300px;
+        border: 5px dotted blue;
       }
 
       /* 스티키 적용구간 부모박스 */
@@ -355,61 +365,61 @@
         padding: 15px;
         border: 5px dotted red;
         height: 700px;
-        /* 스티키 구간적용을 위해서 높이값은 필수 */
+        /* 스티키 구간적용을 위해서 높이값 필수!!! */
       }
 
       /* 스티키 박스 */
       .stkbx{
         position: sticky;
-        /* 보이는 화면 상단으로부터 100px */
+        /* 보이는 화면 상단으로 부터 100px위치 */
         top: 100px;
-        
+
+
         text-align: center;
         font-size: 30px;
         padding: 50px;
-        background-color: rgb(208, 95, 214);
-        border: 5px dotted rgb(116, 31, 119);
+        background-color: lightpink;
+        border: 5px dotted blue;
         z-index: 9999;
       }
 
     </style>
   </head>
   <body>
+
     <div class="bx" id="r1">r1</div>
     <div class="bx" id="s1">s1</div>
 
-    <!-- 스티키 제목박스 -->
+
+    <!-- 스티키 제목박스-->
     <h1 class="tit">Sticky 포지션</h1>
 
     <!-- 스티키를 포함하는 박스 -->
      <div class="wrap">
-      <!-- 스티키 구간적용박스 -->
-       <div class="wrap-stk">
-        <!-- 스티키 포지션박스 -->
-         <div class="stkbx">
-          나는 sticky다! 사라지지 않아!
-         </div>
-       </div>
+      <!--  스티키 구간적용박스 -->
+        <div class="wrap-stk">
+          <!-- 스티키 포지션 박스 -->
+           <div class="stkbx">
+            나는 sticky다! 사라지지 않아!
+           </div>
+        </div>
      </div>
 
     <!-- 젠틀픽스드 박스 -->
-
     <div class="bx" id="f1">
       나는 젠틀픽스드다!!!
     </div>
 
     <!-- 포스터보기 fixed적용박스 -->
-    <div class="fixed-poster">
-      <img
-        src="./images/ab0.jpg"
-        alt="포스터"
-      />
+     <div class="fixed-poster">
+      <img src="./images/ab0.jpg" alt="포스터">
       <span>포스터보기</span>
-    </div>
+     </div>
 
     <!-- 첫번째 앱솔루트 박스 -->
     <div class="bx" id="a1">a1</div>
     <div class="bx" id="r2">r2</div>
+
 
     <div class="bx" id="s2">s2</div>
     <!-- 두번째 앱솔루트 박스 -->
@@ -470,9 +480,7 @@
             </span>
 
             <!-- 부모가 많은 요소를 fixed처리하기 -->
-            <span class="iamfixed"
-              >👩‍🔧개발자👨‍🔧</span
-            >
+             <span class="iamfixed">👩‍🔧개발자👨‍🔧</span>
           </div>
         </div>
       </div>

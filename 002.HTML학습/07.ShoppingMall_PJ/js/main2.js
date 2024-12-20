@@ -99,18 +99,19 @@ $btnMove.click(function () {
     }, 0);
   } /// else ///
 
-  // (3) 블릿 변경하기 : 해당순번에 클래스 "on" 넣기
+  // (3) 블릿 변경하기 : 해당순번에 클래스"on"넣기
   // 대상: .indic li
-  // 순번은 슬라이드 방향별로 아래와같이 읽어온다!
-  // 아랫쪽 버튼은 두번째 순번, 윗쪽 버튼은 첫번째 순번
-  let currIdx = 
-  $slide.find('li').eq(isBtn?1:0).attr('data-seq');
-  console.log('읽은순번:',currIdx);
+  // 순번은 슬라이드 방향별로 아래와 같이 읽어옴
+  // 아랫쪽 버튼은 두번째순번, 윗쪽버튼은 첫번째순번
+  let currIdx = $slide
+    .find("li")
+    .eq(isBtn ? 1 : 0)
+    .attr("data-seq");
+  console.log("읽은순번:", currIdx);
 
-  // 해당순번의 블릿li 클래스 "on" 넣기 (나머지는 빼기) 
-  $indic.eq(currIdx).addClass('on')
-  .siblings().removeClass('on')
-
+  // 해당순번의 블릿li 클래스 "on"넣기 (나머지는 빼기)
+  $indic.eq(currIdx).addClass("on")
+  .siblings().removeClass("on");
 }); /// click ///
 
 // [3. 처음 슬라이드에 고유번호 속성넣기 ]

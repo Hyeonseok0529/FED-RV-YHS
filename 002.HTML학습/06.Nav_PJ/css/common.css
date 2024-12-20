@@ -49,10 +49,10 @@ body{
 }
 /* 서브메뉴 박스 : 100%차지 서브영역 */
 .smenu{
-    /* position: absolute;
+    position: absolute;
     z-index: 999;
-    left: 0; 
-    width: 100%;*/
+    left: 0;
+    width: 100%;
     /* 숨김박스 */ 
     height: 0;
     overflow: hidden;
@@ -61,10 +61,10 @@ body{
     /* 트랜지션 */
     transition: .4s ease-in-out;
 }
-/* -> 동적 높이값은 JS로 함!(+이벤트)*/
+/* -> 동적 높이값은 JS로 함!(+이벤트)
 .gnb>ul>li:hover .smenu{
     height: 300px;
-} 
+} */
 /* 임시 첫번째 */
 /* .gnb>ul:first-child .smenu{
     display: block;

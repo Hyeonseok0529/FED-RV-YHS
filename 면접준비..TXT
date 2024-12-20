@@ -122,6 +122,8 @@ figcaption 등 쓰는 요소에 정확하게 태그를 주자.
 39. 제이쿼리의 대표적인 메서드
 append Prepend 
 
+40. Single Page App -> Vue JS , React , Angular JS
+Multi Page App
 
 
 * 회사 선택할 때는 반드시 교육이 있는 회사여야 한다.

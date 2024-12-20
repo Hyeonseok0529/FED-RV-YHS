@@ -77,6 +77,7 @@
                 (3) rad: 라디안 (2π rad는 한 바퀴 회전)
                 (4) turn: 턴 (1 turn은 한 바퀴 회전)
 
+
             */
             #trans1:hover img {
                 /* y축회전 : tfry */
@@ -151,10 +152,11 @@
                 /* transform: translate(-50%, -100%); */
 
                 /* 
-                    [ translate 속성 ] 
-                      translate: 값 값; -> x,y축 이동설정
-                      translate: 값; -> x축 이동설정
-                      translate: 0 값; -> y축 이동설정
+                    [ translate 속성 ]
+                     translate: 값 값; -> x,y축 이동설정
+                     translate: 값; -> x축 이동설정
+                     translate: 0 값; -> y축 이동설정
+                
                 */
                 translate: -50% -100%;
                 /* x축이동 */
@@ -187,32 +189,33 @@
             */
             #trans6:hover img {
                 /* 원형회전 : tfr */
-                /* transform: rotate(2589deg); */
+                 /* transform: rotate(2589deg); */
 
-                /* 
-                    [ rotate 속성] 
-                      rotate: 각도; -> 평면회전
-                      rotate: x 각도; -> x축회전
-                      rotate: y 각도; -> y축회전
-                      rotate: z 각도; -> z축회전
+                 /* 
+                    [ rotate 속성 ]
+                     rotate: 각도; -> 평면회전
+                     rotate: x 각도; -> x축회전
+                     rotate: y 각도; -> y축회전
+                     rotate: z 각도; -> z축회전
 
-                      ((축별조합하기)) 1은 사용, 0은 미사용
-                      rotate: 1 1 0 45deg; = -> x,y 조합
-                      rotate: 1 1 1 45deg; = -> x,y,z 조합
-                */
+                     ((축별조합하기)) 1은 사용, 0은 미사용
+                     rotate: 1 1 0 45deg; -> x,y조합
+                     rotate: 1 1 1 45deg; -> x,y,z 조합
+                 
+                 
+                 */
+                 /* rotate: 4568deg; */
+                 rotate: 3turn;
+                 /* rotate: x 4568deg; */
+                 /* rotate: y 4568deg; */
+                 /* rotate: 1 1 0 4568deg; */
 
-                /* rotate: 4568deg; */
-                rotate: 4568deg;
-                /* rotate: x 4568deg; */
-                /* rotate: y 4568deg; */
-                /* rotate: 1 1 0 4568deg; */
-                
-                /* 트랜지션 종류 변경 */
-                transition-property: rotate;
-                /* 트랜지션 시간 늘리기 */
-                transition-duration: 1s;
-            }
-             /* 
+                 /* 트랜지션 종류 변경 */
+                 transition-property: rotate;
+                 /* 트랜지션 시간 늘리기 */
+                 transition-duration: 5s;
+
+            /* 
                 transition: 속시이지
                 개별 설정이 가능함!
 
@@ -225,8 +228,12 @@
                 4. 지연시간 :
                     transition-delay
                 */
+
+            }
+
             /* 회전축 변경하기 */
             #trans6 img {
+                /* transform-origin: right bottom; */
                 transform-origin: 70% 20%;
             /* 
                 [ 트랜스폼 회전축 변경속성 ]
@@ -234,8 +241,7 @@
                 - 가로값 : left, right, center, 몇px,몇%
                 - 세로값 : top, bottom, center, 몇px,몇%
                 - 기본값 : 가로, 세로 center임! 
-            */    
-
+            */
 
             }
 
@@ -246,7 +252,7 @@
                 - 각도가 양수/음수에 따라 기울임 방향이 달라짐
             */
             #trans7:hover img {
-                transform: skewX(-30deg);
+                transform: skewY(-30deg);
             }
 
             /* 
@@ -259,21 +265,20 @@
                 축소, 확대해서 크기를 맞출때도 용이함!
             */
             #trans8:hover img {
-                /* 스케일 : tfs */
+                /* 스케일 : tf:s */
                 /* transform: scale(2); */
-                
+
                 /* 
                     [ scale 속성 ] 
                      scale: 값; -> 전체확대
-                     scale: 값 값; -> x,y 따로 확대
-                     scale: 값 0; -> x 확대
-                     scale: 0 값; -> y 확대
-                */
+                     scale: 값 값; -> x,y 따로확대
+                     scale: 값 1; -> x확대
+                     scale: 1 값; -> y확대
+                 */
                 /* scale: 2; */
-                /* scale: .5 3; */
-                /* scale: 2 0.5 */
-                scale: 0.5 2;
-                
+                /* scale: 2 4; */
+                /* scale: 2 1; */
+                scale: 1 2;
             }
             /* 초기배율설정 */
             #trans8 img {
@@ -291,11 +296,10 @@
             */
 
             #trans9:hover img {
-                transform: scale(5) translate(-200%, -100%) 
-                rotateX(1200deg) skewX(50deg) rotate(5300deg);
+                transform: scale(5) translate(-200%,-100%) rotateX(1200deg) skewX(50deg) rotate(5300deg);
 
                 /* 트랜지션 시간 늘리기 */
-                transition-duration: 0.5s;
+                transition-duration: 30s;
             }
 
             /* 
@@ -307,75 +311,74 @@
             */
             #trans10{
                 /* 앱솔루트 자식은 잡히지 않으므로
-                가로, 세로 크기를 설정함 */
+                가로,세로 크기를 설정함! */
                 width: 200px;
                 height: 200px;
                 
                 /* 텍스트 중앙해제 */
-                text-align-last: left;
+                text-align: left;
             }
             #trans10 img{
                 position: absolute;
                 /* 앱솔루트는 서로 겹친다! */
                 /* 위치값 없으면 부모박스에 가만히 있는다!
-                즉, 젠틀하다. 젠틀앱솔루트 */
+                즉, 젠틀하다! 젠틀앱솔루트~!!! */
             }
-
-
-
-
-            
             /* 유정이 원본 회전하여 숨기기 */
             #trans10 img:first-child{
-                /* y축 90도 회전 */
+                /* y축 90도회전 */
                 rotate: y 90deg;
                 /* transform: rotateY(90deg); */
-
-                /* 트랜지션: trs 처음에 천천히*/
-                transition: .4s ease-in
-            }
-            /* 유정이 오버시 회전하여 보이기 */
-            #trans10:hover img:first-child{
-                /* y축 90도 회전 */
-                rotate: y 0deg;
-                /* transform: rotatey(0deg); */
-
-                /* 트랜지션: trs 속시이지 (뒤에 지연시간)
-                마지막에 천천히 */
-                transition: .4s ease-out .4s ;
-            }
-            /* 보거미 원본 회전하기 */
-            #trans10 img:last-child{
-                /* y축 90도 회전 */
-                rotate: y 0deg;
-                /* transform: rotatey(0deg); */
-
-                /* 트랜지션: trs 속시이지 (뒤에 지연시간) */
-                transition: .4s ease-out .4s;    
-
-            }
-            /* 보거미 오버시 회전하기 */
-            #trans10:hover img:last-child{
-                /* y축 90도 회전 */
-                rotate: y 90deg;
-                /* transform: rotatey(90deg); */
 
                 /* 트랜지션: trs 처음에 천천히 */
                 transition: .4s ease-in;
             }
+
+            /* 유정이 오버시 회전하여 보이기 */
+            #trans10:hover img:first-child{
+                /* y축 0도회전 */
+                rotate: y 0deg;
+                /* transform: rotateY(0deg); */
+
+                /* 트랜지션 : trs 속시이지 (뒤에 지연시간) 
+                마지막에 천천히 */
+                transition: .4s ease-out .4s;
+            }
+
+            /* 보거미 원본 회전하기 */
+            #trans10 img:last-child{
+                /* y축 0도회전 */
+                rotate: y 0deg;
+                /* transform: rotateY(0deg); */
+
+                /* 트랜지션 : trs 속시이지 (뒤에 지연시간)
+                마지막에 천천히 */
+                transition: .4s ease-out .4s;
+            }
+
+            /* 보거미 오버시 회전하기 */
+            #trans10:hover img:last-child{
+                /* y축 90도회전 */
+                rotate: y 90deg;
+                /* transform: rotateY(90deg); */
+
+                /* 트랜지션: trs 처음에 천천히 */
+                transition: .4s ease-in;
+
+            }
+
+            /* 
+                [ CSS 애니메이션 가속도 ]
+
+                (1) linear : 등속도
+                (2) ease : 앞뒤로 약간느려짐(기본값)
+                (3) ease-in : 처음에 느리게 출발
+                (4) ease-out : 마지막에 느리게 멈춤
+                (5) ease-in-out : 앞뒤로 느려짐
+
+                https://www.w3schools.com/cssref/playit.php?filename=playcss_animation-timing-function&preval=linear
+            */
             
-
-
-
-            /* [ CSS 애니메이션 가속도 ]
-
-            (1) linear : 등속도
-            (2) ease : 앞뒤로 약간느려짐(기본값)
-            (3) ease-in : 처음에 느리게 출발
-            (4) ease-out : 마지막에 느리게 멈춤
-            (5) ease-in-out : 앞뒤로 느려짐
-https://www.w3schools.com/cssref/playit.php?filename=playcss_animation-timing-function&preval=linear */
-
 
         </style>
     </head>
