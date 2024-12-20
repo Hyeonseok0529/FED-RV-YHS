@@ -47,22 +47,126 @@
     }
     .recommendBox > div {
       width: 56vw;
-      height: 45vw;
+      height: 55vw;
+      margin: 0 auto;
     }
     .bagNbtn,
     .shopbtn {
       display: none;
     }
     .recTextbox {
-      padding: 0px 0 7vw 14vw;
-      box-sizing: none;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 0;
     }
     .viewbtn {
-        font-size: 2.3vw;
+      font-size: 2.3vw;
     }
     .productName {
-        font-size: 5.4vw;
+      font-size: 5.4vw;
     }
+    .recommendBox::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 1px;
+      opacity: 0.5;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.604);
+    }
+
+    .lookbook-page {
+      height: auto;
+    }
+    .lookbookBox {
+      flex-direction: column;
+      padding-top: 5vh;
+    }
+    .lookbookBox > div {
+      width: 100%;
+    }
+    .lbSlideDesc {
+      height: auto;
+    }
+    /* 순서정렬 필요한 박스 */
+    .lbSlideBox {
+      flex-direction: column;
+      height: auto;
+      background-color: transparent;
+    }
+
+    .slideImg {
+      width: 100%;
+      padding: 2vh;
+      padding-bottom: 5vh;
+      box-sizing: border-box;
+      margin-top: 0;
+      background-color: #e0e0e0;
+    }
+
+    .lbVerTxtbox {
+      display: none;
+    }
+    /* 순서3번째로 변경 */
+    .downDescBox {
+      order: 3;
+      position: static;
+      width: 100%;
+      margin-top: 0;
+      padding: 2vh 0 5vh;
+    }
+    .materialsBox {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    /* 순서2번째로 변경 */
+    .btnBox {
+      order: 2;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2vh;
+      margin-top: -2vh;
+    }
+    .lbbtn,
+    .lbshopbtn {
+      position: static;
+    }
+
+/* 아래 박스 */
+.article-page{
+  height: auto;
+}
+.verFlexbox{
+  flex-direction: column;
+  height: auto;
+}
+.artVerbox{
+  display: none;
+}
+.artiTxtbox{
+  width: 100%;
+  height: auto;
+}
+.artiDesc{
+  height: auto;
+  line-height: 2;
+  padding: 0;
+}
+
+.artiImgbox{
+  width: 100%;
+  height: auto;
+}
+
+.footcatBox > div {
+  flex-basis: 50%;
+  box-sizing: border-box;
+}
+
+
+
   }
   @media screen and (max-width: 700px) {
     .mainTxt {
@@ -70,7 +174,7 @@
       width: 85vw;
     }
     .subTxt {
-      font-size: 2.5vw;
+      font-size: 2.7vw;
       width: 80vw;
     }
   }
@@ -88,6 +192,18 @@
     }
     .shopAbtn {
       top: 65%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .mainTxt {
+      font-size: 9.6vw;
+      width: 90vw;
+    }
+
+    .subTxt {
+      font-size: 3.1vw;
+      width: 95vw;
+      height: 30vw;
     }
   }
 }

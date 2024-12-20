@@ -570,8 +570,8 @@ ol {
   height: 100%;
   /* 기사정보 부모박스 */
   position: relative;
-  display: flex;
-  flex-direction: row-reverse;
+  /* display: flex;
+  flex-direction: row-reverse; */
 }
 .artiUpTitbox {
   width: 100%;
@@ -590,32 +590,38 @@ ol {
   padding-top: 2vh;
   box-sizing: border-box;
 }
+/* Article 박스 */
+.verFlexbox{
+  display: flex;
+  height: 90vh;
+}
 /* 세로 텍스트 박스 */
 .artVerbox {
   width: 5%;
-  height: 100%;
   border-right: 0.5px solid #d1c7a3;
 }
 .artVerTxt {
-  position: absolute;
+  /* position: absolute; */
   color: #1f1f1f;
   font-family: var(--font-title);
   font-weight: 600;
   font-size: 3.2rem;
-  margin-top: 72vh;
   rotate: 270deg;
+  translate: 0 1200%;
+  transform-origin: left top;
   letter-spacing: -3.5px;
   width: 187px;
-  left: -3.8vw;
+  
+  /* left: -3.8vw; */
 }
 /* 기사 정보 */
 .artiTxtbox {
-  position: absolute;
+  /* position: absolute; */
   display: block;
   width: 45%;
   height: 90%;
-  top: 10vh;
-  left: 5vw;
+  /* top: 10vh;
+  left: 5vw; */
   border-right: 1px solid #d1c7a3;
   color: #1f1f1f;
 }
@@ -655,14 +661,10 @@ ol {
   font-size: 1vw;
 }
 .artiImgbox {
-  position: absolute;
-  top: 10vh;
-  left: 49.5vw;
-  width: 49.8%;
-  height: 89.8%;
+  width: 50%;
 }
 .borderBox {
-  width: 100%;
+  width: 50%;
   border-bottom: 1px solid #d1c7a3;
   font-family: var(--font-menu);
   height: 4vh;
@@ -676,19 +678,14 @@ ol {
 .borderBoxTxt {
   padding-right: 2vw;
 }
-.imgBox {
-  display: flex;
-  position: absolute;
-  width: 95%;
-  top: 6vh;
-  left: 1.2vw;
-  box-sizing: border-box;
-  height: 91.5%;
+.imgBox{
+  height: 86vh;
   overflow: hidden;
-  justify-content: center;
 }
 .imgBox img {
   cursor: pointer;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: 1s ease-out;
 }
