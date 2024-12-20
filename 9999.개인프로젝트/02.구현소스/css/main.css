@@ -286,7 +286,7 @@ ol {
   font-size: 4.4rem;
   display: block;
   font-family: var(--font-title);
-  color: #fff;
+  color: #ebe6d7;;
   letter-spacing: -1.6px;
   transition: 0.4s ease-out;
   cursor: pointer;
@@ -296,7 +296,7 @@ ol {
 }
 .productDesc {
   display: block;
-  font-size: min(1.2vw, 1.2rem);
+  font-size: 1vw;
   font-family: var(--font-menu);
   color: #ebe6d7;
   font-weight: 400;
@@ -307,7 +307,7 @@ ol {
   position: relative;
   font-size: 2rem;
   font-family: var(--font-menu);
-  color: #fff;
+  color: #ebe6d7;;
   letter-spacing: 1px;
 }
 .viewbtn::after {
@@ -319,7 +319,8 @@ ol {
   width: 0;
   height: 0.5px;
   margin-left: 100%;
-  background-color: #fff;
+  background-color: #ebe6d7;
+  opacity: .5;
   transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .viewbtn:hover::after {

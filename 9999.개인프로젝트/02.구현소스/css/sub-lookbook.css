@@ -29,7 +29,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: ;
+  transition: .6s ease-out;
 }
 .lookbookInbox a img:hover {
   scale: 1.05;
@@ -44,7 +44,6 @@
   left: 22.94rem;
   width: 32.125rem;
   top: 23.562rem;
-  border: 1px solid;
   overflow: hidden;
 }
 .lookBox2 {
@@ -53,7 +52,6 @@
   left: 77.25rem;
   top: 33.783rem;
   width: 31.003rem;
-  border: 1px solid;
   overflow: hidden;
 }
 .lookBox3 {
@@ -62,7 +60,6 @@
   left: 145.011rem;
   top: 19.562rem;
   width: 28.015rem;
-  border: 1px solid;
   overflow: hidden;
 }
 .lookBox4 {
@@ -71,7 +68,6 @@
   left: 118.936rem;
   width: 33.43rem;
   top: 67.505rem;
-  border: 1px solid;
   overflow: hidden;
 }
 .lookBox5 {
@@ -80,7 +76,6 @@
   left: 15.1rem;
   top: 68.2rem;
   width: 32.918rem;
-  border: 1px solid;
   overflow: hidden;
 }
 .lookBox6 {
@@ -89,7 +84,6 @@
   left: 72.549rem;
   top: 92.941rem;
   width: 31.43rem;
-  border: 1px solid;
   overflow: hidden;
 }
 .lookBox7 {
@@ -98,7 +92,6 @@
   left: 21.002rem;
   top: 113.4rem;
   width: 26.344rem;
-  border: 1px solid;
   overflow: hidden;
 }
 .lookBox8 {
@@ -107,6 +100,5 @@
   left: 100rem;
   top: 85.4rem;
   width: 31.843rem;
-  border: 1px solid;
   overflow: hidden;
 }
