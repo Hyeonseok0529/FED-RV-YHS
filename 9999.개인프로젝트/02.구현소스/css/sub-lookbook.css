@@ -10,6 +10,14 @@
 /* Core CSS */
 @import url(./core.css);
 
+/* .topBdbox{
+    position: fixed;
+    border-bottom: 1px solid #d1c7a3;
+    opacity: 0.5;
+    width: 100%;
+    height: 9vh;
+    z-index: 999;
+} */
 .lookbookPage {
   height: auto;
 }
@@ -29,66 +37,65 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: .6s ease-out;
+  transition: 0.6s ease-out;
 }
 .lookbookInbox a img:hover {
   scale: 1.05;
 }
 .lookbookInbox {
-  /* 이미지 부모박스 */
-  position: relative;
+  height: 200vh;
 }
 .lookBox1 {
-  translate: 40vw 3vh;
-  width: min(321px, 37vw);
+  translate: 10.6vw 24vh;
+  width: min(321px, 25.9vw);
   height: auto;
   display: block;
   overflow: hidden;
 }
 .lookBox2 {
-  translate: 40vw 3vh;
-  width: min(310px, 37vw);
+  translate: 42vw 12vh;
+  width: min(310px, 25vw);
   height: auto;
   display: block;
   overflow: hidden;
 }
 .lookBox3 {
-  translate: 40vw 3vh;
-  width: min(280px, 37vw);
+  translate: 74vw -29vh;
+  width: min(280px, 23.3vw);
   height: auto;
   display: block;
   overflow: hidden;
 }
 .lookBox4 {
-  translate: 40vw 3vh;
-  width: min(334px, 37vw);
+  translate: 7vw -21vh;
+  width: min(334px, 27.8vw);
   height: auto;
   display: block;
   overflow: hidden;
 }
 .lookBox5 {
-  translate: 40vw 3vh;
-  width: min(329px, 37vw);
+  translate: 39vw -20vh;
+  width: min(329px, 27.3vw);
   height: auto;
   display: block;
   overflow: hidden;
 }
 .lookBox6 {
-  translate: 40vw 3vh;
-  width: min(314px, 37vw);
+  translate: 69vw -84vh;
+  width: min(314px, 26vw);
   height: auto;
   display: block;
   overflow: hidden;
 }
 .lookBox7 {
-  translate: 40vw 3vh;
+  translate: 11vw -55vh;
   width: min(263px, 37vw);
   height: auto;
   display: block;
   overflow: hidden;
 }
 .lookBox8 {
-  translate: 40vw 3vh;
+  translate: 68vw -85vh;
   width: min(318px, 37vw);
   height: auto;
   display: block;
