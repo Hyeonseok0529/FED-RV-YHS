@@ -11,7 +11,7 @@
 @import url(./core.css);
 
 .lookbookPage {
-  height: 500vh;
+  height: auto;
 }
 #cont-area {
   width: 100%;
@@ -39,66 +39,58 @@
   position: relative;
 }
 .lookBox1 {
-  position: absolute;
-  height: 23.526rem;
-  left: 22.94rem;
-  width: 32.125rem;
-  top: 23.562rem;
+  translate: 40vw 3vh;
+  width: min(321px, 37vw);
+  height: auto;
+  display: block;
   overflow: hidden;
 }
 .lookBox2 {
-  position: absolute;
-  height: 30.576rem;
-  left: 77.25rem;
-  top: 33.783rem;
-  width: 31.003rem;
+  translate: 40vw 3vh;
+  width: min(310px, 37vw);
+  height: auto;
+  display: block;
   overflow: hidden;
 }
 .lookBox3 {
-  position: absolute;
-  height: 32.662rem;
-  left: 145.011rem;
-  top: 19.562rem;
-  width: 28.015rem;
+  translate: 40vw 3vh;
+  width: min(280px, 37vw);
+  height: auto;
+  display: block;
   overflow: hidden;
 }
 .lookBox4 {
-  position: absolute;
-  height: 35.418rem;
-  left: 118.936rem;
-  width: 33.43rem;
-  top: 67.505rem;
+  translate: 40vw 3vh;
+  width: min(334px, 37vw);
+  height: auto;
+  display: block;
   overflow: hidden;
 }
 .lookBox5 {
-  position: absolute;
-  height: 23.575rem;
-  left: 15.1rem;
-  top: 68.2rem;
-  width: 32.918rem;
+  translate: 40vw 3vh;
+  width: min(329px, 37vw);
+  height: auto;
+  display: block;
   overflow: hidden;
 }
 .lookBox6 {
-  position: absolute;
-  height: 33.418rem;
-  left: 72.549rem;
-  top: 92.941rem;
-  width: 31.43rem;
+  translate: 40vw 3vh;
+  width: min(314px, 37vw);
+  height: auto;
+  display: block;
   overflow: hidden;
 }
 .lookBox7 {
-  position: absolute;
-  height: 31.576rem;
-  left: 21.002rem;
-  top: 113.4rem;
-  width: 26.344rem;
+  translate: 40vw 3vh;
+  width: min(263px, 37vw);
+  height: auto;
+  display: block;
   overflow: hidden;
 }
 .lookBox8 {
-  position: absolute;
-  height: 24.575rem;
-  left: 100rem;
-  top: 85.4rem;
-  width: 31.843rem;
+  translate: 40vw 3vh;
+  width: min(318px, 37vw);
+  height: auto;
+  display: block;
   overflow: hidden;
 }
