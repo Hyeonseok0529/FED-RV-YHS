@@ -3,16 +3,17 @@
 /* 개인인 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
 
-body.on::after{
-  content: '';
+body.on::after {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: #00000079;
+  background-color: #64583282;
   z-index: 99;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  /* 페이드인 트랜지션 질문 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 }
 
 /************* 1.상단영역 *************/
@@ -26,7 +27,7 @@ body.on::after{
   width: 100%;
   height: 100px;
 }
-.top-area.inbox{
+.top-area.inbox {
   width: 100vw;
 }
 /* 상단탑영역 a태그 */
@@ -47,7 +48,7 @@ body.on::after{
   display: flex;
   gap: 42px;
   flex-direction: column;
-  height: 100%;
+  height: 9vh;
   justify-content: center;
   align-items: center;
 }
@@ -115,7 +116,7 @@ body.on::after{
   rotate: -45deg;
   transition: top 0.3s ease-out, rotate 0.3s ease-out 0.3s;
 }
-.shopbtn{
+.shopbtn {
   text-shadow: 1px 1px 1px black;
 }
 /* 장바구니 서브메뉴 */
@@ -127,7 +128,7 @@ body.on::after{
   width: 100%;
   height: 100%;
   translate: 100%;
-  transition: translate .6s ease-out;
+  transition: translate 0.6s ease-out;
   /* display: none; */
 }
 .minicart-box {
@@ -145,8 +146,8 @@ body.on::after{
   font-weight: 500;
   font-weight: 600;
   position: absolute;
-  top: 11%;
-  left: 18%;
+  top: 13%;
+  left: 13rem;
   translate: -50% -50%;
 }
 .minicart span:nth-child(2) {
@@ -156,6 +157,8 @@ body.on::after{
   letter-spacing: -2.5px;
   font-weight: 600;
   position: absolute;
+  width: 32vw;
+  text-align: center;
   top: 40%;
   left: 50%;
   translate: -50% -50%;
@@ -169,9 +172,10 @@ body.on::after{
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 22vw;
+  text-align: center;
   translate: -50% -50%;
   background-color: #645832;
-  padding: 0 75px;
   color: #ebe6d7;
   border-radius: 5px;
 }
@@ -188,7 +192,7 @@ aside .smenu {
   background-color: #ebe6d7;
   overflow: hidden;
   background: #ebe6d7 url(../images/Ld_img4.png) no-repeat right/40%;
-  transition: translate .6s ease-in-out;
+  transition: translate 0.6s ease-in-out;
 }
 .smenu .inbox {
   display: flex;
@@ -239,7 +243,7 @@ aside .smenu {
   font-weight: 400;
 }
 
-.uline.color2 a::after{
+.uline.color2 a::after {
   background-color: #fff;
 }
 
@@ -293,7 +297,7 @@ aside .smenu {
   gap: 10px;
   align-items: center;
 }
-.bagbtn{
+.bagbtn {
   text-shadow: 1px 1px 1px black;
 }
 .bagbtn li {
@@ -345,8 +349,9 @@ footer {
   /* 2번째 카테고리 부모박스 */
   position: relative;
 }
-.footcatBox>div{
+.footcatBox > div {
   flex: 1;
+  padding: 3vh 2vh 0vh 5vh;
 }
 .footFirst {
   border-right: 1px solid #d1c7a3;
@@ -374,7 +379,7 @@ footer {
   font-family: var(--font-menu);
 }
 .footCatTit {
-  font-size: 3rem;
+  font-size: 1.5vw;
   font-weight: 400;
   letter-spacing: 0.3vw;
 }
@@ -382,9 +387,9 @@ footer {
   font-size: 1.5rem;
   font-weight: 300;
   opacity: 0.6;
-  color: #ebe6d7
+  color: #ebe6d7;
 }
-.footcatInbox a:nth-child(1){
+.footcatInbox a:nth-child(1) {
   font-weight: 300;
 }
 /* 하단 로고 */

@@ -182,7 +182,7 @@
     padding: 2vh 0 5vh;
   }
   .downDescBox div {
-    height: 5vh;
+    height: 4vh;
     padding: 0px 10px;
     box-sizing: border-box;
     display: flex;
@@ -232,7 +232,7 @@
   }
   .artiDesc {
     height: auto;
-    line-height: 2;
+    line-height: 1.5;
     padding: 5vh 3vh 8vh 2vh;
     margin-top: 3vh;
     font-size: min(1.6rem, 3.1vw);
@@ -265,6 +265,9 @@
     border-top: 1px solid #d1c7a3;
     border-right: none;
     padding-top: 4vh;
+  }
+  .subArti2 .subArtiTxt {
+    margin-top: 2vh;
   }
   .subArti3 {
     display: none;
@@ -304,6 +307,11 @@
     padding: 0px 6vw;
   }
 }
+@media screen and (max-width: 800px) {
+  .footlogo-btn {
+    height: 30vh;
+  }
+}
 @media screen and (max-width: 700px) {
   .mainTxt {
     font-size: 9vw;
@@ -321,7 +329,7 @@
     padding: 0px 1.5rem;
   }
   .hamShop-box {
-    height: 11rem;
+    height: 10vh;
   }
   .main-text {
     top: 46%;
@@ -359,6 +367,16 @@
   .shopAbtn {
     top: 55%;
   }
+  .upTitBox {
+    font-size: 3.5vw;
+  }
+  .downDescBox div {
+    font-size: 2.7vw;
+  }
+
+  .subartiBox {
+    height: 98%;
+  }
   .subTxt {
     font-size: 3.1vw;
     width: 95vw;
@@ -371,7 +389,19 @@
     font-size: min(2.4vw, 2.3vw);
     line-height: 160%;
   }
+  .footCatTit {
+    font-size: 3vw;
+  }
+  .footlogo-btn {
+    height: 20vh;
+  }
   @media screen and (max-width: 400px) {
+    .right-menu {
+      width: 15vw;
+    }
+    .hamShop-box {
+      height: 10vh;
+    }
     .about.page {
       height: 60vh;
     }
