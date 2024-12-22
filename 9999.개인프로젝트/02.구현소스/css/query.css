@@ -21,7 +21,6 @@
     translate: 2vw 3vh;
     width: min(370px, 37vw);
     height: auto;
-    scale: 0;
     /* animation: show-ani 1s cubic-bezier(0.83,-0.2, 0.2, 1.47) forwards; */
     /* transition: 1s cubic-bezier(0.83,-0.2, 0.2, 1.47); */
   }

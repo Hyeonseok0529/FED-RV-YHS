@@ -52,52 +52,86 @@
   display: block;
   overflow: hidden;
 }
+.lookBox1 img {
+  width: min(321px, 25.9vw);
+  object-fit: cover;
+}
 .lookBox2 {
-  translate: 42vw 12vh;
   width: min(310px, 25vw);
+  translate: 42vw 12vh;
   height: auto;
   display: block;
   overflow: hidden;
+}
+.lookBox2 img {
+  width: min(310px, 25vw);
+  object-fit: cover;
 }
 .lookBox3 {
-  translate: 74vw -29vh;
   width: min(280px, 23.3vw);
+  translate: 74vw -29vh;
   height: auto;
   display: block;
   overflow: hidden;
+}
+.lookBox3 img {
+  width: min(280px, 23.3vw);
+  object-fit: cover;
 }
 .lookBox4 {
-  translate: 7vw -21vh;
   width: min(334px, 27.8vw);
+  translate: 7vw -21vh;
   height: auto;
   display: block;
   overflow: hidden;
+}
+.lookBox4 img {
+  width: min(334px, 27.8vw);
+  object-fit: cover;
 }
 .lookBox5 {
-  translate: 39vw -20vh;
   width: min(329px, 27.3vw);
+  translate: 39vw -20vh;
   height: auto;
   display: block;
   overflow: hidden;
 }
+.lookBox4 img {
+  width: min(329px, 27.3vw);
+  object-fit: cover;
+}
+
 .lookBox6 {
-  translate: 69vw -84vh;
   width: min(314px, 26vw);
+  translate: 69vw -84vh;
   height: auto;
   display: block;
   overflow: hidden;
 }
+.lookBox4 img {
+  width: min(314px, 26vw);
+  object-fit: cover;
+}
+
 .lookBox7 {
-  translate: 11vw -55vh;
   width: min(263px, 37vw);
+  translate: 11vw -55vh;
   height: auto;
   display: block;
   overflow: hidden;
+}
+.lookBox4 img {
+  width: min(263px, 37vw);
+  object-fit: cover;
 }
 .lookBox8 {
-  translate: 68vw -85vh;
   width: min(318px, 37vw);
+  translate: 68vw -85vh;
   height: auto;
   display: block;
   overflow: hidden;
+}
+.lookBox4 img {
+  width: min(318px, 37vw);
+  object-fit: cover;
 }
