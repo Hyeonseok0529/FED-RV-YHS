@@ -27,7 +27,7 @@ body {
   height: 100%;
   object-fit: cover;
   scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) .5s forwards;
+  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 0.5s forwards;
 }
 
 @keyframes show-ani {
@@ -52,7 +52,7 @@ body {
   height: 100%;
   object-fit: cover;
   scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) .7s forwards;
+  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 0.7s forwards;
 }
 
 @keyframes show-ani {
@@ -76,7 +76,7 @@ body {
   height: 100%;
   object-fit: cover;
   scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) .9s forwards;
+  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 0.9s forwards;
 }
 
 @keyframes show-ani {
@@ -181,3 +181,18 @@ body {
   }
 }
 
+/* 페이드 아웃 셋팅 */
+/* 페이지 전환효과용 가림막 */
+.pg-cover {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  /* height: 0vh; */
+        /* display: none; */
+  background-color: lightseagreen;
+  /* 트랜지션: 속시이지 */
+  /* transition: all 0.8s ease-in-out; */
+  /* -> 애니메이션을 줄때에는 트랜지션을 빼야한다! */
+}

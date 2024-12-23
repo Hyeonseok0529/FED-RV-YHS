@@ -21,4 +21,5 @@ $(".smenu a").click((e) => {
   let txt = $(e.currentTarget).text();
   if (txt == "HOME") location.href = "index.html";
   else if (txt == "LOOKBOOK") location.href = "sub-lookbook.html";
+  else if (txt == "CONTACT") location.href = "contact.html";
 });
