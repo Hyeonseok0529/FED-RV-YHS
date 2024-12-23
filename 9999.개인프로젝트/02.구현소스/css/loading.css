@@ -6,7 +6,7 @@ body {
 
 .ldContbox {
   width: 54%;
-  height: 100vh;
+  height: 98vh;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -40,7 +40,7 @@ body {
 .aniImg2 {
   position: absolute;
   top: 24rem;
-  left: 0;
+  left: -11vw;
   width: 37%;
   height: auto;
   overflow: hidden;
@@ -62,8 +62,8 @@ body {
 /* 이미지 3 */
 .aniImg3 {
   position: absolute;
-  top: 42rem;
-  left: 16vw;
+  top: 47rem;
+  left: 0vw;
   width: 30%;
   height: auto;
   display: inline-block;
@@ -86,8 +86,8 @@ body {
 /* 이미지 4 */
 .aniImg4 {
   position: absolute;
-  top: 36rem;
-  left: 32vw;
+  top: 56vh;
+  left: 30vw;
   width: 37%;
   height: auto;
   display: inline-block;
@@ -110,8 +110,8 @@ body {
 /* 이미지 5 */
 .aniImg5 {
   position: absolute;
-  top: 21rem;
-  left: 33vw;
+  top: 31vh;
+  left: 42vw;
   width: 34%;
   height: auto;
   display: inline-block;
@@ -134,7 +134,7 @@ body {
 /* 이미지 6 */
 .aniImg6 {
   position: absolute;
-  top: 15rem;
+  top: 10vh;
   left: 22vw;
   width: 34%;
   height: auto;
@@ -158,8 +158,8 @@ body {
 /* 이미지 7 */
 .aniImg7 {
   position: absolute;
-  top: 16rem;
-  left: 4vw;
+  top: 11vh;
+  left: 1vw;
   width: 34%;
   height: auto;
   display: inline-block;

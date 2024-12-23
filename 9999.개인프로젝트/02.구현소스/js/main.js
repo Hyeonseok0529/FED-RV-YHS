@@ -33,6 +33,14 @@ $(".smenu a").click((e) => {
   else if (txt == "CONTACT") location.href = "contact.html";
 });
 
+$(".footcatInbox a").click((e) => {
+  let txt = $(e.currentTarget).text();
+  console.log(e)
+  if (txt == "Home") location.href = "index.html";
+  else if (txt == "Lookbook") location.href = "sub-lookbook.html";
+  else if (txt == "contact") location.href = "contact.html";
+});
+
 
 // 로고 클릭시 홈페이지 이동 //
 $("svg").click(function () {

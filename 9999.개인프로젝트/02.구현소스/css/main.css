@@ -621,6 +621,7 @@ ol {
   transform-origin: left top;
   letter-spacing: -3.5px;
   width: 187px;
+  margin-left: 1vw;
 
   /* left: -3.8vw; */
 }
