@@ -60,7 +60,17 @@
   }
 }
 @media screen and (max-width: 900px) {
-  /************************** 추천제품영역 **************************/
+/* 상단 공통 */
+.minicart-box {
+  width: 100vw;
+}
+.minicart span:nth-child(2) {
+  width: 100vw;
+}
+.minicart span:nth-child(3) {
+  width: 21rem;
+}
+/* 메인 페이지 */
   .main-video {
     height: 90%;
   }

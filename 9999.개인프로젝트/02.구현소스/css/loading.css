@@ -191,7 +191,7 @@ body {
   width: 100vw;
   /* height: 0vh; */
         /* display: none; */
-  background-color: lightseagreen;
+  background-color: black;
   /* 트랜지션: 속시이지 */
   /* transition: all 0.8s ease-in-out; */
   /* -> 애니메이션을 줄때에는 트랜지션을 빼야한다! */

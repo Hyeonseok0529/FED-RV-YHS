@@ -179,6 +179,28 @@ body.on::after {
   color: #ebe6d7;
   border-radius: 5px;
 }
+.conshop{
+  transition:  0.35s ease-in-out;
+}
+.conshop:hover{
+  cursor: pointer;
+}
+.close{
+display: block;
+margin-top: 11rem;
+text-align: right;
+padding-right: 5vw;
+font-size: 2rem;
+box-sizing: border-box;
+border-radius: 20%;
+font-family: var(--font-menu );
+transition:  0.35s ease-in-out;
+}
+.close:hover{
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
 
 /* 서브메뉴 */
 
