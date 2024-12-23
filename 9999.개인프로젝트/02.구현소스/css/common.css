@@ -35,7 +35,7 @@ body.on::after {
   font-family: var(--font-menu);
   color: #fff;
   font-size: 2.4rem;
-  transition: color 0.4s ease-in-out;
+  transition: color 0.4s cubic-bezier(0.07, 0.2, 0.53, 1.57);
 }
 
 .shopbtn:hover,
@@ -214,7 +214,7 @@ aside .smenu {
   background-color: #ebe6d7;
   overflow: hidden;
   background: #ebe6d7 url(../images/Ld_img4.png) no-repeat right/40%;
-  transition: translate 0.6s ease-in-out;
+  transition: translate 0.8s cubic-bezier(0.07, 0.2, 0.02, 1.01);
 }
 .smenu .inbox {
   display: flex;
@@ -321,6 +321,7 @@ aside .smenu {
 }
 .bagbtn {
   text-shadow: 1px 1px 1px black;
+  transition: cubic-bezier(0.07, 0.2, 0.53, 1.57)
 }
 .bagbtn li {
   display: flex;
