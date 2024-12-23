@@ -33,6 +33,7 @@ $(".smenu a").click((e) => {
   else if (txt == "CONTACT") location.href = "contact.html";
 });
 
+
 // 로고 클릭시 홈페이지 이동 //
 $("svg").click(function () {
   location.href = "index.html";
@@ -62,7 +63,9 @@ $(".lbbtn").click(() => {
 
 
 
-$('.total-wrap').delay(2000).slideDown(1000);
+$('.total-wrap').delay(3000).slideDown(2000);
 $('.in-wrap').delay(2000).animate({paddingTop:'0'},1000);
-$('#top-area').hide().delay(3000).fadeIn(1000);
+$('.top-area.inbox').hide().delay(4000).fadeIn(2000);
+$('h1 span').hide().delay(4000).fadeIn(2000);
+$('.shopAbtn').hide().delay(4000).fadeIn(2000);
 // $('.page,#footer-area').hide().delay(3000).fadeIn(1000);

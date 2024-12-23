@@ -59,20 +59,21 @@
     top: 65%;
   }
 }
+
 @media screen and (max-width: 900px) {
-/* 상단 공통 */
-.minicart-box {
-  width: 100vw;
-}
-.minicart span:nth-child(2) {
-  width: 100vw;
-}
-.minicart span:nth-child(3) {
-  width: 21rem;
-}
-/* 메인 페이지 */
+  /* 상단 공통 */
+  .minicart-box {
+    width: 100vw;
+  }
+  .minicart span:nth-child(2) {
+    width: 100vw;
+  }
+  .minicart span:nth-child(3) {
+    width: 21rem;
+  }
+  /* 메인 페이지 */
   .main-video {
-    height: 90%;
+    height: 100%;
   }
   .recom-box {
     height: auto;
@@ -322,6 +323,13 @@
   }
 }
 @media screen and (max-width: 700px) {
+  .aniImg6 {
+    top: 18rem;
+  }
+  .aniImg7 {
+    top: 23rem;
+  }
+
   .mainTxt {
     font-size: 9vw;
     width: 85vw;
@@ -404,6 +412,10 @@
   .footlogo-btn {
     height: 20vh;
   }
+  .subArti2 .subArtiTxt {
+    margin-top: 7vh;
+  }
+
   @media screen and (max-width: 400px) {
     .right-menu {
       width: 15vw;
@@ -423,6 +435,24 @@
     font-size: 10.1vw;
   }
   .subArtiTxt {
-    margin-top: 1vh;
+    margin-top: 7vh;
+  }
+  .recommendBox > div {
+    width: 90vw;
+    height: 130vw;
+  }
+
+  .productName {
+    font-size: 10.4vw;
+  }
+  .productDesc {
+    font-size: min(5.4vw, 3.1vw);
+  }
+  .viewbtn {
+    font-size: 4.6vw;
+  }
+  .subTxt {
+    font-size: min(3.3vw, 1.3rem);
+    width: 100vw;
   }
 }

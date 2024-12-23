@@ -44,11 +44,11 @@ ol {
   color: #888;
 }
 
-.total-wrap{
+.total-wrap {
   overflow: hidden;
   display: none;
 }
-.in-wrap{
+.in-wrap {
   padding-top: 100vh;
 }
 
@@ -123,11 +123,12 @@ ol {
   border-radius: 5px;
   font-size: 1.5rem;
   font-weight: 400;
-  transition: 0.3s ease-in-out;
+  /* transition: 0.3s ease-in-out; */
 }
 .shopAbtn:hover {
   background-color: #645832;
   color: #ebe6d7;
+  transition: 0.3s ease-in-out;
 }
 
 /****************2. About us 영역  *****************/
