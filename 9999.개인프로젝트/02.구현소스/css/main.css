@@ -44,6 +44,14 @@ ol {
   color: #888;
 }
 
+.total-wrap{
+  overflow: hidden;
+  display: none;
+}
+.in-wrap{
+  padding-top: 100vh;
+}
+
 /************* 컨텐츠영역 *************/
 .page {
   height: 100vh;

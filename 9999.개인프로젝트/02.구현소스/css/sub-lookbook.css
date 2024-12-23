@@ -28,6 +28,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  display: none;
 }
 .lbsmenu-box {
   display: flex;
@@ -95,95 +96,122 @@
   scale: 1.05;
 }
 .lookbookInbox {
-  height: 200vh;
+  position: relative;
+  aspect-ratio: 1;
+  /* height: 200vh; */
 }
-.lookBox1 {
-  translate: 10.6vw 24vh;
-  width: min(321px, 25.9vw);
+.lookbookInbox>a{
+  position: absolute;
+  scale: 0;
+  animation: look-box-ani 1s cubic-bezier(0.47,-0.61, 0.43, 1.64) forwards;
+}
+.lookbookInbox .lookBox1 {
+  top: 10%;
+  left: 10%;
+  width: 20%;
   height: auto;
   display: block;
   overflow: hidden;
+  animation-delay: 1.2s;
 }
 .lookBox1 img {
   width: min(321px, 25.9vw);
   object-fit: cover;
 }
-.lookBox2 {
-  width: min(310px, 25vw);
-  translate: 42vw 12vh;
+.lookbookInbox .lookBox2 {
+  top: 20%;
+  left: 20%;
+  width: 30%;
   height: auto;
   display: block;
   overflow: hidden;
+  animation-delay: 1.4s;
 }
 .lookBox2 img {
   width: min(310px, 25vw);
   object-fit: cover;
 }
-.lookBox3 {
-  width: min(280px, 23.3vw);
-  translate: 74vw -29vh;
+.lookbookInbox .lookBox3 {
+  top: 30%;
+  right: 20%;
+  width: 25%;
   height: auto;
   display: block;
   overflow: hidden;
+  animation-delay: 1.6s;
 }
 .lookBox3 img {
   width: min(280px, 23.3vw);
   object-fit: cover;
 }
-.lookBox4 {
-  width: min(334px, 27.8vw);
-  translate: 7vw -21vh;
-  height: auto;
+.lookbookInbox .lookBox4 {
+  top: 10%;
+  right: 10%;
+  width: 30%;
   display: block;
   overflow: hidden;
+  animation-delay: 1.8s;
 }
 .lookBox4 img {
   width: min(334px, 27.8vw);
   object-fit: cover;
 }
-.lookBox5 {
-  width: min(329px, 27.3vw);
-  translate: 39vw -20vh;
+.lookbookInbox .lookBox5 {
+  bottom: 30%;
+  left: 10%;
+  width: 35%;
   height: auto;
   display: block;
   overflow: hidden;
+  animation-delay: 2s;
 }
 .lookBox4 img {
   width: min(329px, 27.3vw);
   object-fit: cover;
 }
 
-.lookBox6 {
-  width: min(314px, 26vw);
-  translate: 69vw -84vh;
+.lookbookInbox .lookBox6 {
+  bottom: 30%;
+  left: 30%;
+  width: 35%;
   height: auto;
   display: block;
   overflow: hidden;
+  animation-delay: 2.2s;
 }
 .lookBox4 img {
   width: min(314px, 26vw);
   object-fit: cover;
 }
 
-.lookBox7 {
-  width: min(263px, 37vw);
-  translate: 11vw -55vh;
+.lookbookInbox .lookBox7 {
+  bottom: 40%;
+  left: 50%;
+  width: 35%;
   height: auto;
   display: block;
   overflow: hidden;
+  animation-delay: 2.4s;
 }
 .lookBox4 img {
   width: min(263px, 37vw);
   object-fit: cover;
 }
-.lookBox8 {
-  width: min(318px, 37vw);
-  translate: 68vw -85vh;
+.lookbookInbox .lookBox8 {
+  top: 10%;
+  right: 10%;
+  width: 35%;
   height: auto;
   display: block;
   overflow: hidden;
+  animation-delay: 2.6s;
 }
 .lookBox4 img {
   width: min(318px, 37vw);
   object-fit: cover;
+}
+@keyframes look-box-ani {
+  to{
+    scale: 1;
+  }
 }

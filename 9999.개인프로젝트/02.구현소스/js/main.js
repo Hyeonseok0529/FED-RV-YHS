@@ -11,7 +11,13 @@ $(".hambtn").click(function (e) {
 
 // 장바구니 버튼 클릭시 미니카트 호출 //
 const $cartBox = $(".minicart");
+let protSts = false;
 $(".right-menu").click(function (e) {
+  if(protSts) return;
+  protSts = true;
+  setTimeout(() => { protSts = false; }, 800);
+
+
   e.preventDefault();
   let isOn = $cartBox.css("translate");
   console.log(isOn);
@@ -53,3 +59,10 @@ $(".conshop").click(function (e) {
 $(".lbbtn").click(() => {
   location.href = "sub-lookbook.html";
 });
+
+
+
+$('.total-wrap').delay(2000).slideDown(1000);
+$('.in-wrap').delay(2000).animate({paddingTop:'0'},1000);
+$('#top-area').hide().delay(3000).fadeIn(1000);
+// $('.page,#footer-area').hide().delay(3000).fadeIn(1000);
