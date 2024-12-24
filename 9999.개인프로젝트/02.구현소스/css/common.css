@@ -377,7 +377,7 @@ footer {
   padding: 3vh 2vh 0vh 5vh;
 }
 .footFirst {
-  border-right: 1px solid #d1c7a3;
+  border-right: 1px solid #d1c7a37e;
   /* 세부 카테고리 부모박스 */
   position: relative;
 }
@@ -385,9 +385,6 @@ footer {
   border-right: 1px solid #d1c7a3;
 }
 .footThird {
-  border-right: 1px solid #d1c7a3;
-}
-.footForth {
   border-right: 1px solid #d1c7a3;
 }
 .footcatInbox {
