@@ -502,7 +502,7 @@ ol {
   display: flex;
   flex-direction: column;
   position: absolute;
-  margin-top: 78vh;
+  margin-top: 3vh;
 }
 .materialsBox {
   display: flex;
@@ -617,7 +617,7 @@ ol {
   font-weight: 600;
   font-size: 3.2rem;
   rotate: 270deg;
-  translate: 0 1600%;
+  translate: 2% 1900%;
   transform-origin: left top;
   letter-spacing: -3.5px;
   width: 187px;
