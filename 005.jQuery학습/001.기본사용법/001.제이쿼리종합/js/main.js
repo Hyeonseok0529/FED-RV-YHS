@@ -25,7 +25,7 @@
 // (1) 미니언즈
 const $mi = $(".mi");
 
-// (2) 건물리스트 (li요소)
+// (2) 건물 리스트(li요소)
 const $room = $(".building li");
 
 // (3) 버튼들
@@ -76,12 +76,13 @@ const msgTxt = [
   "악!;;;; 좀비!<br>어서피하자!",
 ];
 
-// console.log("대상:", $mi, $room, $btns, $msg);
+// console.log('대상:',$mi,$room,$btns,$msg);
 
 // 1. 건물 각 방에 번호넣기 + 좀비/주사기 넣기
-// 대상: .building li -> $room 변수
+// 대상: .building li -> $room변수
 // 사용 제이쿼리 메서드
-// (1) each((순번,요소)=>{코드}) : 요소 개수만큼 순서대로 돌아줌!
+// (1) each((순번,요소)=>{코드})
+// -> 요소 개수만큼 순서대로 돌아줌!
 // (2) append(요소) : 선택요소 내부에 자식요소 추가(이동)
 
 $room.each((idx, el) => {
@@ -104,31 +105,32 @@ $room.each((idx, el) => {
     case 1:
       $(el).append(zom);
       break;
-  } //// switch ////
+  } //// switch //////
 }); //// each 메서드 ////
 
 // 좀비는 모두 숨기기
 $(".mz").hide();
 
-// 2. 버튼 셋팅하기 ///////////
-// 대상: .btns button -> $btns 변수
+// 2. 버튼 셋팅하기 //////////////
+// 대상: .btns button -> $btns변수
 $btns.hide().first().show();
 // 버튼모두.숨겨().첫번째버튼().보여()
 
-// 3. 미니언즈 공통 기능함수 //
+// 3. 미니언즈 공통 기능함수 ///////
+// (1) 기본 공통 기능함수 /////////
+const actMini = (el, seq, fn) => {
+  // [1] el - 클릭된 버튼요소
+  // [2] seq - 이동할 li순번
+  // [3] fn - 이동후 실행할 코드(콜백함수)
 
-// 4. "들어가기" 버튼 클릭시
-$btns.first().click(function () {
-  // -> 내부 화살표함수의 this가 여기에 걸림!
-  // ()=> { // -> 화살표함수는 this가 바깥으로 나감
   // 0-1. 메시지 숨기기
   $msg.fadeOut(300);
-  // 0-2. 버튼 자신 없애기(애니)
-  $(this).slideUp(400);
+  // 0-2. 버튼자신 없애기(애니)
+  $(el).slideUp(400);
 
-  // 1. 특정방으로 이동하기 위한 위치값 읽기
+  // 1. 특정방으로 이동하기위한 위치값 읽기
   // 이동할 li방 위치값을 읽은 후 이동함
-  let myRoom = $room.eq(8);
+  let myRoom = $room.eq(seq);
   // 위치값을 담을 객체변수
   const pos = {};
   // (1) top 위치값
@@ -138,10 +140,11 @@ $btns.first().click(function () {
   // left값을 방 중앙으로 오도록 보정한다!
   pos["left"] = pos["left"] + myRoom.width() / 2 - $mi.width() / 2;
   // -> left값 + 방width절반 - 미니언즈width절반
-  // 제이쿼리 가로크기 = width(), 세로크기 height()
-  console.log("top:", pos.top, "\nleft:", pos.left);
+  // 제이쿼리 가로크기 width(), 세로크기 height()
 
-  // 2. 위치이동하기 //
+  //   console.log("top:", pos.top, "\nleft:", pos.left);
+
+  // 2. 위치이동하기 ////
   $mi.animate(
     {
       top: pos.top,
@@ -149,17 +152,159 @@ $btns.first().click(function () {
     },
     800,
     "easeOutElastic",
-    // 콜백함수(애니후실행)
-    // function(){ // -> this는 $mi
-    () => {
-      // -> this는 싸고있는 $btns.first() 버튼
-      // -> 화살표함수의 this는 바깥으로 나간다!
-      // -> 올라가다가 function(){}에 걸린다!
-      // -> 화살표로 계속 나가면 window를 만난다!
-      // 메시지 변경하기
-      $msg.html(msgTxt[8]).delay(1000).fadeIn(300);
-      // 다음버튼 보이기
-      console.log("나자신은?", this);
-      $(this).next().delay(1000).fadeIn(300);
-    })
-}); /// click ////
+    fn // 전달된 콜백함수
+  );
+}; ////// actMini 함수 ///////
+
+// (2) 다음버튼 보이기함수 ////////
+const showNextBtn = (x) => $(x).next().delay(1000).fadeIn(300);
+// 전달변수 x는 버튼자신을 전달한다!
+
+// 4. "들어가기" 버튼 클릭시 ////////
+$btns
+  .first()
+  .click(function () {
+    // -> 내부화살표함수의 this가 여기에 걸림!
+    // ()=>{ // -> 화살표함수는 this가 바깥으로 나감
+
+    // (1) 버튼별 기능구현 (콜백함수) //////
+    const fn =
+      // function(){ // -> this는 $mi
+      () => {
+        // -> this는 싸고 있는 $btns.first() 버튼
+
+        // -> 화살표함수의 this는 바깥으로 나간다!
+        // -> 올라가다가 function(){}에 걸린다!
+        // -> 화살표로 계속 나가면 window를 만난다!
+
+        // 메시지 변경하기
+        $msg.html(msgTxt[8]).delay(1000).fadeIn(300);
+
+        // 다음버튼 보이기함수 호출
+        showNextBtn(this);
+        // console.log('나자신은?',this);
+      }; //// fn 콜백함수 ////
+
+    // (2) actMini() 함수 호출
+    actMini(this, 8, fn);
+  }) /// click ///
+
+  // 5. "옆방으로!" 버튼 클릭시 ////////
+  .next() // 두번째버튼
+  .click(function () {
+    // (1) 버튼별 기능구현 (콜백함수) //////
+    const fn =
+      // function(){ // -> this는 $mi
+      () => {
+        // 다음버튼 보이기함수 호출
+        showNextBtn(this);
+      }; //// fn 콜백함수 ////
+
+    // (2) actMini() 함수 호출
+    actMini(this, 9, fn);
+  }) //////////// click ////////////
+
+  // 6. "윗층으로 도망가!" 버튼 클릭시 ////////
+  .next() // 두번째버튼
+  .click(function () {
+    // (1) 버튼별 기능구현 (콜백함수) //////
+    const fn =
+      // function(){ // -> this는 $mi
+      () => {
+        // 다음버튼 보이기함수 호출
+        showNextBtn(this);
+      }; //// fn 콜백함수 ////
+
+    // (2) actMini() 함수 호출
+    actMini(this, 7, fn);
+  }) //////////// click ////////////
+
+  // 7. "다시옆방으로!" 버튼 클릭시 ////////
+  .next() // 두번째버튼
+  .click(function () {
+    // (1) 버튼별 기능구현 (콜백함수) //////
+    const fn =
+      // function(){ // -> this는 $mi
+      () => {
+        // 다음버튼 보이기함수 호출
+        showNextBtn(this);
+      }; //// fn 콜백함수 ////
+
+    // (2) actMini() 함수 호출
+    actMini(this, 6, fn);
+  }) //////////// click ////////////
+
+  // 8. "무서우니 윗층으로!" 버튼 클릭시 ////////
+  .next() // 두번째버튼
+  .click(function () {
+    // (1) 버튼별 기능구현 (콜백함수) //////
+    const fn =
+      // function(){ // -> this는 $mi
+      () => {
+        // 다음버튼 보이기함수 호출
+        showNextBtn(this);
+      }; //// fn 콜백함수 ////
+
+    // (2) actMini() 함수 호출
+    actMini(this, 4, fn);
+  }) //////////// click ////////////
+
+  // 9. "치료주사방으로!" 버튼 클릭시 ////////
+  .next() // 두번째버튼
+  .click(function () {
+    // (1) 버튼별 기능구현 (콜백함수) //////
+    const fn =
+      // function(){ // -> this는 $mi
+      () => {
+        // 다음버튼 보이기함수 호출
+        showNextBtn(this);
+      }; //// fn 콜백함수 ////
+
+    // (2) actMini() 함수 호출
+    actMini(this, 2, fn);
+  }) //////////// click ////////////
+
+  // 10. "3번방으로!" 버튼 클릭시 ////////
+  .next() // 두번째버튼
+  .click(function () {
+    // (1) 버튼별 기능구현 (콜백함수) //////
+    const fn =
+      // function(){ // -> this는 $mi
+      () => {
+        // 다음버튼 보이기함수 호출
+        showNextBtn(this);
+      }; //// fn 콜백함수 ////
+
+    // (2) actMini() 함수 호출
+    actMini(this, 3, fn);
+  }) //////////// click ////////////
+
+  // 11. "1번방으로!" 버튼 클릭시 ////////
+  .next() // 두번째버튼
+  .click(function () {
+    // (1) 버튼별 기능구현 (콜백함수) //////
+    const fn =
+      // function(){ // -> this는 $mi
+      () => {
+        // 다음버튼 보이기함수 호출
+        showNextBtn(this);
+      }; //// fn 콜백함수 ////
+
+    // (2) actMini() 함수 호출
+    actMini(this, 1, fn);
+  }) //////////// click ////////////
+
+  // 12. "헬기를 호출!" 버튼 클릭시 ////////
+  .next() // 두번째버튼
+  .click(function () {
+    // (1) 버튼별 기능구현 (콜백함수) //////
+    const fn =
+      // function(){ // -> this는 $mi
+      () => {
+        // 다음버튼 보이기함수 호출
+        showNextBtn(this);
+      }; //// fn 콜백함수 ////
+
+    // (2) actMini() 함수 호출
+    actMini(this, 0, fn);
+  }) //////////// click ////////////
