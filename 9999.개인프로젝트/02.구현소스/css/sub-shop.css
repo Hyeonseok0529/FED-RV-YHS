@@ -162,7 +162,7 @@
 .shopoutBox {
   border: 1px solid black;
   width: 50%;
-  height: 61rem;
+  height: auto;
   overflow: hidden;
   padding: 1vw;
   box-sizing: border-box;
