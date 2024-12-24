@@ -29,6 +29,7 @@ $(".right-menu").click(function (e) {
 $(".smenu a").click((e) => {
   let txt = $(e.currentTarget).text();
   if (txt == "HOME") location.href = "index.html";
+  else if (txt == "SHOP") location.href = "sub-shop.html";
   else if (txt == "LOOKBOOK") location.href = "sub-lookbook.html";
   else if (txt == "CONTACT") location.href = "contact.html";
 });
@@ -68,6 +69,10 @@ $(".conshop").click(function (e) {
 $(".lbbtn").click(() => {
   location.href = "sub-lookbook.html";
 });
+
+$(".shopbtn").click(() => {
+  location.href = "sub-shop.html";
+})
 
 
 

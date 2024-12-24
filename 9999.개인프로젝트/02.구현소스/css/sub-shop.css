@@ -98,15 +98,15 @@
   font-weight: 200;
   padding: 0.5rem;
   margin-top: 11rem;
-  border-top: 1px solid #d1c7a3b7;
+  border-top: 1px solid #d1c7a3;
 }
 .sub-shopInfobox {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.8vw 4vw;
-  border-top: 1px solid #d1c7a3b7;
-  border-bottom: 1px solid #d1c7a3b7;
+  border-top: 1px solid #d1c7a3;
+  border-bottom: 1px solid #d1c7a3;
   font-family: var(--font-menu);
 }
 .pdNum {
@@ -119,7 +119,7 @@
 .sub-filterBox {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #d1c7a3b7;
+  border-right: 1px solid #d1c7a3;
   height: auto;
   width: 34rem;
 }
@@ -131,7 +131,7 @@
   font-family: var(--font-menu);
   letter-spacing: 0.6px;
   color: #1f1f1f;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 400;
   opacity: 0.8;
 }
@@ -144,11 +144,11 @@
 .sort > li:nth-child(1) {
   font-size: 2.3rem;
   font-weight: 600;
-  border-bottom: 1px solid #d1c7a3b7;
+  border-bottom: 1px solid #d1c7a3;
   opacity: 1;
 }
 .sort > li:nth-child(1) {
-  border-top: 1px solid #d1c7a3b7;
+  border-top: 1px solid #d1c7a3;
 }
 
 /* 이미지 영역 */
@@ -159,23 +159,42 @@
   flex: 1;
   justify-content: center;
 }
+.sub-shop-imgBox > div:nth-child(1),
+.sub-shop-imgBox > div:nth-child(3) {
+  border-right: 1px solid #d1c7a3;
+}
+/* .sub-shop-imgBox::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #d1c7a3;
+  opacity: 0.5 ;
+} */
+
 .shopoutBox {
-  border: 1px solid black;
   width: 50%;
   height: auto;
   overflow: hidden;
   padding: 1vw;
   box-sizing: border-box;
+  border-bottom: 1px solid #d1c7a3;
 }
 .shopImg {
-  border: 1px solid #000;
   overflow: hidden;
   display: flex;
   width: 100%;
+
 }
+.shopImg img:hover {
+  scale: 1.05;
+}
+
 .shopImg img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  transition: 1s ease-out;
 }
 .pdInfobox {
   display: flex;

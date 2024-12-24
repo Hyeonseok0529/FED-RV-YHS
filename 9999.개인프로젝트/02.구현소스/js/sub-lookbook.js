@@ -37,8 +37,12 @@ $(".hambtn").click(function (e) {
     let txt = $(e.currentTarget).text();
     console.log(e)
     if (txt == "Home") location.href = "index.html";
+    else if (txt == "SHOP") location.href = "sub-shop.html";
     else if (txt == "Lookbook") location.href = "sub-lookbook.html";
     else if (txt == "contact") location.href = "contact.html";
+  });
+  $(".shopbtn").click((e) => {
+    location.href = "sub-shop.html";
   });
   
   
@@ -68,3 +72,4 @@ $(".hambtn").click(function (e) {
   $(".lbbtn").click(() => {
     location.href = "sub-lookbook.html";
   });
+
