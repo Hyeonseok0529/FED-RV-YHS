@@ -153,4 +153,6 @@
 /* 이미지 영역 */
 .sub-shop-imgBox{
     display: flex;
+    width: 100%;
+    flex-wrap: wrap;
 }
