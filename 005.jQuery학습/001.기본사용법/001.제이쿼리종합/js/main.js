@@ -85,32 +85,81 @@ const msgTxt = [
 // (2) append(요소) : 선택요소 내부에 자식요소 추가(이동)
 
 $room.each((idx, el) => {
-    // console.log(idx,el);
+  // console.log(idx,el);
 
-    // 1. 각 방에 숫자로 순번넣기
-    $(el).text(idx);
+  // 1. 각 방에 숫자로 순번넣기
+  $(el).text(idx);
 
-    // 2. 좀비/주사기 넣기
-    switch(idx){
-        case 9:
-            $(el).append(mz1);
-            break;
-        case 7:
-            $(el).append(mz2);
-            break;
-        case 2:
-            $(el).append(inj);
-            break;
-        case 1:
-            $(el).append(zom);
-            break;
-    } //// switch ////
+  // 2. 좀비/주사기 넣기
+  switch (idx) {
+    case 9:
+      $(el).append(mz1);
+      break;
+    case 7:
+      $(el).append(mz2);
+      break;
+    case 2:
+      $(el).append(inj);
+      break;
+    case 1:
+      $(el).append(zom);
+      break;
+  } //// switch ////
 }); //// each 메서드 ////
 
 // 좀비는 모두 숨기기
-$('.mz').hide();
+$(".mz").hide();
 
 // 2. 버튼 셋팅하기 ///////////
 // 대상: .btns button -> $btns 변수
 $btns.hide().first().show();
 // 버튼모두.숨겨().첫번째버튼().보여()
+
+// 3. 미니언즈 공통 기능함수 //
+
+// 4. "들어가기" 버튼 클릭시
+$btns.first().click(function () {
+  // -> 내부 화살표함수의 this가 여기에 걸림!
+  // ()=> { // -> 화살표함수는 this가 바깥으로 나감
+  // 0-1. 메시지 숨기기
+  $msg.fadeOut(300);
+  // 0-2. 버튼 자신 없애기(애니)
+  $(this).slideUp(400);
+
+  // 1. 특정방으로 이동하기 위한 위치값 읽기
+  // 이동할 li방 위치값을 읽은 후 이동함
+  let myRoom = $room.eq(8);
+  // 위치값을 담을 객체변수
+  const pos = {};
+  // (1) top 위치값
+  pos["top"] = myRoom.offset().top;
+  // (2) left 위치값
+  pos["left"] = myRoom.offset().left;
+  // left값을 방 중앙으로 오도록 보정한다!
+  pos["left"] = pos["left"] + myRoom.width() / 2 - $mi.width() / 2;
+  // -> left값 + 방width절반 - 미니언즈width절반
+  // 제이쿼리 가로크기 = width(), 세로크기 height()
+  console.log("top:", pos.top, "\nleft:", pos.left);
+
+  // 2. 위치이동하기 //
+  $mi.animate(
+    {
+      top: pos.top,
+      left: pos.left,
+    },
+    800,
+    "easeOutElastic",
+    // 콜백함수(애니후실행)
+    // function(){ // -> this는 $mi
+    () => {
+      // -> this는 싸고있는 $btns.first() 버튼
+      // -> 화살표함수의 this는 바깥으로 나간다!
+      // -> 올라가다가 function(){}에 걸린다!
+      // -> 화살표로 계속 나가면 window를 만난다!
+      // 메시지 변경하기
+      $msg.html(msgTxt[8]).delay(1000).fadeIn(300);
+      // 다음버튼 보이기
+      console.log("나자신은?", this);
+      $(this).next().delay(1000).fadeIn(300);
+    })
+}); /// click ////
