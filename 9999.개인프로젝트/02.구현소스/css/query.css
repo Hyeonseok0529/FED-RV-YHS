@@ -166,7 +166,7 @@
   /* 순서정렬 필요한 박스 */
   .lbSlideBox {
     flex-direction: column;
-    height: auto;
+    /* height: auto; */
     background-color: transparent;
     width: 75%;
   }
@@ -209,11 +209,17 @@
     display: flex;
     justify-content: space-between;
     padding: 0 2vh;
-    margin-top: -2vh;
+    margin-top: 44rem;
+    position: absolute;
+    z-index: 99;
+    width: 92%;
   }
   .lbbtn,
   .lbshopbtn {
-    position: static;
+    font-size: 1.5rem;
+  }
+  .lbSlideBox{
+    padding: 0;
   }
 
   /*************** article 영역 ***************/
@@ -331,16 +337,16 @@
   .smenu dl {
     margin-top: -3vh;
   }
-  .smenu dt{
+  .smenu dt {
     font-size: 2.5rem;
     position: relative;
     left: 3rem;
   }
-  .smenu dd{
+  .smenu dd {
     position: relative;
     left: 3rem;
   }
-  .smenu dd a{
+  .smenu dd a {
     font-size: 1.9rem;
   }
 }
