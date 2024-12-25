@@ -329,7 +329,6 @@ ol {
   transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 /**************** 3. Lookbook 영역  *****************/
-/* 질문 : boder-bottom에만 투명도를 주려면?????????????????????? */
 .lookbookBox {
   background-color: #645832;
   width: 100%;
@@ -421,20 +420,32 @@ ol {
 /* 슬라이드 박스 */
 .lbSlideBox {
   width: 90%;
-  height: 74vh;
+  height: 60rem;
   background-color: #e0e0e0;
   margin: 0 auto;
   margin-top: 3vh;
   display: flex;
-  justify-content: center;
   overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.slide {
+  display: block;
 }
 .slideImg {
-  width: 91%;
+  width: 96%;
   height: 80%;
+  position: absolute;
   display: flex;
-  margin-top: 2.5vh;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
+.slide li.on {
+  opacity: 1;
+  z-index: 1;
+}
+
 .slideImg img {
   object-fit: cover;
   margin: 0 auto;
@@ -444,7 +455,7 @@ ol {
 .lbbtn {
   display: block;
   position: absolute;
-  top: 73%;
+  top: 83%;
   font-size: 0.9vw;
   font-weight: 400;
 }
@@ -471,8 +482,8 @@ ol {
 .lbshopbtn {
   display: block;
   position: absolute;
-  top: 73%;
-  left: 91%;
+  top: 83%;
+  left: 87%;
   font-size: 0.9vw;
   font-weight: 400;
 }
