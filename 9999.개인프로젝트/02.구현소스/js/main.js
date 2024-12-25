@@ -28,6 +28,7 @@ $(".right-menu").click(function (e) {
 
 // 서브메뉴 서브 카테고리 클릭시 이동 //
 $(".smenu a").click((e) => {
+  e.preventDefault();
   let txt = $(e.currentTarget).text();
   if (txt == "HOME") location.href = "index.html";
   else if (txt == "SHOP") location.href = "sub-shop.html";
@@ -37,6 +38,7 @@ $(".smenu a").click((e) => {
 
 // 하단영역 서브메뉴 클릭시 이동 //
 $(".footcatInbox a").click((e) => {
+  e.preventDefault();
   let txt = $(e.currentTarget).text();
   console.log(e);
   if (txt == "Home") location.href = "index.html";
@@ -47,6 +49,7 @@ $(".footcatInbox a").click((e) => {
 // 로고 클릭시 홈페이지 이동 //
 $("svg").click(function () {
   location.href = "index.html";
+  e.preventDefault();
 });
 
 // 장바구니 close 클릭시 나가기 //
@@ -68,16 +71,18 @@ $(".conshop").click(function (e) {
 
 // 메인 페이지 SEE LOOKBOOK 버튼 //
 $(".lbbtn").click(() => {
+  e.preventDefault();
   location.href = "sub-lookbook.html";
 });
 
 $(".shopbtn").click((e) => {
+  e.preventDefault();
   location.href = "sub-shop.html";
 });
 
 $(".shopAbtn").click((e) => {
-  e.preventDefault();
   location.href = "sub-shop.html";
+  e.preventDefault();
 });
 $(".productName").click((e) => {
   e.preventDefault();

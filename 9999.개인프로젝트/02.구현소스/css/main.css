@@ -242,7 +242,7 @@ ol {
   width: 100%;
   height: 100%;
   background-color: #645832;
-  border-bottom: 1px solid #ebe6d7;
+  border-bottom: 1px solid #ebe6d753;
   box-sizing: border-box;
 }
 .recommendBox > div {
@@ -340,7 +340,7 @@ ol {
 .lbVerTxtbox {
   width: 5%;
   height: 100%;
-  border-right: 0.5px solid #ebe6d7;
+  border-right: 0.5px solid #ebe6d753;
 }
 .lbVerTxt {
   color: #ebe6d7;
@@ -357,7 +357,7 @@ ol {
   width: 47.5%;
   height: 100%;
   align-content: space-around;
-  border-right: 0.5px solid #ebe6d7;
+  border-right: 0.5px solid #ebe6d753;
 }
 .lbtit {
   width: 100%;
@@ -389,8 +389,8 @@ ol {
 /* 위쪽 타이틀 */
 .upTitBox {
   position: relative;
-  border-top: 1px solid #ebe6d7;
-  border-bottom: 1px solid #ebe6d7;
+  border-top: 1px solid #ebe6d753;
+  border-bottom: 1px solid #ebe6d753;
   width: 100%;
   height: 3vh;
   display: flex;
@@ -523,8 +523,8 @@ ol {
   align-items: center;
   font-size: 1vw;
   color: #ebe6d7;
-  border-top: 1px solid #ebe6d7;
-  border-bottom: 1px solid #ebe6d7;
+  border-top: 1px solid #ebe6d753;
+  border-bottom: 1px solid #ebe6d753;
 }
 .mattit {
   margin-left: 1vw;
@@ -547,7 +547,7 @@ ol {
   align-items: center;
   font-size: 1vw;
   color: #ebe6d7;
-  border-bottom: 1px solid #ebe6d783;
+  border-bottom: 1px solid #ebe6d753;
 }
 .prodtit {
   margin-left: 1vw;
@@ -569,7 +569,7 @@ ol {
   align-items: center;
   font-size: 1vw;
   color: #ebe6d7;
-  border-bottom: 1px solid #ebe6d7;
+  border-bottom: 1px solid #ebe6d753;
 }
 .categtit {
   margin-left: 1vw;
@@ -644,7 +644,7 @@ ol {
   height: 100%;
   /* top: 10vh;
   left: 5vw; */
-  border-right: 1px solid #d1c7a37a;
+  border-right: 1px solid #d1c7a3;
   color: #1f1f1f;
 }
 .upTxt {

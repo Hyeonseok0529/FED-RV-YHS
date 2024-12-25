@@ -42,18 +42,22 @@ $(".footcatInbox a").click((e) => {
   else if (txt == "Contact") location.href = "sub-contact.html";
 });
 $(".shopbtn").click((e) => {
+  e.preventDefault();
   location.href = "sub-shop.html";
 });
 $(".shop").click((e) => {
+  e.preventDefault();
   location.href = "sub-shop.html";
 });
 
 $(".seebtnBox").click((e) => {
+  e.preventDefault();
   location.href = "sub-shop.html";
 });
 
 // 로고 클릭시 홈페이지 이동 //
 $("svg").click(function () {
+  e.preventDefault();
   location.href = "index.html";
 });
 
@@ -76,6 +80,7 @@ $(".conshop").click(function (e) {
 
 // 메인 페이지 SEE LOOKBOOK 버튼 //
 $(".lbbtn").click(() => {
+    e.preventDefault();
   location.href = "sub-lookbook.html";
 });
 

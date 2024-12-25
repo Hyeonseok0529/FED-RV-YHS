@@ -28,6 +28,7 @@ $(".right-menu").click(function (e) {
 
 // 서브메뉴 서브 카테고리 클릭시 이동 //
 $(".smenu a").click((e) => {
+  e.preventDefault();
   let txt = $(e.currentTarget).text();
   if (txt == "HOME") location.href = "index.html";
   else if (txt == "LOOKBOOK") location.href = "sub-lookbook.html";
@@ -35,6 +36,7 @@ $(".smenu a").click((e) => {
 });
 
 $(".footcatInbox a").click((e) => {
+  e.preventDefault();
   let txt = $(e.currentTarget).text();
   console.log(e);
   if (txt == "Home") location.href = "index.html";
@@ -42,9 +44,11 @@ $(".footcatInbox a").click((e) => {
   else if (txt == "Contact") location.href = "sub-contact.html";
 });
 $(".shopbtn").click((e) => {
+  e.preventDefault();
   location.href = "sub-shop.html";
 });
 $(".shop").click((e) => {
+  e.preventDefault();
   location.href = "sub-shop.html";
 });
 
