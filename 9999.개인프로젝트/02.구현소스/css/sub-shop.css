@@ -19,6 +19,13 @@
     z-index: 999;
 } */
 
+/* .total-wrap {
+  overflow: hidden;
+  display: none;
+}
+.in-wrap {
+} */
+
 /***************** 고정 코딩구역 *****************/
 .lbsmenu {
   display: flex;

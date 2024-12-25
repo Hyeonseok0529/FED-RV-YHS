@@ -1,4 +1,4 @@
-// 메인 JS
+// subshop JS //
 
 // 햄버거 버튼 클릭시 서브메뉴 호출 //
 $(".hambtn").click(function (e) {
@@ -30,7 +30,6 @@ $(".right-menu").click(function (e) {
 $(".smenu a").click((e) => {
   let txt = $(e.currentTarget).text();
   if (txt == "HOME") location.href = "index.html";
-  else if (txt == "SHOP") location.href = "sub-shop.html";
   else if (txt == "LOOKBOOK") location.href = "sub-lookbook.html";
   else if (txt == "CONTACT") location.href = "contact.html";
 });
@@ -41,6 +40,12 @@ $(".footcatInbox a").click((e) => {
   if (txt == "Home") location.href = "index.html";
   else if (txt == "Lookbook") location.href = "sub-lookbook.html";
   else if (txt == "contact") location.href = "contact.html";
+});
+$(".shopbtn").click((e) => {
+  location.href = "sub-shop.html";
+});
+$(".shop").click((e) => {
+  location.href = "sub-shop.html";
 });
 
 // 로고 클릭시 홈페이지 이동 //
@@ -65,45 +70,10 @@ $(".conshop").click(function (e) {
   $("body").toggleClass("on");
 });
 
-// 메인 페이지 SEE LOOKBOOK 버튼 //
-$(".lbbtn").click(() => {
-  e.preventDefault();
-  location.href = "sub-lookbook.html";
-});
 
-$(".shopbtn").click(() => {
-  e.preventDefault();
-  location.href = "sub-shop.html";
-});
-
-$(".shopAbtn").click((e) => {
-  e.preventDefault();
-  location.href = "sub-shop.html";
-});
-$(".productName").click((e) => {
-  e.preventDefault();
-  location.href = "sub-shop.html";
-});
-$(".recImgbox").click((e) => {
-  e.preventDefault();
-  location.href = "sub-shop.html";
-});
-$(".lbshopbtn").click((e) => {
-  e.preventDefault();
-  location.href = "sub-shop.html";
-});
-$(".footCatshop").click((e) => {
-  e.preventDefault();
-  location.href = "sub-shop.html";
-});
-$(".viewbtn").click((e) => {
-  e.preventDefault();
-  location.href = "sub-shop.html";
-});
-
-$(".total-wrap").delay(3000).slideDown(2000);
-$(".in-wrap").delay(2000).animate({ paddingTop: "0" }, 1000);
-$(".top-area.inbox").hide().delay(4000).fadeIn(2000);
+// $(".total-wrap").delay(2000).slideDown(2000);
+// $(".in-wrap").delay(2000).fadeIn({ paddingTop: "0" }, 1000);
 $("h1 span").hide().delay(4000).fadeIn(2000);
 $(".shopAbtn").hide().delay(4000).fadeIn(2000);
-// $('.page,#footer-area').hide().delay(3000).fadeIn(1000);
+
+$(".shopInbox").hide().fadeIn(2500);

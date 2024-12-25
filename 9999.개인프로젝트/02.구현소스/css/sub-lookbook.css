@@ -28,7 +28,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  display: none;
+  /* display: none; */
 }
 .lbsmenu-box {
   display: flex;
@@ -56,7 +56,7 @@
 .smenu-imgBackbox {
   display: flex;
   justify-content: center;
-  height: 44vw;
+  height: 38rem;
 }
 .lbsmenu-imgbox {
   width: 90%;
@@ -67,6 +67,11 @@
   box-sizing: border-box;
   overflow: hidden;
   background-color: #fff;
+}
+.lbsmenu-imgbox img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /**************** 고정 코딩 끝 *******************/
