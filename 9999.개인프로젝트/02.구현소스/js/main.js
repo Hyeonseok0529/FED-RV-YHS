@@ -67,12 +67,10 @@ $(".conshop").click(function (e) {
 
 // 메인 페이지 SEE LOOKBOOK 버튼 //
 $(".lbbtn").click(() => {
-  e.preventDefault();
   location.href = "sub-lookbook.html";
 });
 
-$(".shopbtn").click(() => {
-  e.preventDefault();
+$(".shopbtn").click((e) => {
   location.href = "sub-shop.html";
 });
 
@@ -99,6 +97,9 @@ $(".footCatshop").click((e) => {
 $(".viewbtn").click((e) => {
   e.preventDefault();
   location.href = "sub-shop.html";
+});
+$(".subimg").click((e) => {
+  e.preventDefault();
 });
 
 $(".total-wrap").delay(3000).slideDown(2000);
