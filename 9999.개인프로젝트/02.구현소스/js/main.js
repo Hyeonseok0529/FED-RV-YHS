@@ -71,7 +71,7 @@ $(".conshop").click(function (e) {
 
 // 메인 페이지 SEE LOOKBOOK 버튼 //
 $(".lbbtn").click(() => {
-  // e.preventDefault();
+  e.preventDefault();
   location.href = "sub-lookbook.html";
 });
 
