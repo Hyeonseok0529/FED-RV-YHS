@@ -55,6 +55,10 @@ $(".shop").click((e) => {
 $(".shopImg").click((e) => {
   e.preventDefault();
 });
+$(".footCatshop").click((e) => {
+  e.preventDefault();
+  location.href = "sub-shop.html";
+});
 
 // 로고 클릭시 홈페이지 이동 //
 $("svg").click(function () {
