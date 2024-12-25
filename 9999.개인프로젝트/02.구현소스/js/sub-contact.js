@@ -1,4 +1,4 @@
-// Lookbook JS //
+// sub-contact JS //
 
 // 햄버거 버튼 클릭시 서브메뉴 호출 //
 $(".hambtn").click(function (e) {
@@ -48,8 +48,8 @@ $(".shop").click((e) => {
   location.href = "sub-shop.html";
 });
 
-$(".seebtnBox").click((e) => {
-  location.href = "sub-shop.html";
+$(".shopImg").click((e) => {
+  e.preventDefault();
 });
 
 // 로고 클릭시 홈페이지 이동 //
@@ -74,40 +74,10 @@ $(".conshop").click(function (e) {
   $("body").toggleClass("on");
 });
 
-// 메인 페이지 SEE LOOKBOOK 버튼 //
-$(".lbbtn").click(() => {
-  location.href = "sub-lookbook.html";
-});
 
-// 룩북 이미지 클릭시 룩북 서브메뉴 호출 //
-const $lookBox = $(".lbsmenu");
-// let protsts = false;
-$(".lookbookInbox img").click(function (e) {
-  // if (protsts) return;
-  // protsts = true;
-  // setTimeout(() => {
-  //   protSts = false;
-  // }, 800);
+// $(".total-wrap").delay(2000).slideDown(2000);
+// $(".in-wrap").delay(2000).fadeIn({ paddingTop: "0" }, 1000);
+$("h1 span").hide().delay(4000).fadeIn(2000);
+$(".shopAbtn").hide().delay(4000).fadeIn(2000);
 
-  e.preventDefault();
-  let isOn = $lookBox.css("translate");
-  console.log(isOn);
-  $lookBox.css({ translate: isOn == "100%" ? "0" : "100%" });
-  $("body").toggleClass("on");
-});
-
-// CONTINUE SHOPPING 버튼 클릭시 나가기 //
-$(".lbsmenu-close").click(function (e) {
-  e.preventDefault();
-  let isOn = $lookBox.css("translate");
-  console.log(isOn);
-  $lookBox.css({ translate: isOn == "100%" ? "0" : "100%" });
-  $("body").toggleClass("on");
-});
-
-
-// $(".total-wrap").delay(2000).slide(2000);
-// $(".in-wrap").delay(2000).animate({ paddingTop: "0" }, 1000);
-// $(".top-area.inbox").hide().delay(2000).fadeIn(2000);
-// $("h1 span").hide().delay(4000).fadeIn(2000);
-// $(".shopAbtn").hide().delay(4000).fadeIn(2000);
+$(".contactInbox").hide().fadeIn(2500);

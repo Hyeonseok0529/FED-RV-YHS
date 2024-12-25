@@ -31,7 +31,7 @@ $(".smenu a").click((e) => {
   let txt = $(e.currentTarget).text();
   if (txt == "HOME") location.href = "index.html";
   else if (txt == "LOOKBOOK") location.href = "sub-lookbook.html";
-  else if (txt == "CONTACT") location.href = "contact.html";
+  else if (txt == "CONTACT") location.href = "sub-contact.html";
 });
 
 $(".footcatInbox a").click((e) => {
@@ -39,7 +39,7 @@ $(".footcatInbox a").click((e) => {
   console.log(e);
   if (txt == "Home") location.href = "index.html";
   else if (txt == "Lookbook") location.href = "sub-lookbook.html";
-  else if (txt == "contact") location.href = "contact.html";
+  else if (txt == "Contact") location.href = "sub-contact.html";
 });
 $(".shopbtn").click((e) => {
   location.href = "sub-shop.html";
