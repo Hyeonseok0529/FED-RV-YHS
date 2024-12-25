@@ -48,6 +48,10 @@ $(".shop").click((e) => {
   location.href = "sub-shop.html";
 });
 
+$(".shopImg").click((e) => {
+  e.preventDefault();
+});
+
 // 로고 클릭시 홈페이지 이동 //
 $("svg").click(function () {
   location.href = "index.html";
