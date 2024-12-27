@@ -319,7 +319,7 @@ aside .smenu {
   align-items: center;
 }
 .bagbtn {
-  text-shadow: 1px 1px 1px rgb(31, 31, 31);
+  text-shadow: 1px 1px 1px black;
   transition: cubic-bezier(0.07, 0.2, 0.53, 1.57);
 }
 .bagbtn li {
@@ -376,7 +376,7 @@ footer {
   padding: 3vh 2vh 0vh 5vh;
 }
 .footFirst {
-  border-right: 1px solid rgba(209, 199, 163, 0.424);
+  border-right: 1px solid #d1c7a36c;
   /* 세부 카테고리 부모박스 */
   position: relative;
 }

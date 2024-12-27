@@ -2,32 +2,43 @@
 
 
 .ldContbox {
+  position: relative;
   width: 54%;
   height: 98vh;
   display: flex;
   align-items: center;
   margin: 0 auto;
   justify-content: center;
-  position: relative;
 }
 
 .ldContbox a{
   cursor: default;
-}
-/* 이미지 1 */
-.aniImg1 {
-  width: 50%;
   height: auto;
   /* display: inline-block; */
   overflow: hidden;
+  scale: 0;
+  animation: show-ani 2s cubic-bezier(0.18, 0.77, 0.04, 0.86) forwards;
+
 }
 
-.aniImg1 img {
+.ldContbox a:first-child~a{
+  position: absolute;
+}
+
+/* 이미지공통 */
+.ldContbox img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 0.5s forwards;
+}
+
+/* 이미지 1 */
+.ldContbox .aniImg1 {
+  width: 50%;
+  animation-delay: 0.5s;
+}
+
+.ldContbox .aniImg1 img {
 }
 
 @keyframes show-ani {
@@ -37,21 +48,14 @@
 }
 
 /* 이미지 2 */
-.aniImg2 {
-  position: absolute;
+.ldContbox .aniImg2 {
   top: 24rem;
   left: -11vw;
   width: 37%;
-  height: auto;
-  overflow: hidden;
+  animation-delay: 0.7s;
 }
 
-.aniImg2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 0.7s forwards;
+.ldContbox .aniImg2 img {
 }
 
 @keyframes show-ani {
@@ -60,22 +64,14 @@
   }
 }
 /* 이미지 3 */
-.aniImg3 {
-  position: absolute;
+.ldContbox .aniImg3 {
   top: 47rem;
   left: 0vw;
   width: 30%;
-  height: auto;
-  display: inline-block;
-  overflow: hidden;
+  animation-delay: 0.9s;
 }
 
-.aniImg3 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 0.9s forwards;
+.ldContbox .aniImg3 img {
 }
 
 @keyframes show-ani {
@@ -84,22 +80,14 @@
   }
 }
 /* 이미지 4 */
-.aniImg4 {
-  position: absolute;
+.ldContbox .aniImg4 {
   top: 56vh;
   left: 30vw;
   width: 37%;
-  height: auto;
-  display: inline-block;
-  overflow: hidden;
+  animation-delay: 1.1s;
 }
 
-.aniImg4 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 1.1s forwards;
+.ldContbox .aniImg4 img {
 }
 
 @keyframes show-ani {
@@ -108,22 +96,14 @@
   }
 }
 /* 이미지 5 */
-.aniImg5 {
-  position: absolute;
+.ldContbox .aniImg5 {
   top: 31vh;
   left: 42vw;
   width: 34%;
-  height: auto;
-  display: inline-block;
-  overflow: hidden;
+  animation-delay: 1.3s;
 }
 
-.aniImg5 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 1.3s forwards;
+.ldContbox .aniImg5 img {
 }
 
 @keyframes show-ani {
@@ -132,22 +112,14 @@
   }
 }
 /* 이미지 6 */
-.aniImg6 {
-  position: absolute;
+.ldContbox .aniImg6 {
   top: 10vh;
   left: 22vw;
   width: 34%;
-  height: auto;
-  display: inline-block;
-  overflow: hidden;
+  animation-delay: 1.5s;
 }
 
-.aniImg6 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 1.5s forwards;
+.ldContbox .aniImg6 img {
 }
 
 @keyframes show-ani {
@@ -156,22 +128,14 @@
   }
 }
 /* 이미지 7 */
-.aniImg7 {
-  position: absolute;
+.ldContbox .aniImg7 {
   top: 11vh;
   left: 1vw;
   width: 34%;
-  height: auto;
-  display: inline-block;
-  overflow: hidden;
+  animation-delay: 1.7s;
 }
 
-.aniImg7 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  scale: 0;
-  animation: show-ani 1s cubic-bezier(0.18, 0.77, 0.04, 0.86) 1.7s forwards;
+.ldContbox .aniImg7 img {
 }
 
 @keyframes show-ani {
