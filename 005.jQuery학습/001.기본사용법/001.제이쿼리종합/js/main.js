@@ -113,8 +113,10 @@ $(".mz").hide();
 
 // 2. 버튼 셋팅하기 //////////////
 // 대상: .btns button -> $btns변수
-$btns.hide().first().show();
+// $btns.hide().first().show();
 // 버튼모두.숨겨().첫번째버튼().보여()
+// 임시 : 5번버튼 보이기
+$btns.hide().eq(5).show();
 
 // 3. 미니언즈 공통 기능함수 ///////
 // (1) 기본 공통 기능함수 /////////
@@ -196,8 +198,18 @@ $btns
     const fn =
       // function(){ // -> this는 $mi
       () => {
-        // 다음버튼 보이기함수 호출
-        showNextBtn(this);
+        // 좀비 나타나기(2초후)
+        $room
+          .eq(9) // 9번방
+          .find(".mz") // 이 방의 좀비
+          .delay(2000) // 2초후
+          .fadeIn(400, () => {
+            //콜백함수 : 좀비 나타난 후 액션
+            // 메시지넣기/ 위치 조정하기/보이기
+            $msg.html(msgTxt[9]).css({ left: "-88%" }).fadeIn(300);
+            // 다음버튼 보이기함수 호출
+            showNextBtn(this);
+          }); /// fadeIn ///
       }; //// fn 콜백함수 ////
 
     // (2) actMini() 함수 호출
@@ -211,8 +223,20 @@ $btns
     const fn =
       // function(){ // -> this는 $mi
       () => {
-        // 다음버튼 보이기함수 호출
-        showNextBtn(this);
+        // 첫대사출력 : 배열안의 배열(다차원배열)
+        $msg.text(msgTxt[7][0]).fadeIn(300);
+        // 좀비나타남(대사후 1초경과)
+        $room
+          .eq(7) // 7번방
+          .find(".mz") // 이 방의 좀비
+          .delay(1000) // 1초후
+          .fadeIn(400, () => {
+            // 콜백함수: 좀비 나타난 후 액션
+            // 메시지넣기 / 위치 조정하기 / 보이기
+            $msg.html(msgTxt[7][1]);
+            // 다음버튼 보이기함수 호출
+            showNextBtn(this);
+          }); /// fadeIn ///
       }; //// fn 콜백함수 ////
 
     // (2) actMini() 함수 호출
@@ -220,14 +244,23 @@ $btns
   }) //////////// click ////////////
 
   // 7. "다시옆방으로!" 버튼 클릭시 ////////
-  .next() // 두번째버튼
+  .next() // 네번째버튼
   .click(function () {
     // (1) 버튼별 기능구현 (콜백함수) //////
     const fn =
       // function(){ // -> this는 $mi
       () => {
-        // 다음버튼 보이기함수 호출
-        showNextBtn(this);
+        // 첫번째 대사
+        $msg.html(msgTxt[6][0])
+        .fadeIn(300)/* 이 기능이 끝나고나면 */
+        .delay(2000) // 지연시간 2초
+        // 지연시간을 주기위해 fadeIn을 다시 줌!!
+        .fadeIn(300,()=>{
+          // 쉬었다가 두번째 대사
+          $msg.html(msgTxt[6][1]);
+          // 다음버튼 보이기함수 호출
+          showNextBtn(this);
+        })
       }; //// fn 콜백함수 ////
 
     // (2) actMini() 함수 호출
@@ -235,14 +268,60 @@ $btns
   }) //////////// click ////////////
 
   // 8. "무서우니 윗층으로!" 버튼 클릭시 ////////
-  .next() // 두번째버튼
+  .next() // 다섯번째버튼
   .click(function () {
     // (1) 버튼별 기능구현 (콜백함수) //////
     const fn =
       // function(){ // -> this는 $mi
       () => {
-        // 다음버튼 보이기함수 호출
-        showNextBtn(this);
+        // 무.서.워... 메시지 시간차 업데이트
+        $msg.html(msgTxt[4][0][0])
+        .fadeIn(200)
+        .delay(500)
+        .fadeIn(200,()=>$msg.html(msgTxt[4][0][1]))
+        .delay(500)
+        .fadeIn(200,()=>$msg.html(msgTxt[4][0][2]))
+        .delay(500)
+        .fadeIn(200,()=>$msg.html(msgTxt[4][0][3]))
+        .delay(500)
+        .fadeIn(200,()=>$msg.html(msgTxt[4][0][4]))
+        .delay(500)
+        .fadeIn(200,()=>$msg.html(msgTxt[4][0][5]))
+        .delay(500)
+        .fadeIn(200,()=>$msg.html(msgTxt[4][0][6]))
+        .delay(500)
+        .fadeIn(200,()=>$msg.html(msgTxt[4][0][7]))
+        .delay(500)
+        .fadeIn(200,()=>{
+          // 무.서.워... 대사 후 좀비 올라와 달려들기!
+          // 7번방의 좀비가 올라옴!
+          $room.eq(7).find('.mz')
+          .animate({
+            // 좀비 위층으로 뛰어오르기
+            bottom: '100%'
+          },500,'easeOutBack')
+          .delay(500)
+          .animate({
+            // 방까지 뛰어오기
+            right: '120%'
+          },1000,'easeOutBounce',
+         () => { // 좀비 도착후 실행
+          // 미니언즈 흑백처리
+          $mi.find('img')
+          .css({filter:'grayscale(100%)'});
+          // 물린 후 대사
+          $msg.html(msgTxt[4][1])
+          .css({left:'-84%'});
+          // 미니언즈 좀비 이미지 변경
+          $mi.find('img').delay(2000)
+          .fadeIn(200,()=>{ //// 콜백함수
+            $mi.find('img')
+            .attr('src','./images/mz1.png')
+            // 다음버튼 보이기함수 호출
+            showNextBtn(this);
+          }); /// fadeIn ///
+          }); /// animate ///
+        }); /// fadeIn /// 
       }; //// fn 콜백함수 ////
 
     // (2) actMini() 함수 호출
@@ -250,14 +329,36 @@ $btns
   }) //////////// click ////////////
 
   // 9. "치료주사방으로!" 버튼 클릭시 ////////
-  .next() // 두번째버튼
+  .next() // 여섯번째버튼
   .click(function () {
     // (1) 버튼별 기능구현 (콜백함수) //////
     const fn =
       // function(){ // -> this는 $mi
       () => {
+        // 주사기 돌리기
+        // 주사기 회전 애니 되게하려고 jquery.rotate.js 사용
+        $('.inj')
+        .css({zIndex:'9999'})
+        .delay(500)
+        .animate({
+          rotate: '-150deg'
+        },500,'easeInOutCirc',
+      ()=>{ // 콜백함수: 주사기회전후
+        // 미니언즈 이미지변경
+        $mi.find('img')
+        .attr('src','./images/m2.png')
+        // 그레이스케일 원상복구
+        .css({filter:'grayscale(0)'});
+
+        //주사기 없애기
+        $('.inj').hide();
+
+        // 대사날리기
+        $msg.html(msgTxt[2]).fadeIn(200);
+
         // 다음버튼 보이기함수 호출
         showNextBtn(this);
+      })/// animate ///
       }; //// fn 콜백함수 ////
 
     // (2) actMini() 함수 호출
@@ -265,12 +366,15 @@ $btns
   }) //////////// click ////////////
 
   // 10. "3번방으로!" 버튼 클릭시 ////////
-  .next() // 두번째버튼
+  .next() // 일곱번째버튼
   .click(function () {
     // (1) 버튼별 기능구현 (콜백함수) //////
     const fn =
       // function(){ // -> this는 $mi
       () => {
+        // 대사보이기
+        $msg.html(msgTxt[3]).fadeIn(300);
+
         // 다음버튼 보이기함수 호출
         showNextBtn(this);
       }; //// fn 콜백함수 ////
@@ -280,12 +384,15 @@ $btns
   }) //////////// click ////////////
 
   // 11. "1번방으로!" 버튼 클릭시 ////////
-  .next() // 두번째버튼
+  .next() // 여덟번째버튼
   .click(function () {
     // (1) 버튼별 기능구현 (콜백함수) //////
     const fn =
       // function(){ // -> this는 $mi
       () => {
+        // 메시지 보이기
+        $msg.html(msgTxt[1]).fadeIn(300);
+        
         // 다음버튼 보이기함수 호출
         showNextBtn(this);
       }; //// fn 콜백함수 ////
@@ -354,7 +461,8 @@ const santaAni = () => {
     },
     10000,
     "linear",
-    () => { // 콜백함수 //
+    () => {
+      // 콜백함수 //
       // 값의 초기화 (반복할것이므로)
       $santa.css({
         top: "20%",
@@ -367,6 +475,5 @@ const santaAni = () => {
 // 5. 싼타애니 최초호출
 santaAni();
 
-
 // 6. 인터발 함수로 계속 호출하기
-setInterval(santaAni,11000);
+setInterval(santaAni, 11000);
