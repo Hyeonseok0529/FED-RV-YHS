@@ -392,7 +392,7 @@ $btns
       () => {
         // 메시지 보이기
         $msg.html(msgTxt[1]).fadeIn(300);
-        
+
         // 다음버튼 보이기함수 호출
         showNextBtn(this);
       }; //// fn 콜백함수 ////
@@ -402,14 +402,109 @@ $btns
   }) //////////// click ////////////
 
   // 12. "헬기를 호출!" 버튼 클릭시 ////////
-  .next() // 두번째버튼
+  .next() // 아홉번째버튼
   .click(function () {
     // (1) 버튼별 기능구현 (콜백함수) //////
     const fn =
       // function(){ // -> this는 $mi
       () => {
-        // 다음버튼 보이기함수 호출
-        showNextBtn(this);
+
+        // 마지막 최종 쇼쇼쇼~~~!!
+        // (1) 마지막 메시지 보이기
+        $msg.html(msgTxt[0]).fadeIn(300);
+
+        // (2) 1번방의 단체좀들 달겨들기!
+        $room.eq(1)
+        .find('.mz')
+        .fadeIn(300)
+        .animate({
+          right: '100%'
+        },3000 , 'easeInCirc')
+
+        //(3) 헬기 등장 : .heli
+        $('.heli')
+        .css({rotate:'15deg'})
+        .animate({
+          left: '24%',
+          rotate: '0deg'
+        },3000, 'easeOutBack', function(){
+          // (4) 도착후 미니언즈 탄 이미지로 변경
+          $(this).attr('src','./images/heli2.png')
+          // this가 헬기가 되게 function(){}사용!
+          // (5) 이때 미니언즈 사라짐
+          $mi.hide();
+        }) /// animate ///
+        .delay(500) // 헬기를 0.5ch wldus
+        // (6) 지연후 헬기 계속이동
+        .animate({
+          left: '70%',
+          rotate: '15deg'
+        },4000,'easeInOutCirc',function(){
+          // (7) 조종사 좀비된 이미지로 변경
+          $(this).attr('src','./images/heli3.png');
+        })
+        .delay(300) // 0.3초 지연
+        // (8) 지연후 헬기 천천히 화면 바깥으로 나감!
+        .animate({
+          left: '110%'
+        },7000,'linear',()=>{
+        // (9) 최종애니 콜백함수
+        // (간판떨어져,건물무너져 등)
+
+        // (9-1) 간판 떨어지기
+        let tit = $('.tit');
+        // 1단계: 클래스 'on'주기 
+        tit.addClass("on");
+        // 2단계: 클래스 'on2'주기 
+        setTimeout(() => {
+          tit.addClass("on2");
+        }, 3000);
+
+        // (9-2) 건물 무너지기
+        setTimeout(() => {
+          $room.parent().addClass('on');
+          // parent()는 li의 부모인 ul로 올라감
+        }, 6000);
+
+        // (9-3) 추가구현 : 20초후 작동시작
+        setTimeout(() => {
+          // 1) 건물무너지고 9번방 좀비가 올라옴
+          // - 건물이 돌아가 있으므로 세워놓고 올라옴!
+          $room.parent()
+          .attr('style',
+            'transform:rotate(0deg) !important');
+          // 9번방 좀비
+          $room.eq(9)
+          .find('.mz')
+          // 지표로 올라오기
+          .animate({
+            bottom: '594%'
+          },3000)
+          // 3)기다리기
+          .delay(3000)
+          // 4) 오른쪽으로 사라짐
+          .animate({
+            right: '-240%'
+          },5000,()=>{
+            // 진짜 끝!!!
+            // 5) 엔딩글자 나옴
+            $('body').append('<h1 class="ending">THE END</h1>');
+
+            $('.ending')
+            .css({
+
+            }) /// css /// 
+            .hide() // 숨기기
+            .fadeIn(1000) // 페이드로 보이기
+            .animate({color: 'red'},1000);
+            // 마지막 글자색 빨간색으로 마무리!
+            
+          }); ///animate ///
+          
+        }, 20000);
+
+        }); /// animate ///
+
       }; //// fn 콜백함수 ////
 
     // (2) actMini() 함수 호출
