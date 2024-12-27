@@ -20,6 +20,13 @@
 
     <script>
       $(function () {
+        console.log(location.search);
+        // location.search는 url의 물음표 파라미터
+        // 값만 가져오는 속성임!
+        // 메뉴 클릭시 파라미터를 넘겨서
+        // 이것이 있으면 인트로를 하지 않는다!
+        if(location.search!='')
+          $('body').addClass('set');
         /// jQB //////////////////
 
         /// 부드러운 스크롤 호출!(제이쿼리 아님!)

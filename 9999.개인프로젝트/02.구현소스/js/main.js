@@ -5,7 +5,7 @@ $(".hambtn").click(function (e) {
   e.preventDefault();
   e.stopPropagation();
   let isOn = $(this).is(".on");
-  $(".smenu").css({ translate: isOn ? "0" : "0 -150%" });
+  $(".smenu").css({ translate: isOn ? "0" : "0 calc(-100% - 104px)" });
   $("body").toggleClass("on");
 });
 
@@ -27,24 +27,24 @@ $(".right-menu").click(function (e) {
 });
 
 // 서브메뉴 서브 카테고리 클릭시 이동 //
-$(".smenu a").click((e) => {
+$(".smenu a,.footcatInbox a").click((e) => {
   e.preventDefault();
-  let txt = $(e.currentTarget).text();
-  if (txt == "HOME") location.href = "index.html";
+  let txt = $(e.currentTarget).text().toUpperCase();
+  if (txt == "HOME") location.href = "index.html?key=nope";
   else if (txt == "SHOP") location.href = "sub-shop.html";
   else if (txt == "LOOKBOOK") location.href = "sub-lookbook.html";
   else if (txt == "CONTACT") location.href = "sub-contact.html";
 });
 
 // 하단영역 서브메뉴 클릭시 이동 //
-$(".footcatInbox a").click((e) => {
-  e.preventDefault();
-  let txt = $(e.currentTarget).text();
-  console.log(e);
-  if (txt == "Home") location.href = "index.html";
-  else if (txt == "Lookbook") location.href = "sub-lookbook.html";
-  else if (txt == "Contact") location.href = "sub-contact.html";
-});
+// $(".footcatInbox a").click((e) => {
+//   e.preventDefault();
+//   let txt = $(e.currentTarget).text();
+//   console.log(e);
+//   if (txt == "Home") location.href = "index.html";
+//   else if (txt == "Lookbook") location.href = "sub-lookbook.html";
+//   else if (txt == "Contact") location.href = "sub-contact.html";
+// });
 
 // 로고 클릭시 홈페이지 이동 //
 $("svg").click(function () {

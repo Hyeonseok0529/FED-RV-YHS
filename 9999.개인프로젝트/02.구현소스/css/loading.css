@@ -1,5 +1,20 @@
 @charset "utf-8";
 
+body.set
+.pg-cover {
+  display: none;
+}
+
+body.set .total-wrap{
+  display: block;
+}
+body.set .in-wrap{
+  padding-top: 0;
+}
+body.set .shopAbtn{
+  display: block !important;
+  opacity: 1 !important;
+}
 
 .ldContbox {
   position: relative;

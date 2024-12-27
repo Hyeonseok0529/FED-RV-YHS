@@ -97,6 +97,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  opacity: 0;
 }
 .sub-shopTit {
   font-family: var(--font-article);

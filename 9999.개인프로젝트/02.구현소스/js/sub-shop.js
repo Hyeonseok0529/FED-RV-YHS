@@ -84,4 +84,4 @@ $(".conshop").click(function (e) {
 $("h1 span").hide().delay(4000).fadeIn(2000);
 $(".shopAbtn").hide().delay(4000).fadeIn(2000);
 
-$(".shopInbox").hide().fadeIn(2500);
+$(".shopInbox").fadeTo(2500,1);

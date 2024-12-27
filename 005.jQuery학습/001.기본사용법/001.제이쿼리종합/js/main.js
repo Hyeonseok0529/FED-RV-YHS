@@ -113,10 +113,10 @@ $(".mz").hide();
 
 // 2. 버튼 셋팅하기 //////////////
 // 대상: .btns button -> $btns변수
-// $btns.hide().first().show();
+$btns.hide().first().show();
 // 버튼모두.숨겨().첫번째버튼().보여()
 // 임시 : 5번버튼 보이기
-$btns.hide().eq(5).show();
+// $btns.hide().eq(5).show();
 
 // 3. 미니언즈 공통 기능함수 ///////
 // (1) 기본 공통 기능함수 /////////
@@ -492,13 +492,22 @@ $btns
 
             $('.ending')
             .css({
-
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%,-50%)",
+              margin: "0",
+              padding: "0",
+              color: "white",
+              fontSize: "20vh",
+              textShadow: "0 0 5px #000",
+              fontFamily: "vladimir script",
             }) /// css /// 
             .hide() // 숨기기
             .fadeIn(1000) // 페이드로 보이기
             .animate({color: 'red'},1000);
             // 마지막 글자색 빨간색으로 마무리!
-            
+
           }); ///animate ///
           
         }, 20000);
