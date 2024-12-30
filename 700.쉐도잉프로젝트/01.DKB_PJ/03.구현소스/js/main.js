@@ -9,7 +9,55 @@ import * as dkbData from "../data/dkb_data.js";
 // as로 별칭을 지어주면 객체화되어 담겨진다!
 // import { previewData } from "../data/dkb_data.js";
 
-console.log(dkbData);
+// console.log(dkbData);
+
+// 도깨비 GNB 데이터 불러오기
+import gnbData from "../data/gnb_data.js";
+console.log(gnbData, Object.keys(gnbData), gnbData["About tvN"]);
+
+// 0. GNB 데이터 바인딩하기
+$(".gnb").html(`
+  <ul class="fx-box">
+    ${Object.keys(gnbData)
+      .map(
+        (v) => `
+      <li>
+        <a href="#">
+          ${
+            v +
+            (gnbData[v] == "없음"
+              ? ""
+              : ' <i class="fa-solid fa-chevron-down"></i>')
+          }
+         
+        </a>
+        ${
+            (gnbData[v] == "없음"
+              ? ""
+              : `
+              <!-- 서브메뉴 -->
+              <aside class="smenu">
+                <div class="inbox">
+                  <h2>${v}</h2>
+                  <ol>
+                  ${
+                  gnbData[v].map(v2=>`
+                  <li>
+                    <a href="#">${v2}</a>
+                  </li>
+                  `).join("")
+                  }
+                  </ol>
+                </div>
+              </aside>
+              `)
+          }
+      </li>
+      `
+      )
+      .join("")}
+  </ul>
+  `);
 
 // 1. 슬라이드함수 호출하여 실행하기
 slideFn();
@@ -56,9 +104,11 @@ $(".preview-box ul").html(
 // 서비스 기능이 비활성화 된다!
 // 이런경우 JS 기본사용법대로 아래처럼 "맴죠잉~?"
 // 배열.map().join('')
-$('.live-box').html(
-  "<ul>"+
-  dkbData.liveData.map(v=>`
+$(".live-box").html(
+  "<ul>" +
+    dkbData.liveData
+      .map(
+        (v) => `
     <li data-idx="${v.idx}">
       <figure>
         <img
@@ -68,19 +118,22 @@ $('.live-box').html(
         <figcaption>${v.title}</figcaption>
       </figure>
     </li>
-  `).join('')
-  + "</ul>"
+  `
+      )
+      .join("") +
+    "</ul>"
 );
-
 
 ///////////////////////////////////////////////
 /// 대표포스터영역 : 데이터 연결하여 태그 만들기 /
 ///////////////////////////////////////////////
 
 // 대상: .poster-box
-$('.poster-box').html(
-  '<ul>' +
-  dkbData.posterData.map(v=>`
+$(".poster-box").html(
+  "<ul>" +
+    dkbData.posterData
+      .map(
+        (v) => `
     <li data-idx="${v.idx}">
     <figure>
     <img
@@ -90,20 +143,22 @@ $('.poster-box').html(
     <figcaption>${v.title}</figcaption>
     </figure>
     </li>
-    `).join('') + '</ul>'
-  );
-  
-  
-  
-  ///////////////////////////////////////////////
-  /// 최신동영상영역 : 데이터 연결하여 태그 만들기 /
-  ///////////////////////////////////////////////
+    `
+      )
+      .join("") +
+    "</ul>"
+);
 
-  // 대상: .clip-box
-  $('.clip-box').html(
-    `<ul class="slide swiper-wrapper" data-db="clipData">
-    ${
-      dkbData.clipData.map(v=>`
+///////////////////////////////////////////////
+/// 최신동영상영역 : 데이터 연결하여 태그 만들기 /
+///////////////////////////////////////////////
+
+// 대상: .clip-box
+$(".clip-box").html(
+  `<ul class="slide swiper-wrapper" data-db="clipData">
+    ${dkbData.clipData
+      .map(
+        (v) => `
         <li class="swiper-slide" data-idx="${v.idx}">
           <div class="clip-mv-box">
             <img
@@ -116,11 +171,11 @@ $('.poster-box').html(
           </h4>
           <h3>${v.title}</h3>
         </li>
-        `).join('')
-    }
+        `
+      )
+      .join("")}
   `
 );
-
 
 //////////////////////////////
 //스와이퍼 인스턴스 생성하기 ///
