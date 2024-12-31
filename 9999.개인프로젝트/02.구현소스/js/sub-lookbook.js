@@ -57,7 +57,6 @@ $(".seebtnBox").click((e) => {
 
 // 로고 클릭시 홈페이지 이동 //
 $("svg").click(function () {
-  e.preventDefault();
   location.href = "index.html";
 });
 
