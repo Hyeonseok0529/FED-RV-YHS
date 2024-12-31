@@ -12,11 +12,11 @@ import callLetter from "./call_letter.js";
 import startSS from "./smoothScroll23.js";
 
 // 부드러운 스크롤 함수호출
-// 불러오는 것과 함수호출은 다른 것!! 
 startSS();
 
-// 글자등장함수
-callLetter(".stage", "신카이마코토", 1500);
+
+// 글자등장함수 호출하기
+callLetter(".stage", "신카이 마코토", 1500);
 
 /**************************************************** 
     [ 스크롤 이벤트를 활용한 요소 등장액션 기능구현하기 ]
@@ -65,137 +65,135 @@ callLetter(".stage", "신카이마코토", 1500);
 // (2) 변경대상 : .scroll-act
 const scrollAct = myFn.qsa(".scroll-act");
 // (3) 변경대상 : .tit
-// qsa로 잡으면 컬렉션이 담기기 때문에 꼭 몇번째인지 적어야 함.
-// 지금은 tit를 싸잡아서 하나로 담을 예정이므로 qs 하면 됨.
 const tit = myFn.qs(".tit");
-// 타이틀 요소에 트랜지션
+// 타이틀요소에 트랜지션
 tit.style.transition = ".4s ease-in-out";
 
-// console.log("대상:", scrollAct, tit);
+// console.log("대상:", scrollAct,tit);
 
 // 스크롤 등장요소의 위치값 담기
-// offsetTop은 맨 위에서부터 요소의 위치값
+// offsetTop은 맨위에서 부터 요소의 위치값
 // 배열변수에 순서대로 담는다!
 const posEl = [];
-scrollAct.forEach(
-  (el, idx) => (posEl[idx] = el.offsetTop)
-);
+scrollAct.forEach((el, idx) => (posEl[idx] = el.offsetTop));
 
 console.log("위치값:", posEl);
 
-// 2. 이벤트 설정 /////
-// (1)스크롤시 요소등장 함수 호출
+// 2. 이벤트 설정하기 ////////
+// (1) 스크롤시 요소등장 함수 호출
 myFn.addEvt(window, "scroll", showEl);
+
 // (2) 타이틀 요리조리 피하기 함수 호출
 myFn.addEvt(window, "scroll", moveTit);
 
-// 기준값 만들기 : 화면 높이값을 사용
+// 기준값 만들기 : 화면 높이값을 사용(화면의 2/3)
 const CRITERIA = (window.innerHeight / 3) * 2;
 console.log("기준값:", CRITERIA);
 
-// 3. 함수만들기 /////
-// (1) 요소 등장함수/////////
-
+// 3. 함수만들기 /////////////
+// (1) 요소 등장 함수 /////////
 function showEl() {
   // (1) 함수호출확인
-  // console.log('보여라!',window.scrollY);
+  // console.log('나야나!',window.scrollY);
 
   scrollAct.forEach((el) => {
-    // 테스트 : 첫번째 요소의 바운딩 top값
+    // 각 등장요소의 바운딩 top값
     let bcrVal = myFn.getBCR(el);
     // console.log(bcrVal,
-    //   el.getBoundingClientRect());
+    //     el.getBoundingClientRect());
 
     // 화면의 2/3위치에서 클래스 넣기(등장)
     if (bcrVal < CRITERIA) el.classList.add("on");
-    // 기준값 전에는 다시 클래스 제거
+    // 기준값 전에는 다시 클래스 제거(원위치)
     else el.classList.remove("on");
   }); ///// forEach /////
-} //////////////showEl////////
+} /////// showEl함수 ////////////////
 
-// (2) 요리조리 타이틀 움직이는 함수 ///////
+// (2) 요리조리 타이틀 움직이는 함수 ///
 function moveTit() {
   // 스크롤 위치값
   let scY = window.scrollY;
+  // console.log(scrollY);
 
-  // (1) 함수호출확인
+  //(1) 함수호출확인
   // console.log("요리조리!", scY);
 
-  // 제일 큰 값 기준부터 차례로 범위를 만들면 간단해짐!
-  if (scY > posEl[2] - CRITERIA)
+  // 제일 큰값 기준부터 차례로 범위를 만들면 간단해진다!
+  if (scY > posEl[2])
     // 3번째 요소
     tit.style.left = "30%";
-  else if (scY >= posEl[1] - CRITERIA)
+  else if (scY > posEl[1])
     // 2번째 요소
     tit.style.left = "78%";
-  else if (scY > posEl[0] - CRITERIA)
+  else if (scY > posEl[0])
     // 1번째 요소
     tit.style.left = "28%";
   else tit.style.left = "50%";
-} ///// moveTit 함수 /////
+} //////// moveTit 함수 //////////////
 
+/******************************************** 
+    [ 떨어지는 여자 기능 구현하기 ]
+    ______________________________
 
+    (1) 기본원리 : 스크롤 이동에 따른 화면
+    높이값 범위안에서 떨어지는 여자 이미지가
+    아래쪽으로 이동 애니메이션 됨!
 
-/*****************************************************  
-    [떨어지는 여자 기능 구현하기]
-  ________________________________
+    (2) 계산을 위한 비례식 세우기
+      스크롤 한계값 : 윈도우 높이값 
+    = 스크롤 이동값 : 이미지 이동값
 
-  (1) 기본원리 : 스크롤 이동에 따른 화면
-  높이값 범위 안에서 떨어지는 여자 이미지가
-  아래쪽으로 이동 애니메이션 됨!
+    (3) 우리가 구할값은? 이미지 이동값!
+    -> 외항의 곱은 내항의 곱과 같다!
+    스한 : 윈높 = 스이 : 이이
+    스한 * 이이 = 윈높 * 스이
+    이이 = 윈높 * 스이 / 스한
 
-  (2) 계산을 위한 비례식 세우기
-  스크롤 한계값 : 윈도우 높이값 
-= 스크롤 이동값 : 이미지 이동값
-
-  (3) 우리가 구할 값은? 이미지 이동값
-  -> 외항의 곱은 내항의 곱과 같다!
-  스한 : 윈높 = 스이 : 이이
-  스한 * 이이 = 윈높 * 스이
-  이이 = 윈높 * 스이 / 스한
-*****************************************************/
-// 1. 변수값 세팅하기
+********************************************/
+// 1. 변수값 셋팅하기
 // (1) 윈도우 높이값 (윈높)
 const winH = window.innerHeight;
 
 // 전체문서높이
 const docH = document.body.clientHeight;
 
-// (2) 스크롤 한계값(스한) -> 전체 문서 높이 - 화면높이
+// (2) 스크롤 한계값 (스한) -> 전체문서높이 - 화면높이
 // 스한 = docH - winH
 const scLimit = docH - winH;
+
 console.log(
-  '문서높이:',docH,
-  '\n윈도우높이:',winH,
-  '\n스크롤한계값:',scLimit
+  "문서높이:",
+  docH,
+  "\n윈도우높이:",
+  winH,
+  "\n스크롤한계값:",
+  scLimit
 );
 
 // 2. 대상선정 : 떨어지는 여자요소
-const woman = myFn.qs('#woman');
+const woman = myFn.qs("#woman");
 
 // console.log('떨녀:',woman);
 
-// 3. 이벤트 설정하기 : window가 이벤트 대상임
-myFn.addEvt(window, 'scroll',moveWoman);
+// 3. 이벤트 설정하기 : window가 이벤트 대상임!
+myFn.addEvt(window, "scroll", moveWoman);
 
-// 4. 함수만들기 //////////
-function moveWoman(){
-  // (1)스크롤바 위치값 -> 스크롤 이동값
+// 4. 함수만들기 /////////
+function moveWoman() {
+  // (1) 스크롤바 위치값 -> 스크롤 이동값
   let scY = window.scrollY;
 
-  
   // (2) 떨녀 top값 구하기 : 이미지 이동값
-  // 이이 = 원높 * 스이/스한
+  // 이이 = 윈높 * 스이 / 스한
   // 이이 = winH * scY / scLimit
-  let womanTop = winH * scY / scLimit
-  
-  // 호출확인 및 스크롤과 위치값 , 떨녀 top값
-  console.log("스이:", scY, "\n이이",womanTop);
+  let womanTop = (winH * scY) / scLimit;
+
+  // 호출확인 및 스크롤바 위치값, 떨녀 top값
+  console.log("스이:", scY, "\n이이:", womanTop);
 
   // (3) 떨녀에게 적용하기
   woman.style.top = womanTop + 'px';
 
   // (4) 맨위일때 윗쪽으로 숨기기
   if(scY < 50) woman.style.top = '-20%';
-
-} ////// moveWoman ///////
+} //////////// moveWoman 함수 /////////////

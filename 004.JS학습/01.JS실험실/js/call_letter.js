@@ -5,17 +5,17 @@ import myFn from "./my_function.js";
 
 // 기능함수를 외부에 공개함!!!
 export default function callLetter(target, txt, startTime) {
-  // [함수 전달변수 3개]
-  // target - 전달변수에 대상요소 선택자를 받아준다!
-  // txt - 등장할 글자 내용전달
-  // startTime - 등장시간 전달 (1/1000초 숫자, 단위없음)
+  // [ 함수 전달변수 3개 ]
+  // (1) target - 전달변수에 대상요소 선택자를 받아준다!
+  // (2) txt - 등장할 글자 내용전달
+  // (3) startTime - 등장시간 전달 (1/1000초 숫자,단위없음)
 
   // 1. 요구사항 분석
   // - 글자를 박스에 넣고 하나씩 일어나면서 등장
 
   // 2. 대상선정
   // 글자를 넣을 박스
-  // -> 전달받은 선택요소 선택자 target 넣기
+  // -> 전달받은 선택요소 선택자 target넣기
   const stage = myFn.qs(target);
 
   // console.log("대상:", stage);
@@ -61,5 +61,4 @@ export default function callLetter(target, txt, startTime) {
   setTimeout(() => {
     stage.classList.add("on");
   }, startTime);
-  // 파라미터 : 전달되는 매개
-} ////////////// callLetter 함수 //////////////////////
+} ////////////// callLetter 함수 //////////////
