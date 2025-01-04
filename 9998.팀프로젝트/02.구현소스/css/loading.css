@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+body.set
+.pg-cover {
+  display: none;
+}
+
+body.set .total-wrap{
+  display: block;
+}
+body.set .in-wrap{
+  padding-top: 0;
+}
+body.set .shopAbtn{
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.ldContbox {
+  position: relative;
+  width: 54%;
+  height: 98vh;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.ldContbox a{
+  cursor: default;
+  height: auto;
+  /* display: inline-block; */
+  overflow: hidden;
+  scale: 0;
+  animation: show-ani 2s cubic-bezier(0.18, 0.77, 0.04, 0.86) forwards;
+
+}
+
+.ldContbox a:first-child~a{
+  position: absolute;
+}
+
+/* 이미지공통 */
+.ldContbox img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 이미지 1 */
+.ldContbox .aniImg1 {
+  width: 50%;
+  animation-delay: 0.5s;
+}
+
+.ldContbox .aniImg1 img {
+}
+
+@keyframes show-ani {
+  to {
+    scale: 1;
+  }
+}
+
+/* 이미지 2 */
+.ldContbox .aniImg2 {
+  top: 24rem;
+  left: -11vw;
+  width: 37%;
+  animation-delay: 0.7s;
+}
+
+.ldContbox .aniImg2 img {
+}
+
+@keyframes show-ani {
+  to {
+    scale: 1;
+  }
+}
+/* 이미지 3 */
+.ldContbox .aniImg3 {
+  top: 47rem;
+  left: 0vw;
+  width: 30%;
+  animation-delay: 0.9s;
+}
+
+.ldContbox .aniImg3 img {
+}
+
+@keyframes show-ani {
+  to {
+    scale: 1;
+  }
+}
+/* 이미지 4 */
+.ldContbox .aniImg4 {
+  top: 56vh;
+  left: 30vw;
+  width: 37%;
+  animation-delay: 1.1s;
+}
+
+.ldContbox .aniImg4 img {
+}
+
+@keyframes show-ani {
+  to {
+    scale: 1;
+  }
+}
+/* 이미지 5 */
+.ldContbox .aniImg5 {
+  top: 31vh;
+  left: 42vw;
+  width: 34%;
+  animation-delay: 1.3s;
+}
+
+.ldContbox .aniImg5 img {
+}
+
+@keyframes show-ani {
+  to {
+    scale: 1;
+  }
+}
+/* 이미지 6 */
+.ldContbox .aniImg6 {
+  top: 10vh;
+  left: 22vw;
+  width: 34%;
+  animation-delay: 1.5s;
+}
+
+.ldContbox .aniImg6 img {
+}
+
+@keyframes show-ani {
+  to {
+    scale: 1;
+  }
+}
+/* 이미지 7 */
+.ldContbox .aniImg7 {
+  top: 11vh;
+  left: 1vw;
+  width: 34%;
+  animation-delay: 1.7s;
+}
+
+.ldContbox .aniImg7 img {
+}
+
+@keyframes show-ani {
+  to {
+    scale: 1;
+  }
+}
+
+/* 페이드 아웃 셋팅 */
+/* 페이지 전환효과용 가림막 */
+.pg-cover {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+        /* display: none; */
+  background-color: #ebe6d7;
+  /* 트랜지션: 속시이지 */
+  /* transition: all 0.8s ease-in-out; */
+  /* -> 애니메이션을 줄때에는 트랜지션을 빼야한다! */
+}

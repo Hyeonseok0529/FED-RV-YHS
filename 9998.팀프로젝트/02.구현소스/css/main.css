@@ -1,0 +1,806 @@
+@charset "utf-8";
+
+/* 레이아웃 3 CSS */
+
+/* 외부 CSS 불러오기 */
+/* 변수셋팅 CSS */
+@import url(./variables.css);
+/* 12그리드 flex CSS */
+@import url(./grid_12_flex.css);
+/* 리셋 CSS */
+@import url(./reset.css);
+/* 상단영역 CSS */
+@import url(./common.css);
+/* Core CSS */
+@import url(./core.css);
+/* Lookbook CSS */
+@import url(./sub-lookbook.css);
+
+/* 초기화 */
+html,
+body,
+h1,
+h2,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* 공사중표시 */
+.ing * {
+  outline: 1px dashed orange;
+}
+
+/* 공통클래스 */
+/* 중앙속박스 */
+.inbox {
+  /* 블록박스 중앙정렬 -> 마.영.오! */
+  margin: 0 auto;
+}
+/* 임시 타이틀 */
+.temp-tit {
+  position: absolute;
+  color: #888;
+}
+
+.total-wrap {
+  overflow: hidden;
+  display: none;
+}
+.in-wrap {
+  padding-top: 100vh;
+}
+
+/************* 컨텐츠영역 *************/
+.page {
+  height: 100vh;
+}
+/* 임시타이틀 */
+.page .temp-tit {
+  font-size: 4vw;
+  line-height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+.about.page {
+  height: 115vh;
+}
+/************* 1. 배너영역 *************/
+.ban-area {
+  height: 400px;
+}
+.main-video {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.main-text {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 9;
+  /* width: 59vw; */
+  /* display: flex;
+  gap: 1.3vw;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; */
+  color: #fff;
+  font-family: var(--font-title);
+  font-size: min(8rem, 5vw);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.4rem;
+  text-align: center;
+  white-space: nowrap;
+  transform: scaleY(1.8);
+  line-height: 7vh;
+}
+.main-text br ~ span {
+  display: inline-block;
+  /* margin-top: -5.5vw; */
+}
+
+/* SHOP ALL 버튼 */
+.shopAbtn {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 9;
+  width: max(10vw, 15.1rem);
+  height: 4.5vh;
+  color: #1f1f1f;
+  background-color: #ebe6d7;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  /* transition: 0.3s ease-in-out; */
+}
+.shopAbtn:hover {
+  background-color: #645832;
+  color: #ebe6d7;
+  transition: 0.3s ease-in-out;
+}
+
+/****************2. About us 영역  *****************/
+/* 이미지 */
+.imgbox {
+  width: 100%;
+  height: 100%;
+  background-color: #ebe6d7;
+  /* 이미지 부모박스 */
+  position: absolute;
+}
+.imgbox img {
+  left: 50%;
+}
+.imgbox img:nth-child(1) {
+  position: absolute;
+  height: 25vh;
+  /* left: 4rem; */
+  translate: -43vw;
+  top: 15rem;
+  width: 23rem;
+  object-fit: cover;
+}
+.imgbox img:nth-child(2) {
+  position: absolute;
+  height: 35vh;
+  /* right: 80rem; */
+  translate: -9vw;
+  top: 1rem;
+  width: 37rem;
+  object-fit: cover;
+}
+
+.imgbox img:nth-child(3) {
+  position: absolute;
+  height: 30vh;
+  /* right: 0; */
+  translate: 36vw;
+  top: 39rem;
+  width: 20rem;
+  object-fit: cover;
+}
+.imgbox img:nth-child(4) {
+  position: absolute;
+  height: 39vh;
+  /* left: 90rem; */
+  translate: 9vw;
+  top: 55rem;
+  width: 35rem;
+  object-fit: cover;
+}
+.imgbox img:nth-child(5) {
+  position: absolute;
+  height: 39vh;
+  /* left: 1rem; */
+  translate: -41vw 7vh;
+  top: 44rem;
+  width: 57rem;
+  object-fit: cover;
+}
+.imgbox img:nth-child(6) {
+  position: absolute;
+  height: 18vh;
+  /* right: 20rem; */
+  translate: 23vw;
+  top: 20rem;
+  width: 17rem;
+  object-fit: cover;
+}
+/* 텍스트 */
+.page:nth-child(2) {
+  position: relative;
+}
+.aboutTextbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.mainTxt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -100%;
+  font-size: min(7rem, 6vw);
+  width: 55vw;
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: #1f1f1f;
+  text-align: center;
+  line-height: 85%;
+  letter-spacing: -0.3vw;
+}
+.subTxt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% 30%;
+  font-size: min(1.5vw, 1.9rem);
+  text-align: center;
+  line-height: 130%;
+  font-family: var(--font-menu);
+  font-weight: 400;
+}
+
+/****************2. 추천제품 영역  *****************/
+.recommendBox {
+  display: flex;
+  flex-direction: row-reverse;
+  /* 텍스트박스 부모자격 */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #645832;
+  border-bottom: 1px solid #ebe6d753;
+  box-sizing: border-box;
+}
+.recommendBox > div {
+  width: 50%;
+}
+/* 이미지 */
+.recImgbox {
+  height: 100vh;
+  margin-left: auto;
+}
+.recImgbox a {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+.recImgbox a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s ease-out;
+}
+.recImgbox a:hover img {
+  scale: 1.05;
+}
+/* 텍스트 */
+.recTextbox {
+  display: flex;
+  /* position: absolute;
+  top: 0; */
+  padding: 0 0 14vw 11vw;
+  height: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: 3vh;
+  margin-top: 4.8%;
+}
+.productName {
+  font-size: 4.4rem;
+  display: block;
+  font-family: var(--font-title);
+  color: #ebe6d7;
+  letter-spacing: -1.6px;
+  transition: 0.4s ease-out;
+  cursor: pointer;
+}
+.productName:hover {
+  color: #1f1f1f;
+}
+.productDesc {
+  display: block;
+  font-size: 1vw;
+  font-family: var(--font-menu);
+  color: #ebe6d7;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.9px;
+}
+.viewbtn {
+  position: relative;
+  font-size: 2rem;
+  font-family: var(--font-menu);
+  color: #ebe6d7;
+  letter-spacing: 1px;
+}
+.viewbtn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+  margin-left: 100%;
+  background-color: #ebe6d7;
+  opacity: 0.5;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.viewbtn:hover::after {
+  width: 100%;
+  margin-left: 0;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/**************** 3. Lookbook 영역  *****************/
+.lookbookBox {
+  background-color: #645832;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+}
+/* 세로 텍스트 */
+.lbVerTxtbox {
+  width: 5%;
+  height: 100%;
+  border-right: 0.5px solid #ebe6d753;
+}
+.lbVerTxt {
+  color: #ebe6d7;
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  margin-top: 88vh;
+  rotate: 270deg;
+  letter-spacing: -1.5px;
+}
+/* 타이틀 , 설명 영역 */
+.lbTxt {
+  display: flex;
+  flex-wrap: wrap;
+  width: 47.5%;
+  height: 100%;
+  align-content: space-around;
+  border-right: 0.5px solid #ebe6d753;
+}
+.lbtit {
+  width: 100%;
+  font-size: 5rem;
+  color: #ebe6d7;
+  font-family: var(--font-title);
+  font-weight: 600;
+  letter-spacing: -1px;
+  display: block;
+  text-align: center;
+}
+.lbDesc {
+  margin: 10px 75px;
+  font-size: 2rem;
+  color: #ebe6d7;
+  font-family: var(--font-menu);
+  font-weight: 300;
+  line-height: 150%;
+  text-align: center;
+  display: block;
+  opacity: 0.8;
+}
+
+/* 제품 슬라이드 영역 */
+.lbSlideDesc {
+  width: 47.5%;
+  height: 100%;
+}
+/* 위쪽 타이틀 */
+.upTitBox {
+  position: relative;
+  border-top: 1px solid #ebe6d753;
+  border-bottom: 1px solid #ebe6d753;
+  width: 100%;
+  height: 3vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4vh;
+  font-size: 1vw;
+  color: #ebe6d7;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.upTitBox::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.604);
+}
+.upTit1 {
+  margin-left: 1vw;
+}
+.upTit2 {
+  margin-right: 1vw;
+}
+/* 슬라이드 박스 */
+.lbSlideBox {
+  width: 90%;
+  height: 60rem;
+  background-color: #e0e0e0;
+  margin: 0 auto;
+  margin-top: 3vh;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.slide {
+  display: block;
+}
+.slideImg {
+  width: 96%;
+  height: 80%;
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slide li.on {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slideImg img {
+  object-fit: cover;
+  margin: 0 auto;
+  width: 100%;
+}
+/* 슬라이드 버튼 */
+.lbbtn {
+  display: block;
+  position: absolute;
+  top: 83%;
+  font-size: 0.9vw;
+  font-weight: 400;
+}
+.lbbtn:hover {
+  color: #645832;
+}
+.lbbtn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+  margin-left: 100%;
+  background-color: #645832;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lbbtn:hover::after {
+  width: 100%;
+  margin-left: 0;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lbshopbtn {
+  display: block;
+  position: absolute;
+  top: 83%;
+  left: 87%;
+  font-size: 0.9vw;
+  font-weight: 400;
+}
+.lbshopbtn:hover {
+  color: #645832;
+}
+.lbshopbtn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+  margin-left: 100%;
+  background-color: #645832;
+  color: #645832;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lbshopbtn:hover::after {
+  width: 100%;
+  margin-left: 0;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* 슬라이드 하단 텍스트 */
+.downDescBox {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 3vh;
+}
+.materialsBox {
+  display: flex;
+  justify-content: space-between;
+  width: 46.9vw;
+  height: 3vh;
+  align-items: center;
+  font-size: 1vw;
+  color: #ebe6d7;
+  border-top: 1px solid #ebe6d753;
+  border-bottom: 1px solid #ebe6d753;
+}
+.mattit {
+  margin-left: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.matDesc {
+  margin-right: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+.prodBox {
+  display: flex;
+  justify-content: space-between;
+  width: 46.9vw;
+  height: 3vh;
+  align-items: center;
+  font-size: 1vw;
+  color: #ebe6d7;
+  border-bottom: 1px solid #ebe6d753;
+}
+.prodtit {
+  margin-left: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.prodDesc {
+  margin-right: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.categBox {
+  display: flex;
+  justify-content: space-between;
+  width: 46.9vw;
+  height: 3vh;
+  align-items: center;
+  font-size: 1vw;
+  color: #ebe6d7;
+  border-bottom: 1px solid #ebe6d753;
+}
+.categtit {
+  margin-left: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.categDesc {
+  margin-right: 1vw;
+  font-family: var(--font-menu);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+/*********************** 4. Article 영역 ***********************/
+/* 상단 중앙 타이틀 */
+.artiBox {
+  background-color: #ebe6d7;
+  width: 100%;
+  height: 100%;
+  /* 기사정보 부모박스 */
+  position: relative;
+  /* display: flex;
+  flex-direction: row-reverse; */
+}
+.artiUpTitbox {
+  width: 100%;
+  height: 10vh;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d1c7a3;
+}
+.artiUpTit {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: 1.3vw;
+  font-weight: 800;
+  transform: scaleY(2.5);
+  padding-top: 2vh;
+  box-sizing: border-box;
+}
+/* Article 박스 */
+.verFlexbox {
+  display: flex;
+  height: 90vh;
+}
+/* 세로 텍스트 박스 */
+.artVerbox {
+  width: 5%;
+  border-right: 0.5px solid #d1c7a3;
+}
+.artVerTxt {
+  /* position: absolute; */
+  color: #1f1f1f;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 3.2rem;
+  rotate: 270deg;
+  translate: 0% 1600%;
+  transform-origin: left top;
+  letter-spacing: -3.5px;
+  width: 187px;
+  margin-left: 1vw;
+
+  /* left: -3.8vw; */
+}
+/* 기사 정보 */
+.artiTxtbox {
+  /* position: absolute; */
+  display: block;
+  width: 45%;
+  height: 100%;
+  /* top: 10vh;
+  left: 5vw; */
+  border-right: 1px solid #d1c7a3;
+  color: #1f1f1f;
+}
+.upTxt {
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-menu);
+  border-bottom: 1px solid #d1c7a3;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  padding-left: 2vw;
+  font-size: 1.3rem;
+}
+.artMainTit {
+  height: 2vh;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-article);
+  letter-spacing: -0.4px;
+  font-weight: 500;
+  padding: 6vw 2vw;
+  font-size: 4vw;
+  transition: 0.4s ease-out;
+}
+.artMainTit:hover {
+  color: #645832;
+  cursor: pointer;
+}
+.artiDesc {
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  padding: 6vw 2vw;
+  font-size: 1vw;
+  color: #1f1f1f;
+  opacity: 0.8;
+}
+.artiImgbox {
+  width: 50%;
+}
+.borderBox {
+  width: 100%;
+  border-bottom: 1px solid #d1c7a3;
+  font-family: var(--font-menu);
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.borderBoxTxt {
+  padding-right: 2vw;
+}
+.imgBox {
+  width: 95%;
+  height: 90%;
+  margin: 0 auto;
+  margin-top: 3vh;
+  overflow: hidden;
+}
+.imgBox img {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s ease-out;
+}
+.imgBox img:hover {
+  scale: 1.05;
+}
+/*********************** 5. Sub Article 영역 ***********************/
+.subartiBox {
+  width: 100%;
+  height: 100%;
+  background-color: #ebe6d7;
+}
+/* 메인, 서브 기사 사이 공간 */
+.spaceBox {
+  width: 100%;
+  height: 5%;
+  display: block;
+  border-bottom: 1px solid #d1c7a3;
+  border-top: 1px solid #d1c7a3;
+}
+.subArtiContBox {
+  display: flex;
+  width: 100%;
+  height: 94.7%;
+  /* Sub Article 부모박스 */
+  position: relative;
+}
+.subArtiContBox > div {
+  flex: 1;
+}
+
+/* 서브기사 1 */
+.subArti1 {
+  height: 100%;
+  border-right: 1px solid #d1c7a3;
+}
+/* 서브기사 2 */
+.subArti2 {
+  height: 100%;
+  border-right: 1px solid #d1c7a3;
+}
+/* 서브기사 3 */
+.subArti3 {
+  height: 100%;
+}
+.subimg {
+  display: block;
+  width: 91.3%;
+  height: 50%;
+  margin: 0 auto;
+  margin-top: 1vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.subimg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.subArtiTit {
+  font-family: var(--font-article);
+  font-size: 3.5rem;
+  font-weight: 500;
+  letter-spacing: -0.9px;
+  width: 100%;
+  height: 15vh;
+  box-sizing: border-box;
+  padding: 0.8vw 1.4vw;
+  transition: 0.4s ease-out;
+}
+.subArtiTit:hover {
+  color: #645832;
+  cursor: pointer;
+}
+.subArtiTxt {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -0.8px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8vw 1.4vw;
+  margin-top: 7vh;
+}
+.subimg img {
+  cursor: pointer;
+  object-fit: cover;
+  transition: 1s ease-out;
+}
+.subimg img:hover {
+  scale: 1.05;
+}
