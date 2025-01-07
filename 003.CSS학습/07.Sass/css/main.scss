@@ -93,18 +93,64 @@
 
 // 전체 페이지요소
 .wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 // 변수 셋팅하기 ///
+
+// (1) 색상 셋팅
 $mainColor1: #a31212;
 $mainColor1-2: #e46d0b;
 $mainColor2: #204ffc;
 $mainColor2-2: #b0ddf2;
+// (2) 색상명 셋팅
+$orgRed: red;
+$orgAqua: aqua;
 
+// (3) 글자크기 셋팅
+$fontSize1: 40px;
+$fontSize2: 35px;
+$fontSize3: 30px;
 
 // 상단영역
-.top-area{
-    color: $mainColor1;
+.top-area {
+  // 박스글자
+  color: $mainColor1;
+
+  // [네스팅 기법]
+  h1 {
+    color: $orgAqua;
+    // [속성접두어 묶음기법]
+    font: {
+      size: $fontSize1;
+      family: "Times New Roman";
+    }
+    text: {
+      align: center;
+      decoration: underline;
+      shadow: 5px 5px 4px #0000007d;
+    }
+    // 하단마진
+    margin-bottom: $fontSize1;
+
+    // 배경설정
+    background: {
+      color: $mainColor1-2;
+      image: url(../images/flower.png);
+      position: center;
+      repeat: repeat-x;
+      size: 70px;
+    }
+
+    // 패딩
+    padding: 20px;
+  }
+  // 서브 타이틀 박스 
+  h2{
+    font-size: $fontSize3;
+    // 박스 공통설정
+    text-align: center;
+    padding: 20px 0;
+  }
 }
