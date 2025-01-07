@@ -86,6 +86,8 @@
 
 
 *********************************************/
+// 변수 셋팅 sass 불러오기
+@import "./data/_variables";
 // 초기화 셋팅 sass 불러오기
 @import "./common/reset";
 // 주의!: 파일선택 후 실제로 부분파일 앞에 언더바와
@@ -96,22 +98,6 @@
   max-width: 1000px;
   margin: 0 auto;
 }
-
-// 변수 셋팅하기 ///
-
-// (1) 색상 셋팅
-$mainColor1: #a31212;
-$mainColor1-2: #e46d0b;
-$mainColor2: #204ffc;
-$mainColor2-2: #b0ddf2;
-// (2) 색상명 셋팅
-$orgRed: red;
-$orgAqua: aqua;
-
-// (3) 글자크기 셋팅
-$fontSize1: 40px;
-$fontSize2: 35px;
-$fontSize3: 30px;
 
 // 상단영역
 .top-area {
