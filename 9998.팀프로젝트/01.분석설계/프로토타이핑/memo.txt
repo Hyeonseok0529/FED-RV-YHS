@@ -16,3 +16,20 @@ Nova Flat
 Odibee Sans
 Onyx
 Orbitron
+
+// 행성 정보 //
+1. Mecury 
+
+Introduction
+surface temperatures :
+800°F(430°C) ~ -290°F(-180°C)
+the fastest planet, zipping around the Sun every 88 Earth days.
+
+Namesake
+named for the swiftest of the ancient Roman gods.
+
+Potential for Life
+Mercury's environment is not conducive to life as we know it. The temperatures and solar radiation that characterize this planet are most likely too extreme for organisms to adapt to.
+
+Structure
+Mercury is the second densest planet, after Earth. It has a large metallic core with a radius of about 1,289 miles (2,074 kilometers), about 85% of the planet's radius. There is evidence that it is partly molten or liquid. Mercury's outer shell, comparable to Earth's outer shell (called the mantle and crust), is only about 400 kilometers (250 miles) thick.
