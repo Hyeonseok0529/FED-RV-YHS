@@ -21,3 +21,56 @@
  * mounted(){코드}
 
 ***************************************/
+
+// [ 상품정보를 만들어주는 생성자함수 만들기 ]
+// 생성자함수 : 객체를 만들어준다. : 이 객체를 보고 인스턴스라고 한다
+function GetList(idx, name, img, price){
+    // 객체 {속성:값} 생성하기
+    this.idx = idx;
+    this.name = name;
+    this.img = img;
+    this.price = price;
+
+} ////// GetList 생성자함수 /////
+
+// 배열로 상품이름 임의생성할 것 셋팅
+const goods = ["프레이컷","아일렛기모","베어블클","포멀믹스톤"];
+
+// 객체 18개를 생성하자!
+const items = [];
+
+for(let i=0; i<19; i++){
+    let rdm = Math.floor(Math.random()*4)
+    items.push(new GetList(
+            i,
+            goods[rdm],
+            "",
+            (5247*i)+"원"));
+}
+
+console.log(items);
+
+// 1. 뷰JS 인스턴스 생성하기
+const vm = new Vue({
+    // (1) 대상선정
+    el: '#vue-app',
+    // - 대상요소가 꼭 아이디명일 필요는 없음
+    // 클래스이름 사용시 여러개일 경우 첫번째 것만 선택됨
+
+    // (2) 데이터 설정하기
+    data: {
+        // (2-1) 샵명 데이터
+        bitTit : "Style NANDA",
+        // (2-2) 로고 태그정보
+        logo: `<img
+        src="./images/logo_3ce.png" alt="스난다 로고">`,
+        // (2-3) 배너 데이터
+        content: `
+            나는 날고 싶어~!
+            <h2>오늘도 당신은 날고싶다~!</h2>
+            <img
+                src="./images/sub_banner_e.jpg" 
+                alt="스난다 배너">
+        `,
+    },
+})
