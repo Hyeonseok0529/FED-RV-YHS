@@ -21,7 +21,6 @@
  * mounted(){코드}
 
 ***************************************/
-
 // [ 상품정보를 만들어주는 생성자함수 만들기 ]
 // 생성자함수 : 객체를 만들어준다. : 이 객체를 보고 인스턴스라고 한다
 function GetList(idx, name, img, price) {
@@ -46,21 +45,36 @@ const vm = new Vue({
     bitTit: "Style NANDA",
     // (2-2) 로고 태그정보
     logo: `<img
-        src="./images/logo_3ce.png" alt="스난다 로고">`,
+        src="./images/logo_3ce.png"
+        alt="스난다 로고">`,
     // (2-3) 배너 데이터
     content: `
-            나는 날고 싶어~!
-            <h2>오늘도 당신은 날고싶다~!</h2>
-            <img
-                src="./images/sub_banner_e.jpg" 
-                alt="스난다 배너">
+        나는 날고 싶어~!
+        <h2>오늘도 당신은 날고싶다~!</h2>
+        <img
+            src="./images/sub_banner_e.jpg" 
+            alt="스난다 배너">
         `,
 
         // (2-4) 상품정보배열
         items: [], // (호출시 this.items)
   },
   // (3) 메서드 설정하기 ///
-  methods: {},
+  methods: {
+    // (3-1) 이미지 태그를 리턴하는 메서드
+    makeImg(val){
+        return `
+        <img
+                src="./images/fashion1/${val}.jpg" 
+                alt="아이템이미지1">
+        <img
+                src="./images/fashion2/${val}.png" 
+                alt="아이템이미지2">
+        `;
+    },
+    // (3-2) 숫자 3자릿수 콤마 찍어주는 메서드 
+    addCommas(x){},
+  },
 
   // (4) 뷰인스턴스 초기화 단계 : created
   created() {
@@ -71,7 +85,7 @@ const vm = new Vue({
     // 객체 18개를 생성하자! -> data파트에 생성함
     // const items = [];
 
-    for (let i = 0; i < 19; i++) {
+    for (let i = 1; i < 19; i++) {
       // 상품명 배열 랜덤번호(0~3) (0부터는 Math.floor)
       let rdm = Math.floor(Math.random() * 4);
       // 가격 랜덤 곱할 수(4~20 -> 1~17 + 3) (1부터는 Math.ceil)
