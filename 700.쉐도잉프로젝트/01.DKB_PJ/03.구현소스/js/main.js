@@ -21,48 +21,49 @@ console.log(gnbData, Object.keys(gnbData), gnbData["About tvN"]);
 
 // 0. GNB 데이터 바인딩하기
 $(".gnb").html(`
-  <ul class="fx-box">
-    ${Object.keys(gnbData)
-      .map(
-        (v) => `
-      <li>
-        <a href="#">
+    <ul class="fx-box">
+      ${Object.keys(gnbData)
+        .map(
+          (v) => `
+        <li>
+          <a href="#">
+            ${
+              v +
+              (gnbData[v] == "없음"
+                ? ""
+                : '<i class="fa-solid fa-chevron-down"></i>')
+            }
+            
+          </a>
           ${
-            v +
-            (gnbData[v] == "없음"
+            gnbData[v] == "없음"
               ? ""
-              : ' <i class="fa-solid fa-chevron-down"></i>')
+              : `
+                <!-- 서브메뉴 -->
+                <aside class="smenu">
+                  <div class="inbox">
+                    <h2>${v}</h2>
+                    <ol>
+                    ${gnbData[v]
+                      .map(
+                        (v2) => `
+                        <li>
+                          <a href="#">${v2}</a>
+                        </li>
+                      `
+                      )
+                      .join("")}
+                    </ol>
+                  </div>
+                </aside>
+                
+                `
           }
-         
-        </a>
-        ${
-          gnbData[v] == "없음"
-            ? ""
-            : `
-              <!-- 서브메뉴 -->
-              <aside class="smenu">
-                <div class="inbox">
-                  <h2>${v}</h2>
-                  <ol>
-                  ${gnbData[v]
-                    .map(
-                      (v2) => `
-                  <li>
-                    <a href="#">${v2}</a>
-                  </li>
-                  `
-                    )
-                    .join("")}
-                  </ol>
-                </div>
-              </aside>
-              `
-        }
-      </li>
-      `
-      )
-      .join("")}
-  </ul>
+        </li>
+        `
+        )
+        .join("")}
+    </ul>
   `);
 
 // 1. 슬라이드함수 호출하여 실행하기
@@ -81,8 +82,9 @@ slideFn();
 // 콤마없애고 출력해줌!!!
 
 // 데이터 변경하기 : 15화부터 나오게 idx 내림차순
-// -> 데이터는 8개만 씀 -> slice(시작순번,끝순번)
-const newArrayData = dkbData.previewData // 원본배열
+// -> 데이터는 8개만씀 -> slice(시작순번,끝순번)
+const newArrayData = 
+dkbData.previewData // 원본배열
   .slice() // 깊은복사
   .sort(
     // 배열정렬 (idx를 숫자형변환!)
@@ -94,12 +96,13 @@ const newArrayData = dkbData.previewData // 원본배열
         : 1
   )
   .slice(0,8);
-  // 다시한번 정렬한 배열중 0부터 7번까지의 배열값만 딥카피
+  // 다시한번 정렬한 배열중 0부터 7번까지의 배열값만 딥카피!
 
 console.log("미리보기변경:", newArrayData);
+
 console.log("원본:", dkbData.previewData);
 
-// 화면에 배열 데이터 바인딩하기 //
+// 화면에 배열 데이터 바인딩하기 /////
 $(".preview-box ul").html(
   newArrayData.map(
     (v) => `
@@ -125,10 +128,10 @@ $(".preview-box ul").html(
 ///////////////////////////////////////////////
 
 // 대상: .live-box
-// 주의! 제이쿼리 html() 메서드의 값으로 map변환만 쓰면
+// 주의: 제이쿼리 html() 메서드의 값으로 map변환만 쓰면
 // join('') 자동 변환되지만 다른 태그 합칠경우
 // 서비스 기능이 비활성화 된다!
-// 이런경우 JS 기본사용법대로 아래처럼 "맴죠잉~?"
+// 이런경우 JS기본 사용법 대로 아래처럼 "맵죠잉~?"
 // 배열.map().join('')
 $(".live-box").html(
   "<ul>" +
@@ -150,9 +153,9 @@ $(".live-box").html(
     "</ul>"
 );
 
-///////////////////////////////////////////////
-/// 대표포스터영역 : 데이터 연결하여 태그 만들기 /
-///////////////////////////////////////////////
+/////////////////////////////////////////////////
+/// 대표포스터영역 : 데이터 연결하여 태그 만들기 ///
+/////////////////////////////////////////////////
 
 // 대상: .poster-box
 $(".poster-box").html(
@@ -175,9 +178,9 @@ $(".poster-box").html(
     "</ul>"
 );
 
-///////////////////////////////////////////////
-/// 최신동영상영역 : 데이터 연결하여 태그 만들기 /
-///////////////////////////////////////////////
+/////////////////////////////////////////////////
+/// 최신동영상영역 : 데이터 연결하여 태그 만들기 ///
+/////////////////////////////////////////////////
 
 // 대상: .clip-box
 $(".clip-box").html(
@@ -196,11 +199,12 @@ $(".clip-box").html(
             ${v.subtit}
           </h4>
           <h3>${v.title}</h3>
-        </li>
-        `
+        </li>        
+      `
       )
       .join("")}
-  `
+      </ul>
+    `
 );
 
 //////////////////////////////

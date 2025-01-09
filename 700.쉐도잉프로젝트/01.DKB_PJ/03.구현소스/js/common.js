@@ -3,7 +3,8 @@
 // 공통데이터 가져오기
 import comData from "../data/common_data.js";
 
-/// 실행함수 만들고 내보내기
+
+// 실행함수 만들고 내보내기 ///
 export default function comFn(){
     console.log(comData);
 
@@ -11,4 +12,5 @@ export default function comFn(){
     $('body')
     .prepend(comData.topArea)
     .append(comData.footerArea);
-} //// comFn 함수 //////////
+
+} ////////// comFn 함수 ////////////

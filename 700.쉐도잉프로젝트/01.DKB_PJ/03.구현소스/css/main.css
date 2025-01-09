@@ -29,7 +29,7 @@ h2.temp {
   outline: none;
 }
 
-/***************** 1.5. 드라마 파트메뉴 영역 *****************/
+/************ 2.5.드라마 파트메뉴영역 ************/
 #spart-menu {
   /* 스티키 포지션 - 상단스크롤 걸림! */
   position: sticky;
@@ -37,8 +37,8 @@ h2.temp {
   background-color: #fff;
   z-index: 999;
 }
+/* 인박스 높이값 초기화 */
 .spart-menu.inbox {
-  /* 인박스 높이값 초기화 */
   height: auto;
 }
 .spart-menu ul {
@@ -211,7 +211,8 @@ h2.temp {
 .main-area .cat-area {
   position: relative;
   /* 형제 배너박스보다 밑에 깔리므로
-  포지션을 줘서 나중에 오는 박스가 위로 오게 함 */
+  포지션을 줘서 나중에 오는 박스가 위로 오게함! */
+
   /* 비율적용을 위해 높이값을 없앤다! */
   height: auto;
   aspect-ratio: 1320/190;
@@ -381,6 +382,7 @@ h2.temp {
   font-size: 2rem;
   padding-top: 10px;
 }
+
 /************** 4. 미리보기영역 **************/
 .main-area .preview-area {
   height: auto;
@@ -422,7 +424,7 @@ h2.temp {
   /* 말줄임표시 */
   text-overflow: ellipsis;
   /* 보여줄 라인수 셋팅속성 */
-  line-clamp: 7;
+  -webkit-line-clamp: 7;
   /* 라인진행방향 셋팅 */
   -webkit-box-orient: vertical;
 }
@@ -502,7 +504,7 @@ h2.temp {
 /************** 7. 최신동영상영역 **************/
 .banbx {
   position: relative;
-  /* 앱솔루트 양쪽이동박스의 부모자격 */
+  /* 앱솔루트 양쪽이동버튼의 부모자격 */
 }
 .main-area .clip-video-area {
   height: auto;
@@ -517,7 +519,7 @@ h2.temp {
   display: flex;
   /* gap: 0 2%; */
   /* 트랜지션 
-  -> 스와이퍼 랩퍼일 경우 트랜지션 주지말 것*/
+  -> 스와이퍼 랩퍼일 경우 트랜지션 주지말것! */
   /* transition: left 0.3s ease-out; */
   user-select: none;
   -webkit-user-drag: none;
@@ -587,7 +589,7 @@ h2.temp {
 .btn-box button {
   position: absolute;
   z-index: 999;
-  top: 43%;
+  top: 50%;
   border-radius: 50%;
   width: 70px;
   height: 70px;
@@ -623,7 +625,7 @@ h2.temp {
   display: none;
 } */
 
-/********************** 서브 컨텐츠 박스 **********************/
+/*********** 서브 컨텐츠 박스 ***********/
 .sub-cont {
   position: fixed;
   top: 0;

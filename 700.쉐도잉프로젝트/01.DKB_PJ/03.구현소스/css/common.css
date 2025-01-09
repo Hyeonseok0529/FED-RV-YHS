@@ -9,14 +9,14 @@
   position: relative;
   /* .smenu의 부모 */
   z-index: 999;
-  /* 가장 위!! */
+  /* 가장위! */
 }
 .top-area {
   /* 최소높이설정 : 최소높이보다 컨텐츠가
   많아지면 높이값이 auto로 전환되어 늘어남! */
   min-height: 120px;
 }
-/* 1-1. 로고영역/로고 */
+/* 1-1.로고영역 - 로고 */
 .logo {
   padding: 18px 10px;
 }
@@ -29,13 +29,13 @@
   flex-direction: column;
   /* 진행방향 정렬 */
   justify-content: flex-end;
-  /* 진행방향 수직정렬 */
+  /* 진행방향수직 정렬 */
   align-items: flex-end;
 
   /* 높이값 부모박스만큼 */
   height: 100%;
 }
-/* 1-2. 메뉴영역/탑메뉴 */
+/* 1-2. 메뉴영역/메뉴박스/탑메뉴 */
 .top-menu {
   font-size: 1.3rem;
 }
@@ -43,7 +43,7 @@
   gap: 1.6rem;
 }
 
-/* 1-2. 메뉴영역/메뉴박스/GNB메뉴 */
+/*  1-2. 메뉴영역/메뉴박스/GNB메뉴 */
 .gnb {
   font-size: 1.6rem;
 }
@@ -54,48 +54,49 @@
 .gnb ul > li > a {
   padding-bottom: 10px;
 }
-/* gnb 상위 li 오버시 a요소 
-+ 서브메뉴 a 오버시*/
+/* gnb 상위 li 오버시 a요소
++ 서브메뉴 a오버시 */
 .gnb ul > li:hover > a,
-.gnb .smenu a:hover {
+.smenu a:hover {
   color: red;
 }
-/* gnb 상위 오버시 a요소  
+/* gnb 상위 li 오버시 a요소
 밑줄 디자인 보이기 */
 .gnb ul > li > a::after {
   content: "";
   display: block;
-  height: 4px;
   margin-top: 5px;
+  height: 4px;
   background-color: #fff;
 }
 .gnb ul > li:hover > a::after {
   background-color: #222;
 }
+
 /* 아래화살표 아이콘 */
 .gnb i {
   font-size: 1rem;
   vertical-align: 0.3rem;
 }
+
 /* 서브메뉴 */
 aside.smenu {
   position: absolute;
   left: 0;
   width: 100%;
-  margin-top: 10px;
   /* 숨길 박스는 패딩주지말것!(하위박스에 줘라)
-  왜? height 0할 때 안숨겨지기 때문 */
+  왜? height 0 할때 패딩이 보임! */
   max-height: 0;
   transition: max-height 0.6s ease-in-out;
   /* 부모는? 최상위 상단영역 #top-area */
   background-color: white;
   overflow: hidden;
-  /* 상단 보더 */
-  border-top: 1px solid #ccc;
+  /* 상단보더 */
+  border-top: 2px solid #ccc;
 }
 /* 마우스 오버시 보이기 */
 .gnb > ul > li:hover .smenu {
-  max-height: 250px;
+  max-height: 300px;
 }
 /* 서브 속박스 */
 .smenu > div {
@@ -109,7 +110,7 @@ aside.smenu {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-/* 서브리스트 */
+/* 서브 리스트 */
 .smenu ol {
   /* 플렉스 랩핑박스 */
   display: flex;

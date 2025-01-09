@@ -2,8 +2,8 @@
 
 const comData = {
     // 1. 상단영역 코드
-    topArea:`
-    <!-- 1. 상단영역 -->
+    topArea:`    
+    <!-- 1. 상단영역 -->    
     <div id="top-area">
       <header class="top-area inbox">
         <!-- 파티션박스 -->
@@ -39,8 +39,7 @@ const comData = {
               </aside>
               <aside>
                 <!-- GNB 메뉴 -->
-                <nav class="gnb">
-                </nav>
+                <nav class="gnb"></nav>
               </aside>
             </div>
           </div>
@@ -49,7 +48,7 @@ const comData = {
     </div>
     `,
     // 2. 하단영역 코드
-    footerArea:`
+    footerArea:`    
     <!-- 8.하단영역 -->
     <div id="footer-area">
       <footer class="footer-area inbox">
