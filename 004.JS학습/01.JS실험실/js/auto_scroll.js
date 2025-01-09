@@ -192,3 +192,32 @@ function movePage(evt, el, idx, list) {
   //     else el2.parentElement.classList.remove("on");
   //   }); //// forEach ////
 } //// movePage 함수 ////
+
+/********************************************************* 
+    [ 모바일 이벤트처리 ]
+    
+    [ 모바일 터치 스크린에서 사용하는 이벤트 종류 ]
+    1. touchstart - 손가락이 화면에 닿을때 발생
+    2. touchend - 손가락이 화면에서 떨어질때 발생
+    3. touchmove - 손가락이 화면에 닿은채로 움직일때 발생
+    
+    [ 화면터치 이벤트관련 위치값 종류 ]
+    1. screenX, screenY : 
+        디바이스 화면을 기준한 x,y 좌표
+    2. clientX, clientY : 
+        브라우저 화면을 기준한 x,y 좌표(스크롤미포함)
+    3. pageX, pageY : 
+        스크롤을 포함한 브라우저 화면을 기준한 x,y 좌표
+*********************************************************/
+// 1. 모바일 이벤트 등록하기
+myFn.addEvt(window,'touchstart', touchStartFn)
+myFn.addEvt(window,'touchend', touchEndFn)
+
+
+// 2. 모바일 이벤트함수 만들기 //
+function touchStartFn(){
+  console.log('터치시작!');
+}
+function touchEndFn(){
+  console.log('터치끝!');
+}
