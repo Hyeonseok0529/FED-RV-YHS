@@ -41,11 +41,11 @@ function GetList(idx, name, img, price) {
 } ////// GetList 생성자함수 /////
 
 // 생성자함수 없이 객체를 생성하는 방법 //
-const retFn = (idx,name,img,price) => ({
- idx:idx,
- name:name,
- img:img,
- price:price,
+const retFn = (idx, name, img, price) => ({
+  idx: idx,
+  name: name,
+  img: img,
+  price: price,
 }); // retFn // => 중괄호를 리턴한다!
 // console.log(retFn("ㅇㅇ","ㅇㄴ","ㅁㅇ","ㅁㄴ"));
 /////// 이렇게 객체를 생성하는 함수를 만들 수도 있다!
@@ -77,14 +77,14 @@ const vm = new Vue({
             alt="스난다 배너">
         `,
 
-        // (2-4) 상품정보배열
-        items: [], // (호출시 this.items) => array 리터럴 , {}를 쓰면 object 리터럴 
+    // (2-4) 상품정보배열
+    items: [], // (호출시 this.items) => array 리터럴 , {}를 쓰면 object 리터럴
   },
   // (3) 메서드 설정하기 ///
   methods: {
     // (3-1) 이미지 태그를 리턴하는 메서드
-    makeImg(val){
-        return `
+    makeImg(val) {
+      return `
         <img
                 src="./images/fashion1/${val}.jpg" 
                 alt="아이템이미지1">
@@ -93,12 +93,13 @@ const vm = new Vue({
                 alt="아이템이미지2">
         `;
     },
-    // (3-2) 숫자 3자릿수 콤마 찍어주는 메서드 
+    // (3-2) 숫자 3자릿수 콤마 찍어주는 메서드
     // addCommas(x){
     //   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     // },
-    addCommas:(x)=> // 중괄호 , return 생략하고 싶다면 ? 아래와 같이 화살표 함수로 변경
-      x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+    addCommas: (
+      x // 중괄호 , return 생략하고 싶다면 ? 아래와 같이 화살표 함수로 변경
+    ) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
   },
 
   // (4) 뷰인스턴스 초기화 단계 : created ////////////////////////////////////////////////
@@ -107,7 +108,7 @@ const vm = new Vue({
     // 배열로 상품이름 임의생성할 것 셋팅
     const goods = ["프레이컷", "아일렛기모", "베어블클", "포멀믹스톤"];
 
-    // 객체 18개를 생성하자! 
+    // 객체 18개를 생성하자!
     // -> data파트에 생성함 (왜? 앞단에서 사용해야하므로)
     // const items = [];
 
@@ -132,5 +133,29 @@ const vm = new Vue({
   }, //// created ////////
 
   // (5) 뷰 랜더링 완료단계 : mounted
-  mounted() {}, ///// mounted ////////
+  mounted() {
+    // 랜더링 후 자동실행구역 //
+    // 1) 제목 숨겼다 보이기 //
+    $(".tit").hide().delay(1000).slideDown(300);
+    // transform 은 애니메이션을 줄 수 없다. ( 다중속성이므로 ? )
+    // translate는 사용할 수 있음
+
+    // 2) 로고 왼쪽 날아오기
+    $(".logo")
+      .css({ translate: "-100vw" })
+      .delay(2000)
+      .animate({ translate: "0" }, 800, "easeOutElastic", () => {
+        // 애니후 콜백함수 (끝나고나면 호출!)
+        // 3) 리스트위치로 스크롤 애니 이동
+        $("html,body").animate(
+          {
+            scrollTop:
+              // offset().top 은 요소의 top위치값
+              $(".gwrap").offset().top + "px",
+          },
+          600,
+          "easeOutExpo"
+        );
+      });
+  }, ///// mounted ////////
 });
