@@ -56,10 +56,110 @@ import myFn from "./my_function.js";
     https://www.w3schools.com/js/js_api_web_storage.asp
 ***************************************************************/
 
+// 로컬스토리지 테스트
+// localStorage.setItem('my-name','톰소여');
+// localStorage.setItem('your-name','제이슨');
+// console.log(localStorage.getItem('my-name'));
+// console.log(localStorage.getItem('your-name'));
+// myFn.qs('body').onclick = 
+// ()=>{localStorage.clear()};
+// myFn.qs('body').onclick = 
+// ()=>{localStorage.removeItem('your-name')};
+
+// 세션스토리지 테스트
+// sessionStorage.setItem('my-dog','포메라니안');
+// sessionStorage.setItem('your-dog','요키');
+// console.log(sessionStorage.getItem('my-dog'));
+// console.log(sessionStorage.getItem('your-dog'));
+// myFn.qs('body').onclick = 
+// ()=>{sessionStorage.clear()};
+// myFn.qs('body').onclick = 
+// ()=>{sessionStorage.removeItem('my-dog')};
+
+
+
+
+
 // [ 1. 로컬 스토리지 연습 ] ////////////////////
 // 1. 버튼 기능 이벤트 대상 : .local-box button
+const btnLocal = myFn.qsa(".local-box button");
+console.log("대상:", btnLocal);
+
 // 2. 버튼에 이벤트 설정하기
+btnLocal.forEach((ele) => myFn.addEvt(ele, "click", localsFn));
+
 // 3. 로컬쓰 처리 함수 만들기 ///////
+function localsFn() {
+  // 1. 버튼 텍스트 읽기
+  let btxt = this.innerText;
+  console.log("로컬쓰~!", btxt);
+
+  // 2. 버튼별 기능 분기하기 //////
+  if (btxt == "처음") {
+    // (1) 로컬 스토리지 셋팅하기
+    // -> localStorage.setItem(키,값)
+    localStorage.setItem("actor-name", "이정재");
+    localStorage.setItem("actor-role", "박평호역");
+    localStorage.setItem(
+      "actor-cat",
+      "조직내 스파이를 색출하는 해외팀 안기부장"
+    );
+  } /// if ////
+  else if (btxt == "보여줘") {
+    // 배우이름 출력
+    myFn.qs(".local .nm").innerText = localStorage.getItem("actor-name");
+    // 역할이름 출력
+    myFn.qs(".local .role").innerText = localStorage.getItem("actor-role");
+    // 캐릭터소개 출력
+    myFn.qs(".local .cat").innerText = localStorage.getItem("actor-cat");
+  } /// else if ////
+  else if (btxt == "전체삭제") {
+    // 로컬스토리지 전체 삭제
+    // 해당 url 스토리지만 대상으로 모두 지움
+    localStorage.clear();
+
+    // 개별삭제는 removeItem(키)
+    // localStorage.removeItem("actor-name");
+  } //// else if ////
+  else if (btxt == "처리") {
+    // 배열/객체 만들기
+    // 1. 로컬쓰에 "minfo"키가 없으면 새로만들기
+    // 만약 키가 없으면 null값을 리턴함
+    // 이것은 if문에서 false처리됨!
+    // false일때 처리해야하므로 NOT(!)연산자사용
+    // 또는 빈 배열값일 경우도 생성함수호출 처리
+    // if (
+    //   !localStorage.getItem("minfo") ||
+    //   localStorage.getItem("minfo") == "[]"
+    // ) {
+    //   // 최초 객체데이터 만들기 함수 호출
+    //   makeObj();
+    // } /// if ///
+    // console.log(localStorage.getItem("minfo"));
+
+    // // 2. 화면에 출력하기 : 데이터 바인딩하기
+    // bindData();
+  } //// else if ////
+} /////////// localsFn //////////
+
+
+// 추가로 각 출력 영역을 클릭하면 해당 로컬쓰만 지우기셋팅
+// 배우이름 삭제
+myFn.qs(".local .nm").onclick = () => 
+    localStorage.removeItem("actor-name");
+// 역할이름 삭제
+myFn.qs(".local .role").onclick = () => 
+    localStorage.removeItem("actor-role");
+// 캐릭터소개 삭제
+myFn.qs(".local .cat").onclick = () => 
+    localStorage.removeItem("actor-cat");
+
+
+
+
+
+
+
 // "minfo" 로컬쓰 키가 없으면 객체를 만들어 넣기 함수 //
 function makeObj() {
   console.log("minfo만들기!");
@@ -120,3 +220,66 @@ function bindData() {
     </table>
 `;
 } ////////////// bindData //////////////////
+
+//******************************************** */
+///////////////////////////////////////////////
+// [ 2. 세션 스토리지 연습 ] ////////////////////
+// 1. 버튼 기능 이벤트 대상 : .session-box button
+const btnSession = myFn.qsa(".session-box button");
+console.log("대상:", btnSession);
+
+// 2. 버튼에 이벤트 설정하기
+btnSession.forEach((ele) => myFn.addEvt(ele, "click", sessionsFn));
+
+// 3. 세션쓰 처리 함수 만들기 ///////
+function sessionsFn() {
+  // 1. 버튼 텍스트 읽기
+  let btxt = this.innerText;
+  console.log("세션쓰~!", btxt);
+
+  // 2. 버튼별 기능 분기하기 //////
+  if (btxt == "처음") {
+    // (1) 세션 스토리지 셋팅하기
+    // -> sessionStorage.setItem(키,값)
+    sessionStorage.setItem("actor-name", "정우성");
+    sessionStorage.setItem("actor-role", "김정도역");
+    sessionStorage.setItem(
+      "actor-cat",
+      "국내팀 안기부팀장, 박평호랑 사이나쁨"
+    );
+  } /// if ////
+  else if (btxt == "보여줘") {
+    // 배우이름 출력
+    myFn.qs(".session .nm").innerText = 
+    sessionStorage.getItem("actor-name");
+    // 역할이름 출력
+    myFn.qs(".session .role").innerText = 
+    sessionStorage.getItem("actor-role");
+    // 캐릭터소개 출력
+    myFn.qs(".session .cat").innerText = 
+    sessionStorage.getItem("actor-cat");
+  } /// else if ////
+  else if (btxt == "전체삭제") {
+    // 로컬스토리지 전체 삭제
+    // 해당 url 스토리지만 대상으로 모두 지움
+    sessionStorage.clear();
+
+    // 개별삭제는 removeItem(키)
+    // sessionStorage.removeItem("actor-name");
+  } //// else if ////
+} /////////// sessionsFn //////////
+
+// 추가로 각 출력영역을 클릭하면 해당 세션쓰만 지우기셋팅
+// 배우이름 삭제
+myFn.qs(".session .nm").onclick = () => 
+    sessionStorage.removeItem("actor-name");
+// 역할이름 삭제
+myFn.qs(".session .role").onclick = () => 
+    sessionStorage.removeItem("actor-role");
+// 캐릭터소개 삭제
+myFn.qs(".session .cat").onclick = () => 
+    sessionStorage.removeItem("actor-cat");
+
+
+
+
