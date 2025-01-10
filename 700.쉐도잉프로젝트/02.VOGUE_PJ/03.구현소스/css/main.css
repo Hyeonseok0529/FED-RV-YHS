@@ -118,18 +118,18 @@ img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.ban-box ul li .post_content {
+.ban-box ul li .post-content {
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
   padding: 4rem;
   color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5333333333);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4901960784);
 }
-.ban-box ul li .post_content p {
+.ban-box ul li .post-content p {
   font-size: 16px;
 }
-.ban-box ul li .post_content h3 {
+.ban-box ul li .post-content h3 {
   font-size: 42px;
 }/*# sourceMappingURL=main.css.map */
