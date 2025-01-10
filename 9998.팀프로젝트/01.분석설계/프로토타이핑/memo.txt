@@ -188,3 +188,14 @@ Neptune is one of two ice giants in the outer solar system (the other is Uranus)
 
 Scientists think there might be an ocean of super hot water under Neptune's cold clouds. It does not boil away because incredibly high pressure keeps it locked inside.
 
+
+// 행성 회전 자료 // 
+1. Mercury - gif
+2. Venus - gif
+3. Earth - gif
+4. Mars - gif 없음 => png로 대체
+https://www.youtube.com/watch?v=RrNyFKwYiY0
+5. Jupiter - gif
+6. Saturn - gif, link 없음 => png로 대체
+7. Uranus - gif
+8. Neptune - gif
