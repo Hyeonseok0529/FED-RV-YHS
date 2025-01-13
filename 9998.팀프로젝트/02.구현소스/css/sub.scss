@@ -6,13 +6,127 @@
 @import url(./variables.css);
 
 // 메인영역 //
-body{
+////// 포지션 fixed 구역시작 ///////
+body {
   background: url(../images/sub/background_1.jpg) no-repeat fixed top / cover;
-  .spin-area{
+
+  .spin-box {
+    position: fixed;
     display: flex;
-    height: 100vh;
-    .spin-box{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: -1;
+    span {
       display: flex;
+      width: 50%;
+      justify-content: center;
     }
   }
+  ////// 포지션 fixed 구역끝 ///////
+
+  // 첫 컨텐츠 영역 //
+  .first-area {
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: center;
+    div {
+      display: flex;
+      height: 40vh;
+      width: 55%;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      justify-content: flex-start;
+      h1 {
+        font-size: 6vw;
+      }
+      p {
+        width: 50vw;
+        font-size: 1.7vw;
+      }
+    }
+  }
+
+  // introduction 영역 //
+  .introduction-area {
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: center;
+    div {
+      display: flex;
+      height: 45vh;
+      width: 55%;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      justify-content: flex-start;
+      h2 {
+        font-size: 6vw;
+        text-transform: uppercase;
+      }
+      p {
+        width: 50vw;
+        font-size: 1.7vw;
+      }
+    }
+  }
+
+  // Namesake 영역 // 
+  .Namesake-area {
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: center;
+    div {
+      display: flex;
+      height: 45vh;
+      width: 55%;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      justify-content: flex-start;
+      h2 {
+        font-size: 6vw;
+        text-transform: uppercase;
+      }
+      p {
+        width: 50vw;
+        font-size: 1.7vw;
+      }
+    }
+  }
+  
+  // Namesake 영역 // 
+  .potential-area {
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: center;
+    div {
+      display: flex;
+      height: 45vh;
+      width: 55%;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      justify-content: flex-start;
+      h2 {
+        font-size: 6vw;
+        text-transform: uppercase;
+      }
+      p {
+        width: 50vw;
+        font-size: 1.7vw;
+      }
+    }
+  }
+
 }

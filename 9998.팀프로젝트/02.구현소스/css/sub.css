@@ -4,10 +4,112 @@
 body {
   background: url(../images/sub/background_1.jpg) no-repeat fixed top/cover;
 }
-body .spin-area {
+body .spin-box {
+  position: fixed;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: -1;
+}
+body .spin-box span {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+body .first-area {
+  color: #fff;
   display: flex;
   height: 100vh;
+  justify-content: flex-end;
+  align-items: center;
 }
-body .spin-area .spin-box {
+body .first-area div {
   display: flex;
+  height: 40vh;
+  width: 55%;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-start;
+}
+body .first-area div h1 {
+  font-size: 6vw;
+}
+body .first-area div p {
+  width: 50vw;
+  font-size: 1.7vw;
+}
+body .introduction-area {
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
+  align-items: center;
+}
+body .introduction-area div {
+  display: flex;
+  height: 45vh;
+  width: 55%;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-start;
+}
+body .introduction-area div h2 {
+  font-size: 6vw;
+  text-transform: uppercase;
+}
+body .introduction-area div p {
+  width: 50vw;
+  font-size: 1.7vw;
+}
+body .Namesake-area {
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
+  align-items: center;
+}
+body .Namesake-area div {
+  display: flex;
+  height: 45vh;
+  width: 55%;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-start;
+}
+body .Namesake-area div h2 {
+  font-size: 6vw;
+  text-transform: uppercase;
+}
+body .Namesake-area div p {
+  width: 50vw;
+  font-size: 1.7vw;
+}
+body .potential-area {
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
+  align-items: center;
+}
+body .potential-area div {
+  display: flex;
+  height: 45vh;
+  width: 55%;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-start;
+}
+body .potential-area div h2 {
+  font-size: 6vw;
+  text-transform: uppercase;
+}
+body .potential-area div p {
+  width: 50vw;
+  font-size: 1.7vw;
 }/*# sourceMappingURL=sub.css.map */

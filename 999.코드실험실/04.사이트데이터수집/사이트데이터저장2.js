@@ -1,5 +1,5 @@
 // 객체를 변수에 담기
-const myOjb = [
+const myObj = [
   {
     idx: 1,
     catName: "패션 아이템",
