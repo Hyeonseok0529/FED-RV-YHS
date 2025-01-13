@@ -1,0 +1,24 @@
+@import url(./inc.css);
+@import url(./reset.css);
+@import url(./variables.css);
+.s-main-area {
+  font-family: var(--font-main);
+  height: auto;
+}
+.s-main-area .background-box {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: fixed;
+}
+.s-main-area .background-box img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.s-main-area .spin-area h1 {
+  color: #fff;
+  font-size: 100px;
+  display: block;
+}/*# sourceMappingURL=sub.css.map */
