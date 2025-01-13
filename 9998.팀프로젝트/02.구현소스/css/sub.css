@@ -1,24 +1,13 @@
 @import url(./inc.css);
 @import url(./reset.css);
 @import url(./variables.css);
-.s-main-area {
-  font-family: var(--font-main);
-  height: auto;
+body {
+  background: url(../images/sub/background_1.jpg) no-repeat fixed top/cover;
 }
-.s-main-area .background-box {
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  position: fixed;
+body .spin-area {
+  display: flex;
+  height: 100vh;
 }
-.s-main-area .background-box img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-.s-main-area .spin-area h1 {
-  color: #fff;
-  font-size: 100px;
-  display: block;
+body .spin-area .spin-box {
+  display: flex;
 }/*# sourceMappingURL=sub.css.map */
