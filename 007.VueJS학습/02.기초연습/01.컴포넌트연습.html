@@ -31,7 +31,7 @@
     </div>
 
     <!-- 2.그리드 레이아웃 박스 -->
-    <div class="grid">    
+    <div class="grid">     
       
       <!-- v-for 숫자돌리기
       (숫자증가,순번) in 개수 -->
@@ -48,13 +48,15 @@
       ></list-comp>
 
       <!-- 
-      v-on:hull="goMsg"
-      v-on:gotkimchi="ovMsg"
-      해석) 세상에 없는 이벤트인 hull, gotkimchi
-      이벤트로 자기자신의 메서드인 goMsg와 ovMsg를 호출함
-      -> 자식 컴포넌트의 $emit(hull) / $emit(gotkimchi)
-      를 설정하여 연결함!
+        v-on:hull="goMsg"
+        v-on:gotkimchi="ovMsg"
+        해석) 세상에 없는 이벤트인 hull, gotkimchi
+        이벤트로 자기자신의 메서드인 goMsg와 ovMsg를 호출함
+        -> 자식컴포넌트의 $emit(hull) / $emit(gotkimchi)
+        를 설정하여 연결함!!!
       -->
+
+
 
       <!-- 
         [ 1. 내부전달용 변수 바인딩하기 ]

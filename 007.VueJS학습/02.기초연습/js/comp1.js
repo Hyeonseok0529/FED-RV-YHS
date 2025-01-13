@@ -1,8 +1,4 @@
-// 01. 컴포넌트 연습1 JS
-
-// 상품 데이터 제이슨 불러오기
-// import goodsData from './comp_data.json' with{type:'json'};
-// console.log(goodsData)
+// 01. 컴포넌트 연습 JS
 
 // 1. 상단영역 전역 컴포넌트 만들기
 // Vue.component(컴포넌트명,{template:코드})
@@ -29,9 +25,9 @@ Vue.component('list-comp',{
     template: `
         <div>
             <img 
-            v-bind:src="gsrc"
-            v-on:click="goPapa"
-            v-on:mouseover="ovNow"
+                v-bind:src="gsrc" 
+                v-on:click="goPapa"
+                v-on:mouseover="ovNow"
             alt="아이템">
             <aside>
             <h2>{{gname}}</h2>
@@ -62,10 +58,10 @@ Vue.component('list-comp',{
             // gsrc: `./images/${this.setNum()}.jpg`,
             gsrc: `./images/${this.listNum}.jpg`,
             // 상품명
-            gname: 'Soria24'+
+            gname: 'Sofia24'+
                     this.listNum+
                     'WD'+
-                    (this.mySeq%2?"🤴":"👸"),
+                    (this.mySeq%2?"🙆‍♂️":"👩‍⚕️"),
             // gname: this.key,
             // ->key속성은 유일키 구분목적속성이므로 
             //   일반데이터로 사용할 수 없다! 에러남!
@@ -77,55 +73,55 @@ Vue.component('list-comp',{
 
     // (3) methods 속성
     methods: {
-      // 연속번호만들기 테스트용 메서드
+        // 연속번호만들기 테스트용 메서드
         setNum(){
             return ++inum;
         },
-      // 세자리마다 콤마추가 메서드
-      addComma(x){
-        return x.toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      },
-      // 부모와 자식 컴포넌트 연결하기
-      goPapa(){ // -> goPapa는 자식컴포넌트에서 호출!
-        this,$emit('hull')
-        // $emit() 메서드는 부모에 설정한 새로운 이벤트와 연결
-      },
-      ovNow(){ // -> ovNow도 자식컴포넌트에서 호출!
-        this.$emit('gotkimchi')
-      },
+        // 세자리마다 콤마추가 메서드
+        addComma(x){
+            return x.toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+        // 부모와 자식 컴포넌트 연결하기
+        goPapa(){//-> goPapa는 자식컴포넌트에서 호출!
+            this.$emit('hull');
+            // $emit() 메서드는 부모에 설정한 새로운 이벤트와 연결
+        },
+        ovNow(){//-> ovNow도 자식컴포넌트에서 호출!
+            this.$emit('gotkimchi');
+        },
     }
 });
 
-// 컴포넌트의 부모 뷰인스턴스 //
+// 컴포넌트의 부모 뷰인스턴스
 new Vue({
-  el:'.grid',
-  // 자식컴포넌트의 전달값을 받기위한 메서드를 만든다!
-  methods:{
-    // 자식이벤트 전달후 실행메서드
-    goMsg(){
-      alert('자식이 부모에게 이벤트전달 성공!');
+    el:'.grid',
+    // 자식컴포넌트의 전달값을 받기위한 메서드를 만든다!
+    methods:{
+        // 자식이벤트 전달후 실행메서드
+        goMsg(){
+            alert('자식이 부모에게 이벤트전달 성공!');
+        },
+        ovMsg(){
+            console.log('오버!오케이!');
+        }
     },
-    ovMsg(){
-      console.log('오버!오케이!')
-    }
-  },
-})
+});
 
 
 // 3. 유튜브 동영상 컴포넌트 만들기
 Vue.component("ifr-comp",{
-  // 3-1. template옵션
-  template:`
-  <iframe width="49%" style="aspect-ratio: 16/9;" 
-  v-bind:src="ifrSrc" title="#고윤정 과 함께 차가운 겨울을 더욱 액티브하게!  l 디스커버리 23FW #goyounjung #크롭패딩" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
-  `, /// template ////
-  // 3-2. data 옵션
-  data(){
-      return{
-          ifrSrc: `https://www.youtube.com/embed/ZH1Y1l1OmTY?autoplay=1&mute=1&loop=1&playlist=ZH1Y1l1OmTY`,
-      };
-  },
+    // 3-1. template옵션
+    template:`
+    <iframe width="49%" style="aspect-ratio: 16/9;" 
+    v-bind:src="ifrSrc" title="#고윤정 과 함께 차가운 겨울을 더욱 액티브하게!  l 디스커버리 23FW #goyounjung #크롭패딩" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+    `, /// template ////
+    // 3-2. data 옵션
+    data(){
+        return{
+            ifrSrc: `https://www.youtube.com/embed/ZH1Y1l1OmTY?autoplay=1&mute=1&loop=1&playlist=ZH1Y1l1OmTY`,
+        };
+    },
 });
 
 // 뷰인스턴스 생성하기 : 유튜브 동영상 컴포넌트
@@ -133,13 +129,13 @@ new Vue({el:".you-box"});
 
 // 4. 하단 컴포넌트 만들기
 Vue.component("footer-comp",{
-  template:`
-      <div style="background-color:black;text-align:center;color:white;line-height:2;font-weight:bold; padding:3vw; margin-top:1vw;">
-          <h2>Discovery Expedition</h2>
-          <h3>Copyright © F&F Corp. All Rights Reserved.</h3>        
-      </div>
-  `,
+    template:`
+        <div style="background-color:black;text-align:center;color:white;line-height:2;font-weight:bold; padding:3vw; margin-top:1vw;">
+            <h2>Discovery Expedition</h2>
+            <h3>Copyright © F&F Corp. All Rights Reserved.</h3>        
+        </div>
+    `,
 });
 
 // 뷰인스턴스 생성하기 : 하단 컴포넌트
-new Vue({el: "footer-comp"})
+new Vue({el:".tit2"});
