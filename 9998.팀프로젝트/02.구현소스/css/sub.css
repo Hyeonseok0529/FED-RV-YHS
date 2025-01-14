@@ -222,7 +222,6 @@ body .gallery .grid {
   /* 박스중앙위치 및 최대크기설정 */
   max-width: 1300px;
   margin: 0 auto;
-  outline: 2px dashed lightcoral;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: min(1.5vw, 15px) min(1vw, 10px);
 }

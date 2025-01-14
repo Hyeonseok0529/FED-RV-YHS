@@ -121,19 +121,37 @@
         <div class="grid"></div>
         <script>
           let hCode = "";
-          for (let i = 1; i <= 7; i++) {
+          for (let i = 1; i <= 6; i++) {
             hCode += `
               <div>
                 <img src="./images/sub/1_mercury/${i}.jpg" alt="planet">
               </div>
             `;
           } ///// for //////
-    
+
           // .grid에 요소출력
-          document.querySelector(
-            ".grid"
-          ).innerHTML = hCode;
+          document.querySelector(".grid").innerHTML = hCode;
         </script>
+      </section>
+
+      <section>
+        <!-- 갤러리 서브메뉴 -->
+        <div class="gallery-smenu">
+          <!-- 서브메뉴 컨텐츠박스 -->
+          <div class="smenu-contbox">
+            <!-- 사진 플렉스박스 -->
+            <div>
+              <!-- 사진 겉박스 -->
+              <span>
+                <!-- 갤러리 사진원본 -->
+                <img src="" alt="" />
+              </span>
+              <!-- 사진하단 요약 제목 -->
+              <figcaption></figcaption>
+            </div>
+            <button class="close">X</button>
+          </div>
+        </div>
       </section>
     </main>
   </body>
