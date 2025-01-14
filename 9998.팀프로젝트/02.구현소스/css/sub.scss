@@ -5,7 +5,7 @@
 // 폰트 //
 @import "./variables";
 
-@import 'https://fonts.googleapis.com/css2?family=Orbitron&display=swap';
+@import "https://fonts.googleapis.com/css2?family=Orbitron&display=swap";
 
 // 메인영역 //
 ////// 포지션 fixed 구역시작 ///////
@@ -106,7 +106,7 @@ body {
     }
   }
 
-  @mixin common-box{
+  @mixin common-box {
     display: flex;
     height: 100vh;
     justify-content: flex-start;
@@ -191,8 +191,17 @@ body {
     .grid > div {
       /* 부모자격 */
       position: relative;
-      &:nth-child(2){
+      &:nth-child(2) {
         grid-area: 1 / 2 / 2 / 4;
+        aspect-ratio: 2 / 1;
+      }
+      &:nth-child(3) {
+        grid-area: 2 / 1 / 2 / 3;
+        aspect-ratio: 2 / 1;
+      }
+      &:nth-child(6) {
+        grid-area: 4 / 2 / 3 / 4;
+        aspect-ratio: 2 / 1;
       }
       /* 이미지 공통 셋팅 */
       img {
@@ -221,7 +230,7 @@ body {
     /* 그리드 구성박스 변경주기 */
     .second {
       grid-column: 1 / 1;
-      grid-row: 1 / 1 ;
+      grid-row: 1 / 1;
     }
   }
 }
