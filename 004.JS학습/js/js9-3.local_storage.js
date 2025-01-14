@@ -249,29 +249,60 @@ myFn.qs("#sbtn").onclick = () => {
     // 함수 아랫부분 실행 못하도록 리턴함
     return;
   } /// catch ///
-  
+
+  // 로컬쓰 처리함수 호출!
+  setLS('minfo','add');
+}; ///////////////////////// click 이벤트 함수 ///////////////////////
+
+/////////////////// 로컬스토리지 처리 공통함수 //////////////////////
+/***************************************************************** 
+  함수명 : setLS
+  기능 : 로컬스토리지 데이터를 처리하는 함수  
+*****************************************************************/
+function setLS(key,opt) {
+  // key - 로컬스토리지 키명
+  // opt - 처리옵션(add/delete/update)
+  // -> 일반적으로 데이터처리는 4가지를 말한다!
+  // ->>> 크루드(CRUD) - Create / Read / Update / Delete
+
   // [ 로컬쓰 처리 기본과정]
   // 로컬쓰읽기 -> 로컬쓰파싱 -> 데이터변경->로컬쓰문자변경 후 업데이트!
-  
-  // 2. 로컬쓰 minfo 데이터 읽어오기 : 문자형 데이터임!
-  let locals = localStorage.getItem("minfo");
 
-  // 3. 로컬쓰 minfo 파싱후 데이터넣기
+  // 1. 전달값 및 호출확인
+  console.log("로컬쓰처리!", key);
+  // 2. 로컬쓰 minfo 데이터 읽어오기 : 문자형 데이터임!
+  let locals = localStorage.getItem(key);
+
+  // 3. 로컬쓰 minfo 파싱후 데이터 처리하기
   locals = JSON.parse(locals);
-  locals.push({
-    idx: locals.length + 1,
-    tit: tit.value,
-    cont: cont.value,
-  });
+
+  // 3-1. 'add' 일때 데이터 추가하기 //
+  if(opt == 'add'){
+    locals.push({
+      idx: locals.length + 1,
+      tit: tit.value,
+      cont: cont.value,
+    });
+  } //// if ////
+  
+  // 3-2. 'update' 일때 데이터 수정하기 //
+  else if(opt == 'update'){
+
+  } //// else if ////
+
+  // 3-3. 'delete' 일때 데이터 삭제하기 //
+  else if(opt == 'delete'){
+
+  } //// else if ////
 
   // 4. 로컬쓰 변경된 데이터 다시 넣기 : 넣을땐 문자화 (stringify)
-  localStorage.setItem("minfo", JSON.stringify(locals));
+  localStorage.setItem(key, JSON.stringify(locals));
 
   // 5. 다시 데이터 바인딩하기
   bindData();
-}; ///////////////////////// click 이벤트 함수 ///////////////////////
+} //////////////// setLS 함수 /////////////////////
 
-//******************************************** */
+//**********************************************/
 ///////////////////////////////////////////////
 // [ 2. 세션 스토리지 연습 ] ////////////////////
 // 1. 버튼 기능 이벤트 대상 : .session-box button
