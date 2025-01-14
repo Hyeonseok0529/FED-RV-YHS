@@ -71,9 +71,7 @@
           </div>
           <!-- 1-2) 설명 -->
           <div class="desc-desc">
-            <p>
-              named for the swiftest of the ancient Roman gods.
-            </p>
+            <p>named for the swiftest of the ancient Roman gods.</p>
           </div>
         </div>
       </section>
@@ -88,10 +86,54 @@
           <!-- 1-2) 설명 -->
           <div class="desc-desc">
             <p>
-              Mercury's environment is not conducive to life as we know it. The temperatures and solar radiation that characterize this planet are most likely too extreme for organisms to adapt to.
+              Mercury's environment is not conducive to life as we know it. The
+              temperatures and solar radiation that characterize this planet are
+              most likely too extreme for organisms to adapt to.
             </p>
           </div>
         </div>
+      </section>
+      <!--5. Structure 영역 -->
+      <section class="Structure-area">
+        <!-- 1) 행성 정보 -->
+        <div class="desc-box">
+          <!-- 1-1) 타이틀 -->
+          <div class="desc-tit">
+            <h2>Structure</h2>
+          </div>
+          <!-- 1-2) 설명 -->
+          <div class="desc-desc">
+            <p>
+              Mercury is the second densest planet, after Earth. It has a large
+              metallic core with a radius of about 1,289 miles (2,074
+              kilometers), about 85% of the planet's radius. There is evidence
+              that it is partly molten or liquid. Mercury's outer shell,
+              comparable to Earth's outer shell (called the mantle and crust),
+              is only about 400 kilometers (250 miles) thick.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- 갤러리 영역 -->
+      <section class="gallery">
+        <h2 class="gallery-tit">gellery of mercury</h2>
+        <!-- 그리드 레이아웃박스 -->
+        <div class="grid"></div>
+        <script>
+          let hCode = "";
+          for (let i = 1; i <= 7; i++) {
+            hCode += `
+              <div>
+                <img src="./images/sub/1_mercury/${i}.jpg" alt="planet">
+              </div>
+            `;
+          } ///// for //////
+    
+          // .grid에 요소출력
+          document.querySelector(
+            ".grid"
+          ).innerHTML = hCode;
+        </script>
       </section>
     </main>
   </body>
