@@ -39,6 +39,12 @@ body {
     width: 55%;
   }
 
+  @mixin query-set{
+    margin-left: 0;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
   // 첫 컨텐츠 영역 ////////////////////////////////////////////////////////////////////////
   .first-area {
     color: #fff;
@@ -211,9 +217,7 @@ body {
     // Structure 영역 미디어쿼리 //
     @include tablet-medium {
       .Structure-area {
-        margin-left: 0;
-        justify-content: center;
-        align-items: flex-end;
+@include query-set();
         div {
           width: 100%;
           align-items: center;
