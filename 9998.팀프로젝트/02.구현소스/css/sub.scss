@@ -39,10 +39,21 @@ body {
     width: 55%;
   }
 
-  @mixin query-set{
+  @mixin query-set {
     margin-left: 0;
     justify-content: center;
     align-items: flex-end;
+    div {
+      width: 100%;
+      align-items: center;
+      h2 {
+        line-height: 6rem;
+      }
+      p {
+        width: 80%;
+        font-size: 1.3rem;
+      }
+    }
   }
 
   // 첫 컨텐츠 영역 ////////////////////////////////////////////////////////////////////////
@@ -80,15 +91,7 @@ body {
       top: -10rem;
     }
     .first-area {
-      justify-content: center;
-      align-items: flex-end;
-      div {
-        width: 100%;
-        align-items: center;
-        p {
-          font-size: 1.5rem;
-        }
-      }
+      @include query-set();
     }
   }
 
@@ -111,15 +114,7 @@ body {
   // introduction 영역 미디어쿼리 //
   @include tablet-medium {
     .introduction-area {
-      justify-content: center;
-      align-items: flex-end;
-      div {
-        width: 100%;
-        align-items: center;
-        p {
-          font-size: 1.5rem;
-        }
-      }
+      @include query-set();
     }
   }
 
@@ -142,15 +137,8 @@ body {
   // Namesake 영역 미디어쿼리 //
   @include tablet-medium {
     .Namesake-area {
-      justify-content: center;
-      align-items: flex-end;
-      div {
-        width: 100%;
-        align-items: center;
-        p {
-          font-size: 1.5rem;
-        }
-      }
+      @include query-set();
+      text-align: center;
     }
   }
 
@@ -180,21 +168,13 @@ body {
       }
     }
   }
-    // potential for life 영역 미디어쿼리 //
-    @include tablet-medium {
-      .potential-area {
-        justify-content: center;
-        align-items: flex-end;
-        div {
-          width: 100%;
-          align-items: center;
-          p {
-            font-size: 1.5rem;
-          }
-        }
-      }
+  // potential for life 영역 미디어쿼리 //
+  @include tablet-medium {
+    .potential-area {
+      @include query-set();
     }
-  
+  }
+
   // Structure 영역 ////////////////////////////////////////////////////////////////
   .Structure-area {
     @include common-box;
@@ -214,23 +194,12 @@ body {
     }
   }
 
-    // Structure 영역 미디어쿼리 //
-    @include tablet-medium {
-      .Structure-area {
-@include query-set();
-        div {
-          width: 100%;
-          align-items: center;
-          h2{
-            line-height: 6rem;
-          }
-          p {
-            width: 80%;
-            font-size: 1.3rem;
-          }
-        }
-      }
+  // Structure 영역 미디어쿼리 //
+  @include tablet-medium {
+    .Structure-area {
+      @include query-set();
     }
+  }
 
   .gallery {
     /* 타이틀 */
