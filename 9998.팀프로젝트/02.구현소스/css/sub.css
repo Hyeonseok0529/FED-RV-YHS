@@ -99,6 +99,10 @@ body .first-area div p, body .Namesake-area div p, body .introduction-area div p
   font-size: 1.7vw;
 }
 @media (max-width: 1000px) {
+  body .spin-box {
+    justify-content: center;
+    top: -10rem;
+  }
   body .first-area,
   body .introduction-area,
   body .Namesake-area {

@@ -69,12 +69,20 @@ body {
 
   // 첫 컨텐츠 영역 미디어쿼리 //
   @include tablet-medium {
+    .spin-box {
+      justify-content: center;
+      top: -10rem;
+    }
     .first-area,
     .introduction-area,
     .Namesake-area {
       justify-content: center;
       align-items: flex-end;
     }
+    .introduction-area div p {
+      $font-size-large: 36px
+      // 이게 왜 안먹지 ..?
+  }
   }
 
   // introduction 영역 //////////////////////////////////////////////////////////////
