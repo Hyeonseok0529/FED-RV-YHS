@@ -6,6 +6,8 @@
 @import "./variables";
 
 @import "https://fonts.googleapis.com/css2?family=Orbitron&display=swap";
+// 쿼리 // 
+@import "./include";
 
 // 메인영역 //
 ////// 포지션 fixed 구역시작 ///////
@@ -29,6 +31,16 @@ body {
   }
   ////// 포지션 fixed 구역끝 ///////
 
+@mixin flex-set{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-start;
+  width: 55%;
+
+}
+
   // 첫 컨텐츠 영역 //
   .first-area {
     color: #fff;
@@ -37,13 +49,16 @@ body {
     justify-content: flex-end;
     align-items: center;
     div {
-      display: flex;
       height: 35vh;
-      width: 55%;
-      align-items: flex-start;
-      flex-direction: column;
-      justify-content: center;
-      justify-content: flex-start;
+      /* 믹스인 사용으로 인한 주석 */
+      // display: flex;
+      // width: 55%;
+      // align-items: flex-start;
+      // flex-direction: column;
+      // justify-content: center;
+      // justify-content: flex-start;
+
+      @include flex-set();
       h1 {
         font-size: 6vw;
       }
@@ -56,19 +71,10 @@ body {
 
   // introduction 영역 //
   .introduction-area {
-    color: #fff;
-    display: flex;
-    height: 100vh;
-    justify-content: flex-end;
-    align-items: center;
+    @extend .first-area;
     div {
-      display: flex;
       height: 35vh;
-      width: 55%;
-      align-items: flex-start;
-      flex-direction: column;
-      justify-content: center;
-      justify-content: flex-start;
+      @include flex-set();
       h2 {
         font-size: 6vw;
         text-transform: uppercase;
@@ -82,19 +88,10 @@ body {
 
   // Namesake 영역 //
   .Namesake-area {
-    color: #fff;
-    display: flex;
-    height: 100vh;
-    justify-content: flex-end;
-    align-items: center;
+    @extend .first-area;
     div {
-      display: flex;
       height: 35vh;
-      width: 55%;
-      align-items: flex-start;
-      flex-direction: column;
-      justify-content: center;
-      justify-content: flex-start;
+      @include flex-set();
       h2 {
         font-size: 6vw;
         text-transform: uppercase;
@@ -112,20 +109,15 @@ body {
     justify-content: flex-start;
     align-items: center;
     margin-left: 6vw;
+    color: #fff;
   }
 
   // potential for life 영역 //
   .potential-area {
-    color: #fff;
     @include common-box;
     div {
-      display: flex;
       height: 45vh;
-      width: 55%;
-      align-items: flex-start;
-      flex-direction: column;
-      justify-content: center;
-      justify-content: flex-start;
+      @include flex-set();
       h2 {
         font-size: 6vw;
         text-transform: uppercase;
@@ -139,20 +131,11 @@ body {
   }
   // Structure 영역 //
   .Structure-area {
-    color: #fff;
-    display: flex;
-    height: 100vh;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: 6vw;
+    @include common-box;
+    margin-bottom: 30rem;
     div {
-      display: flex;
       height: 40vh;
-      width: 55%;
-      align-items: flex-start;
-      flex-direction: column;
-      justify-content: center;
-      justify-content: flex-start;
+      @include flex-set();
       h2 {
         font-size: 6vw;
         text-transform: uppercase;
@@ -168,7 +151,7 @@ body {
   .gallery {
     /* 타이틀 */
     h2 {
-      margin-bottom: 2vh;
+      margin-bottom: 10vh;
       text-transform: uppercase;
       color: #fff;
       text-align: center;

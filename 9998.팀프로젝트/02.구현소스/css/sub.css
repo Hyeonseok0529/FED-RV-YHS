@@ -74,44 +74,38 @@ body .spin-box span {
   width: 50%;
   justify-content: center;
 }
-body .first-area {
+body .first-area, body .Namesake-area, body .introduction-area {
   color: #fff;
   display: flex;
   height: 100vh;
   justify-content: flex-end;
   align-items: center;
 }
-body .first-area div {
-  display: flex;
+body .first-area div, body .Namesake-area div, body .introduction-area div {
   height: 35vh;
-  width: 55%;
+  /* 믹스인 사용으로 인한 주석 */
+  display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   justify-content: flex-start;
+  width: 55%;
 }
-body .first-area div h1 {
+body .first-area div h1, body .Namesake-area div h1, body .introduction-area div h1 {
   font-size: 6vw;
 }
-body .first-area div p {
+body .first-area div p, body .Namesake-area div p, body .introduction-area div p {
   width: 50vw;
   font-size: 1.7vw;
 }
-body .introduction-area {
-  color: #fff;
-  display: flex;
-  height: 100vh;
-  justify-content: flex-end;
-  align-items: center;
-}
 body .introduction-area div {
-  display: flex;
   height: 35vh;
-  width: 55%;
+  display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   justify-content: flex-start;
+  width: 55%;
 }
 body .introduction-area div h2 {
   font-size: 6vw;
@@ -121,21 +115,14 @@ body .introduction-area div p {
   width: 50vw;
   font-size: 1.7vw;
 }
-body .Namesake-area {
-  color: #fff;
-  display: flex;
-  height: 100vh;
-  justify-content: flex-end;
-  align-items: center;
-}
 body .Namesake-area div {
-  display: flex;
   height: 35vh;
-  width: 55%;
+  display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   justify-content: flex-start;
+  width: 55%;
 }
 body .Namesake-area div h2 {
   font-size: 6vw;
@@ -146,21 +133,21 @@ body .Namesake-area div p {
   font-size: 1.7vw;
 }
 body .potential-area {
-  color: #fff;
   display: flex;
   height: 100vh;
   justify-content: flex-start;
   align-items: center;
   margin-left: 6vw;
+  color: #fff;
 }
 body .potential-area div {
-  display: flex;
   height: 45vh;
-  width: 55%;
+  display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   justify-content: flex-start;
+  width: 55%;
 }
 body .potential-area div h2 {
   font-size: 6vw;
@@ -172,21 +159,22 @@ body .potential-area div p {
   font-size: 1.7vw;
 }
 body .Structure-area {
-  color: #fff;
   display: flex;
   height: 100vh;
   justify-content: flex-start;
   align-items: center;
   margin-left: 6vw;
+  color: #fff;
+  margin-bottom: 30rem;
 }
 body .Structure-area div {
-  display: flex;
   height: 40vh;
-  width: 55%;
+  display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   justify-content: flex-start;
+  width: 55%;
 }
 body .Structure-area div h2 {
   font-size: 6vw;
@@ -211,7 +199,7 @@ body .gallery {
   /* 그리드 구성박스 변경주기 */
 }
 body .gallery h2 {
-  margin-bottom: 2vh;
+  margin-bottom: 10vh;
   text-transform: uppercase;
   color: #fff;
   text-align: center;
