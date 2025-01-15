@@ -69,22 +69,11 @@ body {
 
   // 첫 컨텐츠 영역 미디어쿼리 //
   @include tablet-medium {
-    .first-area {
+    .first-area,
+    .introduction-area,
+    .Namesake-area {
       justify-content: center;
       align-items: flex-end;
-    }
-  }
-  @include tablet-small {
-    .main-box {
-      width: 600px;
-      font-size: 20px;
-    }
-  }
-
-  @include mobile {
-    .main-box {
-      width: 200px;
-      font-size: 10px;
     }
   }
 
