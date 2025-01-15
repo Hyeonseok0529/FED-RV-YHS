@@ -103,11 +103,16 @@ body .first-area div p, body .Namesake-area div p, body .introduction-area div p
     justify-content: center;
     top: -10rem;
   }
-  body .first-area,
-  body .introduction-area,
-  body .Namesake-area {
+  body .first-area, body .Namesake-area, body .introduction-area {
     justify-content: center;
     align-items: flex-end;
+  }
+  body .first-area div, body .Namesake-area div, body .introduction-area div {
+    width: 100%;
+    align-items: center;
+  }
+  body .first-area div p, body .Namesake-area div p, body .introduction-area div p {
+    font-size: 1.5rem;
   }
 }
 body .introduction-area div {
@@ -127,6 +132,19 @@ body .introduction-area div p {
   width: 50vw;
   font-size: 1.7vw;
 }
+@media (max-width: 1000px) {
+  body .introduction-area {
+    justify-content: center;
+    align-items: flex-end;
+  }
+  body .introduction-area div {
+    width: 100%;
+    align-items: center;
+  }
+  body .introduction-area div p {
+    font-size: 1.5rem;
+  }
+}
 body .Namesake-area div {
   height: 35vh;
   display: flex;
@@ -143,6 +161,19 @@ body .Namesake-area div h2 {
 body .Namesake-area div p {
   width: 50vw;
   font-size: 1.7vw;
+}
+@media (max-width: 1000px) {
+  body .Namesake-area {
+    justify-content: center;
+    align-items: flex-end;
+  }
+  body .Namesake-area div {
+    width: 100%;
+    align-items: center;
+  }
+  body .Namesake-area div p {
+    font-size: 1.5rem;
+  }
 }
 body .potential-area {
   display: flex;
@@ -170,6 +201,19 @@ body .potential-area div p {
   width: 50vw;
   font-size: 1.7vw;
 }
+@media (max-width: 1000px) {
+  body .potential-area {
+    justify-content: center;
+    align-items: flex-end;
+  }
+  body .potential-area div {
+    width: 100%;
+    align-items: center;
+  }
+  body .potential-area div p {
+    font-size: 1.5rem;
+  }
+}
 body .Structure-area {
   display: flex;
   height: 100vh;
@@ -196,6 +240,24 @@ body .Structure-area div h2 {
 body .Structure-area div p {
   width: 50vw;
   font-size: 1.4vw;
+}
+@media (max-width: 1000px) {
+  body .Structure-area {
+    margin-left: 0;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  body .Structure-area div {
+    width: 100%;
+    align-items: center;
+  }
+  body .Structure-area div h2 {
+    line-height: 6rem;
+  }
+  body .Structure-area div p {
+    width: 80%;
+    font-size: 1.3rem;
+  }
 }
 body .gallery {
   /* 타이틀 */

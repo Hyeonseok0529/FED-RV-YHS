@@ -4,21 +4,13 @@
 /*********** 1. 웹폰트 ***********/
 /* Roboto체 + Noto Sans Kr체 - CDN */
 @import 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
-
 /* 
 font-family: 'Roboto', "Noto Sans KR";
 */
-// 전체 글씨체 적용 //
+// 전체 글씨체 적용 ///
 body{
   font-family: 'Roboto', "Noto Sans KR";
 }
-/* 
-  [ 공통 클래스 이름정의 ]
-  1. ibx - inside box 속박스
-  2. pt1, pt2 - part1, part2 각 부분박스(비율적용)
-  3. cbx - content box 내용박스
-  4. bgi - background image 관련 속성
-*/
 
 /* 공사중 표시 */
 // body * {
@@ -29,38 +21,35 @@ body{
 
 /* 2-1. 중앙 속박스 */
 .ibx {
-    max-width: 1600px;
-    margin: 0 auto;
+  max-width: 1600px;
+  margin: 0 auto;
 }
-
-
 
 // 3. 미디어쿼리 믹스인 ///////////////
 // 큰것부터 작은것 순으로!!!
 @mixin desktop {
-    @media (max-width: $breakpoint-desktop) {
-      @content;
-    }
+  @media (max-width: $breakpoint-desktop) {
+    @content;
   }
-  @mixin tablet-large {
-    @media (max-width: $breakpoint-tablet-large) {
-      @content;
-    }
+}
+@mixin tablet-large {
+  @media (max-width: $breakpoint-tablet-large) {
+    @content;
   }
-  @mixin tablet-medium {
-    @media (max-width: $breakpoint-tablet-medium) {
-      @content;
-    }
+}
+@mixin tablet-medium {
+  @media (max-width: $breakpoint-tablet-medium) {
+    @content;
   }
-  @mixin tablet-small {
-    @media (max-width: $breakpoint-tablet-small) {
-      @content;
-    }
+}
+@mixin tablet-small {
+  @media (max-width: $breakpoint-tablet-small) {
+    @content;
   }
-  
-  @mixin mobile {
-    @media (max-width: $breakpoint-mobile) {
-      @content;
-    }
+}
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
   }
-  
+}

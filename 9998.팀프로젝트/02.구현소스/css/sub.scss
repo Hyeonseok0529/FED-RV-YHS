@@ -73,16 +73,17 @@ body {
       justify-content: center;
       top: -10rem;
     }
-    .first-area,
-    .introduction-area,
-    .Namesake-area {
+    .first-area {
       justify-content: center;
       align-items: flex-end;
+      div {
+        width: 100%;
+        align-items: center;
+        p {
+          font-size: 1.5rem;
+        }
+      }
     }
-    .introduction-area div p {
-      $font-size-large: 36px
-      // 이게 왜 안먹지 ..?
-  }
   }
 
   // introduction 영역 //////////////////////////////////////////////////////////////
@@ -101,6 +102,20 @@ body {
       }
     }
   }
+  // introduction 영역 미디어쿼리 //
+  @include tablet-medium {
+    .introduction-area {
+      justify-content: center;
+      align-items: flex-end;
+      div {
+        width: 100%;
+        align-items: center;
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
 
   // Namesake 영역 //////////////////////////////////////////////////////////////
   .Namesake-area {
@@ -115,6 +130,20 @@ body {
       p {
         width: 50vw;
         font-size: 1.7vw;
+      }
+    }
+  }
+  // Namesake 영역 미디어쿼리 //
+  @include tablet-medium {
+    .Namesake-area {
+      justify-content: center;
+      align-items: flex-end;
+      div {
+        width: 100%;
+        align-items: center;
+        p {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -145,6 +174,21 @@ body {
       }
     }
   }
+    // potential for life 영역 미디어쿼리 //
+    @include tablet-medium {
+      .potential-area {
+        justify-content: center;
+        align-items: flex-end;
+        div {
+          width: 100%;
+          align-items: center;
+          p {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  
   // Structure 영역 ////////////////////////////////////////////////////////////////
   .Structure-area {
     @include common-box;
@@ -163,6 +207,26 @@ body {
       }
     }
   }
+
+    // Structure 영역 미디어쿼리 //
+    @include tablet-medium {
+      .Structure-area {
+        margin-left: 0;
+        justify-content: center;
+        align-items: flex-end;
+        div {
+          width: 100%;
+          align-items: center;
+          h2{
+            line-height: 6rem;
+          }
+          p {
+            width: 80%;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
 
   .gallery {
     /* 타이틀 */
