@@ -7,7 +7,7 @@
 
 // 1. 상단영역 ////////////////
 .top-area {
-  // 부모자격 //
+  /* 부모자격 */
   position: relative;
   padding: $spacing-40;
 }
@@ -27,7 +27,7 @@
 
   ul {
     display: flex;
-    gap: 20px;
+    gap: 3em;
     justify-content: center;
 
     li {
@@ -53,12 +53,13 @@
   }
 }
 
-// 1-3. 요약메뉴 //
+// 1-3. 요약메뉴 ///////////
 .sum-menu {
   position: absolute;
-  //  부모는? .top-area
+  // 부모는? .top-area
   right: $spacing-40;
   top: $spacing-40;
+
   font-size: $font-size-common;
 
   // 하위리스트
@@ -78,7 +79,7 @@
       // 구독하기
       &:nth-child(2) a {
         font-weight: bold;
-        padding: 8px 10px;
+        padding: 8px 15px;
         background-color: #000;
         color: #fff;
       }
@@ -87,7 +88,6 @@
         font-size: 3em;
         font-weight: 100;
         transform: scaleX(0.7);
-        // 트랜스폼은 display: inline-block;일때 적용됨!
         display: inline-block;
       }
     }
@@ -148,61 +148,16 @@
   }
 }
 
-// 7. Fashion 영역 //
-// 서브 타이틀 공통 //
-.sub-tit {
-  font-size: $font-size-x-large;
-  padding-bottom: 15px;
-}
-// 영역박스 공통 //
-.common-box {
-  padding: $spacing-40;
-}
+// 7. Fashion 영역 /////////////
+
 // 패션영역 속박스
 .fashion-area {
   @extend .common-box;
 }
+
+
 // 리스트 박스
 .post-list {
-  ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-
-    // 3번째 li 두칸 차지하기
-    li:nth-child(3) {
-      grid-area: 1 / 3 / 3 / 4;
-      figcaption {
-        translate: 0 -100%;
-        padding: 20px;
-        color: #fff;
-        background: linear-gradient(to top, #000, transparent);
-        // 날짜 글쓴이는 숨김
-        p.date{
-          display: none;
-        }
-      }
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    // 아이템 설명박스
-    figcaption {
-      padding: 20px 0;
-      p.category {
-        font-size: $font-size-cat-date;
-      }
-      h3.s-tit {
-        font-size: $font-size-small-tit;
-        margin: 10px 0;
-      }
-      p.date {
-        font-size: $font-size-cat-date;
-        color: #999;
-      }
-    }
-  }
+  // right-type
+  @include list-type("right-type");
 }
