@@ -98,6 +98,12 @@ body .first-area div p, body .Namesake-area div p, body .introduction-area div p
   width: 50vw;
   font-size: 1.7vw;
 }
+@media (max-width: 1000px) {
+  body .first-area, body .Namesake-area, body .introduction-area {
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
 body .introduction-area div {
   height: 35vh;
   display: flex;

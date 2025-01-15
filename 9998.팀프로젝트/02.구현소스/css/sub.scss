@@ -4,10 +4,9 @@
 @import "./reset";
 // 폰트 //
 @import "./variables";
-
 @import "https://fonts.googleapis.com/css2?family=Orbitron&display=swap";
-// 쿼리 // 
-@import "./include";
+// 쿼리 //
+@import "./sub-query";
 
 // 메인영역 //
 ////// 포지션 fixed 구역시작 ///////
@@ -31,17 +30,16 @@ body {
   }
   ////// 포지션 fixed 구역끝 ///////
 
-@mixin flex-set{
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-  justify-content: flex-start;
-  width: 55%;
+  @mixin flex-set {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: flex-start;
+    width: 55%;
+  }
 
-}
-
-  // 첫 컨텐츠 영역 //
+  // 첫 컨텐츠 영역 ////////////////////////////////////////////////////////////////////////
   .first-area {
     color: #fff;
     display: flex;
@@ -69,7 +67,28 @@ body {
     }
   }
 
-  // introduction 영역 //
+  // 첫 컨텐츠 영역 미디어쿼리 //
+  @include tablet-medium {
+    .first-area {
+      justify-content: center;
+      align-items: flex-end;
+    }
+  }
+  @include tablet-small {
+    .main-box {
+      width: 600px;
+      font-size: 20px;
+    }
+  }
+
+  @include mobile {
+    .main-box {
+      width: 200px;
+      font-size: 10px;
+    }
+  }
+
+  // introduction 영역 //////////////////////////////////////////////////////////////
   .introduction-area {
     @extend .first-area;
     div {
@@ -86,7 +105,7 @@ body {
     }
   }
 
-  // Namesake 영역 //
+  // Namesake 영역 //////////////////////////////////////////////////////////////
   .Namesake-area {
     @extend .first-area;
     div {
@@ -112,7 +131,7 @@ body {
     color: #fff;
   }
 
-  // potential for life 영역 //
+  // potential for life 영역 //////////////////////////////////////////////////////////////
   .potential-area {
     @include common-box;
     div {
@@ -129,7 +148,7 @@ body {
       }
     }
   }
-  // Structure 영역 //
+  // Structure 영역 ////////////////////////////////////////////////////////////////
   .Structure-area {
     @include common-box;
     margin-bottom: 30rem;

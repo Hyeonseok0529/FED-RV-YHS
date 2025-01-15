@@ -23,7 +23,7 @@ $breakpoint-tablet-small: 700px;
 $breakpoint-mobile: 500px;
 
 
-// 믹스인 셋팅
+// (3) 믹스인 셋팅
 @mixin desktop {
     @media (max-width: $breakpoint-desktop) {
       @content;
@@ -50,36 +50,3 @@ $breakpoint-mobile: 500px;
       @content;
     }
   }
-
-// 세부 셋팅내용
-@include desktop {
-    .main-box {
-      width: 1200px;
-      font-size: 40px;
-    }
-  }
-  @include tablet-large {
-    .main-box {
-      width: 900px;
-      font-size: 40px;
-    }
-  }
-  @include tablet-medium {
-    .main-box {
-      width: 800px;
-      font-size: 30px;
-    }
-  }
-  @include tablet-small {
-    .main-box {
-      width: 600px;
-      font-size: 20px;
-    }
-  }
-  
-  @include mobile {
-    .main-box {
-      width: 200px;
-      font-size: 10px;
-    }
-  } 
