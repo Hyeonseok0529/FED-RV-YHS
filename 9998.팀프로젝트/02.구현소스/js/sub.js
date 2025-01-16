@@ -5,6 +5,10 @@
 // 변경대상: .smenu-contbox img
 const $smenuImg = $(".smenu-contbox");
 const $smenuImgbox = $(".smenu-imgbox");
+
+// 닫기버튼 셋팅
+// $(".close").click(() => $(".gallery-smenu").fadeOut());
+
 $('.gallery img').click(function(){
 // console.log("미리보기!")
 
