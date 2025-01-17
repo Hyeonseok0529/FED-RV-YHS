@@ -1,7 +1,10 @@
-// 헤더, 푸터 //
-@import "./inc";
 // 리셋 //
-@import "./reset";
+@import "./common/reset";
+@import "./common/core";
+// 헤더, 푸터 //
+@import "./common/inc";
+@import "./common/t-inc";
+@import "./common/m-inc";
 // 폰트 //
 @import "./variables";
 @import "https://fonts.googleapis.com/css2?family=Orbitron&display=swap";
@@ -295,7 +298,6 @@ body {
       top: 11vh;
       right: 14vh;
       border-radius: 50%;
-      scale: 1.5;
     }
     .smenu-contbox {
       width: 100%;
