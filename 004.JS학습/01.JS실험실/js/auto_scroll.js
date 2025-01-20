@@ -84,7 +84,7 @@ function wheelFn(e) {
   if (pgNum < 0) pgNum = 0;
   else if (pgNum > TOTAL_PAGE - 1) pgNum = TOTAL_PAGE - 1;
 
-  // console.log("페이지번호:", pgNum, pageEl[pgNum].offsetTop);
+  console.log("페이지번호:", pgNum, pageEl[pgNum].offsetTop);
 
   // (4-6) 페이지 이동하기 /////////
   window.scrollTo(0, pageEl[pgNum].offsetTop);
@@ -152,7 +152,7 @@ function movePage(evt, el, idx, list) {
   // el - 전달된 개별요소(this대신 사용함!)
   // idx - 요소의 순번 전달
   // list - 전체 컬렉션 객체
-  // console.log("evt:", evt, "/el:", el, "/idx:", idx, "/list:", list);
+  console.log("evt:", evt, "/el:", el, "/idx:", idx, "/list:", list);
 
   // 1) 기본이동막기
   evt.preventDefault();
@@ -164,7 +164,7 @@ function movePage(evt, el, idx, list) {
 
   // 3) 이동할 페이지 위치값 구하기
   let pgPos = myFn.qs(tgId).offsetTop;
-  // console.log("클릭!", tgId, pgPos);
+  console.log("클릭!", tgId, pgPos);
 
   // 4) 페이지 이동하기
   window.scrollTo(0, pgPos);
@@ -227,7 +227,8 @@ function touchStartFn(e) {
   // event.touches는 모바일 터치정보를 담고 있음
   // 위치정보는 0번째 주소에 모두 종류별로 있음
   // console.log('터치시작!', mPosStart, e.touches);
-} //////////////////////// touchStartFn 함수 ///////////////
+} /////////// touchStartFn 함수 ///////////
+
 function touchEndFn(e) {
   // 1. 필요한 위치값은 Y축
   mPosEnd = e.changedTouches[0].screenY;
@@ -236,17 +237,17 @@ function touchEndFn(e) {
 
   // 2. 위치차 : 처음위치 - 나중위치
   let diffValue = mPosStart - mPosEnd;
-  // console.log('터치끝!',mPosEnd, '/차이수:',diffValue);
+  // console.log('터치끝!', mPosEnd, '/차이수:',diffValue);
 
   // 3. 위치차 값이 양수이면 아래쪽이동(음수는 윗쪽이동)
   if (diffValue > 0) {
     console.log("아랫방향이동!");
     pgNum++;
-  } ////// if ////////
+  } //// if /////
   else if (diffValue < 0) {
     console.log("윗방향이동!");
     pgNum--;
-  } /////// else if ///
+  } ///// else if ///
 
   // 4. 한계값 체크 (0과 페이지끝번호 기준) ///////
   if (pgNum < 0) pgNum = 0;
@@ -254,8 +255,7 @@ function touchEndFn(e) {
 
   // 5. 페이지 이동하기 /////////
   window.scrollTo(0, pageEl[pgNum].offsetTop);
-
+  
   // 6. 페이지번호와 일치하는 GNB와 인디케이터에 클래스on넣기
   [gnb, indic].forEach((v) => addOn(v));
-  
-} //////////////////////// touchEndFn 함수 ///////////////
+} //////// touchEndFn 함수 ///////////////
