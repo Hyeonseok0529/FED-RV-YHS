@@ -89,15 +89,15 @@
   }
 }
 
-// 2. 하단영역 /////////////////////////////////////
-// 하단 겉박스
+// 2. 하단영역 ////////////////////
+// 하단겉박스
 #footer-area{
     background-color: #000;
 }
 // 하단속박스
 .footer-area {
   /* 최소높이 */
-  min-height: 285px;
+  min-height: 298px;
   padding: 80px 0 78px;
   // 박스크기유지
   box-sizing: border-box;
@@ -134,6 +134,7 @@
     a {
       color: #fff;
       font-size: 13px;
+      font-weight: bold;
     }
 
     // 마지막li a만 두꺼운글자
