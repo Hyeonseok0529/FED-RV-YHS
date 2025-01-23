@@ -2,6 +2,7 @@
 // 컴포넌트 불러오기 /////
 // [1] 공통컴포넌트
 import { TopComp } from "./components/common.js";
+import {BannerComp} from "./components/banner.js";
 
 console.log(TopComp);
 
