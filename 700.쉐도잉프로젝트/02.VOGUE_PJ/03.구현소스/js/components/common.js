@@ -33,20 +33,22 @@ const TopComp = Vue.component("top-comp", {
         <!-- 1-4. 추가메뉴박스 -->
         <nav class="add-menu">
           <ol>
-            <li v-for="
-            (v,k) in this.addMenu
-            /* v - 객체값, k - 키명 */
-            "
-            :class="
-            // 키명이 '로그아웃'이면 'hide'클래스 넣기
-              k=='로그아웃'?'hide':''
-            "
+            <li 
+              v-for="
+                (v,k) in this.addMenu
+                /* v - 객체값, k - 키명 */
+              "
+
+              :class="
+              // 키명이 '로그아웃'이면 'hide'클래스넣기
+                k=='로그아웃' ? 'hide' : ''
+              "
             >
-              <a
-               href="#"
-               @click.prevent="goPage(k)"
-               >
-              <i :class="v" :title="k"></i>
+              <a 
+                href="#"
+                @click.prevent="goPage(k)"
+              >
+                <i :class="v" :title="k"></i>
               </a>
             </li>
           </ol>
@@ -70,9 +72,10 @@ const TopComp = Vue.component("top-comp", {
       },
     };
   }, /// data ///
-  // 1-3. 컴포넌트 메서드구역 //
+
+  // 1-3. 컴포넌트 메서드구역 /////
   methods:{
-    // goPage : 링크이동 메서드//
+    // goPage : 링크이동 메서드 /////
     goPage(gubun){ // gubun - 구분키(키명)
       console.log(gubun);
       // 페이지명 셋팅변수
@@ -82,27 +85,26 @@ const TopComp = Vue.component("top-comp", {
         case "로그인": pgName = "login"; break;
         case "회원가입": pgName = "member"; break;
         case "장바구니": pgName = "cart_list"; break;
-      } /// switch ///
+      } //// switch /////////
 
-      // 페이지 이동하기 //
+      // 페이지 이동하기 ///
       location.href = pgName + '.html';
 
     }, //// goPage 메서드 ////
-  }, ///// methods /////
-  // 1-4. 컴포넌트 라이프사이클 메서드 : mounted
-  mounted() {
-    //폰트어썸 link CSS 넣기
+  }, /// methods //////
+  // 1-4. 컴포넌트 라이프사이크 메서드 : mounted
+  mounted(){
+    // 폰트어썸 link CSS 넣기
     $('head').append(`
       <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-      `)
-  }, ///// mounted ///
-}); /// TopComp ///
+    `);
+  }, /// mounted ///
+}); /// TopComp ///////////////
 
-
-// 2. 하단컴포넌트
+// 2. 하단컴포넌트 /////////////////////
 const BottomComp = Vue.component("bottom-comp", {
   // 템플릿 코드 ////
   template: `

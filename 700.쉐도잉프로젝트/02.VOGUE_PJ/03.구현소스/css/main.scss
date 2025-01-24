@@ -16,6 +16,7 @@
   position: relative;
   // 선택막기
   user-select: none;
+
   ul {
     position: relative;
     /* 3번째 슬라이드부터 보이기(앞에2개) */
@@ -35,7 +36,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        // 이미지 드래그 막기(중요함!)
+        // 이미지 드래그 막기 (중요함!)
         -webkit-user-drag: none;
       }
 
@@ -71,12 +72,13 @@
     &.ab1 {
       left: 50px;
     }
-
+  
     /*오른쪽버튼*/
     &.ab2 {
       right: 50px;
     }
   }
+
 
   /*블릿버튼*/
   .indic {
@@ -99,6 +101,7 @@
           /*회색이미지만 투명하게*/
           opacity: 0;
         }
+      
       }
 
       /*회색블릿이미지가 보이게하는 class*/
@@ -109,6 +112,9 @@
       }
     }
   }
+
+
+
 }
 
 @include tablet-medium {
