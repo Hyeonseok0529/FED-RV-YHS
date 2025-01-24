@@ -30,6 +30,14 @@ const TopComp = Vue.component('top-comp',{
             </li>
           </ol>
         </nav>
+        <!-- 1-4. 추가메뉴박스 -->
+        <nav class="add-menu">
+          <ol>
+            <li v-for="v in this.sumMenu">
+              <a href="#">{{v}}</a>
+            </li>
+          </ol>
+        </nav>
       </header>      
     </div>   
     `,
