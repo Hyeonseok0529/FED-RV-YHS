@@ -19,11 +19,22 @@
   --top-area-padding-size: 20px 50px;
   --bottom-area-padding-size: 50px;
   --contents-box-padding-size: 85px 0 0;
-  --cat-title-padding-size: 15px 10px
+  --cat-title-padding-size: 15px 10px;
 }
 
 /* 1. 상단영역 */
-
+body{
+    padding-top: 100px;
+}
+/* 겉박스 */
+#top-area{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
 /* 속박스 */
 .top-area {
   padding: var(--top-area-padding-size);
@@ -125,54 +136,57 @@ h1.logo img {
 }
 /* 캐릭터 리스트 */
 .cat-list ul{
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
 }
 .cat-list ul li{
-  flex-basis: 25%;
-  padding: 10px;
-  box-sizing: border-box;
+    flex-basis: 25%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 /* 이미지 파트박스 */
 .img-part{
-  position: relative;
-
+    position: relative;
 }
 /* 두개의 이미지 공통 */
 .cat-list img{
-  width: 100%;
+    width: 100%;
 }
 /* 마지막 이미지 숨기기 */
 .cat-list img:last-child{
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: .4s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: .4s;
 }
 /* 오버시 이미지 보이기 */
 .cat-list li:hover img:last-child{
-  opacity: 1;
+    opacity: 1;
 }
+
 /* 이미지 박스 */
 .cat-list figure{
-  border: 1px solid #ccc;
-  border-radius: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
 }
 /* 이미지 설명 */
-.cat-list figcaption h3{
-text-align: center;
-padding: var(--cat-title-padding-size);
+.cat-list figcaption{
+    text-align: center;
+    padding: var(--cat-title-padding-size);
 }
 /* 캐릭터 타이틀 */
 .cat-list figcaption h3{
-  font-size: 22px;
-  font-weight: normal;
+    font-size: 22px;
+    font-weight: normal;
 }
 /* 캐릭터 영문 */
 .cat-list figcaption p{
-  font-size: 12px;
+    font-size: 12px;
 }
+
+
 /* 2-3. 컴퍼니영역 */
 .company{
     background-color: var(--company-area-color);
@@ -181,17 +195,31 @@ padding: var(--cat-title-padding-size);
 .recruit{
     background-color: var(--character-area-color);
 }
-/* 2-5. 플레이스영역 */
-.place{
-    background: url(../images/bg_shop.jpg) no-repeat center/cover;
-}
 /* 컴퍼니 영역 & 리쿠르트 영역 공통 리스트 디자인 */
 .com-type-list{
-  display: flex;
-  justify-content: center;
-  gap: 5vw;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-bottom: 100px;
 }
-.com-type-list img
+/* 공통 타이틀 */
+.com-type-list h3{
+    font-size: 22px;
+    padding: 20px 0;
+    font-weight: normal;
+}
+/* 공통 내용 */
+.com-type-list p{
+    font-size: 16px;
+}
+.com-type-list p:last-of-type{
+    margin-bottom: 30px;
+}
+/* 2-5. 플레이스영역 */
+.place{    
+    padding-bottom: 30vh;
+    background: url(../images/bg_shop.jpg) no-repeat center/cover;
+}
 /* 2-6. 컨텍어스영역 */
 .contact-us{
     background-color: var(--contact-area-color);

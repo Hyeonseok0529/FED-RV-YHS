@@ -2,7 +2,7 @@
 
 import myFn from "./my_function.js";
 
-// 캐릭터 데이터 가져오기 //
+// 캐릭터 데이터 가져오기 ////
 import catData from './cat_data.json' with{type:'json'};
 // console.log(catData);
 
@@ -29,7 +29,7 @@ myFn.qs(".gnb-mob").onclick = function () {
   gnbMenu.classList.toggle("show");
 };
 
-// 3. 캐릭터 영역 데이터 연결하여 출력태그 만들기 //
+// 3. 캐릭터 영역 데이터 연결하여 출력태그 만들기 ////
 myFn.qs(".cat-list").innerHTML = `
     <ul>
     ${catData
@@ -38,66 +38,74 @@ myFn.qs(".cat-list").innerHTML = `
         <li>
             <figure>
                 <div class="img-part">
-                    <img src="./images/${v.isrc}.png" alt"${v.title}">
-                    <img src="./images/${v.isrc}_ov.png" alt"${v.title}">
+                    <img src="./images/${v.isrc}.png" alt="${v.title}">
+                    <img src="./images/${v.isrc}_ov.png" alt="${v.title}">
                 </div>
-                    <figcaption>
-                        <h3>${v.title}</p>
-                        <p class="title-en">${v.title_en}</p>
-                    </figcaption>
+                <figcaption>
+                    <h3>${v.title}</h3>
+                    <p class="title-en">${v.title_en}</p>
+                </figcaption>     
             </figure>
         </li>
     `
       )
       .join("")}
 
+
     </ul>
 `;
 
-// 4. company 영역
+// 4. 컴퍼니 영역 ///////////////////////
 // 데이터 : 배열
 const companyData = [
   {
-    title: "회사연혁",
+    title: "회사소개",
     content: "맑고 깨끗한 강가에^문화를 쌓아 올리자",
     imgsrc: "ico_company1",
   },
   {
-    title: "회사소개",
-    content: "쌓아올리면 뭐해?^그다음거 하면 되지.",
+    title: "회사연혁",
+    content: "산리오의 히스토리를^확인하세요",
     imgsrc: "ico_company3",
   },
   {
-    title: "사업소개",
-    content: "딩디기리딩딩",
+    title: "사업영역",
+    content: "소셜 커뮤니케이션을^산리오가 시작합니다",
     imgsrc: "ico_company4",
   },
 ];
-// 컴퍼니 리스트 박스에 데이터 태그 출력하기 //
-myFn.qs(".company-list").innerHTML = `
-<ul class="com-type-list">
-${companyData
-  .map(
-    (v) => `
-    <li>
-        <figure>
-            <div class="img-part">
-                <img src="./images/${v.imgsrc}.png" alt"${v.title}">
-            </div>
-                <figcaption>
-                    <h3>${v.title}</p>
-                    <p>${v.content.split("^")[0]}</p>
-                    <p>${v.content.split("^")[1]}</p>
-                    <a href="#" class="com-btn"> more </a>
-                </figcaption>
-        </figure>
-    </li>
-`
-  )
-  .join("")}
 
-</ul>
+// 컴퍼니 리스트 박스에 데이터 태그 출력하기 /////
+myFn.qs(".company-list").innerHTML = `
+    <ul class="com-type-list">
+    ${companyData
+      .map(
+        (v) => `
+        <li>
+            <figure>
+                <div class="img-part">
+                    <img src="./images/${v.imgsrc}.png" alt="${v.title}">
+                </div>
+                <figcaption>
+                    <h3>${v.title}</h3>
+                    <p>
+                        ${v.content.split('^')[0]}
+                    </p>
+                    <p>
+                        ${v.content.split('^')[1]}
+                    </p>
+                    <a href="#" class="com-btn">more</a>
+                </figcaption>     
+            </figure>
+        </li>
+    `
+      )
+      .join("")}
+
+
+    </ul>
 `;
+
 
 // 5. 리쿠르트 영역 ///////////////////////
 // 데이터 : 배열
@@ -119,28 +127,33 @@ const recruitData = [
   },
 ];
 
-// 컴퍼니 리스트 박스에 데이터 태그 출력하기 //
+// 리쿠르트 리스트 박스에 데이터 태그 출력하기 /////
 myFn.qs(".recruit-list").innerHTML = `
-<ul class="com-type-list">
-${recruitData
-  .map(
-    (v) => `
-    <li>
-        <figure>
-            <div class="img-part">
-                <img src="./images/${v.imgsrc}.png" alt"${v.title}">
-            </div>
+    <ul class="com-type-list">
+    ${recruitData
+      .map(
+        (v) => `
+        <li>
+            <figure>
+                <div class="img-part">
+                    <img src="./images/${v.imgsrc}.png" alt="${v.title}">
+                </div>
                 <figcaption>
-                    <h3>${v.title}</p>
-                    <p>${v.content.split("^")[0]}</p>
-                    <p>${v.content.split("^")[1]}</p>
-                    <a href="#" class="com-btn"> more </a>
-                </figcaption>
-        </figure>
-    </li>
-`
-  )
-  .join("")}
+                    <h3>${v.title}</h3>
+                    <p>
+                        ${v.content.split('^')[0]}
+                    </p>
+                    <p>
+                        ${v.content.split('^')[1]}
+                    </p>
+                    <a href="#" class="com-btn">more</a>
+                </figcaption>     
+            </figure>
+        </li>
+    `
+      )
+      .join("")}
 
-</ul>
+
+    </ul>
 `;
