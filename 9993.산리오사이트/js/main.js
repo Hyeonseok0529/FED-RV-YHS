@@ -53,3 +53,23 @@ myFn.qs(".cat-list").innerHTML = `
 
     </ul>
 `;
+
+// 4. company 영역
+// 데이터 : 배열
+const companyData = [
+  {
+    title: '회사연혁',
+    content: '맑고 깨끗한 강가에 문화를 쌓아 올리자',
+    imgsrc:'ico_company1'
+  },
+  {
+    title: '회사소개',
+    content: '쌓아올리면 뭐해? 그다음거 하면 되지.',
+    imgsrc:'ico_company2'
+  },
+  {
+    title: '사업소개',
+    content: '딩디기리딩딩',
+    imgsrc:'ico_company3'
+  }
+];
