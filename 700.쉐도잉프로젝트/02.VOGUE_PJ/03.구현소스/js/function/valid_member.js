@@ -1,8 +1,7 @@
 // 회원가입 유효성검사 및 회원가입처리 JS - valid_member.js
 
 export default function valid_member() {
-  console.log("유효성 검사를 실행합니다.", $("#mid"));
-  ///// valid_member /////
+  //   console.log("유효성검사! 나야나~!!!", $("#mid"));
 
   /********************************************** 
     [ 사용자 입력폼 유효성 검사 ]
@@ -36,7 +35,7 @@ export default function valid_member() {
         2. 현재 블러가 발생한 요소의 값은?
     ******************************************/
       // 이름입력창(id=='mnm')이면 trim()
-      // 나머지는 groSpace()로 처리하여 공백을 제거한다!
+      // 나머지는 groSpace() 로 처리하여 공백을 제거한다!
       let cv = cid == "mnm" ? $(this).val().trim() : groSpace($(this).val());
       // 비?집:놀이동산
 
@@ -138,7 +137,8 @@ export default function valid_member() {
           "@" +
           (seleml.val() == "free" ? eml2.val() : seleml.val());
         // (비?집:놀이동산)
-        // 선택박스값이 'free'인가?숨긴이메일입력창값:선택값
+        // 선택박스값이 'free'인가?
+        // 숨긴이메일입력창값:선택값
 
         // 2. 이메일 검사함수 호출하기!
         resEml(comp);
@@ -146,11 +146,12 @@ export default function valid_member() {
 
       /// 모두 통과일 경우 메시지 지우기 ///////
       else {
+        console.log(3333);
         // empty()는 텍스트 내용 지우기
         $(this).siblings(".msg").empty();
       } /////// else //////
     }); ///////////////// blur 메서드 /////////////////
-  /////////////////////////////////////////////////
+  //////////////////////////////////////////////////
 
   /////////// 이메일 관련 대상선정 /////////////
   // 이메일 앞주소
@@ -273,7 +274,7 @@ export default function valid_member() {
   }; ///////////// resEml /////////////////
 
   /************************************** 
-      비밀번호 글자 보이기/숨기기 셋팅
+     비밀번호 글자 보이기/숨기기 셋팅
     **************************************/
   let eyeNum = 1;
   $(".eye")
@@ -331,6 +332,7 @@ export default function valid_member() {
     pass = true;
 
     // 3. 입력창 blur이벤트 강제 발생시키기
+    // trigger(이벤트) - 선택요소에 강제 이벤트 발생!
     $(`form.logF input[type=text][id!=email2],
         form.logF input[type=password]`).trigger("blur");
 
@@ -343,8 +345,9 @@ export default function valid_member() {
         let temp = [];
 
         // 로컬쓰가 있으면 읽어옴!
-        if(localStorage.getItem('mem-data'))
-            temp = JSON.parse(localStorage.getItem('mem-data'))
+        if(localStorage.getItem('mem-data')) 
+            temp = JSON.parse(localStorage.getItem('mem-data'));
+
     // 로컬스토리지에 데이터 넣기
     let memData = {
         idx:1,
@@ -356,6 +359,7 @@ export default function valid_member() {
 
     // 객체값을 배열 로컬쓰에 넣기
     temp.push(memData);
+
     // 로컬쓰에 넣기
     localStorage.setItem('mem-data',JSON.stringify(temp));
 
@@ -365,7 +369,7 @@ export default function valid_member() {
       // 로그인 페이지로 넘겨준다!
 
       // 로그인 페이지로 리디렉션!
-      // location.href = 'login.html';
+    //   location.href = 'login.html';
 
       // 민감한 입력 데이터 페이지가 다시 돌아와서
       // 보이면 안되기 때문에 히스토리를 지우는
@@ -377,7 +381,7 @@ export default function valid_member() {
       alert("입력을 수정하세요~!");
     } //////// else : 불통과시 //////
   }); ///////////// click ///////////
-} //////// valid_member 함수
+} ///////////// valid_member 함수 //////////////
 
 /*//////////////////////////////////////////////////////
     함수명: vReg (validation with Regular Expression)
