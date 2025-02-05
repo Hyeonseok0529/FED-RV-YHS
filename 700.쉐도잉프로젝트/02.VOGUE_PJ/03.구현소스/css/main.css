@@ -249,6 +249,10 @@ img {
   background-color: red;
 }
 
+#ban-area {
+  overflow: hidden;
+}
+
 .ban-box {
   position: relative;
   -webkit-user-select: none;

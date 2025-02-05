@@ -69,14 +69,49 @@ export default function valid_member() {
             .text("영문자로 시작하는 6~20글자 영문자/숫자")
             .removeClass("on");
 
-          // [ 불통과시 pass값 변경2 ]
-            pass = false;
+          // [ 불통과시 pass값 변경2-1 ]
+          pass = false;
         } //////// if ///////
         else {
           // 통과시
           // 1. DB에 조회하여 같은 아이디가 있다면
           // '이미 사용중인 아이디입니다' 와 같은 메시지출력
-          // 2. 만약 DB조회하여 같은 아이다가 없다면
+          if (localStorage.getItem("mem-data")) {
+            // (1) 로컬스 'mem-data'가 있는 경우 파싱함
+            let temp = JSON.parse(localStorage.getItem("mem-data"));
+            // (2) 파싱된 로컬스는 배열이므로 find로
+            // 현재 입력한 아이디가 있는지 찾아본다!
+            // 배열.find(v=>{if(조건){return true}})
+            // -> true가 리턴되면 해당 배열값이 저장됨.
+            //그러나 없으면 값이 그냥 undefined로 남음
+            let result = temp.find((v) => {
+              console.log(v.userid);
+              // cv는 입력된 아이디값
+              // 완전히 일치하는 아이디 존재여부를 검사!
+              if (v.userid == cv) return true;
+            }); // find //
+
+            console.log("아이디존재결과:", result);
+
+            // (3) 결과 처리하기 //
+            // 1) result가 undefined가 아닐경우(아이디있음!)
+            if (result) {
+              /// 아이디 입력 불가! //
+              $(this)
+                .siblings(".msg")
+                .text("이미 사용중인 아이디입니다!")
+                .removeClass("on");
+
+              // [ 불통과시 pass값 변경2 ]
+              pass = false;
+            } /// if ///
+            else {
+              // 아이디 입력가능!
+              // 메시지 띄우기
+          $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
+            } //// else ////
+          } /// if ///
+          // 2. 만약 DB조회하여 같은 아이디가 없다면
           // '멋진 아이디네요~!'와 같은 메시지출력
           // 여기서 우선은 DB조회 못하므로 통과시 메시지로 출력
           // 메시지 띄우기
@@ -99,7 +134,7 @@ export default function valid_member() {
             .text("특수문자,문자,숫자포함 형태의 5~15자리");
 
           // [ 불통과시 pass값 변경3 ]
-            pass = false;
+          pass = false;
         } //////// if ///////
         else {
           // 통과시
@@ -117,7 +152,7 @@ export default function valid_member() {
           $(this).siblings(".msg").text("비밀번호가 일치하지 않습니다!");
 
           // [ 불통과시 pass값 변경4 ]
-            pass = false;
+          pass = false;
         } //////// if ///////
         else {
           // 통과시
@@ -269,7 +304,7 @@ export default function valid_member() {
         .removeClass("on");
 
       // [ 불통과시 pass값 변경5 ]
-        pass = false;
+      pass = false;
     } //////// else : 불통과시 ////////
   }; ///////////// resEml /////////////////
 
@@ -341,27 +376,53 @@ export default function valid_member() {
 
     // 4. 검사결과에 따라 메시지 보이기
     if (pass) {
-        // 로컬쓰용 배열변수
-        let temp = [];
+      // 로컬쓰용 배열변수
+      let temp = [];
 
-        // 로컬쓰가 있으면 읽어옴!
-        if(localStorage.getItem('mem-data')) 
-            temp = JSON.parse(localStorage.getItem('mem-data'));
+      // 로컬쓰가 있으면 읽어옴!
+      if (localStorage.getItem("mem-data"))
+        temp = JSON.parse(localStorage.getItem("mem-data"));
 
-    // 로컬스토리지에 데이터 넣기
-    let memData = {
-        idx:1,
-        mid:$('#mid').val(),
-        mpw:$('#mpw').val(),
-        mnm:$('#mnm').val(),
-        email:$('#email1').val()
-    };
+      /************************************************** 
+          [회원가입 입력 데이터 구조 정의]
+          1. 일련번호 : idx - 숫자값(유일키)
+          2. 아이디 : userid - 문자값
+          3. 비밀번호 : password - 문자값
+          4. 이름 : name - 문자값
+          5. 성별 : gender - 문자값(m-남성, w-여성)
+          6. 이메일 : email - 
+        *************************************************/
 
-    // 객체값을 배열 로컬쓰에 넣기
-    temp.push(memData);
+      // 로컬스토리지에 데이터 넣기
+      let memData = {
+        // 1. 일련번호 : idx - 숫자값(유일키)
+        // -> 기존 배열개수 + 1로 입력
+        idx: temp.length + 1,
+        // 2. 아이디 : userid - 문자값
+        userid: $("#mid").val(),
+        // 3. 비밀번호 : password - 문자값
+        password: $("#mpw").val(),
+        // 4. 이름 : name - 문자값
+        name: $("#mnm").val(),
+        // 5. 성별 : gender - 문자값(m-남성, w-여성)
+        // :radio - input 속성 type의 값이 'radio' 선택
+        // [name=gen] - 속성 name의 값이 'gen'인 것을 선택
+        // :cheched - 체크된 라디오 버튼을 선택
+        gender: $(":radio[name=gen]:checked").val(),
+        // 6. 이메일 : email -
+        email:
+          $("#email1").val() +
+          "@" +
+          ($("#seleml").val() == "free"
+            ? $("#email2").val()
+            : $("#seleml").val()),
+      };
 
-    // 로컬쓰에 넣기
-    localStorage.setItem('mem-data',JSON.stringify(temp));
+      // 객체값을 배열 로컬쓰에 넣기
+      temp.push(memData);
+
+      // 로컬쓰에 넣기
+      localStorage.setItem("mem-data", JSON.stringify(temp));
 
       alert("회원가입을 축하드립니다! 짝짝짝!");
       // 원래는 POST방식으로 DB에 회원가입정보를
@@ -369,7 +430,7 @@ export default function valid_member() {
       // 로그인 페이지로 넘겨준다!
 
       // 로그인 페이지로 리디렉션!
-    //   location.href = 'login.html';
+      //   location.href = 'login.html';
 
       // 민감한 입력 데이터 페이지가 다시 돌아와서
       // 보이면 안되기 때문에 히스토리를 지우는

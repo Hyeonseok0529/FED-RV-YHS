@@ -6,10 +6,26 @@ import myFn from "./my_function.js";
 import catData from './cat_data.json' with{type:'json'};
 // console.log(catData);
 
-// 1. GNB메뉴 대문자글자변경 ////
+// GNB용 데이터 배열
+const gnbData = ["company","character","place","recruit"];
+
+// 1. GNB메뉴 데이터 바인딩하기 ////
 myFn
-  .qsa(".gnb ul li a")
-  .forEach((el) => (el.innerText = el.innerText.toUpperCase()));
+  .qs(".gnb").innerHTML = `
+    <ul>
+      ${gnbData.map(v=>`
+        <li>
+          <a href="#">${v}</a>
+        </li>
+      `).join('')}
+    </ul>
+  `;
+
+
+// -> JS도 대소문자 변환할 수 있다!
+// myFn.qs(".gnb ul li a")
+// .forEach((el) => (el.innerText = 
+// el.innerText.toUpperCase()));
 // toUpperCase() 대문자변경
 // toLowerCase() 소문자변경
 
