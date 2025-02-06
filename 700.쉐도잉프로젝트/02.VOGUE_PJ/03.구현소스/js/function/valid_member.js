@@ -73,8 +73,8 @@ export default function valid_member() {
           pass = false;
         } //////// if ///////
         else {
-          // 통과시
-          // 1. DB에 조회하여 같은 아이디가 있다면
+          // 통과시 /////////////////////////
+          // 1. 로컬스에 조회하여 같은 아이디가 있다면
           // '이미 사용중인 아이디입니다' 와 같은 메시지출력
           if (localStorage.getItem("mem-data")) {
             // (1) 로컬스 'mem-data'가 있는 경우 파싱함
@@ -82,41 +82,45 @@ export default function valid_member() {
             // (2) 파싱된 로컬스는 배열이므로 find로
             // 현재 입력한 아이디가 있는지 찾아본다!
             // 배열.find(v=>{if(조건){return true}})
-            // -> true가 리턴되면 해당 배열값이 저장됨.
-            //그러나 없으면 값이 그냥 undefined로 남음
+            // -> true가 리턴되면 해당배열값이 저장됨
+            // 그.러.나... 없으면 값이 그냥 undefined로 남음
             let result = temp.find((v) => {
               console.log(v.userid);
               // cv는 입력된 아이디값
               // 완전히 일치하는 아이디 존재여부를 검사!
               if (v.userid == cv) return true;
-            }); // find //
+            }); /////// find ///////
 
             console.log("아이디존재결과:", result);
 
-            // (3) 결과 처리하기 //
+            // (3) 결과처리하기 ////////
             // 1) result가 undefined가 아닐경우(아이디있음!)
             if (result) {
-              /// 아이디 입력 불가! //
+              /// 아이디 입력 불가!!!
               $(this)
                 .siblings(".msg")
                 .text("이미 사용중인 아이디입니다!")
                 .removeClass("on");
 
-              // [ 불통과시 pass값 변경2 ]
+              // [ 불통과시 pass값 변경2-2 ]
               pass = false;
             } /// if ///
+            // 2) result가 undefined일 경우(아이디 없음!)
             else {
-              // 아이디 입력가능!
+              // 아이디 입력가능!!!
               // 메시지 띄우기
-          $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
-            } //// else ////
-          } /// if ///
+              $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
+            } /// else ///
+          } /////////// if ///////////
+
           // 2. 만약 DB조회하여 같은 아이디가 없다면
           // '멋진 아이디네요~!'와 같은 메시지출력
           // 여기서 우선은 DB조회 못하므로 통과시 메시지로 출력
-          // 메시지 띄우기
-          $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
-          // -> 비동기 통신 Ajax로 서버쪽에 아이디 중복검사필요!
+          else{
+            // 메시지 띄우기
+            $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
+            // -> 비동기 통신 Ajax로 서버쪽에 아이디 중복검사필요!
+          } /////////// else ///////////
         } ////// else //////
       } /////////////// else if : 아이디검사 ///////
 
@@ -383,20 +387,20 @@ export default function valid_member() {
       if (localStorage.getItem("mem-data"))
         temp = JSON.parse(localStorage.getItem("mem-data"));
 
-      /************************************************** 
-          [회원가입 입력 데이터 구조 정의]
-          1. 일련번호 : idx - 숫자값(유일키)
-          2. 아이디 : userid - 문자값
-          3. 비밀번호 : password - 문자값
-          4. 이름 : name - 문자값
-          5. 성별 : gender - 문자값(m-남성, w-여성)
-          6. 이메일 : email - 
-        *************************************************/
+      /****************************************** 
+          [ 회원가입 입력 데이터 구조 정의 ]
+           1. 일련번호 : idx - 숫자값(유일키)
+           2. 아이디 : userid - 문자값
+           3. 비밀번호 : password - 문자값
+           4. 이름 : name - 문자값
+           5. 성별 : gender - 문자값(m-남성,w-여성)
+           6. 이메일 : email - 문자값(@포함주소)
+        ******************************************/
 
       // 로컬스토리지에 데이터 넣기
       let memData = {
         // 1. 일련번호 : idx - 숫자값(유일키)
-        // -> 기존 배열개수 + 1로 입력
+        // -> 기존 배열개수 + 1 로 입력
         idx: temp.length + 1,
         // 2. 아이디 : userid - 문자값
         userid: $("#mid").val(),
@@ -404,12 +408,12 @@ export default function valid_member() {
         password: $("#mpw").val(),
         // 4. 이름 : name - 문자값
         name: $("#mnm").val(),
-        // 5. 성별 : gender - 문자값(m-남성, w-여성)
-        // :radio - input 속성 type의 값이 'radio' 선택
+        // 5. 성별 : gender - 문자값(m-남성,w-여성)
+        // :radio - input 속성 type의 값이 'radio'선택
         // [name=gen] - 속성 name의 값이 'gen'인 것을 선택
-        // :cheched - 체크된 라디오 버튼을 선택
+        // :checked - 체크된 라디오버튼을 선택
         gender: $(":radio[name=gen]:checked").val(),
-        // 6. 이메일 : email -
+        // 6. 이메일 : email - 문자값(@포함주소)
         email:
           $("#email1").val() +
           "@" +

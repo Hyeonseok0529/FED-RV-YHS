@@ -73,27 +73,27 @@ export const JoinComp = Vue.component("join-comp", {
                 <li>
                   <span class="itit">성별</span>
                   <label htmlFor="gen1">남성</label>
-                  <input
-                  type="radio" 
-                  name="gen" 
-                  id="gen1"
-                  value="m"
+                  <input 
+                    type="radio" 
+                    name="gen" 
+                    id="gen1" 
+                    value="m"
                   />
                   <label htmlFor="gen2">여성</label>
                   <input 
-                  type="radio" 
-                  name="gen" 
-                  id="gen2" 
-                  value="m"
-                  checked />
+                    type="radio" 
+                    name="gen" 
+                    id="gen2" 
+                    value="w"
+                    checked 
+                  />
                   <!-- 라디오버튼의 name 속성을 
-                              같은 이름으로 쓰면 그룹핑되어
-                              하나만 선택된다! 
-    
-                              checked 속성 - 기본체크설정
-                              value값 설정해야 선택밧 읽을 때 사용됨!
-                              (남성은 'm',여성은 'w')
-                              -->
+                      같은 이름으로 쓰면 그룹핑되어
+                      하나만 선택된다!     
+                    checked 속성 - 기본체크설정
+                    value값 설정해야 선택값 읽을때 사용됨!
+                    (남성은 'm', 여성은 'w')
+                    -->
                 </li>
                 <!-- 이메일 -->
                 <li>
@@ -150,5 +150,8 @@ export const JoinComp = Vue.component("join-comp", {
   mounted() {
     // 유효성검사 함수호출!
     valid_member();
+    
+    // CSS 변경하기 ///
+    $('#css-set').attr('href','./css/member.css');
   }, /// mounted ///////
 });
