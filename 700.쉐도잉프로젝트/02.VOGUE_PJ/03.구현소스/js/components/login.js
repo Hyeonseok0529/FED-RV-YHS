@@ -15,7 +15,7 @@ Vue.component("login-comp",{
            <!-- 2-1. 로그인 페이지 상단영역 --> 
           <header class="ctop">
              <!-- 2-1-1. 서브타이틀 --> 
-            <h2 class="stit">Login {{msg}}</h2>
+            <h2 class="stit">Login</h2>
           </header>
            <!-- 2-2. 갤러리 페이지 컨텐츠 박스 --> 
           <section class="scont">
@@ -89,10 +89,16 @@ Vue.component("login-comp",{
     methods: {
       // 전역 스토어 변수 업데이트 메서드 호출
       actLogin(pm,txt){
-        console.log('가상돔 메서드 실행!',pm);
-        this.msg = txt;
-        // 스토어 뮤테이션스 호출
+        // pm : 로그인 된 사용자 정보 객체
+        // console.log('가상돔 메서드 실행!',pm);
+        // this.msg = txt;
+
+        // 1. 스토어 뮤테이션스 호출
         store.commit('setLogin',pm);
+        // 2. 세션스토리지 셋업하기! 'login-user'
+        sessionStorage.setItem('login-user', JSON.stringify(pm));
+        // 3. 첫페이지로 라우팅하기
+        this.$router.push('/');
       },
     },
     // 4. 데이터셋업파트

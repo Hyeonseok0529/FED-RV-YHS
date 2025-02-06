@@ -1,5 +1,8 @@
 // 보그 PJ 공통 컴포넌트 : SPA용 - common_spa.js
 
+// 뷰엑스 스토어 불러오기 ///
+import store from "../vuex_store.js";
+
 // 1. 상단컴포넌트
 const TopComp = Vue.component("top-comp", {
   // 1-1. 템플릿코드설정 /////
@@ -33,26 +36,37 @@ const TopComp = Vue.component("top-comp", {
         </nav>
         <!-- 1-4. 추가메뉴박스 -->
         <nav class="add-menu">
-          <ol>
+          <ol :class="$store.state.loginCls">
             <li 
               v-for="
                 (v,k) in this.addMenu
                 /* v - 객체값, k - 키명 */
               "
-
-              :class="
-              // 키명이 '로그아웃'이면 'hide'클래스넣기
-                k=='로그아웃' ? 'hide' : ''
-              "
             >
-              <router-link :to="v[1]">
+              <!-- 
+              로그아웃일때는 일반 a요소
+
+              [뷰JS 조건문 디렉티브]
+              v-if="조건" / v-else-if="조건" / v-else
+              -->
+
+              <a href="#" 
+                v-if="k=='로그아웃'"
+                @click.prevent="logoutFn"
+              >
+                <i :class="v[0]" :title="k"></i>
+              </a>
+
+              <!-- 기타일때는 라우터링크 -->
+
+              <router-link :to="v[1]" v-else>
                 <i :class="v[0]" :title="k"></i>
               </router-link>
             </li>
           </ol>
         </nav>
         <!-- 로그인 환영메시지 박스 -->
-        <div id="login-msg">{{$store.state.loginUser.name}}님, VOGUE에 오신 것을 환영합니다.</div>
+        <div id="login-msg">{{$store.state.welcomeMsg}}</div>
       </header>      
     </div>   
     `,
@@ -76,6 +90,11 @@ const TopComp = Vue.component("top-comp", {
 
   // 1-3. 컴포넌트 메서드구역 /////
   methods:{
+    // 로그아웃 메서드 /////
+    logoutFn(){
+      if(confirm("로그아웃 하시겠습니까?"))
+        store.commit('setLogout');
+    },
     // goPage : 링크이동 메서드 /////
     goPage(gubun){ // gubun - 구분키(키명)
       console.log(gubun);
