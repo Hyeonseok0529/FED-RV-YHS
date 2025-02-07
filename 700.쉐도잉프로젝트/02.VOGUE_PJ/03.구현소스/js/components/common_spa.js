@@ -1,5 +1,8 @@
 // 보그 PJ 공통 컴포넌트 : SPA용 - common_spa.js
 
+// 상단영역 데이터 불러오기 //
+import {gnbMenu, sumMenu, addMenu} from "../../data/gnb_data.js"
+
 // 뷰엑스 스토어 불러오기 ///
 import store from "../vuex_store.js";
 
@@ -21,8 +24,10 @@ const TopComp = Vue.component("top-comp", {
         <!-- 1-2. 메뉴박스 -->
         <nav class="gnb">
           <ul>
-            <li v-for="v in this.gnbMenu">
-              <a href="#">{{v}}</a>
+            <li v-for="v in Object.keys(this.gnbMenu)">
+              <router-link : to="/item">
+              {{v}}
+              </router-link>
             </li>
           </ul>
         </nav>
@@ -72,50 +77,47 @@ const TopComp = Vue.component("top-comp", {
     `,
   // 1-2. 데이터 셋업 리턴 메서드 /////
   data() {
-    return {
-      // (1) GNB 메뉴 데이터
-      gnbMenu: ["FASHION", "BEAUTY", "LIFESTYLE", "CULTURE", "VIDEO"],
-      // (2) 요약 메뉴 데이터
-      sumMenu: ["KOREA", "구독하기", "≡"],
-      // (3) 추가가 메뉴 데이터 : 
-      // 키는 메뉴, 값은 배열로 폰트어썸 클래스(0), 라우터경로(1)
-      addMenu: {
-        로그인: ["fa-solid fa-right-to-bracket","/login"],
-        로그아웃: ["fa-solid fa-right-from-bracket","/logout"],
-        회원가입: ["fa-solid fa-user","/join"],
-        장바구니: ["fa-solid fa-cart-shopping","/cart"],
-      },
-    };
+    return {gnbMenu,sumMenu,addMenu};
+    // 구조분해 할당 방식으로 같은 이름의 객체 가져오기
+    // return {gnbMenu:gnbMenu,sumMenu:sumMenu,addMenu:addMenu}
+    // 외부에서 가져온 객체를 같은 이름으로 할당하는 경우가 많다!
+    // 이때 같은 이름으로 구조분해하여 할당하는 방식은
+    // 코딩량을 줄여주며 가독성을 높인다!
   }, /// data ///
 
   // 1-3. 컴포넌트 메서드구역 /////
-  methods:{
+  methods: {
     // 로그아웃 메서드 /////
-    logoutFn(){
-      if(confirm("로그아웃 하시겠습니까?"))
-        store.commit('setLogout');
+    logoutFn() {
+      if (confirm("로그아웃 하시겠습니까?")) store.commit("setLogout");
     },
     // goPage : 링크이동 메서드 /////
-    goPage(gubun){ // gubun - 구분키(키명)
+    goPage(gubun) {
+      // gubun - 구분키(키명)
       console.log(gubun);
       // 페이지명 셋팅변수
       let pgName;
       // 구분키별 분기 //
-      switch(gubun){
-        case "로그인": pgName = "login"; break;
-        case "회원가입": pgName = "member"; break;
-        case "장바구니": pgName = "cart_list"; break;
+      switch (gubun) {
+        case "로그인":
+          pgName = "login";
+          break;
+        case "회원가입":
+          pgName = "member";
+          break;
+        case "장바구니":
+          pgName = "cart_list";
+          break;
       } //// switch /////////
 
       // 페이지 이동하기 ///
-      location.href = pgName + '.html';
-
+      location.href = pgName + ".html";
     }, //// goPage 메서드 ////
   }, /// methods //////
   // 1-4. 컴포넌트 라이프사이크 메서드 : mounted
-  mounted(){
+  mounted() {
     // 폰트어썸 link CSS 넣기
-    $('head').append(`
+    $("head").append(`
       <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"

@@ -208,7 +208,7 @@ $(".preview-box li").click(function () {
   console.log("미리봐봐~!");
 
   // 1. 클릭된 박스의 데이터 읽어오기
-  let currTit = $(this).find("h3").html();
+  let currTit = $(this).find("h3").text();
   let currCont = $(this).find("p").text();
 
   // 2. 읽어온 내용을 서브컨텐츠 박스에 넣기

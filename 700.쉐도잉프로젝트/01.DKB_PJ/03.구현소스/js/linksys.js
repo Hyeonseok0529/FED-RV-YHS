@@ -25,14 +25,14 @@ export default function linksysFn() {
         break;
     }
 
-    // 3. 페이지 이동 : pm값이 'etc' 가 아닌경우만 이동
+    // 3. 페이지이동 : pm값이 'etc' 가 아닌경우만 이동
     if (pm !== "etc") {
       location.href = "./content.html?page=" + pm;
     } else {
-      alert("로그인/회원가입/인물관계도 페이지만 이용가능합니다.");
+      alert("로그인/회원가입/인물관계도 만 서비스오픈!");
     }
   });
 
   // 로고 클릭시 홈으로!!
-  $('.logo a').click(()=>location.href = './index.html');
-} /////////////// linksysFn 함수 /////////////////
+  $(".logo a").click(() => (location.href = "./index.html"));
+} //////////// linksysFn 함수 /////////////
