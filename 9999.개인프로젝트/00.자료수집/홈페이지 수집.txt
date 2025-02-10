@@ -34,6 +34,18 @@ https://www.acro.co.kr/Ahah_view02.action
 3. 한솔 봄
 https://www.vhom.co.kr/?utm_source=naver_bs&utm_medium=cpt&utm_campaign=pc&utm_term=homelink&utm_content=bespoke_%ED%95%9C%EC%86%94%EB%B4%84&n_media=27758&n_query=%ED%95%9C%EC%86%94%EB%B4%84&n_rank=1&n_ad_group=grp-a001-04-000000042550002&n_ad=nad-a001-04-000000318489354&n_keyword_id=nkw-a001-04-000006255594573&n_keyword=%ED%95%9C%EC%86%94%EB%B4%84&n_campaign_type=4&n_contract=tct-a001-04-000000000972904&n_ad_group_type=5&NaPm=ct%3Dm2ec9ads%7Cci%3D0za0002wZf5Bwq6Tjfp%2D%7Ctr%3Dbrnd%7Chk%3Df3fa513015112d26abd4fe35a50125297102b996%7Cnacn%3Dx0dyBUg2vmVg
 
+[ 멘토링 요구사항 팔로우 업 ]
+
+1. 마이페이지
+- 주소업데이트
+- 비밀번호변경
+
+2. 비밀번호찾기
+- SMTP 기능구현
+
+3. 소셜 로그인 기능
+
+4. 결제기능
 
 [홈페이지 소스]
 1.https://nannalagerman.com/
