@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bon Voyage</title>
+    <link rel="icon" href="./images/pavicon-nasa.png">
+
+    <!-- CSS 연결 -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- 제이쿼리 라이브러리 CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <!-- 스와이퍼 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
+    <!-- 제이쿼리 UI CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+    <!-- JS 연결 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <script defer src="./js/inc.js"></script>
+
+  </head>
+  <body>
+    <!-- <div class="cursor"><img src="./images/cursor/cursor_sample_1.png" alt=""></div> -->
+    <main class="main-area">
+      
+      <section class="swiper mySwiper">
+        <div class="swiper-wrapper">
+        </div>
+      </section>
+
+      <div class="modal">
+        <div class="modal-inner">
+          <div class="close-box">
+            <span class="close">X</span>
+          </div>
+          <div id="threejs-container"></div>
+        </div>
+      </div>
+
+      <!-- 로딩 팝업 -->
+      <div class="swiper-popup">
+        <img src="./images/main/slide.png" alt="swiper Image" class="swiper-image" />
+      </div>
+
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js",
+            "three/examples/jsm/loaders/GLTFLoader.js": "https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/loaders/GLTFLoader.js",
+            "three/examples/jsm/controls/OrbitControls.js": "https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/controls/OrbitControls.js"
+        }
+      }
+    </script>
+    <script defer type="module" src="./js/main.js"></script>
+  </body>
+</html>
+
+

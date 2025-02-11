@@ -1,9 +1,0 @@
-@mixin flex($x: flex-start, $y: flex-end) {
-    display: flex;
-    justify-content: $x;
-    align-items: $y;
-    @content;
-}
-
-/////// 컬러 ///////
-$color-navy : #2e3d81;
