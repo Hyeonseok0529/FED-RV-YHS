@@ -21,3 +21,4 @@ https://youtube.com/shorts/bsnDyMHrYOU?si=1MMhhFJkOmP68Nj7
 모던 자바스크립트
 추후에 공부할 때 사용
 https://ko.javascript.info/
+
