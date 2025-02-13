@@ -1,7 +1,7 @@
 // 보그 PJ 공통 컴포넌트 : SPA용 - common_spa.js
 
-// 상단영역 데이터 불러오기 //
-import {gnbMenu, sumMenu, addMenu} from "../../data/gnb_data.js"
+// 상단영역 데이터 불러오기 ///
+import {gnbMenu, sumMenu, addMenu} from "../../data/gnb_data.js";
 
 // 뷰엑스 스토어 불러오기 ///
 import store from "../vuex_store.js";
@@ -25,8 +25,14 @@ const TopComp = Vue.component("top-comp", {
         <nav class="gnb">
           <ul>
             <li v-for="v in Object.keys(this.gnbMenu)">
-              <router-link : to="/item">
-              {{v}}
+              <router-link :to="{
+                name:'sub-page',
+                // query는 get방식처럼 url창으로 전달함
+                // 값은 {키:값,키:값} 객체형식임
+                // 결과는 url?키=값&키=값
+                query:{id:v}
+               }">
+                {{v}}
               </router-link>
             </li>
           </ul>
@@ -78,8 +84,8 @@ const TopComp = Vue.component("top-comp", {
   // 1-2. 데이터 셋업 리턴 메서드 /////
   data() {
     return {gnbMenu,sumMenu,addMenu};
-    // 구조분해 할당 방식으로 같은 이름의 객체 가져오기
-    // return {gnbMenu:gnbMenu,sumMenu:sumMenu,addMenu:addMenu}
+    // 구조분해할당 방식으로 같은 이름의 객체 가져오기
+    // return {gnbMenu:gnbMenu, sumMenu:sumMenu, addMenu:addMenu};
     // 외부에서 가져온 객체를 같은 이름으로 할당하는 경우가 많다!
     // 이때 같은 이름으로 구조분해하여 할당하는 방식은
     // 코딩량을 줄여주며 가독성을 높인다!
