@@ -3,6 +3,9 @@
 // 내함수 불러오기
 import myFn from "./my_function";
 
+// 외부 jsx파일 불러오기
+import Avengers from "./avengers";
+// 리액트에서는 CDN에서 from 뒤에 파일명에 "js || jsx" 생략가능
 /************************************************* 
     [ 리액트 컴포넌트 ]
     - 컴포넌트는 HTML요소를 반환하는 함수다!
@@ -35,6 +38,17 @@ import myFn from "./my_function";
     render() 메서드는 HTML을 반환함
     (함수형 컴포넌트의 return 키워드를 
         사용할 수 있는 역할을 함!)
+
+    _____________________________________________
+
+    [ 컴포넌트의 호출 ]
+     1. 컴포넌트이름과 동일한 홀로 태그로 호출한다
+     2. 전달값은 태그의 속성셋팅과 방식으로 보내준다
+     예) function HaHaHa(){return 코드}
+     {return 코드}
+
+     ((호출))
+     <HaHaHa king="킹" wang="왕" zzang="짱"/>
 
 *************************************************/
 /// [ 클래스형 컴포넌트 만들기 ] ///
@@ -76,13 +90,122 @@ function IronMan() {
 ReactDOM.render(<IronMan />, target[1]);
 
 // [ 이미지생성 공통 컴포넌트 ] //
-function MakeImage(props) {
+// function MakeImage({isrc,ialt})
+function MakeImage(변수헐) {
+  console.log("전달객체:", 변수헐);
+  // 컴포넌트에 전달되는 값은 객체로 전달된다!
   // {ialt, isrc} - 구조분해할당
   // 객체가 들어올 때 해당 속성명으로 받으면 된다!
   return (
     <figure>
-      <img src={"./images/" + props.isrc} alt={props.ialt} />
-      <figcaption>{props.ialt}</figcaption>
+      <img src={"./images/" + 변수헐.isrc} alt={변수헐.ialt} />
+      <figcaption>{변수헐.ialt}</figcaption>
     </figure>
   );
-}
+} /////// MakeImage 컴포넌트 ////////
+
+// 내가 좋아하는 색 표시하기 컴포넌트 //
+function FavoriteThings(조아) {
+  return (
+    <h2>
+      좋아하는 색 : <span style={{ color: "skyblue" }}>{조아.color}</span>
+      <br />
+      좋아하는 음식 : {조아.food} <br />
+      취미 : {조아.hobby} <br />
+    </h2>
+  );
+} /// FavoriteThings 컴포넌트 ////
+
+// 좋아하는 색과 음식, 취미를 각각 속성명으로 생성하여
+// 컴포넌트를 호출하면 개별적으로 속성값을 다르게 출력할 수 있다!
+
+// 출력 : 세번째 .root
+
+ReactDOM.render(
+  <FavoriteThings 
+  color="스카이블루" 
+  food="알리오올리오" 
+  hobby="요리" />,
+  target[2]
+);
+// 출력 : 네번째 .root
+
+ReactDOM.render(
+  <FavoriteThings
+  color="스카이블루"
+  food="짜파구리" 
+  hobby="러닝" />,
+  target[3]
+);
+
+/************************************************* 
+    컴포넌트 내부에서 다른 컴포넌트를 호출 할 수 있다!
+*************************************************/
+
+function Who(){
+    return (
+      <div>
+        <h1>김똑팔이가 누구야?</h1>
+        {/* 다른컴포넌트 넣기 */}
+        <Answer />
+      </div>
+    );
+  } ///////// Who 컴포넌트 ///////////////
+  
+  // 컴포넌트 내부에서 호출할 컴포넌트 /////
+  function Answer(){
+    return <h2>김씨가 똑하고 팔이 부러졌대!</h2>
+  } /////////// Answer 컴포넌트 //////////////
+  
+  // 출력: 다섯번째 .root
+  ReactDOM.render(<Who />,target[4]);
+  
+  // [ 외부파일 컴포넌트 출력하기 ]
+  // 출력 : 여섯번째 .root
+  ReactDOM.render(<Avengers />,target[5]);
+
+  /*************************************************** 
+    [ 컴포넌트의 파일분리 ]
+    리액트는 코드를 재사용하는 것이므로
+    컴포넌트를 별도의 파일로 분할 하는것 일반적이다!
+
+    {분할방법}
+    1. jsx의 새파일을 생성한다.
+    2. 대문자로 시작하는 컴포넌트를 구현한다.
+    3. 분할구현된 jsx파일을 import하여 호출한다.
+
+    -> 일반적으로 js파일 상단에 import 키워드로 불러오면
+    되는데 지금 사용하는 CDN방식의 바벨모듈에서는
+    주의 사항이 있으니 참고 바란다!(아래참고)
+
+***************************************************/
+/************************************************* 
+[ 바벨을 사용할때 모듈로 파일 호출시 주의사항! ]
+  ____________________________________________
+
+  설치형이 아닌 CDN방식의 바벨은 호출셋업의 시차로
+  바로 모듈을 호출하면 에러가 발생한다!
+  따라서 모듈을 사용할 파일을 아래와 같은 형식으로
+  메인 html 상단에 호출해 줘야만 한다!!!
+
+  -> 상단에 모듈화한 JS를 먼저 불러준다!
+
+  <script src="모듈화한js" 
+  data-plugins="transform-es2015-modules-umd" 
+  type="text/babel"></script>
+
+  -> 아래쪽에 모듈을 호출하는 JS를 불러준다!
+
+  <script src="모듈을 호출하는 JS" 
+  data-plugins="transform-es2015-modules-umd" 
+  type="text/babel"></script>
+
+  ->>> 위의 호출 속성 중 기본적으로
+  type="text/babel" 은 당연히 해야하고
+
+  ->>> 여기에 더하여 하나의 속성을 추가한다!
+  data-plugins="transform-es2015-modules-umd"
+
+  이 속성과 값이 바벨에서 모듈을 사용하게 하는
+  es2015 즉 ES6버전에서의 모듈문법을 사용하게끔 해준다!
+*************************************************/
