@@ -1,14 +1,10 @@
 // 01.공유신발 JSX
 
-// 임시 데이터 불러오기
-import guData from './data/gu_data';
-console.log(guData);
-
 // 상품리스트 서브컴포넌트 불러오기
-// import GoodsList from "./components/goods_list";
+import GoodsList from "./components/GoodsList";
 
 // 상품상세보기 서브컴포넌트 불러오기
-// import GoodsDetail from "./components/goods_detail";
+import GoodsDetail from "./components/GoodsDetail";
 
 // 공통함수 불러오기
 import * as comFn from "./common/com_fn";
@@ -26,6 +22,18 @@ import * as comFn from "./common/com_fn";
 // 함수형 컴포넌트는 첫글자 대문자인 함수키워드로 만든다
 
 function MainComponent() {
+    // [ 후크 상태관리 변수 셋팅!!! ]
+    // 1. 리스트 / 상세보기 전환용 상태관리변수
+    const [ viewList, setViewList ] = React.useState(true);
+    // 2. 상품 데이터 인덱스값 상태관리변수
+    const [ gIdx, setGIdx ] = React.useState(1);
+    // 3. 선택 아이템 고유이름 상태관리변수
+    const [ selItem, setSelItem ] = React.useState("공유");
+    // 4. 테스트용 상태관리변수(의존성 테스트용!)
+    const [ test, setTest ] = React.useState(true);
+
+
+
   /************************************** 
     [ 코드구성 ]
     1. 타이틀 : h1.tit
@@ -39,35 +47,39 @@ function MainComponent() {
         ul > li > ol > li > (img/text)
     ㄴ> 상품상세보기 :
         ol > li > (img/text/button)
-    ____________________________________
 
-    [ 일단 html 태그를 가져온 경우 수정사항]
-     1. 홀로태그는 반드시 끝에 스스로 닫아야 함
-     ex) <br> -> <br />
-     2. 클래스 속성명은 className으로 변경
+    __________________________________________
+
+    [ 일반 html 태그를 가져온 경우 수정사항 ]
+     1. 홀로태그는 반드시 끝에 스스로 닫기처리
+     예) <br> -> <br />
+     2. className 속성명은 classNameName으로 변경
      3. 인라인 스타일은 객체형태로 변경
-     style="color:red;" -> style={{color:"red"}}
-  **************************************/
+      
+     
+
+**************************************************/
   ////////////////////////////////////
   // 코드리턴구역 /////////////////////
   return (
     <React.Fragment>
       <h1 className="tit">
-        <img id="logo" src="./images/logo.png" alt="로고" />
+        <img
+          id="logo"
+          src="./images/logo.png"
+          alt="로고"
+          style={{
+            width: "50px",
+            verticalAlign: "-6px",
+            marginRight: "10px",
+          }}
+        />
         <span>공유가 신고 다닌다는!</span>
       </h1>
       <section>
         <h2 className="stit">공유는 오늘도 멋찝니다!</h2>
         <div className="img-box">
-          <img 
-          id="logo"
-          src="./images/vans/gongyoo.jpg"
-          alt="로고"
-          style={{
-            width:'500px',
-            verticalAlign:'-6px',
-            marginRight:'10px'
-          }} />
+          <img src="./images/vans/gongyoo.jpg" alt="멋진공유" />
         </div>
       </section>
       <div className="btn-box">
@@ -76,7 +88,24 @@ function MainComponent() {
         <button>useEffect 의존성 테스트</button>
       </div>
       <div className="gwrap">
-        <GoodsList/>
+        {
+          // 상태변수 viewList가 true면
+          // 상품리스트 하위 컴포넌트
+          viewList ?
+          <GoodsList 
+          selItem={selItem} 
+          // 상태변수 업데이트를 위해 자식에게 변수 업데이트 메서드를 보내준다!
+          setGIdx={setGIdx}
+          setViewList={setViewList}
+          />
+          :
+          // 상태변수 viewList가 false면
+          // 상품상세보기 하위 컴포넌트 보이기
+          <GoodsDetail 
+          selItem={selItem} 
+          gIdx={gIdx}
+          setViewList={setViewList} />
+        }
       </div>
     </React.Fragment>
   );
@@ -87,35 +116,3 @@ ReactDOM.render(<MainComponent />, document.querySelector("#root"));
 // ReactDOM.render(어쩌구,저쩌구);
 // 어쩌구를 저쩌구에 출력해라!
 
-/***************************************************** 
-        [ 상품리스트 서브컴포넌트 : GoodsList ]
-*****************************************************/
-function GoodsList(){
-
-  // 리턴 코드구역 //
-  return (
-    <ul>
-      {
-        // 반복 데이터로 li태그 만들기
-        guData.map((v) => (
-          <li>
-          <a href="#">
-            <ol className="glist">
-              <li>
-                <img src={"./images/vans/vans_"+v.idx+".jpg"} alt="신발" />
-              </li>
-              <li>{v.gname}</li>
-              <li>가격 : {comFn.addCommas(v.gprice)}원</li>
-            </ol>
-          </a>
-        </li>
-        ))
-      }
-    </ul>
-  )
-
-} //// GoodsList 컴포넌트 ////
-
-const addCommas = (x) => {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
