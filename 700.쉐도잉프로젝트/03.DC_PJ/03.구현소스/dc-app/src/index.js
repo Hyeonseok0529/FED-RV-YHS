@@ -3,7 +3,16 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout';
 import Main from './components/pages/Main';
+import Character from './components/pages/Character';
+import Comics from './components/pages/Comics';
+import Board from './components/pages/Board';
+import Games from './components/pages/Games';
+import Movies from './components/pages/Movies';
+import News from './components/pages/News';
+import Videos from './components/pages/Videos';
 
+// 공통 CSS 취상위 JS //
+import "./css/index.scss";
 /********************************************* 
     [ 리액트 라우터 ]
     -> 컴포넌트를 연결하여 특정 이벤트에 모듈을
@@ -51,6 +60,13 @@ export default function MainComponent(){
                 <Route path="/" element={<Layout />}>
                 {/* 하위중 첫 페이지는 index라고 속성 씀 */}
                     <Route index element={<Main />}/>
+                    <Route path='character' element={<Character />}/>
+                    <Route path='comics' element={<Comics />} />
+                    <Route path='movies' element={<Movies />} />
+                    <Route path='games' element={<Games />} />
+                    <Route path='news' element={<News />} />
+                    <Route path='video' element={<Videos />} />
+                    <Route path='board' element={<Board />} />
                 </Route>
             </Routes>
         </BrowserRouter>
