@@ -3,7 +3,7 @@ import React from 'react';
 function Movies(props) {
     return (
         <div>
-            <h1>Movies!</h1>
+            <h1>영화야!</h1>
         </div>
     );
 }
