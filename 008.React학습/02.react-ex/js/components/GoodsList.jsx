@@ -22,9 +22,22 @@ export default function GoodsList({ selItem, setGIdx, setViewList }) {
     hjData : null;
 
     // 조건 랜더링 : null 값일 경우
-    if(!selDB) return <ul>
+    if(!selDB) return (<ul>
       <li>데이터가 없습니다.</li>
     </ul>
+    );
+
+  // [ useEffect 코드 구역 : 화면업데이트 후 실행구역]
+  React.useEffect(()=>{
+    console.log('나는 리스트 컴포넌트다!');
+
+    // 컴포넌트 소멸시 실행구역은 useEffect 함수 안에 
+    // 함수 리턴코드를 만들어준다!
+    return(()=>{
+      console.log('나는 리스트 컴포넌트 소멸시 실행이다!');
+    });
+
+  }) // useEffect //
 
   // 리턴 코드구역 //
   return (

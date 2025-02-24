@@ -6,6 +6,9 @@ import guData from "../data/gu_data";
 import hjData from "../data/hj_data";
 // console.log(guData);
 
+// 공통함수 불러오기
+import * as comFn from "./common/com_fn";
+
 export default function GoodsDetail({selItem, gIdx, setViewList}) {
   // selItem - 대분류(공유/효진) -> 데이터선택
   // gIdx - 구체적인 선택 데이터 idx값
@@ -34,6 +37,18 @@ export default function GoodsDetail({selItem, gIdx, setViewList}) {
   "데이터가 없습니다."
 
   console.log("Selected Data:", selData);
+
+    // [ useEffect 코드 구역 : 화면업데이트 후 실행구역]
+    React.useEffect(()=>{
+      console.log('나는 디테일 컴포넌트다!');
+  
+      // 컴포넌트 소멸시 실행구역은 useEffect 함수 안에 
+      // 함수 리턴코드를 만들어준다!
+      return()=>{
+        console.log('나는 디테일 컴포넌트 소멸시 실행이다!');
+      };
+  
+    }) // useEffect //  
 
   // 리턴 코드구역 //
   return (
@@ -68,7 +83,7 @@ export default function GoodsDetail({selItem, gIdx, setViewList}) {
       >
         상품명 : {selData.gname}
         <br />
-        가격 : {selData.gprice}
+        가격 : {comFn.addCommas(selData.gprice)}원
         <br />
         {
           // 공유일때만 추가 데이터 조건렌더링!

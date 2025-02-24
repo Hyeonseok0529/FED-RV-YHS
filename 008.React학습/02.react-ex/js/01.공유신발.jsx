@@ -47,12 +47,19 @@ function MainComponent() {
   React.useEffect(() => {
     console.log("DOM이 완성되었어!");
     console.log("🍜랜더링후 test상태변수값:", test);
-  }); ////////////// useEffect ///////////////
+      }); ////////////// useEffect ///////////////
 
   // [ 2. useEffect : 의존성이있는 경우 ] ///
   React.useEffect(() => {
     console.log("의존성useEffect실행![test]");
-  }, [test]);
+
+
+    // 초이스 인트로 애니함수 호출(의존성:selItem)
+    comFn.choiceIntroAni();
+
+    // 스크롤 위치 맨 위로 이동하기 //
+    window.scrollTo(0, 0);
+  }, [test, selItem]);
   // 의존성이란? useEffect가 실행되는 것에 관련된
   // 상태변수를 등록하여 실행구역을 컨트롤한다!
   // 즉, 등록된 상태변수가 변경될때만 이 구역은 실행된다!
@@ -60,10 +67,14 @@ function MainComponent() {
   // -> useEffect(함수,[의존성변수])
   // -> 함수 뒤에 콤마후 배열형으로 넣는다
   // -> 배열형이므로 여러개를 등록할 수 있다!
+  // 예) useEffect(함수,[변수1,변수2,변수3])
 
   // [ 3. useEffect : 의존성이있으나 빈 경우 ] ///
   React.useEffect(() => {
     console.log("useEffect 의존성이 비어서 한번만 실행!");
+
+    // 로고 애니호출(처음 한번만 실행!)
+    comFn.logoAni();
   }, []);
   // -> useEffect(함수,[])
   // -> 최초로딩시 한번만 실행한다!
@@ -71,7 +82,10 @@ function MainComponent() {
   // [ 4. useLayoutEffect : 화면랜더링 전 DOM완성 후 실행구역 ] ///
   React.useLayoutEffect(() => {
     console.log("화면 랜더링 전 DOM 완성 후 실행");
-  }, [test]); // -> 의존성 실행!
+
+    // 애니 속성 초기화 함수실행(의존성:selItem)
+    comFn.initFn();
+  }, [test, selItem]); // -> 의존성 실행!
   // },[]); -> 최초 한번 실행
   // }); -> 매번 실행
 
@@ -122,7 +136,7 @@ function MainComponent() {
         />
         <span>
           {selItem +
-            (selItem === "공유" ? "가 신고다닌다는!" : "이 입고 다닌다는!")}
+            (selItem === "공유" ? "가 신고 다닌다는!" : "이 입고 다닌다는!")}
         </span>
       </h1>
       <section>
@@ -146,6 +160,9 @@ function MainComponent() {
           onClick={() => {
             // 선택 아이템 변경하기
             setSelItem(selItem === "공유" ? "효진" : "공유");
+            // 아이템 변경시 리스트보기 상태로 전환
+            setViewList(true);
+            // 상세보기 상태에서 아이템 변경이 될 수 있으므로!
           }}
         >
           {selItem}초이스 바로가기
