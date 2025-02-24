@@ -50,10 +50,17 @@ export default function GoodsList({ selItem, setGIdx, setViewList }) {
             }}>
               <ol className="glist">
                 <li>
-                  <img
-                    src={"./images/vans/vans_" + v.idx + ".jpg"}
-                    alt="신발"
-                  />
+                  {
+                    selItem === "공유"?
+                    <img
+                      src={"./images/vans/vans_" + v.idx + ".jpg"}
+                      alt="신발"
+                      /> :
+                      <img
+                        src={"./images/gallery/" + v.idx + ".jpg"}
+                        alt="드레스"
+                    />
+                  }
                 </li>
                 <li>상품명 : {v.gname}</li>
                 <li>가격 : {comFn.addCommas(v.gprice)}원</li>
