@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from '../modules/Banner';
 
 function Video(props) {
     return (
