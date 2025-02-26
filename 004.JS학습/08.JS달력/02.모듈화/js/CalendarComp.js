@@ -1,4 +1,4 @@
-// 달력 컴포넌트 JS - CalendarComp.js ////////////
+// 달력컴포넌트 JS - CalendarComp.js ////////////
 
 /*********************************************** 
  * [ 생성자 함수로 변환하여 사용하기 ]
@@ -39,19 +39,19 @@ const myFn = {
 // 요일변경배열 ////
 const week = ["일", "월", "화", "수", "목", "금", "토"];
 
-// 달력함수 호출 -> 여기서 달력호출 하지 않음.
+// 달력함수 호출 -> 이젠 여기서 안함!
 // makeDallyeok();
 
 export default function MakeDallyeok(selEl) {
-  // selEl = 전달변수 : 달력을 넣을 요소(선택자만 보냄)
+  // selEl 전달변수 - 달력을 넣을 요소(선택자만 보냄!)
   // myFn.cs("달력만들어!");
 
-  // [ 생성자함수 속성/메서드 공개 연습하기 ] //
-  // 요일정보 변환배열 //
+  // [ 생성자함수 속성/메서드 공개 연습하기 ] //////
+  // 요일정보 변환배열 ////
   this.week = ["일", "월", "화", "수", "목", "금", "토"];
   // 한자리수 날짜 앞에 0추가 메서드
   this.addZero = (x) => (x < 10 ? "0" + x : x);
-  ///////////////////////////////////////////
+  ////////////////////////////////////////////////
 
   // 0. 달력 컴포넌트 html 넣기
   myFn.qs(selEl).innerHTML = insertHcode();
@@ -62,11 +62,11 @@ export default function MakeDallyeok(selEl) {
   // (2) 오늘날짜 객체
   const today = new Date();
   // (3) 년도요소 : .yearTit
-  const yearTit = myFn.qs(".yearTit");
+  const yearTit = myFn.qs(selEl+" .yearTit");
   // (4) 월요소 : .monthTit
-  const monthTit = myFn.qs(".monthTit");
+  const monthTit = myFn.qs(selEl+" .monthTit");
   // (5) 날짜요소 : .dates
-  const dates = myFn.qs(".dates");
+  const dates = myFn.qs(selEl+" .dates");
   // (6) 날짜넣을 배열변수
   const dateSet = [];
   // (7) html 코드 저장변수
@@ -188,7 +188,7 @@ export default function MakeDallyeok(selEl) {
     // 7) 날짜 정보를 사용하도록 셋팅하기 /////
     // ★★★★★★★★★★★★★★★★★★★★
     // (1) 대상선정 : .date -> 위에서 새로 담겼으므로 새로읽음!
-    let newDate = myFn.qsa(".date");
+    let newDate = myFn.qsa(selEl+" .date");
     // console.log(newDate);
 
     // (2) 각 날짜 .date요소에 링크설정하기
@@ -197,19 +197,21 @@ export default function MakeDallyeok(selEl) {
       myFn.addEvt(el, "click", () => {
         // 1. 년도읽기
         let nowY = yearTit.innerText;
+
         // 2. 월읽기
         let nowM = monthTit.innerText;
+
         // 3. 날짜읽기
         let nowD = el.innerText;
 
         // 4. 이전달/다음달 구분하기
         let isSpan = myFn.qsEl(el, "span");
-        // console.log(isSpan)
-        // span이 있으면 null이 아니므로 true처리됨
+        // console.log('span있니?',isSpan);
+        // span이 있으면 null이 아니므로  true처리됨!
         if (isSpan) {
-          // span의 클래스가 'bm'/'am'인지 구분하기
+          // span의 클래스가 'bm'/'am' 인지 구분하기
           let isAM = isSpan.classList.contains("am");
-          // console.log(isAM)
+          // console.log('클래스가 am이니?',isAM);
           if (isAM) {
             // 다음달이므로 1을 더함
             nowM++;
@@ -219,19 +221,20 @@ export default function MakeDallyeok(selEl) {
               nowM = 1;
               // 1월은 다음해로 처리
               nowY++;
-            } // if : 한계값 체크
-          } // if // : 클래스 'am' 이냐
+            } // if : 한계값 체크 ///
+          } /////// if : 클래스'am'이냐? ///////
           else {
-            // 'bm'일 경우 즉, 이전달이므로 1을 뺌
+            // 'bm'일 경우 즉, 이전달이므로 1을뺌
             nowM--;
             if (nowM == 0) {
+              // 한계값 체크!
               // 0월은 12월로 처리
               nowM = 12;
               // 12월은 이전해로 처리
               nowY--;
-            } // if : 한계값 체크 //
-          } // else //
-        } // if //  : 이전/다음달처리(span있냐?)
+            } /// if : 한계값 체크 ///
+          } ///// else : 클래스 'bm'일 경우 처리 //////
+        } ///////// if : 이전/다음달처리(span있냐?) ////////
 
         // 5. 날짜형식 구성하기 : yyyy-mm-dd
         let setDate = `${nowY}-${myFn.addZero(nowM)}-${myFn.addZero(nowD)}`;
@@ -240,15 +243,16 @@ export default function MakeDallyeok(selEl) {
         let setDay = new Date(setDate).getDay();
 
         // 날짜형식 + 요일 찍기
-        console.log(setDate, `(${week[setDay]})`);
-        //  7. 선택날짜 정보 히든필드에 저장하기
+        // console.log(setDate + `(${week[setDay]})`);
+
+        // 7. 선택날짜 정보 히든필드에 저장하기
         // -> 활용도를 높이기 위해 일반구분자로 정보공개
-        // 예) 년도/월/일/요일 -> 2025/2/28/3
-        myFn.qs(".date-info").value = 
+        // 예) 년도/월/일/요일 -> 2025/2/28/5
+        myFn.qs(selEl+" .date-info").value = 
         `${nowY}/${nowM}/${nowD}/${setDay}`;
-        // 요일 정보는 원본 배열정보로 넣어 놓는다
-      }); // addEvt //
-    }); // forEach //
+        // 요일 정보는 원본 배열정보로 넣어 놓는다!
+      }); //// addEvt //////
+    }); //// forEach //////////
   }; //////////// initDallyeok 함수 ///////
 
   // 2. 함수 만들기 //////////////
@@ -257,7 +261,7 @@ export default function MakeDallyeok(selEl) {
   // 인스턴스 생성시 접근할 수 있도록 한다!
   this.chgCalendar = (num) => {
     // num (1이면 다음, -1이면 이전)
-    // console.log("달력변경 고고!");
+    console.log("달력변경 고고!");
 
     // 이전/다음달로 변경하여 initDallyeok() 함수 호출!
     currDate.setMonth(currDate.getMonth() + num);
@@ -269,27 +273,27 @@ export default function MakeDallyeok(selEl) {
 
   // 3. 이벤트 설정하기 ////////////////////////
   // (1) 이전버튼에 함수 연결하기 : 달을 빼기위해 -1전달
-  myFn.addEvt(myFn.qs(".btnL"), "click", 
+  myFn.addEvt(myFn.qs(selEl+" .btnL"), "click", 
   () => this.chgCalendar(-1));
   // (2) 다음버튼에 함수 연결하기 : 달을 더하기위해 1전달
-  myFn.addEvt(myFn.qs(".btnR"), "click", 
+  myFn.addEvt(myFn.qs(selEl+" .btnR"), "click", 
   () => this.chgCalendar(1));
   // -> this키워드로 등록된 생성자 함수 속성/메서드는
-  // 반드시 this 키워드를 사용하여 호출해야함
-  
+  // 반드시 this키워드를 사용하여 호출해야함!
+
   // 4. 초기셋팅함수 호출!
   initDallyeok();
 } /////////////// MakeDallyeok 생성자함수 ////////////
 
-/*********************************************** 
-  함수명 : insertHcode
-  기능 : 달력의 HTML 코드 넣기
-***********************************************/
+/****************************************** 
+    함수명 : insertHcode
+    기능 : 달력의 HTML 코드 넣기
+******************************************/
 function insertHcode() {
-  // 달력 html 코드를 리턴함
-  return `
+  // 달력 html코드를 리턴함!
+  return `    
     <!-- 달력전체박스 -->
-    <div class="calender">
+    <div class="calendar">
       <!-- 달력상단:해당년/월표시 -->
       <header class="header">
         <!-- 달력이동버튼:이전 -->
@@ -317,7 +321,7 @@ function insertHcode() {
         <div class="dates"></div>
       </section>
       <!-- 달력 선택날짜데이터 저장용 히든필드 -->
-       <input type="hidden" class="date-info">
+      <input type="hidden" class="date-info">
     </div>
   `;
-} // insertHcode 함수 //
+} ///////////// insertHcode 함수 ///////////////
