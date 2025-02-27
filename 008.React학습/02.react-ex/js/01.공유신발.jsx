@@ -47,18 +47,15 @@ function MainComponent() {
   React.useEffect(() => {
     console.log("DOM이 완성되었어!");
     console.log("🍜랜더링후 test상태변수값:", test);
-      }); ////////////// useEffect ///////////////
+
+  }); ////////////// useEffect ///////////////
 
   // [ 2. useEffect : 의존성이있는 경우 ] ///
   React.useEffect(() => {
     console.log("의존성useEffect실행![test]");
 
-
-    // 초이스 인트로 애니함수 호출(의존성:selItem)
+    // 초이스인트로 애니함수 호출(의존성:selItem)
     comFn.choiceIntroAni();
-
-    // 스크롤 위치 맨 위로 이동하기 //
-    window.scrollTo(0, 0);
   }, [test, selItem]);
   // 의존성이란? useEffect가 실행되는 것에 관련된
   // 상태변수를 등록하여 실행구역을 컨트롤한다!
@@ -72,27 +69,31 @@ function MainComponent() {
   // [ 3. useEffect : 의존성이있으나 빈 경우 ] ///
   React.useEffect(() => {
     console.log("useEffect 의존성이 비어서 한번만 실행!");
-
+    
     // 로고 애니호출(처음 한번만 실행!)
     comFn.logoAni();
   }, []);
   // -> useEffect(함수,[])
   // -> 최초로딩시 한번만 실행한다!
 
-  // [ 4. useLayoutEffect : 화면랜더링 전 DOM완성 후 실행구역 ] ///
+  // [ 4. useLayoutEffect :
+  // 화면랜더링 전 DOM완성후 실행구역 ] ///
   React.useLayoutEffect(() => {
-    console.log("화면 랜더링 전 DOM 완성 후 실행");
+    console.log("화면랜더링전 DOM완성후 실행!");
 
     // 애니 속성 초기화 함수실행(의존성:selItem)
     comFn.initFn();
-  }, [test, selItem]); // -> 의존성 실행!
-  // },[]); -> 최초 한번 실행
-  // }); -> 매번 실행
+
+    // 스크롤위치 맨 위로 이동하기 ///
+    window.scrollTo(0, 0);
+  }, [test, selItem]); // -> 의존성실행!
+  // },[]); -> 최초한번실행
+  // }); -> 매번실행
 
   // -> useEffect보다 먼저 실행됨!
   // -> useLayoutEffect도 의존성 셋팅은 useEffect와 동일함!
   // useLayoutEffect(함수,[의존성])
-  // useLayoutEffect(함수,[]) - 최초 한번만 실행
+  // useLayoutEffect(함수,[]) -> 최초한번만 실행
 
   /************************************** 
     [ 코드구성 ]
@@ -134,10 +135,12 @@ function MainComponent() {
             marginRight: "10px",
           }}
         />
-        <span>
-          {selItem +
-            (selItem === "공유" ? "가 신고 다닌다는!" : "이 입고 다닌다는!")}
-        </span>
+        <span>{
+        selItem + 
+        (selItem==="공유"?
+          "가 신고 다닌다는!":
+          "이 입고 다닌다는!")
+          }</span>
       </h1>
       <section>
         <h2 className="stit">
@@ -145,12 +148,12 @@ function MainComponent() {
             selItem === "공유"?
             "공유는 오늘도 멋찝니다!":
             "효진은 오늘도 쨍~합니다!"
-          }
+          }          
           </h2>
         <div className="img-box">
           {
             selItem === "공유"?
-            <img src="./images/vans/gongyoo.jpg" alt="멋진공유" /> :
+            <img src="./images/vans/gongyoo.jpg" alt="멋진공유" />:
             <img src="./images/gallery/hyo.jpg" alt="엘레강스한 효진" />
           }
         </div>
@@ -162,10 +165,10 @@ function MainComponent() {
             setSelItem(selItem === "공유" ? "효진" : "공유");
             // 아이템 변경시 리스트보기 상태로 전환
             setViewList(true);
-            // 상세보기 상태에서 아이템 변경이 될 수 있으므로!
+            // 왜? 상세보기상태에서 아이템 변경이 될 수 있으므로!
           }}
         >
-          {selItem}초이스 바로가기
+          {selItem === "공유" ? "효진" : "공유"}초이스 바로가기
         </button>
         <br />
         <button onClick={testFn}>useEffect 의존성 테스트</button>

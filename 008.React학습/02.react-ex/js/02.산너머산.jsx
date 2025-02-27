@@ -78,18 +78,20 @@ function 큰집() {
 
   // 코드 리턴구역 ///////
   return (
-    // 큰집 컴포넌트안에서 호출하는 컴포넌트를 감싸면서
-    // 컨텍스트 프로바이더를 셋팅해준다.
-    // 전역 속성/메서드 사용가능
+    // 큰집 컨포넌트안에서 호출하는 컴포넌트를 감싸면서
+    // 컨텍스트 프로바이더를 셋팅해 준다! 
+    // -> 전역 속성/메서드 사용가능!
     // -> 형식 : <프로바이더변수.Provider value={{변수,변수}}
-    <누구냐.Provider value={{mtName,setMtName,mtBoxCss,mtInfoBoxCss}}>
-    <할아버지 />
+    <누구냐.Provider 
+    value={{mtName,setMtName,mtBoxCss,mtInfoBoxCss}}>
+      <할아버지 />
     </누구냐.Provider>
   );
 } ////////////// 큰집 ///////////////////
 
 ///// 서브컴포넌트 ////////
 function 할아버지() {
+
   // 코드 리턴구역 ///////
   return (
     <아버지 />

@@ -81,6 +81,7 @@ function 큰집() {
 
 ///// 서브컴포넌트 ////////
 function 할아버지({ mtName, mtBoxCss, mtInfoBoxCss, setMtName }) {
+
   // 코드 리턴구역 ///////
   return (
     <아버지 mtName={mtName} mtBoxCss={mtBoxCss} mtInfoBoxCss={mtInfoBoxCss} setMtName={setMtName} />
