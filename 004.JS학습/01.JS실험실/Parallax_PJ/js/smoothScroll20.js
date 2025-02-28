@@ -1,28 +1,28 @@
 // Smooth Scroll JS Verson 2020.12
-// 부드러운 스크롤 2025.02 버전 - 생성자 함수화
-// arranged by Tom Brace Parker
+// 부드러운 스크롤 2025.02 버전 - 생성자함수화
+// arranged by Tom Brace Parker &  friends
 
 // 바깥쪽의 변수가 전역변수가 되지 않도록
-// 전체를 하나의 생성자 함수로 만들어준다!
+// 전체를 하나의 생성자 함수로 만들어준다!!!
 export default function SmoothScrollFn() {
-  // startSS()함수를 호출하여 사용
-  // this키워드로 변수를 만들면
-  // 외부에서 생성자함수 사용시 객체로 접근가능!
 
+  // startSS()함수를 호출하여 사용
+  // this키워드로 변수를 만들면 
+  // 외부에서 생성자함수 사용시 객체로 접근가능!
   this.startSS = () => {
-    smoothScroll(document, 150, 10);
-  };
+    smoothScroll(document, 30, 22);
+  }
 
   // 전역변수 스크롤 위치값
   let pos;
   // 다른 코딩으로 스크롤 이동시 이 변수에 일치필요!!!
 
   // 전역변수 pos를 셋팅하는 함수(외부에서 이것사용!)
-  // 외부접근 가능하도록 this로 등록!
+  // 외부접근 가능하도록 this로 등록!!!
   this.setPos = (val) => {
     // val - 위치값 전달변수
     pos = val;
-  };
+  }
 
   function smoothScroll(target, speed, smooth) {
     if (target === document)
@@ -94,4 +94,4 @@ export default function SmoothScrollFn() {
       );
     })();
   }
-} // 전체를 감싼 함수 : smoothScrollFn //
+} //////////// smoothScrollFn 함수 /////////////
