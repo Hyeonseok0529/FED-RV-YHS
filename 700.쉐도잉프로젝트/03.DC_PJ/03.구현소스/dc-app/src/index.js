@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/layout/Layout';
-import Main from './components/pages/Main';
-import Character from './components/pages/Character';
-
 
 /// 전체 PJ 공통 CSS 최상위 JS에서 불러오기 ///
 import "./css/index.scss";
+// 사스파일에서 import시엔 _와 .scss생략가능하나
+// 리액트 import에서는 모두 정확히 써야함!
+
+// 컴포넌트 불러오기 ////
+import Layout from './components/layout/Layout';
+import Main from './components/pages/Main';
+import Character from './components/pages/Character';
 import Comics from './components/pages/Comics';
 import Movies from './components/pages/Movies';
 import Games from './components/pages/Games';
@@ -15,8 +18,7 @@ import News from './components/pages/News';
 import Video from './components/pages/Video';
 import Board from './components/pages/Board';
 import SwiperApp from './components/plugin/SwiperApp';
-// 사스파일에서 import시엔 _와 .scss생략가능하나
-// 리액트 import에서는 모두 정확히 써야함!
+
 
 /********************************************* 
     [ 리액트 라우터 ]
@@ -64,7 +66,7 @@ export default function MainComponent(){
                 슬래쉬는 루트를 말하고 레이아웃 컴포넌트 불러옴 */}
                 <Route path="/" element={<Layout />}>
                 {/* 하위중 첫페이지는 index라고 속성씀! */}
-                    {/* <Route index element={<Main catName="main" />}  /> */}
+                    <Route index element={<Main catName="main" />}  />
                     <Route path='character' element={<Character />}  />
                     <Route path='comics' element={<Comics catName="COMICS" />}  />
                     <Route path='movies' element={<Movies catName="MOVIES" />}  />
@@ -72,7 +74,7 @@ export default function MainComponent(){
                     <Route path='news' element={<News />}  />
                     <Route path='video' element={<Video catName="VIDEO" />}  />
                     <Route path='board' element={<Board />}  />
-                    <Route index element={<SwiperApp />}  />
+                    {/* <Route index element={<SwiperApp />}  /> */}
                 </Route>
             </Routes>
         </BrowserRouter>
