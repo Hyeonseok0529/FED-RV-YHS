@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "../modules/Banner";
 import VidIntro from "../modules/VidIntro";
-import VidSwipe from '../modules/VidSwipe';
+import VidSwipe from "../modules/VidSwipe";
 
 function Movies({catName}) {
   // catName - 페이지 카테고리명 데이터
