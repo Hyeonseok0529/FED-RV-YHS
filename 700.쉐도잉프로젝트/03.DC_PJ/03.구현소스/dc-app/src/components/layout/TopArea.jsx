@@ -9,7 +9,58 @@ import { menu } from "../../js/data/gnb";
 import "../../css/common/top_area.scss";
 import Logo from "../modules/Logo";
 
+// 폰트어썸 불러오기 ////
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// 돋보기 아이콘 ///
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+// 제이쿼리 불러오기 //
+import $ from "jquery";
+
 export default function TopArea() {
+
+  // [ 검색 관련 함수들 ] ///////
+  // 1. 검색창 보이기함수 ////
+  const showSearch = (e) => {
+    // 기본기능막기
+    e.preventDefault();
+    // 검색 입력박스 보이기
+    $('.searchingGnb').show();
+    // 2. 입력창에 포커스 보내기
+    $('#schinGnb').focus();
+
+  }; //////////// showSearch 함수 //////////
+
+  // 2. 검색창에 엔터키 누르면 검색함수 호출함수
+  const enterKey = (e) => {
+    // e.keyCode는 숫자형 키코드, e.key는 문자형 키코드
+    // console.log(e.key, e.keyCode);
+    // 엔터키일 경우 입력값 읽어서 검색함수 호출하기
+    if (e.key === 'Enter'){
+      // (1)입력창의 입력값 읽어오기 : val() 사용!
+      let txt = $(e.target).val().trim();
+      // console.log(txt);
+      // (2) 빈 값이 아니면 검색함수 호출
+      if(txt !== ''){
+        goSearch(txt);
+      } // if //
+      // (3) 빈 값이면 메시지 출력
+      else{
+        alert('Please write letters for Searching.');
+      } // else //
+
+    } // if //
+  }; // enterKey //
+
+  // 3. 검색페이지로 검색어와 함께 이동하기 함수
+  const goSearch = (txt) => {
+    console.log('검색 값',txt);
+    // 라우터 이동함수로 검색페이지 이동
+    
+  }; // goSearch // 
+
+
+
   /// 리턴 코드구역 ////////
   return (
     <>
@@ -57,6 +108,42 @@ export default function TopArea() {
                 }
               </li>
             ))}
+            {/* 3. 검색, 회원가입, 로그인 메뉴 */}
+            <li
+              style={{
+                marginLeft: "auto",
+                marginRight: "25px",
+              }}
+            >
+              {/* 검색입력박스 */}
+              <div className="searchingGnb">
+                {/* 검색버튼 돋보기 아이콘 */}
+                <FontAwesomeIcon 
+                  icon={faSearch}
+                  className="schbtnGnb"
+                  title="Open search"
+                  onClick={()=>{}}
+                />
+                {/* 입력창 */}
+                <input 
+                  type="text" 
+                  name="schinGnb"
+                  id="schinGnb"
+                  placeholder="Filter by Keyword"
+                  onKeyUp={enterKey}
+                />
+              </div>
+              {/* 검색기능링크 - 클릭시 검색창 보이기 */}
+              <a href="#" onClick={showSearch}>
+                <FontAwesomeIcon icon={faSearch} />
+              </a>
+            </li>
+            <li>
+              <Link to="/member">JOIN US</Link>
+            </li>
+            <li>
+              <Link to="/login">LOGIN</Link>
+            </li>
           </ul>
         </nav>
         {/* 모바일용 햄버거 버튼 */}
