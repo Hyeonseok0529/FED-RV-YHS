@@ -1,7 +1,7 @@
-// DC.com 검색 페이지 컴포넌트 - SearchPage.jsx
+// DC.com 검색페이지 컴포넌트 - SearchPage.jsx
 
 import React from 'react';
-import {useLocation} from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 import Searching from '../modules/Searching';
 
 function SearchPage() {
@@ -11,16 +11,15 @@ function SearchPage() {
     // 넘어온 키워드 받기
     const keyword = state.keyword;
 
-    // 리턴 코드구역 //
+    // 리턴 코드구역 ////////////////
     return (
         <>
             <h1 className='tit'>
                 Search Result ({keyword})
             </h1>
             {/* 검색모듈 */}
-            <Searching kword={keyword}/>
+            <Searching kword={keyword} />
         </>
-        // 검색 모듈 // 
     );
 }
 
