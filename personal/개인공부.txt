@@ -22,3 +22,23 @@ https://youtube.com/shorts/bsnDyMHrYOU?si=1MMhhFJkOmP68Nj7
 추후에 공부할 때 사용
 https://ko.javascript.info/
 
+통신 프로토콜 3요소 
+구문 Syntax
+의미 Semantic
+타이밍 timing
+
+HTN 우선순위 계산식 = (대기시간 + 실행시간) / 실행시간
+SJF 기아현상 발생가능 -> 대기시간에 집중하는 방식 HRN 경로우대
+프로세스 스케줄링 
+비선점 건들지 못함
+FCFS
+SJF
+HRN
+기한부
+우선순위
+
+선점형 스케줄링
+SRT
+RR
+MLQ다단계 큐
+MFQ 다단계 피드백 큐
